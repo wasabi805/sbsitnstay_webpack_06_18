@@ -8,6 +8,6 @@ var path = require('path');
 
 /* GET home page. */
 router.get('/', (req, res)=> {
-  res.sendFile(path.join(__dirname, '../dist', 'index.html'));});
+  res.sendFile(path.join(__dirname, '../public/theme', 'index.html'));});
 
 module.exports = router;
