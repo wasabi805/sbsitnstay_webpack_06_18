@@ -7,7 +7,7 @@ module.exports={
     mode: 'development',
 
     entry : {
-        app: './src/App.js'
+        app: './src/index.js'
     } ,
 
     output: {
@@ -46,7 +46,7 @@ module.exports={
             {
                 test: /\.(png|jpg|gif)$/,
 
-                //keep the og name and the ext
+
                 //outputPath : copy temp and place here && update
                 // places imgs into the html file : the final dir before img get bundled
 
@@ -67,16 +67,16 @@ module.exports={
     // Plugins
     plugins: [new HtmlWebpackPlugin({
         title: 'My Custom HTML Temp',
-        template: './public/theme/index.html'
+        template: './src/index.html'
     })
-    ]
+    ],
 
 
-    // devServer: {
-    //     contentBase: path.join(__dirname, 'dist'),
-    //     compress: true,
-    //     port: 3000
-    // }
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 3000
+    }
 };
 
 
