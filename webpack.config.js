@@ -2,20 +2,21 @@ var webpack = require('webpack');
 var path = require('path');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 
 module.exports={
-    mode: 'development',
+
+    mode: 'production',
 
     entry : {
-        app: './src/index.js'
+        app: __dirname + '/src/App.js'
     } ,
 
     output: {
-
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, './dist/build'),
         filename: "bundle.js",
-        publicPath: "/dist",
-        sourceMapFilename: "public/build/bundle.map"
+        sourceMapFilename: "bundle.map"
     },
 
 
@@ -43,6 +44,28 @@ module.exports={
                 use: ['html-loader']
             },
 
+            // {
+            //     test: /\.(css|scss)$/,
+            //     use: [
+            //         "style-loader", // creates style nodes from JS strings
+            //         "css-loader", // translates CSS into CommonJS
+            //         "sass-loader" // compiles Sass to CSS
+            //     ]
+            // },
+
+            {
+                test: /\.(css|scss)$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader", "sass-loader"],
+
+                    publicPath: 'dist/'
+
+                })
+            },
+
+
+
             {
                 test: /\.(png|jpg|gif)$/,
 
@@ -65,12 +88,17 @@ module.exports={
     },
 
     // Plugins
-    plugins: [new HtmlWebpackPlugin({
+    plugins: [
+
+        new HtmlWebpackPlugin({
         title: 'My Custom HTML Temp',
         template: './src/index.html'
-    })
-    ],
+        }),
 
+        new ExtractTextPlugin("styles.css")
+
+
+    ],
 
     devServer: {
         contentBase: path.join(__dirname, 'dist'),

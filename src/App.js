@@ -1,10 +1,15 @@
 import React , {Component}from 'react';
-import ReactDOM from 'react-dom';
+import Landing from './components/Landing'
+
 
 class App extends Component{
     render(){
         return(
-            <div>Hello World</div>
+            <div>
+                Hello World!
+
+                <Landing/>
+            </div>
         )
     }
 }
