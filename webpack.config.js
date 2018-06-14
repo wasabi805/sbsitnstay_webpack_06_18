@@ -5,16 +5,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
-var test = path.join(__dirname, 'src');
-
-console.log(__dirname+ '/src/App.js');
-console.log(test);
 module.exports={
 
     mode: 'production',
 
     entry : {
-        app: __dirname + '/src/index.js'
+        app: __dirname + '/src/index.js',
+        // style: __dirname + '/src/assets/css/main.scss',
     } ,
 
     output: {
@@ -51,27 +48,22 @@ module.exports={
             // {
             //     test: /\.(css|scss)$/,
             //     use: [
-            //         "style-loader", // creates style nodes from JS strings
-            //         "css-loader", // translates CSS into CommonJS
-            //         "sass-loader" // compiles Sass to CSS
+            //         "style-loader",
+            //         "css-loader",
+            //         "sass-loader"
             //     ]
             // },
 
             {
                 test: /\.(css|scss)$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: ["css-loader", "sass-loader"],
-
-                    publicPath: 'dist/'
-
-                })
+                use: [
+                    {loader: 'style-loader'}, {loader:'css-loader'}, {loader: 'sass-loader'}]
             },
 
 
 
             {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|svg|eot|woff|ttf|woff2)$/,
 
 
                 //outputPath : copy temp and place here && update
@@ -106,6 +98,9 @@ module.exports={
 
     devServer: {
         contentBase: path.join(__dirname, 'src'),
+        watchOptions:{
+            poll: true
+        },
         compress: true,
         port: 3000
     }

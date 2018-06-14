@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "back": "node ./bin/www",
-    "front": "webpack-dev-server",
+    "front": "webpack-dev-server --watch",
     "dev": "concurrently \"npm run back\" \"npm run front\""
   },
   "dependencies": {
