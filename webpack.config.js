@@ -4,18 +4,17 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports={
-    mode: 'development',
+
+    mode: 'production',
 
     entry : {
-        app: './src/index.js'
+        app: __dirname + '/src/App.js'
     } ,
 
     output: {
-
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, './dist/build'),
         filename: "bundle.js",
-        publicPath: "/dist",
-        sourceMapFilename: "public/build/bundle.map"
+        sourceMapFilename: "bundle.map"
     },
 
 
