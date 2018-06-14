@@ -7,8 +7,7 @@ class App extends Component{
         return(
             <div>
                 Hello World!
-
-                <Landing/>
+                {/*<Landing/>*/}
             </div>
         )
     }

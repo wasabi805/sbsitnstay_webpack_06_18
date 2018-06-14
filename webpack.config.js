@@ -5,12 +5,16 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
+var test = path.join(__dirname, 'src');
+
+console.log(__dirname+ '/src/App.js');
+console.log(test);
 module.exports={
 
     mode: 'production',
 
     entry : {
-        app: __dirname + '/src/App.js'
+        app: __dirname + '/src/index.js'
     } ,
 
     output: {
@@ -101,7 +105,7 @@ module.exports={
     ],
 
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: path.join(__dirname, 'src'),
         compress: true,
         port: 3000
     }
