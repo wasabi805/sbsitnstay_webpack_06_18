@@ -1,7 +1,10 @@
 import React , {Component}from 'react'
-import IndexLanding from './components/IndexLanding'
+import Landing from './components/Landing'
 import Header from './components/Header'
 import Menu from './components/Menu'
+import Banner from './components/Banner'
+import Main from './components/Main'
+
 
 import mainCss from './assets/css/main.scss';
 
@@ -11,7 +14,9 @@ class App extends Component{
             <div id="wrapper">
                 <Header/>
                 <Menu/>
-                <IndexLanding/>
+                <Banner/>
+                <Main/>
+                <Landing/>
             </div>
         )
     }
