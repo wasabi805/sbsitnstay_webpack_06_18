@@ -7,7 +7,17 @@ var path = require('path');
 //https://stackoverflow.com/a/25463996/7857134
 
 /* GET home page. */
-router.get('/', (req, res)=> {
-  res.sendFile(path.join(__dirname, '../public/theme', 'index.html'));});
+
+//gets the index from theme as ref
+// router.get('/', (req, res)=> {
+//   res.sendFile(path.join(__dirname, '../public/theme', 'index.html'));});
+
+// router.get('/', (req, res)=>{
+//   res.json({msg: 'localhost5000'})
+// });
+
+
+
+
 
 module.exports = router;
