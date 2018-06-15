@@ -101,6 +101,7 @@ module.exports={
         watchOptions:{
             poll: true
         },
+        historyApiFallback: true,
         compress: true,
         port: 3000
     }

@@ -7,7 +7,7 @@ class Landing extends Component{
     render(){
         return(
             <div id="wrapper">
-                {/*<Header/>*/}
+                <Header/>
                 <h1>TEST LANDING</h1>
             </div>
         )

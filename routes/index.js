@@ -12,9 +12,9 @@ var path = require('path');
 // router.get('/', (req, res)=> {
 //   res.sendFile(path.join(__dirname, '../public/theme', 'index.html'));});
 
-router.get('/', (req, res)=>{
-  res.json({msg: 'localhost5000'})
-});
+// router.get('/', (req, res)=>{
+//   res.json({msg: 'localhost5000'})
+// });
 
 
 
