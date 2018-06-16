@@ -4,7 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 import routes from './routes';
 
 ReactDOM.render(
-    <BrowserRouter>
-        {routes}
-    </BrowserRouter>, document.getElementById('root')
+
+        routes,
+
+document.getElementById('root')
 );

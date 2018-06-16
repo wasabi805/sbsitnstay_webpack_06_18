@@ -15,7 +15,8 @@ module.exports={
     } ,
 
     output: {
-        path: path.resolve(__dirname, './dist/build'),
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
         filename: "bundle.js",
         sourceMapFilename: "bundle.map"
     },
@@ -98,10 +99,16 @@ module.exports={
 
     devServer: {
         contentBase: path.join(__dirname, 'src'),
+
+        publicPath: '/',
+        compress: true,
+
         watchOptions:{
             poll: true
         },
+
         historyApiFallback: true,
+
         compress: true,
         port: 3000
     }
