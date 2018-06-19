@@ -15,7 +15,8 @@ module.exports={
     } ,
 
     output: {
-        path: path.resolve(__dirname, './dist/build'),
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
         filename: "bundle.js",
         sourceMapFilename: "bundle.map"
     },
@@ -71,9 +72,9 @@ module.exports={
 
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: 'url-loader',
                         options: {
-
+                            fallback: 'file-loader',
                             outputPath: 'img/',
                             publicPath: 'img/'
                         }
@@ -98,10 +99,16 @@ module.exports={
 
     devServer: {
         contentBase: path.join(__dirname, 'src'),
+
+        publicPath: '/',
+        compress: true,
+
         watchOptions:{
             poll: true
         },
+
         historyApiFallback: true,
+
         compress: true,
         port: 3000
     }
