@@ -61,7 +61,7 @@ class LandingMain extends Component{
                                         </header>
                                         <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
                                         <ul className="actions">
-                                            <li><Link to='/landing/sub' className="button">Learn more</Link></li>
+                                            <li><Link to='/landing/sub' className="button">Make this the Services Btn</Link></li>
                                         </ul>
                                     </div>
                                 </div>

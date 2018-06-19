@@ -72,9 +72,9 @@ module.exports={
 
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: 'url-loader',
                         options: {
-
+                            fallback: 'file-loader',
                             outputPath: 'img/',
                             publicPath: 'img/'
                         }
