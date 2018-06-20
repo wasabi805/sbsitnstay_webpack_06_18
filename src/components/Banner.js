@@ -3,16 +3,22 @@ import React, {Component} from 'react';
 class Banner extends Component{
     render(){
         return(
-            <section id="banner" class="major">
-                <div class="inner">
-                    <header class="major">
-                        <h1>South Bay Sit N' Stay</h1>
+            <section id="banner" className="major">
+                <div className="inner">
+                    <header className="major">
+
+
+
+                        <div className="container">
+                            <span className='text1'><h1>South Bay Sit N' Stay</h1></span>
+                        </div>
+
+
                     </header>
-                    <div class="content">
-                        <p>A responsive site template designed by HTML5 UP<br />
-                            and released under the Creative Commons.</p>
-                        <ul class="actions">
-                            <li><a href="#one" class="button next scrolly">Get Started</a></li>
+                    <div className="content">
+                        <p>Welcome</p>
+                        <ul className="actions">
+                            <li><a href="#one" className="button next scrolly">Get Started</a></li>
                         </ul>
                     </div>
                 </div>
