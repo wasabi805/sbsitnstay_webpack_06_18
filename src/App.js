@@ -1,6 +1,6 @@
 import React , {Component}from 'react'
 // import Landing from './components/Landing/Landing'
-import Header from './components/Header'
+
 import Menu from './components/Menu'
 import Banner from './components/Banner'
 import IndexMain from './components/IndexMain'
@@ -17,7 +17,7 @@ class App extends Component{
 
                 <div id="wrapper">
 
-                    {/*<Header />*/}
+
                     {/*<Menu/>*/}
                     <Banner/>
                     <IndexMain/>

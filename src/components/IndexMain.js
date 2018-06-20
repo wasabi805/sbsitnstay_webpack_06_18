@@ -4,8 +4,6 @@ import { BrowserRouter as Router,Route, Link } from 'react-router-dom';
 import pic01 from '.././images/pic01.jpg'
 
 
-import LandingMain from './landing/LandingMain'
-
 
 // console.log(this.props.children, 'THIS.PROPS.CHILDREN');
 class IndexMain extends Component{
