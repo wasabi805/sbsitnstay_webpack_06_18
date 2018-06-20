@@ -19,8 +19,21 @@ class LandingMain extends Component{
     componentDidMount(){
         // console.log(this.props.match.params.id, 'Match');
 
-        if(this.props.match.params.id == 'what-we-do'){
-            console.log('Services');
+        if(this.props.match.params.id == 'about-us'){
+            console.log('About US');
+            this.setState({
+                title: 'About Us',
+                titleContent: "Who Are We? We are a small netwrk of local sitters who cater your busy schedule",
+                sections:[
+                    {title:'Kayla', content: 'Meet Kayla!'},
+                    {title:'Catherine', content: 'Meet Catherine'},
+                    {title:'Kimmy', content: 'Meet Kimmy'}
+                ]
+            })
+        }
+
+        if(this.props.match.params.id == 'services'){
+            console.log('what-we-do');
             this.setState({
                 title: 'What We Do',
                 titleContent: "A list of services",
@@ -31,6 +44,12 @@ class LandingMain extends Component{
                 ]
             })
         }
+
+
+
+
+
+
         else{
             console.log("didn't work");
         }
@@ -55,9 +74,9 @@ class LandingMain extends Component{
                             <header className="major">
                                 <h3>{item.title}</h3>
                             </header>
-                            <p>Some other stuff</p>
+                            <p>{item.content}</p>
                             <ul className="actions">
-                                <li><Link to='/landing/sub' className="button">Make this the Services Btn</Link></li>
+                                <li><Link to='/landing/sub' className="button">Render {item.title}'s Profile </Link></li>
                             </ul>
                         </div>
                     </div>

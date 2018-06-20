@@ -15,7 +15,7 @@ class IndexMain extends Component{
         this.state={
 
             tiles: [
-                {title:'Meet the Crew!',pathSrc:'/landing/what-we-do', msg: 'Get acquainted with out sitters' },
+                {title:'Meet the Crew!',pathSrc:'/landing/about-us', msg: 'Get acquainted with out sitters' },
                 {title: 'Services', pathSrc: '/landing/services', msg: 'What we can do for you and your pup'},
                 {title: 'Gallery', pathSrc: '/landing/gallery', msg: 'Join the gang!'},
                 {title: 'Contact', pathSrc: '/landing/contact', msg: 'Get in touch with us!'}
