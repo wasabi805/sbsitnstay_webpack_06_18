@@ -3,7 +3,10 @@ import {Route,Link} from 'react-router-dom'
 
 import pic08 from '../../images/pic08.jpg'
 
-import SubContentMain from './subContent/SubContentMain'
+
+import LandingSections from './LandingSections'
+import TextFieldGroup from '../common/TextFieldGroup'
+
 
 class LandingMain extends Component{
 
@@ -12,12 +15,14 @@ class LandingMain extends Component{
         this.state={
             title:'',
             titleContent:'',
-            sections:[]
+            sections:[],
+            isHidden: false
+
         }
     }
 
     componentDidMount(){
-        // console.log(this.props.match.params.id, 'Match');
+        console.log(this.props.match.params.id, 'Match');
 
         if(this.props.match.params.id == 'about-us'){
             console.log('About US');
@@ -40,14 +45,36 @@ class LandingMain extends Component{
                 sections:[
                     {title:'Walking', content: 'We walk your dog'},
                     {title:'Feeding', content: 'We feed you dog'},
+                    {title:'Overnight Care', content: "We Sleep at your house"},
+                    {title:'Drop-ins', content: "We'll dip by and check on your dog"},
                     {title:'Adventures', content: 'We take your dog on adventures'}
                 ]
             })
         }
 
+        if(this.props.match.params.id == 'gallery'){
+            console.log('gallery');
+            this.setState({
+                title: 'Gallery',
+                titleContent: "Some of our friends",
+                sections:[
+                    {title:'Gallery', content: 'more friends'},
+
+                ]
+            })
+        }
+
+        if(this.props.match.params.id == 'contact'){
+            console.log('contact');
+            this.setState({
+                title: 'Contact us',
+                titleContent: "We'd love to hear from you!",
+                sections:[]
+            })
 
 
 
+        }
 
 
         else{
@@ -57,7 +84,7 @@ class LandingMain extends Component{
 
     render(){
 
-        console.log(this.state, 'Landing Main');
+
         // console.log(this.props.match.params.id, 'Match');
 
         const SectionMapper = this.state.sections.map(item=>{
@@ -88,11 +115,16 @@ class LandingMain extends Component{
 
         });
 
+
+        console.log(this.props.match.params.id, 'outside of compDidMount');
+        //
+        //
+
+        console.log('this is landingMain');
         return(
                 <div id="wrapper">
                     {/*Main*/}
                     <div id="main">
-                        {/*<SectionHeading title={this.state.title}/>*/}
 
                         <section id="one">
                             <div className="inner">
@@ -113,6 +145,7 @@ class LandingMain extends Component{
 
 
                             {SectionMapper}
+
                             {/*<section>*/}
                                 {/*<a href="generic.html" className="image">*/}
                                     {/*<img src={pic08} alt="" data-position="center center" />*/}
@@ -180,6 +213,10 @@ class LandingMain extends Component{
                     </div>
 
                     {/*Contact*/}
+
+                    {/*<TextFieldGroup />*/}
+
+
                     {/*<section id="contact">*/}
                         {/*<div className="inner">*/}
                             {/*<section>*/}

@@ -6,7 +6,7 @@ class Banner extends Component{
             <section id="banner" class="major">
                 <div class="inner">
                     <header class="major">
-                        <h1>Hi, my name is Forty</h1>
+                        <h1>South Bay Sit N' Stay</h1>
                     </header>
                     <div class="content">
                         <p>A responsive site template designed by HTML5 UP<br />
