@@ -20,21 +20,12 @@ export default (
                 <Route exact path='/' component = { App } />
 
                 <Switch>
-                    <Route exact path='/landing' component ={LandingMain}/>
+                    <Route exact path='/landing/:id' component ={LandingMain}/>
+
+
+
                     <Route path='/landing/sub' component={SubContentMain}/>
                 </Switch>
-
-
-
-            {/*<Route path='/landing' render={({match:{url}})=>{*/}
-                {/*console.log(url, 'frm routes.js' );*/}
-                {/*return(*/}
-                    {/*<div>*/}
-                        {/*<Route path={url} component={LandingMain}/>*/}
-                        {/*<Route path={url + '/sub'} component={SubContentMain}/>*/}
-                    {/*</div>*/}
-                {/*)*/}
-            {/*}}/>*/}
 
         </div>
     </Router>

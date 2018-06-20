@@ -5,48 +5,52 @@ import pic07 from '../../images/pic07.jpg'
 
 import SubContentMain from './subContent/SubContentMain'
 
-import Header from './Header'
-import Menu from './Menu';
+import SectionHeading from './section-content/section-heading'
+import SectionMain from './section-content/section-main';
 
 class LandingMain extends Component{
+
+    constructor(props){
+        super(props);
+        this.state={
+            param: '',
+            title:''
+        }
+    }
+
+    componentDidMount(){
+        console.log(this.props.match.url,'i mounted');
+
+
+        if(this.props.match.url === '/landing/services'){
+           this.setState({
+               title : 'ThisIsATest'
+           })
+        }
+
+
+
+    }
+
+
+
+
+
+    switch(){
+
+    }
+
     render(){
+
+
+
 
         return(
 
                 <div id="wrapper">
-
-
-                    {/*Menu */}
-                    {/*Banner*/}
-                     {/*Note: The "styleN" class below should match that of the header element. */}
-                    <section id="banner" class="style2">
-                        <div className="inner">
-							<span className="image">
-								<img src={pic07} alt="" />
-							</span>
-                            <header className="major">
-                                <h1>Landing</h1>
-                                <Link to="/landing/sub"> HELLO</Link>
-                            </header>
-                            <div className="content">
-                                <p>Lorem ipsum dolor sit amet nullam consequat<br />
-                                    sed veroeros. tempus adipiscing nulla.</p>
-                            </div>
-                        </div>
-                    </section>
-
                     {/*Main*/}
                     <div id="main">
-
-                        {/*One*/}
-                        <section id="one">
-                            <div className="inner">
-                                <header class="major">
-                                    <h2> TODO: LANDING INTRO CONTENT</h2>
-                                </header>
-                                <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.</p>
-                            </div>
-                        </section>
+                        <SectionHeading title={this.state.title}/>
 
                         {/*Two*/}
                         <section id="two" className="spotlights">
@@ -66,6 +70,7 @@ class LandingMain extends Component{
                                     </div>
                                 </div>
                             </section>
+
                             <section>
                                 <a href="generic.html" className="image">
                                     <img src="images/pic09.jpg" alt="" data-position="top center" />

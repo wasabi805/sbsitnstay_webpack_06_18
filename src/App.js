@@ -3,7 +3,7 @@ import React , {Component}from 'react'
 import Header from './components/Header'
 import Menu from './components/Menu'
 import Banner from './components/Banner'
-import Main from './components/Main'
+import IndexMain from './components/IndexMain'
 // import Landing from './components/landing/LandingMain'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -20,7 +20,7 @@ class App extends Component{
                     {/*<Header />*/}
                     {/*<Menu/>*/}
                     <Banner/>
-                    <Main/>
+                    <IndexMain/>
 
                 </div>
 
