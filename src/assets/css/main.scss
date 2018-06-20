@@ -1704,6 +1704,44 @@
 		margin: 0 0 2em 0;
 	}
 
+
+	//My Code
+	.container{
+		//transform: translate(-50%, -50%);
+
+	}
+
+	.container span{
+		color: white;
+		text-transform: uppercase;
+		display: block;
+
+	}
+
+	.text1{
+		position: relative;
+		animation: text 3s 1;
+	}
+	
+	@keyframes text {
+		0%{
+			color: black;
+			margin-bottom: -30px;
+		}
+		30%{
+			letter-spacing: 8px;
+			margin-bottom: -30px;
+		}
+		85%{
+			letter-spacing: 6px;
+			margin-bottom: -30px;
+		}
+	}
+
+
+	//-----	---------	---------	---------
+
+	//All h1
 	h1, h2, h3, h4, h5, h6 {
 		color: #ffffff;
 		font-weight: 600;
@@ -1831,6 +1869,7 @@
 		width: -ms-max-content;
 		width: max-content;
 		margin-bottom: 2em;
+
 	}
 
 		header.major > :first-child {
@@ -3580,7 +3619,7 @@
 			}
 
 				#banner h1 {
-					font-size: 2em;
+					font-size: 20px;
 				}
 
 				#banner > .inner .content {

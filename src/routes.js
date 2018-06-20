@@ -7,7 +7,8 @@ import Header from "./components/landing/Header";
 import Menu from "./components/landing/Menu";
 import Banner from "./components/Banner";
 import SubContentMain from "./components/landing/subContent/SubContentMain";
-
+import LandingSections from "./components/landing/LandingSections"
+import TextFieldGroup from "./components/common/TextFieldGroup"
 
 export default (
 
@@ -20,7 +21,10 @@ export default (
                 <Route exact path='/' component = { App } />
 
                 <Switch>
-                    <Route exact path='/landing/:id' component ={LandingMain}/>
+                    {/*<Route exact path='/landing/:id' component ={LandingMain}/>*/}
+                    <Route exact path='/landing' component ={LandingMain}/>
+                    <Route exact path='/contact' component ={TextFieldGroup}/>
+                    <Route exact path ='/:id' component={LandingMain}/>
 
 
 

@@ -2,8 +2,9 @@ import React, {Component} from 'react'
 
 import { BrowserRouter as Router,Route, Link } from 'react-router-dom';
 import pic01 from '.././images/pic01.jpg'
-import routes from '../routes';
 
+
+import LandingMain from './landing/LandingMain'
 
 
 // console.log(this.props.children, 'THIS.PROPS.CHILDREN');
@@ -14,10 +15,10 @@ class IndexMain extends Component{
         this.state={
 
             tiles: [
-                {title:'Meet the Crew!',pathSrc:'/landing/what-we-do', msg: 'Get acquainted with out sitters' },
-                {title: 'Services', pathSrc: '/landing/services', msg: 'What we can do for you and your pup'},
-                {title: 'Gallery', pathSrc: '/landing/gallery', msg: 'Join the gang!'},
-                {title: 'Contact', pathSrc: '/landing/contact', msg: 'Get in touch with us!'}
+                {title:'Meet the Crew!',pathSrc:'/about-us', msg: 'Get acquainted with out sitters' },
+                {title: 'Services', pathSrc: '/services', msg: 'What we can do for you and your pup'},
+                {title: 'Gallery', pathSrc: '/gallery', msg: 'Join the gang!'},
+                {title: 'Contact', pathSrc: '/contact', msg: 'Get in touch with us!'}
             ]
         }
     }
@@ -64,6 +65,8 @@ class IndexMain extends Component{
                     {titleMapper[3]}
 
                 </section>
+
+
 
             </div>
 
