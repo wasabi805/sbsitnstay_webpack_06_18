@@ -1,45 +1,70 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import classNames from 'classnames';
+
+import Dropdown from 'react-simple-dropdown';
+import {DropdownTrigger, DropdownContent} from 'react-simple-dropdown'
+
+// const DropdownTrigger = Dropdown.DropdownTrigger;
+// const DropdownContent = Dropdown.DropdownContent;
 
 import pic10 from '.././images/pic10.jpg'
 
 // import NavMenu from './layout/nav-menu'
 
 
-class Testcomp extends Component{
+class TestMenu extends Component{
+
+
+
     render(){
+
+        console.log(Dropdown);
+
         return(
-            <header className='navDiv container'>
-                {/*v-header container*/}
+            <div className='myNav'>
+                <Dropdown >
 
-                <div className="navMenu-wrap">
-                    <img src={pic10}/>
-                </div>
+                    <DropdownTrigger><span className='hamberger'>&#9776;</span></DropdownTrigger>
+
+                    <DropdownContent>
+                        <ul>
+                            <li>
+                                <a href="/profile">Profile</a>
+                            </li>
+
+                            <li>
+                                <a href="/favorites">Favorites</a>
+                            </li>
+
+                            <li>
+                                <a href="/logout">Log Out</a>
+                            </li>
+                        </ul>
+                    </DropdownContent>
+                </Dropdown>
+            </div>
 
 
-                <div className='header-overlay'></div>
-                    {/*header-overlay*/}
 
-                <div className='header-content'>
+            // {/*<div className='myNav'>*/}
+            //
+            //     {/*<label htmlFor="toggle"> &#9776; </label>*/}
+            //
+            //     {/*<input type="checkbox" id="toggle"/>*/}
+            //
+            //     {/*<div className='myMenu'>*/}
+            //         {/*<a href="#"> Link1 </a>*/}
+            //         {/*<a href="#"> Link2 </a>*/}
+            //         {/*<a href="#"> Link3 </a>*/}
+            //         {/*<a href="#"> Link4 </a>*/}
+            //         {/*<a href="#"><span className='mySpan'>Link5</span></a>*/}
+            //     {/*</div>*/}
+            //
+            // // </div>
 
-                    {/*<ul className="links">*/}
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="landing.html">Landing</a></li>
-                        <li><a href="generic.html">Generic</a></li>
-                        <li><a href="elements.html">Elements</a></li>
-                    </ul>
-
-                    {/*<ul className="actions vertical">*/}
-                    <ul>
-                        <li><a href="#" className="button special fit">Get Started</a></li>
-                        <li><a href="#" className="button fit">Log In</a></li>
-                    </ul>
-                </div>
-
-            </header>
         )
     }
 }
 
-export default Testcomp
+export default TestMenu

@@ -54,6 +54,8 @@ class IndexMain extends Component{
         return(
             <div id="main">
 
+                <p>I'm coming from indexMain</p>
+
                 {/*One*/}
                 <section id="one" className="tiles">
 

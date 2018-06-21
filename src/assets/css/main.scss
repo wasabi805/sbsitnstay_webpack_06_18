@@ -1707,6 +1707,175 @@
 
 	//-----	-----		My Code		-----	-----
 
+    .myNav{
+        border-bottom: 1px solid lightgray;
+        padding: 20px;
+        position: fixed; //you put this here, can take out for later
+
+        height: 70px;
+        width: 100vw;
+        line-height: 2rem;
+        z-index: 11;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom: 20px;
+
+        background-color: lightgrey;
+
+    }
+
+
+  .dropdown {
+    display: inline; //def inline-bloc
+    position: absolute;
+    float: right;
+
+  }
+
+  .dropdown a{
+    border-bottom: none;
+
+  }
+
+
+
+  .dropdown__content {
+      display: none;
+      position: absolute;
+      text-align: right;
+      //margin-left:auto;
+      //margin-right:auto;
+      width: 100vw;
+      height: 90vh;
+      background-color: yellow;
+      z-index: 10;
+      opacity: .5;
+  }
+
+  .dropdown__content li{
+      display: none;
+      position: relative;
+      text-align: center;
+      margin-left:auto;
+      margin-right:auto;
+      width: 100vw;
+      z-index: 10;
+  }
+
+  .hamberger{
+      margin-left: 90vw;
+  }
+
+  .myNav .hamberger {
+    float:right
+  }
+
+  .dropdown--active .dropdown__content {
+    display: block;
+    text-decoration: none;
+
+  }
+
+  .dropdown--active .dropdown__content li{
+    position: relative;
+    display: block;
+    text-decoration: none;
+
+  }
+
+
+
+	//.myTestContainer{
+	//	width: 100%;
+	//	height: 100%;
+	//	margin: 0;
+	//	font-family: 'helvetica neue', 'sans-serif';
+	//	z-index: 7;
+	//}
+
+	//.nav{
+     //   padding: 20px;
+	//	border-bottom: 1px solid lightgray;
+	//	text-align: right;
+	//	height: 200px;
+	//	line-height: 70px;
+	//}
+    //
+    //.nav input{
+     // font-size: 100px;
+    //}
+    //
+    //
+	//.toggle input{
+	//	font-size: 200px;
+	//}
+    //
+	//.myMenu{
+	//	margin: 0 30px 0 0;
+	//}
+    //
+	//.myMenu a{
+	//	clear: right;
+	//	margin: 0 30px 0 0;
+	//	text-decoration: none;
+	//	color: grey;
+	//	margin: 0 10px;
+	//	line-height: 70px;
+	//}
+    //
+	//.mySpan{
+	//	color: green;
+	//}
+    //
+	//label{
+	//	margin: 0 40px 0 0 ;
+	//	font-size: 26px;
+	//	line-height: 70px;
+	//	//display: none;
+	//	width: 26px;
+	//	float: right;
+    //
+	//}
+    //
+	//.toggle{
+	//	//display: none;
+	//}
+    //
+	//#toggle{
+     // resize: horizontal ;
+     // width: 200px;
+	//	//display: none;
+	//}
+    //
+	//@media only screen and (max-width: 500px){
+    //
+	//	label{
+	//		display: block;
+	//		cursor: pointer;
+    //
+	//	}
+	//	.myMenu{
+	//		text-align: center;
+	//		width: 100%;
+	//	}
+	//	.myMenu a{
+	//		display: block;
+	//		border-bottom: 1px solid lightgray;
+	//		margin: 0;
+	//	}
+    //
+	//	#toggle:checked + .myMenu{
+	//		display: block;
+	//}
+    //
+    //
+	//}
+
+
+
+
+
+
 
 
     //NAVBAR MENU
