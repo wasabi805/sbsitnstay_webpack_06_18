@@ -1705,30 +1705,160 @@
 	}
 
 
-	//-----	-----		My Code		-----	-----
 
-    .myNav{
-        border-bottom: 1px solid lightgray;
-        padding: 20px;
-        position: fixed; //you put this here, can take out for later
 
-        height: 70px;
-        width: 100vw;
-        line-height: 2rem;
-        z-index: 11;
-        margin-left:auto;
-        margin-right:auto;
-        margin-bottom: 20px;
+	.burger container{
+		position: absolute;
+        display: flex;
+		background-color: #6fc3df;
+        margin-top: 50px;
+		height: 100vh;
+        width: 90vw;
+		display: block;
+		//align-items: center;
+		color: white;
+        z-index: 3;
+	}
 
-        background-color: lightgrey;
+	.burger-bg-wrap{
+		position: absolute;
+        display: inline;
+		//top: 70px;
+		//left: 0;
+		//width: 100%;
+		//height: 50vh;
+		overflow: hidden;
 
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+
+	}
+
+	.burger-bg-wrap img{
+		//min-width: 100%;
+		//min-height:100%;
+        position: absolute;
+        z-index: 2;
+
+
+	}
+
+	.burger-bg-wrap-overlay{
+		height: 50vh;
+		width: 100vw;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		background-color: #225470;
+		opacity: .3;
+		z-index: 1;
+
+	}
+
+	//this will center the links & btns in the dropdown
+	.burger-list-main{
+		position: absolute;
+		padding-left: 0px;
+		left: 0px;
+		right: 0px;
+	}
+
+
+    //any effect I'll apply will go here: possibly an image
+	.burger-list-content{
+		position: absolute;
+		display: block;
+        margin-top: 20px;
+        padding-top: 130px;
+		width: 100vw;
+        height: 100vh;
+        background-color: powderblue;
+        opacity: .9;
+		z-index: 2;
+
+	}
+
+    .burger-list{
+      margin-top: 30px;
+      text-align: center;
     }
 
 
+    .burger-item{
+        width: auto
+    }
+
+	.burger-list-content .burger-list{
+
+	}
+
+	.burger-list .burger-item{
+		color: red;
+	}
+
+    .burger-list .burger-buttons{
+        color: blue;
+    }
+
+
+
+
+
+    //.burger-list li{
+    //
+    //
+    //}
+    //
+    //
+    //.burger-item li{
+    //    color: #8d82c4;
+    //}
+    //
+    //
+    //.burger-buttons{
+    //  position: absolute;
+    //
+    //}
+    //
+    //.burger-route{
+    //
+    //}
+
+
+
+
+
+
+
+
+
+
+	//-----	-----		My Code		-----	-----
+
+	.myNav{
+		border-bottom: 1px solid lightgray;
+		//padding: 20px;
+		position: fixed; //you put this here, can take out for later
+
+		height: 70px;
+		width: 100vw;
+		line-height: 2rem;
+		z-index: 11;
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom: 20px;
+		background-color: lightgrey;
+
+
+	}
+
+
   .dropdown {
-    display: inline; //def inline-bloc
-    position: absolute;
-    float: right;
+    display: block; //def inline-bloc
+    position: relative;
+    //float: right;
 
   }
 
@@ -1738,18 +1868,16 @@
   }
 
 
-
+    //THIS IS THE PARENT div for all  drop-down menu links
   .dropdown__content {
       display: none;
-      position: absolute;
-      text-align: right;
-      //margin-left:auto;
-      //margin-right:auto;
-      width: 100vw;
-      height: 90vh;
-      background-color: yellow;
+      position: relative;
+      top: 50px;  //need the 50px buffer so overlay wont block the menu berger
+      right: 0px;
+      left: 0px;
+       //background-color: lightcyan; //if you see the cyan, you're fine
       z-index: 10;
-      opacity: .5;
+
   }
 
   .dropdown__content li{
@@ -1758,16 +1886,18 @@
       text-align: center;
       margin-left:auto;
       margin-right:auto;
+	  color: black;
       width: 100vw;
       z-index: 10;
   }
 
   .hamberger{
-      margin-left: 90vw;
+      //margin-left: 70vw;
   }
 
   .myNav .hamberger {
-    float:right
+    float:right;
+    margin-right: 20px;
   }
 
   .dropdown--active .dropdown__content {
@@ -1782,101 +1912,6 @@
     text-decoration: none;
 
   }
-
-
-
-	//.myTestContainer{
-	//	width: 100%;
-	//	height: 100%;
-	//	margin: 0;
-	//	font-family: 'helvetica neue', 'sans-serif';
-	//	z-index: 7;
-	//}
-
-	//.nav{
-     //   padding: 20px;
-	//	border-bottom: 1px solid lightgray;
-	//	text-align: right;
-	//	height: 200px;
-	//	line-height: 70px;
-	//}
-    //
-    //.nav input{
-     // font-size: 100px;
-    //}
-    //
-    //
-	//.toggle input{
-	//	font-size: 200px;
-	//}
-    //
-	//.myMenu{
-	//	margin: 0 30px 0 0;
-	//}
-    //
-	//.myMenu a{
-	//	clear: right;
-	//	margin: 0 30px 0 0;
-	//	text-decoration: none;
-	//	color: grey;
-	//	margin: 0 10px;
-	//	line-height: 70px;
-	//}
-    //
-	//.mySpan{
-	//	color: green;
-	//}
-    //
-	//label{
-	//	margin: 0 40px 0 0 ;
-	//	font-size: 26px;
-	//	line-height: 70px;
-	//	//display: none;
-	//	width: 26px;
-	//	float: right;
-    //
-	//}
-    //
-	//.toggle{
-	//	//display: none;
-	//}
-    //
-	//#toggle{
-     // resize: horizontal ;
-     // width: 200px;
-	//	//display: none;
-	//}
-    //
-	//@media only screen and (max-width: 500px){
-    //
-	//	label{
-	//		display: block;
-	//		cursor: pointer;
-    //
-	//	}
-	//	.myMenu{
-	//		text-align: center;
-	//		width: 100%;
-	//	}
-	//	.myMenu a{
-	//		display: block;
-	//		border-bottom: 1px solid lightgray;
-	//		margin: 0;
-	//	}
-    //
-	//	#toggle:checked + .myMenu{
-	//		display: block;
-	//}
-    //
-    //
-	//}
-
-
-
-
-
-
-
 
     //NAVBAR MENU
     .navDiv{
@@ -1929,6 +1964,7 @@
     }
 
     .header-content{
+
       	width: 100%;
 		padding-left: 25%;
 		padding-right: 25%;

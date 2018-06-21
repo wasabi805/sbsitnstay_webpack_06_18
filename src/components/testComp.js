@@ -5,8 +5,6 @@ import classNames from 'classnames';
 import Dropdown from 'react-simple-dropdown';
 import {DropdownTrigger, DropdownContent} from 'react-simple-dropdown'
 
-// const DropdownTrigger = Dropdown.DropdownTrigger;
-// const DropdownContent = Dropdown.DropdownContent;
 
 import pic10 from '.././images/pic10.jpg'
 
@@ -28,19 +26,35 @@ class TestMenu extends Component{
                     <DropdownTrigger><span className='hamberger'>&#9776;</span></DropdownTrigger>
 
                     <DropdownContent>
-                        <ul>
-                            <li>
-                                <a href="/profile">Profile</a>
-                            </li>
 
-                            <li>
-                                <a href="/favorites">Favorites</a>
-                            </li>
+                        <div className='burger container'>
 
-                            <li>
-                                <a href="/logout">Log Out</a>
-                            </li>
-                        </ul>
+                            <div className="burger-bg-wrap">
+                                <img src={pic10}/>
+                            </div>
+
+                            {/*<div className='burger-bg-wrap-overlay'></div>*/}
+
+                            <ul className='burger-list-main'>
+
+                                <div className='burger-list-content'>
+
+                                    {/*<ul className="links">*/}
+                                    <ul className='burger-list'>
+                                        <li className='burger-item'><a href="/">Home</a></li>
+                                        <li className='burger-item'><a href="landing.html">Landing</a></li>
+                                        <li className='burger-item'><a href="generic.html">Generic</a></li>
+                                        <li className='burger-item'><a href="elements.html">Elements</a></li>
+                                    </ul>
+
+                                    {/*<ul className="actions vertical">*/}
+                                    <ul className='burger-buttons'>
+                                        <li className='burger-item'><a href="#" className="burger-route">Get Started</a></li>
+                                        <li className='burger-item'><a href="#" className="burger-route">Log In</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
                     </DropdownContent>
                 </Dropdown>
             </div>
