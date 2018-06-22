@@ -1987,10 +1987,22 @@
 	// END: LOGO ANIMATION //
 
 
-	//-----	-----	USED FOR inner pic : index-tiles	-----	-----
-	.index-tile-image{
-		max-width: 80%;
-	}
+	////-----	-----	USED FOR inner pic : index-tiles	-----	-----
+    //
+	//.myTile{
+	//	padding-left: 0px;
+	//	padding-top: 0px;
+	//}
+    //
+	//.index-tile{
+	//	max-width: 100%;
+	//	max-height: 100%;
+	//}
+    //
+	//.index-tile .index-tile-image{
+	//	width: 40rem;
+	//	height: 20.2rem;
+	//}
 	
 
 
@@ -3082,7 +3094,8 @@
 			}
 
 			.tiles article header {
-				position: relative;
+				//My Code : commented out for text inside index tiles to layer properly
+				//position: relative;
 				z-index: 3;
 			}
 
@@ -3175,6 +3188,57 @@
 			.tiles article:nth-child(6n):before {
 				background-color: #87c5a4;
 			}
+
+
+
+//-----	-----	USED FOR inner pic : index-tiles	-----	-----
+
+		#myTile{
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			padding-left: 0px;
+
+			position: relative;
+		}
+
+		#myTile .index-tile{
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		#myTile .index-tile .index-tile-image{
+			min-width: 100%;
+			max-width: 100%;
+			max-height:100%;
+			min-height:100%;
+		}
+
+		.major-tile-cont{
+			//see notes @ class .tiles article header {} in this stylesheet
+			position: absolute;
+			padding-left: 50px;
+			padding-bottom: 50px;
+		  }
+
+		.major-tile-cont h3{
+			//color: red;
+		}
+
+		.tiles .myTile{
+			padding-left: 0px;
+			padding-top: 0px;
+		}
+
+
+		//image img props for index pg tiles
+		//.index-tile .index-tile-image{
+		//	min-width: 100%;
+		//	max-width: 100%;
+		//	max-height:100%;
+		//	min-height:100%;
+		//}
+
 
 		@media screen and (max-width: 1280px) {
 

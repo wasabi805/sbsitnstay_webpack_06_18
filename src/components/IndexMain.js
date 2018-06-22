@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 
 import { BrowserRouter as Router,Route, Link } from 'react-router-dom';
-import dogLeash from '.././images/dog-leash.jpg'
+// import dogLeash from '.././images/dog-leash.jpg'
+// import dogsOnLeash from '.././images/dogs-on-leash.jpg'
+import kaylaPic from '.././images/kayla.jpg'
 
 
 
@@ -13,10 +15,10 @@ class IndexMain extends Component{
         this.state={
 
             tiles: [
-                {title:'Meet the Crew!',pathSrc:'/about-us', msg: 'Get acquainted with out sitters', img: '.././images/dog-leash.jpg'},
-                {title: 'Services', pathSrc: '/services', msg: 'What we can do for you and your pup', img: '.././images/dog-leash.jpg'},
+                {title:'Meet the Crew!',pathSrc:'/about-us', msg: 'Get acquainted with out sitters', img: '.././images/kayla.jpg'},
+                {title: 'Services', pathSrc: '/services', msg: 'What we can do for you and your pup', img: '.././images/dogs-on-leash.jpg'},
                 {title: 'Gallery', pathSrc: '/gallery', msg: 'Join the gang!', img: '.././images/dog-leash.jpg'},
-                {title: 'Contact', pathSrc: '/contact', msg: 'Get in touch with us!', img: '.././images/dog-leash.jpg'}
+                {title: 'Contact', pathSrc: '/contact', msg: 'Get in touch with us!', img: '.././images/dog-laptop.jpg'}
             ]
         }
     }
@@ -31,11 +33,11 @@ class IndexMain extends Component{
             let tiles=[];
 
             const tileMapper =
-                <article>
-                    <span class="index-tile-image">
-                        <img src={item.img} alt="" />
+                <article id='myTile'>
+                    <span class="index-tile">
+                        <img className='index-tile-image' src={item.img} alt="" />
                     </span>
-                    <header className="major">
+                    <header className="major-tile-cont">
                         <h3>
                             <Link to={item.pathSrc} className="link">
                                 {item.title}
