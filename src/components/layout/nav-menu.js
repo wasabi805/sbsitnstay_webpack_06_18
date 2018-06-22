@@ -5,7 +5,7 @@ import pic10 from '../../images/pic10.jpg'
 
 // import NavMenu from './layout/nav-menu'
 
-
+//      -----   THIS IS THE OLD NAVBAR  -------
 class NavBarMenu extends Component{
 
     constructor(props){
