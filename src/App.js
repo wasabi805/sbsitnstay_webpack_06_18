@@ -4,11 +4,10 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Banner from './components/Banner'
 import IndexMain from './components/IndexMain'
-import NavBarMenu from './components/layout/nav-menu'
-import Header from './components/layout/Header'
-import TestMenu from './components/testComp'
+
 
 import mainCss from './assets/css/main.scss';
+import dogLeash from './images/dog-leash.jpg'
 
 class App extends Component{
 
@@ -26,10 +25,7 @@ class App extends Component{
         return(
 
                 <div>
-                    <TestMenu/>
 
-                    {/*<Header/>*/}
-                    {/*<NavBarMenu/>*/}
                     <Banner/>
                     <IndexMain/>
 

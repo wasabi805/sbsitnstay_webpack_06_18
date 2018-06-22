@@ -1,54 +1,54 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import Dropdown from 'react-simple-dropdown';
+import {DropdownTrigger, DropdownContent} from 'react-simple-dropdown'
+import routes from '../../routes';
 
 import pic10 from '../../images/pic10.jpg'
 
-// import NavMenu from './layout/nav-menu'
-
-//      -----   THIS IS THE OLD NAVBAR  -------
 class NavBarMenu extends Component{
-
-    constructor(props){
-        super(props);
-        this.state={
-            isHidden: true
-        }
-    }
-
-
     render(){
-
-
+        routes
         return(
-            <header className='navDiv container'>
-                {/*v-header container*/}
+            <div className='myNav'>
+                <Dropdown >
 
-                <div className="navMenu-wrap">
-                    <img src={pic10}/>
-                </div>
+                    <DropdownTrigger><span className='hamberger'>&#9776;</span></DropdownTrigger>
 
+                    <DropdownContent>
 
-                <div className='header-overlay'></div>
-                {/*header-overlay*/}
+                        <div className='burger container'>
 
-                <div className='header-content'>
+                            <div className="burger-bg-wrap">
+                                <img src={pic10}/>
+                            </div>
 
-                    {/*<ul className="links">*/}
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="landing.html">Landing</a></li>
-                        <li><a href="generic.html">Generic</a></li>
-                        <li><a href="elements.html">Elements</a></li>
-                    </ul>
+                            {/*<div className='burger-bg-wrap-overlay'></div>*/}
 
-                    {/*<ul className="actions vertical">*/}
-                    <ul>
-                        <li><a href="#" className="button special fit">Get Started</a></li>
-                        <li><a href="#" className="button fit">Log In</a></li>
-                    </ul>
-                </div>
+                            <ul className='burger-list-main'>
 
-            </header>
+                                <div className='burger-list-content'>
+
+                                    {/*<ul className="links">*/}
+                                    <ul className='burger-list'>
+                                        <li className='burger-item'><a href="/">Home</a></li>
+                                        <li className='burger-item'><Link to="/about-us">About US</Link></li>
+                                        <li className='burger-item'><a href="/">Services</a></li>
+                                        <li className='burger-item'><a href="/">Gallery</a></li>
+                                        <li className='burger-item'><a href="/">Contact</a></li>
+                                    </ul>
+
+                                    {/*<ul className="actions vertical">*/}
+                                    <ul className='burger-buttons'>
+                                        <li className='burger-item'><a href="#" className="burger-route">Register Account</a></li>
+                                        <li className='burger-item'><a href="#" className="burger-route">Log In</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
+                    </DropdownContent>
+                </Dropdown>
+            </div>
         )
     }
 }

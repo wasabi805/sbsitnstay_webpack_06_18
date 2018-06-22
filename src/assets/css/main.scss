@@ -1,6 +1,9 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 
+
+
+
 /*
 	Forty by HTML5 UP
 	html5up.net | @ajlkn
@@ -1804,7 +1807,7 @@
 
 
 	.myNav{
-		border-bottom: 1px solid lightgray;
+		//border-bottom: 1px solid lightgray;
 		//padding: 20px;
 		position: fixed; //you put this here, can take out for later
 
@@ -1815,7 +1818,7 @@
 		margin-left:auto;
 		margin-right:auto;
 		margin-bottom: 20px;
-		background-color: lightgrey;
+		//background-color: lightgrey;
 
 
 	}
@@ -1982,6 +1985,12 @@
 	}
 
 	// END: LOGO ANIMATION //
+
+
+	//-----	-----	USED FOR inner pic : index-tiles	-----	-----
+	.index-tile-image{
+		max-width: 80%;
+	}
 	
 
 
@@ -2110,10 +2119,10 @@
 	}
 
 	header.major {
-		width: -moz-max-content;
-		width: -webkit-max-content;
-		width: -ms-max-content;
-		width: max-content;
+		//width: -moz-max-content;
+		//width: -webkit-max-content;
+		//width: -ms-max-content;
+		//width: max-content;
 		margin-bottom: 2em;
 
 	}
@@ -3693,7 +3702,7 @@
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background-image: url("../../images/banner.jpg");
+		background: url("../../images/dog-flowers.jpg");
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -3731,7 +3740,7 @@
 			display: block;
 			height: 100%;
 			left: 0;
-			opacity: 0.85;
+			opacity: 0.60;
 			position: absolute;
 			top: 0;
 			width: 100%;
@@ -4063,7 +4072,7 @@
 		-webkit-transition: -webkit-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		-ms-transition: -ms-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
-		padding-top: 3.25em;
+		padding-top: 7.25em; //you changed this so that the custom navbar you made doesn't block the banner bg img: default was 3.25em
 	}
 
 		#wrapper.is-transitioning {
