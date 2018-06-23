@@ -1769,7 +1769,7 @@
 	}
 
 
-    //any effect I'll apply will go here: possibly an image
+    //any effect I'll apply will go here: possibly an image as bg
 	.burger-list-content{
 		position: absolute;
 		display: block;
@@ -3235,18 +3235,21 @@
 		//-----	-----		My Code		-----	-----
 		//used for <LandingMain/> : employee profile imgs
 
-		#employee-profile{
+		#section-profile{
 			position: relative;
 			//background-color: yellow;
 		}
 
 
 		//About-us employee img props
-		#employee-profile .employee-image img{
+		#section-profile .section-image00 img{
 			width: 280px;
 			height: 307px;
+		}
 
-
+		#section-profile .section-image01 img{
+			width: 700px;
+			height: 900px;
 		}
 
 

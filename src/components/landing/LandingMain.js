@@ -30,10 +30,15 @@ class LandingMain extends Component{
                 title: 'About Us',
                 titleContent: "Who Are We? We are a small network of local sitters who cater your busy schedule",
                 sections:[
-                    {title:'Kayla', content: 'Meet Kayla!', img: '../../images/kayla-profile.jpg'},
-                    {title:'Catherine', content: 'Meet Catherine', img: '../../images/catherine.jpg'},
-                    {title:'Yuko', content: 'Meet Yuko', img: '../../images/yuko.jpg'}
-                ]
+                    {title:'Kayla', content: 'Meet Kayla!', img: '../../images/kayla-profile.jpg', setImgSize: 'section-image00'},
+                    {title:'Catherine', content: 'Meet Catherine', img: '../../images/catherine.jpg', setImgSize: 'section-image00'},
+                    {title:'Yuko', content: 'Meet Yuko', img: '../../images/yuko.jpg', setImgSize: 'section-image00'}
+                ],
+
+                sectionSize : {
+                    aboutUs: 'employee-image00',
+                    services: 'employee-image01'
+                }
             })
         }
 
@@ -43,11 +48,11 @@ class LandingMain extends Component{
                 title: 'What We Do',
                 titleContent: "A list of services",
                 sections:[
-                    {title:'Walking', content: 'We walk your dog', img: '../../images/dog-leash-02.jpg'},
-                    {title:'Feeding', content: 'We feed you dog', img: '../../images/pups-eating.jpg'},
-                    {title:'Overnight Care', content: "We Sleep at your house", img: '../../images/dog-sleeping-01.jpg'},
-                    {title:'Drop-ins', content: "We'll dip by and check on your dog", img: '../../images/dog-sleeping-00.jpg'},
-                    {title:'Adventures', content: 'We take your dog on adventures', img: '../../images/dog-on-hike-00.jpg'}
+                    {title:'Walking', content: 'We walk your dog', img: '../../images/dog-leash-02.jpg', setImgSize: 'section-image01'},
+                    {title:'Feeding', content: 'We feed you dog', img: '../../images/pups-eating.jpg', setImgSize: 'section-image01'},
+                    {title:'Overnight Care', content: "We Sleep at your house", img: '../../images/dog-sleeping-01.jpg', setImgSize: 'section-image01'},
+                    {title:'Drop-ins', content: "We'll dip by and check on your dog", img: '../../images/dog-sleeping-00.jpg', setImgSize: 'section-image01'},
+                    {title:'Adventures', content: 'We take your dog on adventures', img: '../../images/dog-on-hike-00.jpg', setImgSize: 'section-image01'}
                 ]
             })
         }
@@ -72,10 +77,7 @@ class LandingMain extends Component{
                 sections:[]
             })
 
-
-
         }
-
 
         else{
             console.log("didn't work");
@@ -84,20 +86,13 @@ class LandingMain extends Component{
 
     render(){
 
-
-        // console.log(this.props.match.params.id, 'Match');
-
         const SectionMapper = this.state.sections.map(item=>{
 
             let sections= [];
 
             let section =
-
-                //TODO : make an if or switch check for the url param and change section id + a className
-                //TODO: then, add css for those classes : all images shouldnt be the same size
-
-                <section id='employee-profile'>
-                    <a href="generic.html" className="employee-image">
+                <section id='section-profile'>
+                    <a href="generic.html" className={item.setImgSize}>
                         <img src={item.img} alt="" data-position="center center" />
                     </a>
                     <div className="content">
