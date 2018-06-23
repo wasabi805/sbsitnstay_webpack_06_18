@@ -3231,15 +3231,27 @@
 		}
 
 
-		//image img props for index pg tiles
-		//.index-tile .index-tile-image{
-		//	min-width: 100%;
-		//	max-width: 100%;
-		//	max-height:100%;
-		//	min-height:100%;
-		//}
+
+		//-----	-----		My Code		-----	-----
+		//used for <LandingMain/> : employee profile imgs
+
+		#employee-profile{
+			position: relative;
+			//background-color: yellow;
+		}
 
 
+		//About-us employee img props
+		#employee-profile .employee-image img{
+			width: 280px;
+			height: 307px;
+
+
+		}
+
+
+
+		//-----	HTML5up Stock Media Queries -----
 		@media screen and (max-width: 1280px) {
 
 			.tiles article {

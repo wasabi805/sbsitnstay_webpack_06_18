@@ -31,11 +31,11 @@ class NavBarMenu extends Component{
 
                                     {/*<ul className="links">*/}
                                     <ul className='burger-list'>
-                                        <li className='burger-item'><a href="/">Home</a></li>
+                                        <li className='burger-item'><Link to="/">Home</Link></li>
                                         <li className='burger-item'><Link to="/about-us">About US</Link></li>
-                                        <li className='burger-item'><a href="/">Services</a></li>
-                                        <li className='burger-item'><a href="/">Gallery</a></li>
-                                        <li className='burger-item'><a href="/">Contact</a></li>
+                                        <li className='burger-item'><Link to="/services">Services</Link></li>
+                                        <li className='burger-item'><Link to="/gallery">Gallery</Link></li>
+                                        <li className='burger-item'><Link to="/contact">Contact</Link></li>
                                     </ul>
 
                                     {/*<ul className="actions vertical">*/}
