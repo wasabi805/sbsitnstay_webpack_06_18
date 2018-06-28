@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Route,Link} from 'react-router-dom'
 
-import pic08 from '../../images/pic08.jpg'
+import pups from '../../images/pups-eating.jpg'
 
 class LandingSections extends Component{
 
@@ -37,11 +37,11 @@ class LandingSections extends Component{
                 title: 'What We Do',
                 titleContent: "A list of services",
                 sections:[
-                    {title:'Walking', content: 'We walk your dog'},
-                    {title:'Feeding', content: 'We feed you dog'},
-                    {title:'Overnight Care', content: "We Sleep at your house"},
-                    {title:'Drop-ins', content: "We'll dip by and check on your dog"},
-                    {title:'Adventures', content: 'We take your dog on adventures'}
+                    {title:'Walking', content: 'We walk your dog', img: '../../images/pups-eating.jpg'},
+                    {title:'Feeding', content: 'We feed you dog', img: '../../images/pups-eating.jpg'},
+                    {title:'Overnight Care', content: "We Sleep at your house", img: '../../images/pups-eating.jpg'},
+                    {title:'Drop-ins', content: "We'll dip by and check on your dog", img: '../../images/pups-eating.jpg'},
+                    {title:'Adventures', content: 'We take your dog on adventures', img: '../../images/pups-eating.jpg'}
                 ]
             })
         }
@@ -85,9 +85,9 @@ class LandingSections extends Component{
             let sections= [];
 
             let section =
-                <section>
-                    <a href="generic.html" className="image">
-                        <img src={pic08} alt="" data-position="center center" />
+                <section id='employee-profile'>
+                    <a href="generic.html" className="employee-image">
+                        <img src={item.img} alt="" data-position="center center" />
                     </a>
                     <div className="content">
                         <div className="inner">
@@ -103,6 +103,7 @@ class LandingSections extends Component{
                 </section>;
 
             sections.push(section)
+
 
             return sections
 

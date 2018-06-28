@@ -1,6 +1,9 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 
+
+
+
 /*
 	Forty by HTML5 UP
 	html5up.net | @ajlkn
@@ -1704,11 +1707,254 @@
 		margin: 0 0 2em 0;
 	}
 
+//-----	-----		My Code		-----	-----
 
-	//My Code
+    //Drop down nav : used react-simple-dropdown
+	.burger container{
+		position: absolute;
+        display: flex;
+		background-color: #6fc3df;
+        margin-top: 50px;
+		height: 100vh;
+        width: 90vw;
+		display: block;
+		//align-items: center;
+		color: white;
+        z-index: 3;
+	}
+
+	.burger-bg-wrap{
+		position: absolute;
+        display: inline;
+		//top: 70px;
+		//left: 0;
+		//width: 100%;
+		//height: 50vh;
+		overflow: hidden;
+
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+
+	}
+
+	.burger-bg-wrap img{
+		//min-width: 100%;
+		//min-height:100%;
+        position: absolute;
+        z-index: 2;
+
+
+	}
+
+	.burger-bg-wrap-overlay{
+		height: 50vh;
+		width: 100vw;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		background-color: #225470;
+		opacity: .3;
+		z-index: 1;
+
+	}
+
+	//this will center the links & btns in the dropdown
+	.burger-list-main{
+		position: absolute;
+		padding-left: 0px;
+		left: 0px;
+		right: 0px;
+	}
+
+
+    //any effect I'll apply will go here: possibly an image as bg
+	.burger-list-content{
+		position: absolute;
+		display: block;
+        margin-top: 20px;
+        padding-top: 130px;
+		width: 100vw;
+        height: 100vh;
+        background-color: powderblue;
+        opacity: .9;
+		z-index: 2;
+
+	}
+
+    .burger-list{
+      margin-top: 30px;
+      text-align: center;
+    }
+
+
+    .burger-item{
+        width: auto
+    }
+
+	.burger-list-content .burger-list{
+
+	}
+
+	.burger-list .burger-item{
+		color: red;
+	}
+
+    .burger-list .burger-buttons{
+        color: blue;
+    }
+
+
+	.myNav{
+		//border-bottom: 1px solid lightgray;
+		//padding: 20px;
+		position: fixed; //you put this here, can take out for later
+
+		height: 70px;
+		width: 100vw;
+		line-height: 2rem;
+		z-index: 11;
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom: 20px;
+		//background-color: lightgrey;
+
+
+	}
+
+
+  .dropdown {
+    display: block; //def inline-bloc
+    position: relative;
+    //float: right;
+
+  }
+
+  .dropdown a{
+    border-bottom: none;
+
+  }
+
+
+    //THIS IS THE PARENT div for all  drop-down menu links
+  .dropdown__content {
+      display: none;
+      position: relative;
+      top: 50px;  //need the 50px buffer so overlay wont block the menu berger
+      right: 0px;
+      left: 0px;
+       //background-color: lightcyan; //if you see the cyan, you're fine
+      z-index: 10;
+
+  }
+
+  .dropdown__content li{
+      display: none;
+      position: relative;
+      text-align: center;
+      margin-left:auto;
+      margin-right:auto;
+	  color: black;
+      width: 100vw;
+      z-index: 10;
+  }
+
+  .hamberger{
+      //margin-left: 70vw;
+  }
+
+  .myNav .hamberger {
+    float:right;
+    margin-right: 20px;
+  }
+
+  .dropdown--active .dropdown__content {
+    display: block;
+    text-decoration: none;
+
+  }
+
+  .dropdown--active .dropdown__content li{
+    position: relative;
+    display: block;
+    text-decoration: none;
+
+  }
+
+    //NAVBAR MENU
+    .navDiv{
+
+      background-color: #6fc3df;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .container{
+      max-width: 960px;
+      //padding-left: 1rem;
+      //padding-right: 1rem;
+      margin: auto;
+      text-align: center;
+    }
+
+
+    .navMenu-wrap{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .navMenu-wrap img{
+		min-width: 100%;
+		min-height:100%;
+		max-width: 100vh;
+		max-height: 100vh;
+
+    }
+
+    .header-overlay{
+		height: 100vh;
+		width: 100vw;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #225470;
+		opacity: .4;
+		z-index: 1;
+
+    }
+
+    .header-content{
+
+      	width: 100%;
+		padding-left: 25%;
+		padding-right: 25%;
+		text-align: center;
+		z-index: 2;
+    }
+
+	.header-content ul{
+
+	}
+
+	.header-content a{
+	//	nothing in here, left this so i can decide later if i want to style
+	}
+
+
+
+
+
+
+	//-----	USED FOR THE LOGO ANIMATION	-----
 	.container{
 		//transform: translate(-50%, -50%);
-
 	}
 
 	.container span{
@@ -1737,6 +1983,27 @@
 			margin-bottom: -30px;
 		}
 	}
+
+	// END: LOGO ANIMATION //
+
+
+	////-----	-----	USED FOR inner pic : index-tiles	-----	-----
+    //
+	//.myTile{
+	//	padding-left: 0px;
+	//	padding-top: 0px;
+	//}
+    //
+	//.index-tile{
+	//	max-width: 100%;
+	//	max-height: 100%;
+	//}
+    //
+	//.index-tile .index-tile-image{
+	//	width: 40rem;
+	//	height: 20.2rem;
+	//}
+	
 
 
 	//-----	---------	---------	---------
@@ -1864,10 +2131,10 @@
 	}
 
 	header.major {
-		width: -moz-max-content;
-		width: -webkit-max-content;
-		width: -ms-max-content;
-		width: max-content;
+		//width: -moz-max-content;
+		//width: -webkit-max-content;
+		//width: -ms-max-content;
+		//width: max-content;
 		margin-bottom: 2em;
 
 	}
@@ -2307,6 +2574,7 @@
 		list-style: disc;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
+
 	}
 
 		ul li {
@@ -2826,7 +3094,8 @@
 			}
 
 			.tiles article header {
-				position: relative;
+				//My Code : commented out for text inside index tiles to layer properly
+				//position: relative;
 				z-index: 3;
 			}
 
@@ -2920,6 +3189,74 @@
 				background-color: #87c5a4;
 			}
 
+
+
+//-----	-----	USED FOR inner pic : index-tiles	-----	-----
+
+		#myTile{
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			padding-left: 0px;
+
+			position: relative;
+		}
+
+		#myTile .index-tile{
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		#myTile .index-tile .index-tile-image{
+			min-width: 100%;
+			max-width: 100%;
+			max-height:100%;
+			min-height:100%;
+		}
+
+		.major-tile-cont{
+			//see notes @ class .tiles article header {} in this stylesheet
+			position: absolute;
+			padding-left: 50px;
+			padding-bottom: 50px;
+		  }
+
+		.major-tile-cont h3{
+			//color: red;
+		}
+
+		.tiles .myTile{
+			padding-left: 0px;
+			padding-top: 0px;
+		}
+
+
+
+		//-----	-----		My Code		-----	-----
+		//used for <LandingMain/> : employee profile imgs
+
+		#section-profile{
+			position: relative;
+			//background-color: yellow;
+		}
+
+
+		//About-us employee img props
+		#section-profile .section-image00 img{
+			width: 280px;
+			height: 307px;
+			opacity: .5;
+		}
+
+		#section-profile .section-image01 img{
+			width: 600px;
+			height: 576px;
+			opacity: .7;
+		}
+
+
+
+		//-----	HTML5up Stock Media Queries -----
 		@media screen and (max-width: 1280px) {
 
 			.tiles article {
@@ -3446,7 +3783,7 @@
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background-image: url("../../images/banner.jpg");
+		//background: url("../../images/dog-flowers.jpg");
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -3484,7 +3821,7 @@
 			display: block;
 			height: 100%;
 			left: 0;
-			opacity: 0.85;
+			opacity: 0.60;
 			position: absolute;
 			top: 0;
 			width: 100%;
@@ -3816,7 +4153,7 @@
 		-webkit-transition: -webkit-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		-ms-transition: -ms-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
-		padding-top: 3.25em;
+		padding-top: 7.25em; //you changed this so that the custom navbar you made doesn't block the banner bg img: default was 3.25em
 	}
 
 		#wrapper.is-transitioning {
@@ -3850,25 +4187,25 @@
 /* Menu */
 
 	#menu {
-		-moz-transition: -moz-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
-		-webkit-transition: -webkit-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
-		-ms-transition: -ms-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+		//-moz-transition: -moz-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+		//-webkit-transition: -webkit-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+		//-ms-transition: -ms-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
 		transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
-		-moz-align-items: center;
-		-webkit-align-items: center;
-		-ms-align-items: center;
+		//-moz-align-items: center;
+		//-webkit-align-items: center;
+		//-ms-align-items: center;
 		align-items: center;
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
+		//display: -moz-flex;
+		//display: -webkit-flex;
+		//display: -ms-flex;
 		display: flex;
-		-moz-justify-content: center;
-		-webkit-justify-content: center;
-		-ms-justify-content: center;
+		//-moz-justify-content: center;
+		//-webkit-justify-content: center;
+		//-ms-justify-content: center;
 		justify-content: center;
-		-moz-pointer-events: none;
-		-webkit-pointer-events: none;
-		-ms-pointer-events: none;
+		//-moz-pointer-events: none;
+		//-webkit-pointer-events: none;
+		//-ms-pointer-events: none;
 		pointer-events: none;
 		background: rgba(36, 41, 67, 0.9);
 		box-shadow: none;
@@ -3879,21 +4216,21 @@
 		padding: 3em 2em;
 		position: fixed;
 		top: 0;
-		visibility: hidden;
+		//visibility: hidden;
 		width: 100%;
 		z-index: 10002;
 	}
 
 		#menu .inner {
-			-moz-transition: -moz-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
-			-webkit-transition: -webkit-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
-			-ms-transition: -ms-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
+			//-moz-transition: -moz-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
+			//-webkit-transition: -webkit-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
+			//-ms-transition: -ms-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
 			transition: transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
-			-moz-transform: rotateX(20deg);
-			-webkit-transform: rotateX(20deg);
-			-ms-transform: rotateX(20deg);
+			//-moz-transform: rotateX(20deg);
+			//-webkit-transform: rotateX(20deg);
+			//-ms-transform: rotateX(20deg);
 			transform: rotateX(20deg);
-			-webkit-overflow-scrolling: touch;
+			//-webkit-overflow-scrolling: touch;
 			max-width: 100%;
 			max-height: 100vh;
 			opacity: 0;
