@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 
-import { BrowserRouter as Router,Route, Link } from 'react-router-dom';
+import {Route, Link } from 'react-router-dom';
+// import Banner from './Banner'
+
+
+
 // import dogLeash from '.././images/dog-leash.jpg'
 // import dogsOnLeash from '.././images/dogs-on-leash.jpg'
 import kaylaPic from '.././images/kayla.jpg'
@@ -21,6 +25,7 @@ class IndexMain extends Component{
                 {title: 'Contact', pathSrc: '/contact', msg: 'Get in touch with us!', img: '.././images/dog-laptop.jpg'}
             ]
         }
+
     }
 
 
@@ -58,7 +63,6 @@ class IndexMain extends Component{
         return(
             <div id="main">
 
-                {/*<p>I'm coming from indexMain</p>*/}
 
                 {/*One*/}
                 <section id="one" className="tiles">

@@ -6,7 +6,7 @@ import {Route,Link} from 'react-router-dom'
 import LandingSections from './LandingSections'
 import TextFieldGroup from '../common/TextFieldGroup'
 import pups from '../../images/pups-eating.jpg'
-
+import routes from '../../routes'
 
 class LandingMain extends Component{
 
@@ -22,7 +22,7 @@ class LandingMain extends Component{
     }
 
     componentDidMount(){
-        console.log(this.props.match.params.id, 'Match');
+        console.log(this.props, 'Match');
 
         if(this.props.match.params.id == 'about-us'){
             console.log('About US');
@@ -79,12 +79,10 @@ class LandingMain extends Component{
 
         }
 
-        else{
-            console.log("didn't work");
-        }
     };
 
     render(){
+        routes
 
         const SectionMapper = this.state.sections.map(item=>{
 
@@ -115,11 +113,11 @@ class LandingMain extends Component{
         });
 
 
-        console.log(this.props.match.params.id, 'outside of compDidMount');
+        // console.log(this.props.match.params.id, 'outside of compDidMount');
         //
         //
 
-        console.log('this is landingMain');
+        // console.log('this is landingMain');
         return(
                 <div>
                     {/*Main*/}

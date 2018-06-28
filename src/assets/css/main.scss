@@ -3245,11 +3245,13 @@
 		#section-profile .section-image00 img{
 			width: 280px;
 			height: 307px;
+			opacity: .5;
 		}
 
 		#section-profile .section-image01 img{
-			width: 700px;
-			height: 900px;
+			width: 600px;
+			height: 576px;
+			opacity: .7;
 		}
 
 
@@ -3781,7 +3783,7 @@
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background: url("../../images/dog-flowers.jpg");
+		//background: url("../../images/dog-flowers.jpg");
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
