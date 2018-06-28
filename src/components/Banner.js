@@ -22,42 +22,10 @@ class Banner extends Component{
     }
 
     componentDidMount() {
-        // console.log(this.props.match, "testing the banner props");
-
-        console.log('test me ', this.props
-        );
-
-        if(this.props.match === undefined){
-            console.log('this is true');
-
-        }else{
-            if(this.props.match === !undefined && this.props.match.params.id == true){
-
-                console.log('this is false');
-
-                this.setState({
-                    location: this.props.match.params.id
-                });
-            }
-        }
-
-
 
     }
 
-
-
     render(){
-
-        console.log(this.state.location, '<=== current location');
-
-
-
-
-
-
-
-
 
         return(
 
