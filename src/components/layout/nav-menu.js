@@ -14,25 +14,11 @@ class NavBarMenu extends Component{
 
         };
 
-        this.swapBannerImg = this.swapBannerImg.bind(this)
 
     }
-
-
-
-    swapBannerImg(){
-
-    }
-
-
-
-
     render(){
 
-
-
         return(
-
                 <div className='myNav'>
                     <Dropdown>
 

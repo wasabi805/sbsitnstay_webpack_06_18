@@ -112,9 +112,9 @@ class SectionBody extends Component{
 
 
 
-        console.log(this.state.title, 'sectionBody did mount');
+        // console.log(this.state.title, 'sectionBody did mount');
 
-        console.log(this.props);
+
         return(
             <div>
                 {/*Main*/}

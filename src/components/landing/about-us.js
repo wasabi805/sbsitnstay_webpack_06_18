@@ -15,7 +15,7 @@ class AboutUs extends Component{
     }
 
     componentDidMount(){
-
+        // console.log(this.props.location.pathname, 'The Route Homeboy');
     }
 
 

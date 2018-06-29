@@ -6,6 +6,7 @@ import routes from './routes'
 import IndexMain from './components/IndexMain'
 import NavBarMenu from "./components/layout/nav-menu";
 import Banner from './components/Banner'
+import BannerType from './components/layout/banner-type'
 
 import AboutUs from './components/landing/about-us'
 import Services from './components/landing/services'
@@ -32,6 +33,7 @@ class App extends Component{
 
     render(){
 
+
         return(
                 <Router>
                     <div>
@@ -40,7 +42,9 @@ class App extends Component{
 
                         <NavBarMenu/>
 
-                        <Route path='/' component = { Banner} />
+                        <Route exact path='/' component = { Banner} />
+
+                        <Route exact path='/:id' component = { BannerType} />
 
 
 
