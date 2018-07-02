@@ -49,7 +49,7 @@ class Banner extends Component{
                 <div className="inner">
                     <header className="major">
                         <div className="container">
-                            <span className='text1'><h1>SB SIT N STAY!!</h1></span>
+                            <span className='text1'><h1>South Bay Sit N Stay</h1></span>
                         </div>
 
 

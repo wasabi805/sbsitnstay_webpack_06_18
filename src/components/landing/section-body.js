@@ -22,7 +22,7 @@ class SectionBody extends Component{
                     sections:[
                         {title:'Kayla', content: 'Meet Kayla!', img: '../../images/kayla-profile.jpg', setImgSize: 'section-image00'},
                         {title:'Catherine', content: 'Meet Catherine', img: '../../images/catherine.jpg', setImgSize: 'section-image00'},
-                        {title:'Yuko', content: 'Meet Yuko', img: '../../images/yuko.jpg', setImgSize: 'section-image00'}
+                        // {title:'Yuko', content: 'Meet Yuko', img: '../../images/yuko.jpg', setImgSize: 'section-image00'}
                     ],
                     sectionSize : {
                         aboutUs: 'employee-image00',
@@ -83,7 +83,7 @@ class SectionBody extends Component{
 
             let section =
                 //START HERE
-                <section id='two'>
+                <section id='two' className='spotlights'>
                     <a href="generic.html" className="image">
                         <img src={item.img} alt="" data-position="center center" />
                     </a>
@@ -116,14 +116,14 @@ class SectionBody extends Component{
 
 
         return(
-            <div>
-                {/*Main*/}
+
+
                 <div id='main'>
 
                     <section id="one">
                         <div className="inner">
 
-                            <header class="major">
+                            <header className="major">
                                 <h2> {this.state.title}</h2>
                             </header>
 
@@ -139,23 +139,7 @@ class SectionBody extends Component{
 
                 </div>
 
-                {/*Footer*/}
-                <footer id="footer">
-                    <div className="inner">
-                        <ul class="icons">
-                            <li><a href="#" className="icon alt fa-twitter"><span className="label">Twitter</span></a></li>
-                            <li><a href="#" className="icon alt fa-facebook"><span className="label">Facebook</span></a></li>
-                            <li><a href="#" className="icon alt fa-instagram"><span className="label">Instagram</span></a></li>
-                            <li><a href="#" className="icon alt fa-github"><span className="label">GitHub</span></a></li>
-                            <li><a href="#" className="icon alt fa-linkedin"><span className="label">LinkedIn</span></a></li>
-                        </ul>
-                        <ul className="copyright">
-                            <li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-                        </ul>
-                    </div>
-                </footer>
 
-            </div>
 
 
         )

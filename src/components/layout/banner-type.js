@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
-
-import dogWithTrainerSunset from '../../images/dog-trainer-silhouettes-sunset.jpg'
+import dogAndOwnerSunset from '../../images/dog-and-owner-sunset.jpg'
+import dogAndTrainerSilho from '../../images/dog-trainer-silhouettes-sunset.jpg'
+import dogSelfie from '../../images/dog-selfie.jpg'
 
 class BannerType extends Component{
 
@@ -11,7 +12,9 @@ class BannerType extends Component{
             thisPath: '',
 
             banner:[
-                {name: 'About Us Banner', bgImg: '../../images/dog-trainer-silhouettes-sunset.jpg'}
+                {name: 'About Us', bgImg: '../../images/dog-and-owner-sunset.jpg'},
+                {name: 'Services', bgImg: '../../images/dog-trainer-silhouettes-sunset.jpg'},
+                {name: 'Gallery', bgImg: '../../images/dog-selfie.jpg'}
             ]
         };
 
@@ -52,17 +55,40 @@ class BannerType extends Component{
 
             return banner
 
+        });
+
+        //----- -----   -----   -----   -----   -----   -----
 
 
+        const location = this.props.location.pathname
 
+        const test =(path, arr)=>{
 
+            path = location
+            arr = BannerMapper;
 
+            switch (path){
+                case '/about-us':
+                    return arr[0];
 
-        })
+                case '/services':
+                    return arr[1];
+
+                case '/gallery':
+                    return arr[2];
+
+                default:
+                    return arr[0]
+            }
+
+        };
+
+        console.log(test(), 'This is test');
+
 
         return(
            <div>
-               {BannerMapper}
+               {test()}
            </div>
         )
     }

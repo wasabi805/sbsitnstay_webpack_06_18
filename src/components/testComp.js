@@ -3,53 +3,42 @@ import {Link} from 'react-router-dom';
 import Dropdown from 'react-simple-dropdown';
 import {DropdownTrigger, DropdownContent} from 'react-simple-dropdown'
 
-
+import dogLaptop from '.././images/dog-laptop.jpg'
 import pic10 from '.././images/pic10.jpg'
 
 class TestMenu extends Component{
     render(){
-        console.log(Dropdown);
+        // console.log(Dropdown);
 
         return(
-            <div className='myNav'>
-                <Dropdown >
+            <section id="landing-section">
 
-                    <DropdownTrigger><span className='hamberger'>&#9776;</span></DropdownTrigger>
+                <div className='row'>
+                   <div className='col-md-4'>
+                       <div className='img-section'>
+                           <img src={dogLaptop}/>
+                       </div>
+                   </div>
 
-                    <DropdownContent>
+                    <div className='col-md-8'>
 
-                        <div className='burger container'>
+                        <div className='img-section-content'>
 
-                            <div className="burger-bg-wrap">
-                                <img src={pic10}/>
+                            <div className='row-md-12'>
+                                <h2>Meet Kayla</h2>
                             </div>
 
-                            {/*<div className='burger-bg-wrap-overlay'></div>*/}
+                            <div className='row-md-12'>
+                                <button>Click Me</button>
+                            </div>
 
-                            <ul className='burger-list-main'>
-
-                                <div className='burger-list-content'>
-
-                                    {/*<ul className="links">*/}
-                                    <ul className='burger-list'>
-                                        <li className='burger-item'><Link to="/">Home</Link></li>
-                                        <li className='burger-item'><Link to="/about-us">About US</Link></li>
-                                        <li className='burger-item'><Link to="/services">Services</Link></li>
-                                        <li className='burger-item'><a href="/">Gallery</a></li>
-                                        <li className='burger-item'><a href="/">Contact</a></li>
-                                    </ul>
-
-                                    {/*<ul className="actions vertical">*/}
-                                    <ul className='burger-buttons'>
-                                        <li className='burger-item'><a href="#" className="burger-route">Register Account</a></li>
-                                        <li className='burger-item'><a href="#" className="burger-route">Log In</a></li>
-                                    </ul>
-                                </div>
-                            </ul>
                         </div>
-                    </DropdownContent>
-                </Dropdown>
-            </div>
+
+
+                    </div>
+                </div>
+
+            </section>
         )
     }
 }

@@ -54,7 +54,7 @@ class App extends Component{
 
 
 
-                        {/*<Route path = '/test' component={TestMenu}/>*/}
+                        <Route path = '/test' component={TestMenu}/>
 
                         {/*<Route exact path='/' component = { App } />*/}
 
