@@ -1,9 +1,5 @@
 import React, {Component} from 'react';
 
-import dogAndOwnerSunset from '../../images/dog-and-owner-sunset.jpg'
-import dogAndTrainerSilho from '../../images/dog-trainer-silhouettes-sunset.jpg'
-import dogSelfie from '../../images/dog-selfie.jpg'
-
 class BannerType extends Component{
 
     constructor(props){
@@ -14,7 +10,8 @@ class BannerType extends Component{
             banner:[
                 {name: 'About Us', bgImg: '../../images/dog-and-owner-sunset.jpg'},
                 {name: 'Services', bgImg: '../../images/dog-trainer-silhouettes-sunset.jpg'},
-                {name: 'Gallery', bgImg: '../../images/dog-selfie.jpg'}
+                {name: 'Gallery', bgImg: '../../images/dog-selfie.jpg'},
+                {name: 'Contact', bgImg: '../../images/dog-on-phone.jpg'},
             ]
         };
 
@@ -59,7 +56,7 @@ class BannerType extends Component{
 
         //----- -----   -----   -----   -----   -----   -----
 
-
+        //NOTE: PROPS PASSED in VIA react-router
         const location = this.props.location.pathname
 
         const test =(path, arr)=>{
@@ -77,13 +74,17 @@ class BannerType extends Component{
                 case '/gallery':
                     return arr[2];
 
+                case '/contact':
+                    return arr[3];
+
+
                 default:
                     return arr[0]
             }
 
         };
 
-        console.log(test(), 'This is test');
+        console.log(test(), 'This is coming from banner-type.js, ln 87');
 
 
         return(

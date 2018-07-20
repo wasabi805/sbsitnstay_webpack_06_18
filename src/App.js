@@ -10,6 +10,7 @@ import BannerType from './components/layout/banner-type'
 
 import AboutUs from './components/landing/about-us'
 import Services from './components/landing/services'
+import Contact from './components/landing/contact'
 
 
 
@@ -54,6 +55,7 @@ class App extends Component{
                         <Route exact path ='/' component={IndexMain}/>
                         <Route exact path ='/about-us' component={AboutUs}/>
                         <Route exact path ='/services' component={Services}/>
+                        <Route exact path ='/contact' component={Contact}/>
 
 
 
