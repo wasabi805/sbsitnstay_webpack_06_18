@@ -1,6 +1,11 @@
 const express= require('express');
 const mongoose = require('mongoose');
 
+
+//ROUTES
+const customerLeads = require('./routes/api/customer-leads');
+
+
 const app = express();
 
 //used for DB Config
@@ -15,6 +20,12 @@ mongoose.connect(db)
 
 
 app.get('/', (req, res)=>res.send('Hello Buddy'));
+
+
+//use ROUTES
+app.use('/api/customer-leads', customerLeads );
+
+
 
 const port = process.env.PORT || 5000;
 
