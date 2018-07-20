@@ -83,8 +83,8 @@ class AboutUs extends Component{
                 >
                     <div className='row'>
                         <div className='col-md-4'>
-                            <div className='landing-item'>
-                                <img src={kayla}/>
+                            <div className='about-us-img'>
+                                <img id='kayla-img' src={kayla} />
                             </div>
                         </div>
 
@@ -116,8 +116,8 @@ class AboutUs extends Component{
                 >
                     <div className='row'>
                         <div className='col-md-4'>
-                            <div className='landing-item'>
-                                <img src={catherine}/>
+                            <div className='about-us-img'>
+                                <img id='catherine-img' src={catherine} />
                             </div>
                         </div>
 
@@ -149,8 +149,8 @@ class AboutUs extends Component{
                 >
                     <div className='row'>
                         <div className='col-md-4'>
-                            <div className='landing-item'>
-                                <img src={yuko}/>
+                            <div className='about-us-img'>
+                                <img id='yuko-img' src={yuko}/>
                             </div>
                         </div>
 
