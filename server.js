@@ -1,5 +1,6 @@
 const express= require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 
 //ROUTES
@@ -7,6 +8,13 @@ const customerLeads = require('./routes/api/customer-leads');
 
 
 const app = express();
+//Middleware for required for body-parer
+app.use(bodyParser.urlencoded({
+    extended: false,
+}));
+
+app.use(bodyParser.json());
+
 
 //used for DB Config
 const db = require('./config/keys').mongoURI;
