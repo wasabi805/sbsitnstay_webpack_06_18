@@ -46,8 +46,6 @@ const ServiceText =(props)=>{
        )
     }
 
-
-
     else{
         return null
     }

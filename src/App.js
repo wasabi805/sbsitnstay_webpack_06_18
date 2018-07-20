@@ -4,7 +4,7 @@ import routes from './routes'
 import mainCss from './assets/css/main.scss';
 
 import IndexMain from './components/IndexMain'
-import NavBarMenu from "./components/layout/nav-menu";
+import NavContainer from "./components/layout/nav-container";
 import Banner from './components/Banner'
 import BannerType from './components/layout/banner-type'
 
@@ -41,11 +41,13 @@ class App extends Component{
                         {/*<IndexMain/>*/}
 
 
-                        <NavBarMenu/>
+                        <NavContainer/>
 
                         <Route exact path='/' component = { Banner} />
 
+
                         <Route exact path='/:id' component = { BannerType} />
+
 
 
 

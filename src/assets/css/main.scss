@@ -1709,101 +1709,84 @@
 
 //-----	-----		My Code		-----	-----
 
-    //Drop down nav : used react-simple-dropdown
-	.burger container{
-		position: absolute;
-        display: flex;
-		background-color: #6fc3df;
-        margin-top: 50px;
-		height: 100vh;
-        width: 90vw;
-		display: block;
-		//align-items: center;
-		color: white;
-        z-index: 3;
-	}
+	//TEST 3 : NavBar
 
-	.burger-bg-wrap{
-		position: absolute;
-        display: inline;
-		//top: 70px;
-		//left: 0;
-		//width: 100%;
-		//height: 50vh;
+	//HEADER TOP NAV BAR
+	.navbar{
+		//background-color: transparent;
+		opacity: 0.8;
 		overflow: hidden;
+		height: 63px;
+		//z-index: 5;
+	}
 
-        margin-left: auto;
-        margin-right: auto;
-        align-items: center;
+	.navbar	a{
+		float: left	;
+		display: block;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+
+	.navbar ul{
+		padding: 8px 0 0 0 ;
+		list-style: none;
+	}
+
+	.navbar a:hover{
+		background-color: #ddd;
+		color: #000;
+	}
+
+	//SIDE NAV BAR (ACTUAL)
+
+	.side-nav{
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 4;
+		top:0;
+		left: 0;
+		background-color: #111;
+		opacity: 0.7;
+		overflow-x: hidden;
+		padding-top: 60px;
+		transition: 0.5s;
+	}
+
+	.side-nav a{
+		padding: 10px 10px 10px 30px;
+		text-decoration: none;
+		font-size: 22px;
+		color: #ccc;
+		display: block;
+		transition: 0.3s;
+		border: none;
+	}
+
+	.side-nav a:hover{
+		color: #fff;
 
 	}
 
-	.burger-bg-wrap img{
-		//min-width: 100%;
-		//min-height:100%;
-        position: absolute;
-        z-index: 2;
-
-
-	}
-
-	.burger-bg-wrap-overlay{
-		height: 50vh;
-		width: 100vw;
+	//moves the close button to right of the slide nav menu
+	.side-nav .btn-close{
 		position: absolute;
 		top: 0;
-		left: 0;
-
-		background-color: #225470;
-		opacity: .3;
-		z-index: 1;
+		right: 22px;
+		font-size: 36px;
+		margin-left: 50px;
 
 	}
 
-	//this will center the links & btns in the dropdown
-	.burger-list-main{
-		position: absolute;
-		padding-left: 0px;
-		left: 0px;
-		right: 0px;
-	}
 
 
-    //any effect I'll apply will go here: possibly an image as bg
-	.burger-list-content{
-		position: absolute;
-		display: block;
-        margin-top: 20px;
-        padding-top: 130px;
-		width: 100vw;
-        height: 100vh;
-        //background-color: powderblue;
-        opacity: .9;
-		z-index: 2;
-
-	}
-
-    .burger-list{
-      margin-top: 30px;
-      text-align: center;
-    }
 
 
-    .burger-item{
-        width: auto
-    }
 
-	.burger-list-content .burger-list{
 
-	}
-
-	.burger-list .burger-item{
-		color: red;
-	}
-
-    .burger-list .burger-buttons{
-        color: blue;
-    }
 
 
 	.myNav{
@@ -1819,6 +1802,7 @@
 		margin-right:auto;
 		margin-bottom: 20px;
 		//background-color: lightgrey;
+
 
 
 	}

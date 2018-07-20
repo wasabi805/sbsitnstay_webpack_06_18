@@ -77,9 +77,9 @@ class Services extends Component{
 
         return(
             <div>
+                            {/*SERVICES*/}
 
-                {/*SERVICES*/}
-
+                {/*DOM elem that used as trigger*/}
                 <section id="landing-section"
                          onMouseOver={this.onMessageHover}
                 >
@@ -91,9 +91,8 @@ class Services extends Component{
                         </div>
 
 
-                        {/*DOM elem that used as trigger*/}
-                        <div className='col-md-8 '
-                        >
+
+                        <div className='col-md-8 '>
                             <div className='row-md-12'>
                                 <h2>Walking</h2>
                             </div>
@@ -111,7 +110,9 @@ class Services extends Component{
                 </section>
 
 
-                {/*FEEDING*/}
+                            {/*FEEDING*/}
+
+                {/*DOM elem that used as trigger*/}
                 <section id="landing-section"
                          onMouseOver={this.onFeedingHover}
                 >
@@ -122,9 +123,8 @@ class Services extends Component{
                             </div>
                         </div>
 
-                        {/*DOM elem that used as trigger*/}
-                        <div className='col-md-8 '
-                        >
+
+                        <div className='col-md-8 '>
                             <div className='row-md-12'>
                                 <h2>FEEDING</h2>
                             </div>
@@ -143,7 +143,9 @@ class Services extends Component{
                 </section>
 
 
-                {/*OVERNIGHT CARE*/}
+                            {/*OVERNIGHT CARE*/}
+
+                {/*DOM elem that used as trigger*/}
                 <section id="landing-section"
                          onMouseOver={this.onOverNightHover}
                 >
@@ -154,10 +156,8 @@ class Services extends Component{
                             </div>
                         </div>
 
-                        {/*DOM elem that used as trigger*/}
-                        <div className='col-md-8 '
 
-                        >
+                        <div className='col-md-8 '>
                             <div className='row-md-12'>
                                 <h2>OVERNIGHT CARE</h2>
                             </div>
@@ -168,20 +168,9 @@ class Services extends Component{
                                     isHoveredOverNight={this.state.isHoveredOverNight}
                                 />
                             </div>
-
-
                         </div>
-
-
-
                     </div>
                 </section>
-
-
-
-
-
-
             </div>
         )
     }
@@ -189,10 +178,3 @@ class Services extends Component{
 
 export default Services
 
-// <div className='landing-drescrip-text'>
-//
-// {this.state.showFeedingText ? '' : '\'Cause day and night\n' +
-//     'The lonely stoner seems to free his mind at night\n' +
-//     'He\'s all alone somethings will never change\n' +
-//     'The lonely loner seems to free his mind at night (at, at, at night)'}
-// </div>

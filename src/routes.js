@@ -5,7 +5,7 @@ import App from "./App";
 
 
 
-import NavBarMenu from "./components/layout/nav-menu";
+import NavBarMenu from "./components/layout/nav-container";
 import Banner from './components/Banner'
 
 import TextFieldGroup from "./components/common/TextFieldGroup"
