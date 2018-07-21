@@ -1,50 +1,118 @@
 import React, {Component} from 'react';
 
 class Contact extends Component{
+
+    constructor(props){
+        super(props);
+
+        this.state={
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            comments: '',
+            errors: {},
+        };
+
+
+
+        this.handleInputChange = this.handleInputChange.bind(this)
+    };
+
+
+    // ! IMPORTANT : without this, we wont be able to update state
+    // form inputs targets the name && value
+
+    handleInputChange(e){
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+
+    };
+
+
     render(){
+
         return(
             <section id="contact">
-                <div class="inner">
+                <div className="inner">
                     <section>
                         <form method="post" action="#">
-                            <div class="fields">
-                                <div class="field half">
-                                    <label for="name">Name</label>
-                                    <input type="text" name="name" id="name" />
+
+                            <div className="fields">
+
+                                <div className="field half">
+                                    <label htmlFor="firstName">First name</label>
+
+                                    <input type="text" name="firstName" id="name"
+
+                                           value={this.state.firstName}
+                                           onChange={this.handleInputChange}
+                                    />
                                 </div>
-                                <div class="field half">
-                                    <label for="email">Email</label>
-                                    <input type="text" name="email" id="email" />
+
+                                <div className="field half">
+                                    <label htmlFor="lastName">Last name</label>
+                                    <input type="text" name="lastName" id="name"
+                                           value={this.state.lastName}
+                                           onChange={this.handleInputChange}
+                                    />
                                 </div>
-                                <div class="field">
-                                    <label for="message">Message</label>
-                                    <textarea name="message" id="message" rows="6"></textarea>
+
+                                <div className="field half">
+                                    <label htmlFor="email">Email</label>
+                                    <input type="text" name="email" id="email"
+                                           value={this.state.email}
+                                           onChange={this.handleInputChange}
+                                    />
                                 </div>
+
+                                <div className="field half">
+                                    <label htmlFor="phone">Phone</label>
+                                    <input type="text" name="phone" id="email"
+                                           value={this.state.phone}
+                                           onChange={this.handleInputChange}
+                                    />
+                                </div>
+
+                                <div className="field">
+                                    <label htmlFor="comments">Questions or Comments</label>
+                                    <textarea name="comments" id="message" rows="6"
+                                              value={this.state.comments}
+                                              onChange={this.handleInputChange}
+                                    >
+
+                                    </textarea>
+                                </div>
+
                             </div>
-                            <ul class="actions">
-                                <li><input type="submit" value="Send Message" class="primary" /></li>
+
+
+                            <ul className="actions">
+                                <li><input type="submit" value="Send Message" className="primary"  /></li>
                                 <li><input type="reset" value="Clear" /></li>
                             </ul>
                         </form>
                     </section>
-                    <section class="split">
+
+                    <section className="split">
                         <section>
-                            <div class="contact-method">
-                                <span class="icon alt fa-envelope"></span>
+                            <div className="contact-method">
+                                {/*<span className="icon alt fa-envelope"></span>*/}
                                 <h3>Email</h3>
                                 <a href="#">information@untitled.tld</a>
                             </div>
                         </section>
                         <section>
-                            <div class="contact-method">
-                                <span class="icon alt fa-phone"></span>
+                            <div className="contact-method">
+                                {/*<span className="icon alt fa-phone"></span>*/}
                                 <h3>Phone</h3>
                                 <span>(000) 000-0000 x12387</span>
                             </div>
                         </section>
                         <section>
                             <div class="contact-method">
-                                <span class="icon alt fa-home"></span>
+                                {/*<span className="icon alt fa-home"></span>*/}
                                 <h3>Address</h3>
                                 <span>1234 Somewhere Road #5432<br />
 										Nashville, TN 00000<br />
