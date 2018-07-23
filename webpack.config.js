@@ -8,6 +8,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports={
 
     mode: 'production',
+    // mode: 'development',
 
     entry : {
         app: __dirname + '/src/index.js',
@@ -54,7 +55,6 @@ module.exports={
             },
 
 
-
             {
                 test: /\.(png|jpg|gif|svg|eot|woff|ttf|woff2)$/,
 
@@ -91,18 +91,30 @@ module.exports={
 
     devServer: {
         contentBase: path.join(__dirname, 'src'),
+        compress: true,
+        port: 3000,
 
         publicPath: '/',
-        compress: true,
-
         watchOptions:{
             poll: true
         },
 
+        //TODO step3
+
+        proxy:[{
+            context: ['/api'],
+            target: 'http://localhost:5000',
+        }],
+
+
+        //without this prop in devServer, your pages won't reload if you click refresh
         historyApiFallback: true,
 
-        compress: true,
-        port: 3000
+
+
+
+
+
     }
 };
 

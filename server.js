@@ -1,19 +1,45 @@
 const express= require('express');
+var path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 
-//ROUTES
-const customerLeads = require('./routes/api/customer-leads');
+
+
+
+const proxy= require('http-proxy-middleware');
+
+const options={
+    target: 'http://localhost:5000/api/contact',
+    changeOrigin: true
+};
+
+const exampleProxy = proxy(options);
+
+
+
+
+
 
 
 const app = express();
+
+
+//ROUTES
+const contact = require('./routes/api/contact');
+
+
+
 //Middleware for required for body-parer
 app.use(bodyParser.urlencoded({
     extended: false,
 }));
-
 app.use(bodyParser.json());
+
+//Middleware for required for proxy
+//has to to be dir path, dont forget the routes part of the path
+const myProxy = app.use('routes/api', exampleProxy);
+
 
 
 //used for DB Config
@@ -30,8 +56,17 @@ mongoose.connect(db)
 app.get('/', (req, res)=>res.send('Hello Buddy'));
 
 
+
 //use ROUTES
-app.use('/api/customer-leads', customerLeads );
+app.use('/api/contact',contact );
+
+
+
+
+
+
+
+
 
 
 

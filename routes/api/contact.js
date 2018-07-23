@@ -4,10 +4,10 @@ const router = express.Router();
 
 
 //Load Models
-const CustomerLead = require('../../models/CustomerLead');
+const Contact = require('../../models/CustomerLead');
 
 //Loads form input validation
-const validateCustomerLeadInput = require('../../validation/customer-leads');
+const validateContactsInput = require('../../validation/contacts');
 
 
 
@@ -17,6 +17,12 @@ const validateCustomerLeadInput = require('../../validation/customer-leads');
 //@access   PUBIC
 
 router.get('/test', (req,res)=>res.json({msg : 'TEST : customer-leads route SUCCESS!'}));
+// router.get('/test', (req,res)=> console.log(res, 'this is the from /test : cust-leads'));
+
+
+router.get('/', (req,res)=> res.json({msg: 'Get handle for /api/contact '}));
+
+
 
 
 
@@ -25,10 +31,13 @@ router.get('/test', (req,res)=>res.json({msg : 'TEST : customer-leads route SUCC
 //@desc     submits contact form data for potential clients
 //@access   PUBIC
 
-router.post('/inquiry', (req,res)=>{
+router.post('/', (req,res)=>{
+
+    console.log(req, 'this is set from the form : log frm api/customer-leads.js');
 
     //deconstruct for any errors : pass in req.body for ALL the data from form submit.
-    const {errors, isValid} = validateCustomerLeadInput(req.body);
+    const {errors, isValid} = validateContactsInput(req.body);
+    console.log(isValid, 'check to see if form made it to back end');
 
     //initial check upon form submit/ if is-Valid returns false: is anything empty or in the wrong data format
     if(!isValid){
@@ -36,7 +45,7 @@ router.post('/inquiry', (req,res)=>{
     }
     else{
         //enter a new lead
-        const newCustomerLead = new CustomerLead({
+        const newCustomerLead = new Contact({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,

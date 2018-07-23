@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class Contact extends Component{
 
@@ -16,8 +17,15 @@ class Contact extends Component{
 
 
 
-        this.handleInputChange = this.handleInputChange.bind(this)
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleGetTest = this.handleGetTest.bind(this);
     };
+
+    componentDidMount(){
+        this.handleGetTest();
+        console.log('compDidMOunt ==> contact.js');
+    }
 
 
     // ! IMPORTANT : without this, we wont be able to update state
@@ -30,6 +38,46 @@ class Contact extends Component{
 
     };
 
+    handleFormSubmit(e){
+
+        e.preventDefault(); //prevents automatic send
+
+        const newContact ={
+
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            phone: this.state.phone,
+            comments: this.state.comments
+
+        };
+
+
+        //TODO : step4
+        axios.post('/api/contact', newContact)
+
+            .then((res)=> {
+                console.log(res, 'THis made it to db');
+
+
+            })
+            .catch((err)=> {
+                console.log(err, 'there was an error');
+
+            });
+
+
+        console.log('This is the data that get passed to axios', {newContact});
+
+    };
+
+
+
+    handleGetTest(){
+        // axios.get('api/customer-leads/test')
+    }
+
+
 
     render(){
 
@@ -37,7 +85,7 @@ class Contact extends Component{
             <section id="contact">
                 <div className="inner">
                     <section>
-                        <form method="post" action="#">
+                        <form onSubmit={this.handleFormSubmit}>
 
                             <div className="fields">
 
@@ -52,7 +100,7 @@ class Contact extends Component{
                                 </div>
 
                                 <div className="field half">
-                                    <label htmlFor="lastName">Last name</label>
+                                    <label htmlFor="lastName">Last name!</label>
                                     <input type="text" name="lastName" id="name"
                                            value={this.state.lastName}
                                            onChange={this.handleInputChange}
