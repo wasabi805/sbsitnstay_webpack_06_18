@@ -3,52 +3,173 @@ import {Link} from 'react-router-dom';
 import Dropdown from 'react-simple-dropdown';
 import {DropdownTrigger, DropdownContent} from 'react-simple-dropdown'
 
-
+import dogLaptop from '.././images/dog-laptop.jpg'
 import pic10 from '.././images/pic10.jpg'
 
 class TestMenu extends Component{
+
+    constructor(props){
+        super(props);
+        this.state={
+
+            showWalkingText: true,
+            showFeedingText: true,
+            showOvernightCareText: true,
+            showDropinsText: true,
+            showAdventuresText: true,
+
+
+        }
+
+        this.handleShowWalkingText = this.handleShowWalkingText.bind(this);
+        this.handleShowFeedingText = this.handleShowFeedingText.bind(this);
+        this.handleOvernightCareText = this.handleOvernightCareText.bind(this);
+        this.handleShowDropinsText = this.handleShowDropinsText.bind(this);
+        this.handleAdventuresText = this.handleAdventuresText.bind(this);
+        this.onClick = this.onClick.bind(this);
+
+
+    }
+
+
+    handleShowWalkingText(){
+        console.log('Show Walking Text');
+
+        this.setState(prevState =>({
+            showWalkingText: !prevState.showWalkingText
+        }))
+
+        console.log(this.state.showWalkingText, '<-------');
+
+    }
+
+    handleShowFeedingText(){
+        console.log('Show Feeding Text');
+
+        this.setState(prevState =>({
+            showFeedingText: !prevState.showFeedingText
+        }))
+
+        console.log(this.state.showFeedingText, '<|||||||');
+
+    }
+
+    handleOvernightCareText(){
+        console.log('Show Overnight Text');
+        this.setState(prevState =>({
+            showOvernightCareText: !prevState.showOvernightCareText
+        }))
+
+    }
+
+    handleShowDropinsText(){
+        console.log('Show Dropin  Text?');
+        this.setState(prevState =>({
+            showDropinsText: !prevState.showDropinsText
+        }))
+
+    }
+
+    handleAdventuresText(){
+        this.setState(prevState =>({
+            showAdventuresText: !prevState.showAdventuresText
+        }))
+    }
+
+
+
+    onClick(e){
+        console.log(e);
+
+    }
+
+
     render(){
-        console.log(Dropdown);
+        // console.log(Dropdown);
 
         return(
-            <div className='myNav'>
-                <Dropdown >
+            <div>
 
-                    <DropdownTrigger><span className='hamberger'>&#9776;</span></DropdownTrigger>
+                <section id="landing-section">
+                    <div className='row'>
+                        <div className='col-md-4'>
+                            <div className='landing-item'>
+                                <img src={dogLaptop}/>
+                            </div>
+                        </div>
 
-                    <DropdownContent>
-
-                        <div className='burger container'>
-
-                            <div className="burger-bg-wrap">
-                                <img src={pic10}/>
+                        <div className='col-md-8 '>
+                            <div className='row-md-12'>
+                                <h2>Walking</h2>
                             </div>
 
-                            {/*<div className='burger-bg-wrap-overlay'></div>*/}
-
-                            <ul className='burger-list-main'>
-
-                                <div className='burger-list-content'>
-
-                                    {/*<ul className="links">*/}
-                                    <ul className='burger-list'>
-                                        <li className='burger-item'><Link to="/">Home</Link></li>
-                                        <li className='burger-item'><Link to="/about-us">About US</Link></li>
-                                        <li className='burger-item'><Link to="/services">Services</Link></li>
-                                        <li className='burger-item'><a href="/">Gallery</a></li>
-                                        <li className='burger-item'><a href="/">Contact</a></li>
-                                    </ul>
-
-                                    {/*<ul className="actions vertical">*/}
-                                    <ul className='burger-buttons'>
-                                        <li className='burger-item'><a href="#" className="burger-route">Register Account</a></li>
-                                        <li className='burger-item'><a href="#" className="burger-route">Log In</a></li>
-                                    </ul>
+                            <div className='row-md-12'>
+                                <div className='landing-content'>
+                                    {this.state.showWalkingText ? '.' : 'I grew up on the crime side, the New York Times side\n' +
+                                        'Staying alive was no jive\n' +
+                                        'Had second hands, moms bounced on old men\n' +
+                                        'So then we moved to Shaolin land\n' +
+                                        'A young youth, yo rockin\' the gold tooth, \'Lo goose\n' +
+                                        'Only way, I begin to G off was drug loo'}
                                 </div>
-                            </ul>
+                            </div>
+
+                            <div className='row-md-12'>
+                                <div className='landing-btn'>
+                                    <button
+                                        onClick={this.handleShowWalkingText}
+
+                                    >Click Me </button>
+                                </div>
+
+                            </div>
                         </div>
-                    </DropdownContent>
-                </Dropdown>
+
+
+
+                    </div>
+                </section>
+
+
+                <section id="landing-section">
+                    <div className='row'>
+
+                        <div className='col-md-8'>
+
+                            <div className='landing-content'>
+
+                                <div className='row-md-12'>
+                                    <h2>Feeding</h2>
+                                </div>
+
+                                <div className='landing-drescrip-text'>
+
+                                    {this.state.showFeedingText ? '' : 'FEEDING CONTENT WORKS'}
+                                </div>
+
+                            </div>
+
+
+                            <div className='row-md-12'>
+                                <button
+                                    onClick={this.handleShowFeedingText}
+
+                                >Click Me </button>
+                            </div>
+
+                        </div>
+
+                        <div className='col-md-4'>
+                            <div className='landing-item'>
+                                <img src={dogLaptop}/>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </section>
+
             </div>
         )
     }

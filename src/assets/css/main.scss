@@ -1709,101 +1709,80 @@
 
 //-----	-----		My Code		-----	-----
 
-    //Drop down nav : used react-simple-dropdown
-	.burger container{
-		position: absolute;
-        display: flex;
-		background-color: #6fc3df;
-        margin-top: 50px;
-		height: 100vh;
-        width: 90vw;
-		display: block;
-		//align-items: center;
-		color: white;
-        z-index: 3;
-	}
+		//HEADER & SLIDE NAV MENU : FINAL
 
-	.burger-bg-wrap{
-		position: absolute;
-        display: inline;
-		//top: 70px;
-		//left: 0;
-		//width: 100%;
-		//height: 50vh;
+	//-----	USED FOR THE HEADER & SLIDE NAV MENU	-----
+	.navbar{
+		//background-color: transparent;
+		opacity: 0.8;
 		overflow: hidden;
+		height: 63px;
+		//z-index: 5;
+	}
 
-        margin-left: auto;
-        margin-right: auto;
-        align-items: center;
+	.navbar	a{
+		float: left	;
+		display: block;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+
+	.navbar ul{
+		padding: 8px 0 0 0 ;
+		list-style: none;
+	}
+
+	.navbar a:hover{
+		background-color: #ddd;
+		color: #000;
+	}
+
+	//SIDE NAV BAR (ACTUAL)
+
+	.side-nav{
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 4;
+		top:0;
+		left: 0;
+		background-color: #111;
+		opacity: 0.7;
+		overflow-x: hidden;
+		padding-top: 60px;
+		transition: 0.5s;
+	}
+
+	.side-nav a{
+		padding: 10px 10px 10px 30px;
+		text-decoration: none;
+		font-size: 22px;
+		color: #ccc;
+		display: block;
+		transition: 0.3s;
+		border: none;
+	}
+
+	.side-nav a:hover{
+		color: #fff;
 
 	}
 
-	.burger-bg-wrap img{
-		//min-width: 100%;
-		//min-height:100%;
-        position: absolute;
-        z-index: 2;
-
-
-	}
-
-	.burger-bg-wrap-overlay{
-		height: 50vh;
-		width: 100vw;
+	//moves the close button to right of the slide nav menu
+	.side-nav .btn-close{
 		position: absolute;
 		top: 0;
-		left: 0;
-
-		background-color: #225470;
-		opacity: .3;
-		z-index: 1;
-
+		right: 22px;
+		font-size: 36px;
+		margin-left: 50px;
 	}
 
-	//this will center the links & btns in the dropdown
-	.burger-list-main{
-		position: absolute;
-		padding-left: 0px;
-		left: 0px;
-		right: 0px;
-	}
+	//-----	END : HEADER & SLIDE NAV MENU	-----
 
 
-    //any effect I'll apply will go here: possibly an image as bg
-	.burger-list-content{
-		position: absolute;
-		display: block;
-        margin-top: 20px;
-        padding-top: 130px;
-		width: 100vw;
-        height: 100vh;
-        background-color: powderblue;
-        opacity: .9;
-		z-index: 2;
-
-	}
-
-    .burger-list{
-      margin-top: 30px;
-      text-align: center;
-    }
-
-
-    .burger-item{
-        width: auto
-    }
-
-	.burger-list-content .burger-list{
-
-	}
-
-	.burger-list .burger-item{
-		color: red;
-	}
-
-    .burger-list .burger-buttons{
-        color: blue;
-    }
 
 
 	.myNav{
@@ -1820,136 +1799,7 @@
 		margin-bottom: 20px;
 		//background-color: lightgrey;
 
-
 	}
-
-
-  .dropdown {
-    display: block; //def inline-bloc
-    position: relative;
-    //float: right;
-
-  }
-
-  .dropdown a{
-    border-bottom: none;
-
-  }
-
-
-    //THIS IS THE PARENT div for all  drop-down menu links
-  .dropdown__content {
-      display: none;
-      position: relative;
-      top: 50px;  //need the 50px buffer so overlay wont block the menu berger
-      right: 0px;
-      left: 0px;
-       //background-color: lightcyan; //if you see the cyan, you're fine
-      z-index: 10;
-
-  }
-
-  .dropdown__content li{
-      display: none;
-      position: relative;
-      text-align: center;
-      margin-left:auto;
-      margin-right:auto;
-	  color: black;
-      width: 100vw;
-      z-index: 10;
-  }
-
-  .hamberger{
-      //margin-left: 70vw;
-  }
-
-  .myNav .hamberger {
-    float:right;
-    margin-right: 20px;
-  }
-
-  .dropdown--active .dropdown__content {
-    display: block;
-    text-decoration: none;
-
-  }
-
-  .dropdown--active .dropdown__content li{
-    position: relative;
-    display: block;
-    text-decoration: none;
-
-  }
-
-    //NAVBAR MENU
-    .navDiv{
-
-      background-color: #6fc3df;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      color: white;
-    }
-
-    .container{
-      max-width: 960px;
-      //padding-left: 1rem;
-      //padding-right: 1rem;
-      margin: auto;
-      text-align: center;
-    }
-
-
-    .navMenu-wrap{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .navMenu-wrap img{
-		min-width: 100%;
-		min-height:100%;
-		max-width: 100vh;
-		max-height: 100vh;
-
-    }
-
-    .header-overlay{
-		height: 100vh;
-		width: 100vw;
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-color: #225470;
-		opacity: .4;
-		z-index: 1;
-
-    }
-
-    .header-content{
-
-      	width: 100%;
-		padding-left: 25%;
-		padding-right: 25%;
-		text-align: center;
-		z-index: 2;
-    }
-
-	.header-content ul{
-
-	}
-
-	.header-content a{
-	//	nothing in here, left this so i can decide later if i want to style
-	}
-
-
-
-
 
 
 	//-----	USED FOR THE LOGO ANIMATION	-----
@@ -2003,6 +1853,41 @@
 	//	width: 40rem;
 	//	height: 20.2rem;
 	//}
+
+
+	//-----	USED TO CROP ABOUT-US PROFILE IMG	-----
+	//see for img resizing & cropping refs : https://stackoverflow.com/questions/493296/css-display-an-image-resized-and-cropped
+
+
+	//sets the size of div containing img
+	.about-us-img{
+		//NOTE: change width & height later to dynamic units || run media query
+		width: 400px;
+		height: 400px;
+		overflow: hidden;
+	}
+
+	//adjust margins to move field of view over the img
+	.about-us-img #kayla-img{
+		width: 100%;
+		height: 100%;
+		margin: -75px 0 0 1px;
+	}
+
+	.about-us-img #catherine-img{
+		width: 100%;
+		height: 100%;
+		margin: -11px 0 0 1px;
+	}
+
+	.about-us-img #yuko-img{
+		width: 100%;
+		height: 100%;
+		margin: -11px 0 0 1px;
+	}
+
+
+
 	
 
 
@@ -3235,25 +3120,50 @@
 		//-----	-----		My Code		-----	-----
 		//used for <LandingMain/> : employee profile imgs
 
-		#section-profile{
+
+		//https://www.w3.org/Style/Examples/007/center.en.html
+		//USED FOR TEST COMP : SECTIONS
+		#landing-section {
+
 			position: relative;
-			//background-color: yellow;
+			overflow: auto;
+
+
+			.landing-item {
+				background-color: yellow;
+				//width: 100%;
+				//height: 100%;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+
+
+			}
+
+			#landing-content{
+				position: relative;
+				padding-top: 2%;
+				padding-bottom: 2%;
+				display: inline-block;
+				align-items: center;
+				padding-left: 5em;
+				width: 100%;
+				height: 180px; //make this dynamic later
+			}
+
+			.landing-btn{
+				margin-bottom: 2em;
+			}
+
 		}
 
-
-		//About-us employee img props
-		#section-profile .section-image00 img{
-			width: 280px;
-			height: 307px;
-			opacity: .5;
+		.img-section-content{
+			h2{
+				//text-align: center;
+				color: red;
+			}
 		}
-
-		#section-profile .section-image01 img{
-			width: 600px;
-			height: 576px;
-			opacity: .7;
-		}
-
 
 
 		//-----	HTML5up Stock Media Queries -----
@@ -3752,7 +3662,7 @@
 
 		@media screen and (max-width: 480px) {
 
-			#header .logo span {
+			#header .logo npm run dev {
 				display: none;
 			}
 
