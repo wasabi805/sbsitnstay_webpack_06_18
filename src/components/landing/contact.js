@@ -53,8 +53,9 @@ class Contact extends Component{
         };
 
 
-        //TODO : step4
+        //TODO : step6
         axios.post('/api/contact', newContact)
+        ////////////////////
 
             .then((res)=> {
                 console.log(res, 'THis made it to db');

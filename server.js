@@ -1,12 +1,13 @@
 const express= require('express');
+
+//TODO: Proxy step 1
 var path = require('path');
+////////////////////
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-
-
-
-
+//TODO: Proxy step 2
+//see: https://www.npmjs.com/package/http-proxy-middleware
 const proxy= require('http-proxy-middleware');
 
 const options={
@@ -15,7 +16,7 @@ const options={
 };
 
 const exampleProxy = proxy(options);
-
+////////////////////
 
 
 
@@ -26,8 +27,9 @@ const app = express();
 
 
 //ROUTES
+//TODO: Proxy step 3
 const contact = require('./routes/api/contact');
-
+////////////////////
 
 
 //Middleware for required for body-parer
@@ -36,10 +38,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+//TODO: Proxy step 4
 //Middleware for required for proxy
 //has to to be dir path, dont forget the routes part of the path
 const myProxy = app.use('routes/api', exampleProxy);
-
+////////////////////
 
 
 //used for DB Config
@@ -58,16 +61,9 @@ app.get('/', (req, res)=>res.send('Hello Buddy'));
 
 
 //use ROUTES
+//TODO: Proxy step 5
 app.use('/api/contact',contact );
-
-
-
-
-
-
-
-
-
+////////////////////
 
 
 const port = process.env.PORT || 5000;
