@@ -99,13 +99,12 @@ module.exports={
             poll: true
         },
 
-        //TODO step3
-
+        //TODO step 7
         proxy:[{
             context: ['/api'],
             target: 'http://localhost:5000',
         }],
-
+        ////////////////////
 
         //without this prop in devServer, your pages won't reload if you click refresh
         historyApiFallback: true,
