@@ -10,21 +10,16 @@ const bodyParser = require('body-parser');
 //see: https://www.npmjs.com/package/http-proxy-middleware
 const proxy= require('http-proxy-middleware');
 
-const options={
+const myProxyOptions={
     target: 'http://localhost:5000/api/contact',
     changeOrigin: true
 };
 
-const exampleProxy = proxy(options);
+const myProxy = proxy(myProxyOptions);
 ////////////////////
 
 
-
-
-
-
 const app = express();
-
 
 //ROUTES
 //TODO: Proxy step 3
@@ -41,7 +36,7 @@ app.use(bodyParser.json());
 //TODO: Proxy step 4
 //Middleware for required for proxy
 //has to to be dir path, dont forget the routes part of the path
-const myProxy = app.use('routes/api', exampleProxy);
+const pathToMyProxy = app.use('routes/api', myProxy);
 ////////////////////
 
 
