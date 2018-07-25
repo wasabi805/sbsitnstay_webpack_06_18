@@ -1,15 +1,13 @@
 import React, {Component} from 'react'
 
 import {Route, Link } from 'react-router-dom';
-// import Banner from './Banner'
-
-
 
 // import dogLeash from '.././images/dog-leash.jpg'
 // import dogsOnLeash from '.././images/dogs-on-leash.jpg'
-import kaylaPic from '.././images/kayla.jpg'
-
-
+const kayla = 'https://res.cloudinary.com/ocampot/image/upload/v1532396652/sbsitnstay/kayla-profile.jpg';
+const dogs_on_leash = 'https://res.cloudinary.com/ocampot/image/upload/v1532397698/sbsitnstay/dogs_on_leash.jpg';
+const dog_leash = 'https://res.cloudinary.com/ocampot/image/upload/v1532398583/sbsitnstay/dog_leash.jpg';
+const dog_laptop = 'https://res.cloudinary.com/ocampot/image/upload/v1532398723/sbsitnstay/dog_laptop.jpg'
 
 // console.log(this.props.children, 'THIS.PROPS.CHILDREN');
 class IndexMain extends Component{
@@ -19,10 +17,10 @@ class IndexMain extends Component{
         this.state={
 
             tiles: [
-                {title:'Meet the Crew!',pathSrc:'/about-us', msg: 'Get acquainted with out sitters', img: '.././images/kayla.jpg'},
-                {title: 'Services', pathSrc: '/services', msg: 'What we can do for you and your pup', img: '.././images/dogs-on-leash.jpg'},
-                {title: 'Gallery', pathSrc: '/gallery', msg: 'Join the gang!', img: '.././images/dog-leash.jpg'},
-                {title: 'Contact', pathSrc: '/contact', msg: 'Get in touch with us!', img: '.././images/dog-laptop.jpg'}
+                {title:'Meet the Crew!',pathSrc:'/about-us', msg: 'Get acquainted with out sitters', img: kayla},
+                {title: 'Services', pathSrc: '/services', msg: 'What we can do for you and your pup', img: dogs_on_leash},
+                {title: 'Gallery', pathSrc: '/gallery', msg: 'Join the gang!', img: dog_leash},
+                {title: 'Contact', pathSrc: '/contact', msg: 'Get in touch with us!', img: dog_laptop}
             ]
         }
 
@@ -30,8 +28,6 @@ class IndexMain extends Component{
 
 
     render(){
-
-        console.log(typeof dogLeash);
 
         const titleMapper = this.state.tiles.map((item)=> {
 

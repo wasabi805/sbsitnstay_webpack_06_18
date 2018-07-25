@@ -7,10 +7,9 @@ import ServicesText from './services-text'
 
 
 
-
-import dogLaptop from '../../images/dog-laptop.jpg'
-import pupsEating from '../../images/pups-eating.jpg'
-import dogNap from '../../images/dog-sleeping-01.jpg'
+const dog_leash_002 = 'https://res.cloudinary.com/ocampot/image/upload/v1532399332/sbsitnstay/dog_leash_002.jpg'
+const pups_eating = 'https://res.cloudinary.com/ocampot/image/upload/v1532399233/sbsitnstay/pups_eating.jpg'
+const dog_sleeping_01 = 'https://res.cloudinary.com/ocampot/image/upload/v1532399537/sbsitnstay/dog_sleeping_01.jpg'
 
 
 class Services extends Component{
@@ -86,7 +85,7 @@ class Services extends Component{
                     <div className='row'>
                         <div className='col-md-4'>
                             <div className='landing-item'>
-                                <img src={dogLaptop}/>
+                                <img src={dog_leash_002}/>
                             </div>
                         </div>
 
@@ -119,7 +118,7 @@ class Services extends Component{
                     <div className='row'>
                         <div className='col-md-4'>
                             <div className='landing-item'>
-                                <img src={pupsEating}/>
+                                <img src={pups_eating}/>
                             </div>
                         </div>
 
@@ -152,7 +151,7 @@ class Services extends Component{
                     <div className='row'>
                         <div className='col-md-4'>
                             <div className='landing-item'>
-                                <img src={dogNap}/>
+                                <img src={dog_sleeping_01}/>
                             </div>
                         </div>
 

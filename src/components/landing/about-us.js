@@ -5,9 +5,9 @@ import {DropdownTrigger, DropdownContent} from 'react-simple-dropdown'
 
 import AboutUsText from './about-us-text'
 
-import kayla from '../../images/kayla.jpg'
-import catherine from '../../images/catherine.jpg'
-import yuko from '../../images/yuko.jpg'
+const kayla = 'https://res.cloudinary.com/ocampot/image/upload/v1532396652/sbsitnstay/kayla-profile.jpg';
+const catherine = 'https://res.cloudinary.com/ocampot/image/upload/v1532396286/sbsitnstay/catherine.jpg';
+const yuko = 'https://res.cloudinary.com/ocampot/image/upload/v1532396750/sbsitnstay/yuko.jpg';
 
 
 class AboutUs extends Component{

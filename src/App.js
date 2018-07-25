@@ -12,13 +12,6 @@ import AboutUs from './components/landing/about-us'
 import Services from './components/landing/services'
 import Contact from './components/landing/contact'
 
-
-
-import dogLeash from './images/dog-leash.jpg'
-import dogWithLeash002 from './images/dog-leash-002.jpg'
-import TextFieldGroup from "./components/common/TextFieldGroup";
-
-
 import TestMenu from "./components/testComp";
 
 
