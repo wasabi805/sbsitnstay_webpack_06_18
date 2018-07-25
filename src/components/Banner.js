@@ -3,8 +3,8 @@ import {Route, Link } from 'react-router-dom';
 
 
 
-import dogOnLeash01 from '.././images/dog-leash-01.jpg'
-import dogSunset from '.././images/dog-trainer-silhouettes-sunset.jpg'
+const dog_leash_01 = 'https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg'
+const dogs_on_leash = 'https://res.cloudinary.com/ocampot/image/upload/v1532397698/sbsitnstay/dogs_on_leash.jpg'
 
 // const bannerBgImg = {
 //     backgroundImage: [`url(${dogOnLeash01})`]
@@ -20,26 +20,17 @@ class Banner extends Component{
             thisPath: '',
 
             bannerBgData:[
-                {title: "South Bay Sit N' Stay!!", backgroundImage: dogOnLeash01},
-                {title: "Who We Are!!!", backgroundImage: dogOnLeash01}
+                {title: "South Bay Sit N' Stay!!", backgroundImage: dog_leash_01},
+                {title: "Who We Are!!!", backgroundImage: dog_leash_01}
             ]
         }
     }
 
-    // componentDidMount() {
-        // console.log('from Main Banner', this.props.location.pathname);
-
-    //     this.setState({
-    //         thisPath: this.props.location.pathname
-    //     })
-    //
-    //
-    // }
 
     render(){
 
         const bannerBgImg01={
-            backgroundImage: `url(${dogOnLeash01})`
+            backgroundImage: `url(${dog_leash_01})`
         };
 
         return(

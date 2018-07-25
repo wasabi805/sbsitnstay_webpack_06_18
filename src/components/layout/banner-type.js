@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+
+
+
 class BannerType extends Component{
 
     constructor(props){
@@ -8,10 +11,10 @@ class BannerType extends Component{
             thisPath: '',
 
             banner:[
-                {name: 'About Us', bgImg: '../../images/dog-and-owner-sunset.jpg'},
-                {name: 'Services', bgImg: '../../images/dog-trainer-silhouettes-sunset.jpg'},
-                {name: 'Gallery', bgImg: '../../images/dog-selfie.jpg'},
-                {name: 'Contact', bgImg: '../../images/dog-on-phone.jpg'},
+                {name: 'About Us', bgImg: 'https://res.cloudinary.com/ocampot/image/upload/v1532397892/sbsitnstay/dog_and_owner_sunset.jpg'},
+                {name: 'Services', bgImg: 'https://res.cloudinary.com/ocampot/image/upload/v1532398062/sbsitnstay/dog_trainer_silhouettes_sunset.jpg'},
+                {name: 'Gallery', bgImg: 'https://res.cloudinary.com/ocampot/image/upload/v1532398181/sbsitnstay/dog_selfie.jpg'},
+                {name: 'Contact', bgImg: 'https://res.cloudinary.com/ocampot/image/upload/v1532398257/sbsitnstay/dog_on_phone.jpg'},
             ]
         };
 
