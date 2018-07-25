@@ -1,7 +1,7 @@
 import React , {Component}from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import routes from './routes'
-import mainCss from './assets/css/main.scss';
+import mainCss from './assets/css/main.css';
 
 import IndexMain from './components/IndexMain'
 import NavContainer from "./components/layout/nav-container";
@@ -15,6 +15,9 @@ import Contact from './components/landing/contact'
 import TestMenu from "./components/testComp";
 
 //THIS IS THE SASS FIX Branch
+
+// dev": "concurrently \"npm run start\" \"npm run front\""
+
 class App extends Component{
 
     constructor(props){

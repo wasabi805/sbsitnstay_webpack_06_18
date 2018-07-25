@@ -49,16 +49,24 @@ module.exports={
 
 
             {
-                test: /\.(css|scss)$/,
-                use: [
-                    {loader: 'style-loader'}, {loader:'css-loader'}, {loader: 'sass-loader'}]
+                test: /\.css$/,
+                use:['style-loader', 'css-loader']
+            },
+
+            {
+                test: /\.scss$/,
+                use:[
+                    {loader: "style-loader"},
+                    {loader: "css-loader"},
+                    {loader: "sass-loader",
+                        options:{}
+                    }
+                ]
             },
 
 
             {
                 test: /\.(png|jpg|gif|svg|eot|woff|ttf|woff2)$/,
-
-
                 //outputPath : copy temp and place here && update
                 // places imgs into the html file : the final dir before img get bundled
 
