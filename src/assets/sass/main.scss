@@ -4,11 +4,9 @@
 @import "variables";
 
 //----- Nav Menus -----
-@import "nav-menus/header-nav";
-@import 'nav-menus/side-nav';
-
-
-
+//@import "nav-menus/header-nav";
+//@import 'nav-menus/side-nav';
+@import "nav-menus/banner";
 
 #main{
 
@@ -18,71 +16,17 @@
   width: 100vw;
 
   background-color: yellow;
-}
 
+  @include banner
 
-.banner{
-
-  position: relative;
-  background: lightgrey;
-  background: url("https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg") no-repeat;
-  z-index: 0;
-
-  .banner-top-menu{
-
-    @include header-nav;
-    @include side-nav;
-
-  }
-
-
-
-  .overlay{
-    margin: 0px;
-    padding: 0px;
-    position: absolute;
-    z-index: 1;
-
-    width: 100%;
-    height: 43rem;
-    opacity: .3;
-    background-color: #01549b;
-  }
 
 }
 
-
-.banner-content{
-  color: white;
-
-
-  h1{
-    margin-left: 2rem;
-    z-index: 2;
-  }
-
-  p{
-    margin-left: 2rem;
-    z-index: 2;
-  }
-
-  .banner-column{
-    z-index: 3;
-
-    .banner-btn-row{
-      margin-top: 5rem;
-      margin-left: auto;
-      margin-right: auto;
-      width:10rem;
-      height: 3rem;
-      border-style: solid;
+//----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+//PLAY HERE!:
 
 
-
-    }
-  }
-
-}
+//
 
 
 
@@ -90,6 +34,8 @@
 
 
 
+
+//----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 //remove the top nav menu for small screens
 @media(min-width: 2px)and(max-width: 479px) {
   .header-nav-list{

@@ -4,10 +4,9 @@ import routes from './routes'
 require('./assets/css/main.css');
 import TestComp from './components/testComp'
 
+import BannerParent from './components/BannerParent'
+import BodyParent from './components/BodyParent'
 
-import Banner from './components/Banner'
-
-//THIS IS THE SASS FIX Branch
 
 class App extends Component{
 
@@ -18,23 +17,15 @@ class App extends Component{
         }
     }
 
-
-
     render(){
 
         return(
 
             <div id='main'>
+                <Route path='/' component={BannerParent} />
+                <Route path='/' component={BodyParent}/>
 
-
-                <div>
-                    {/*site map for routes*/}
-                    {/*<Route path='/test' component={TestComp}/>*/}
-
-                    <Route path='/' component={Banner} />
-                </div>
-
-
+            <small className='im-hidden-in-appjs'>
                 {/*<div className='info'>*/}
                     {/*<h4>*/}
                         {/*Don't delete me: I'm coming from app.js*/}
@@ -49,16 +40,12 @@ class App extends Component{
                         {/*yellow is coming from the #main div*/}
                     {/*</small>*/}
                 {/*</div>*/}
-
-
-
-
+            </small>
             </div>
 
         )
     }
 }
-
 
 
 export default App
