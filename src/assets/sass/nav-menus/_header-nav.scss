@@ -1,0 +1,31 @@
+@mixin header-nav{
+
+    .header-nav-list{
+
+
+      //background-color: #c1e2b3;
+      float: right;
+
+      .list-inline-item{
+
+        li{
+          list-style-type: none;
+
+        }
+
+        .nav-link{
+          color: white;
+          z-index: 3;
+        }
+
+      }
+
+
+
+
+
+
+
+    }
+
+}

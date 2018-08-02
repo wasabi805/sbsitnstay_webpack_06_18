@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 
-
-
-
 class BannerType extends Component{
 
     constructor(props){

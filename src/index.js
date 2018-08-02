@@ -4,9 +4,21 @@ import { BrowserRouter } from 'react-router-dom'
 // import routes from './routes';
 import App from './App'
 
+
+
+
+
+
+
+
+
+
+
 ReactDOM.render(
-        <App/>,
-        // routes,
+
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>,
 
 document.getElementById('root')
 );

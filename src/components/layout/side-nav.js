@@ -35,8 +35,7 @@ class NavBarMenu extends Component{
     render(){
         return(
             <div>
-                <nav className='navbar'>
-
+                <nav className='navbar bg-danger'>
 
                     <span className='open-slide'>
                         {/*TRIGGERS OPEN SLIDE MENU*/}
@@ -51,9 +50,9 @@ class NavBarMenu extends Component{
                         </a>
                     </span>
 
-                    <ul className='navbar-nav'>
+                    <ul className='navbar-nav '>
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/about-us'>About Us</Link></li>
+                        <li><Link to='/about-us'>Wu-tang</Link></li>
                         <li><Link to='/services'>Services</Link></li>
                         <li><Link to='/gallery'>Gallery</Link></li>
                         <li><Link to='contact'>Contact</Link></li>
@@ -72,16 +71,11 @@ class NavBarMenu extends Component{
 
                     <a><Link to='/' onClick={this.onCloseSlideMenu}>Home</Link></a>
 
-                    <a><Link to='/about-us' onClick={this.onCloseSlideMenu}>About Us</Link></a>
+                    <a><Link to='/about-us' onClick={this.onCloseSlideMenu}>About us</Link></a>
                     <a><Link to='/services' onClick={this.onCloseSlideMenu}>Services</Link></a>
                     <a><Link to='/gallery' onClick={this.onCloseSlideMenu}>Gallery</Link></a>
                     <a><Link to='/contact'onClick={this.onCloseSlideMenu}>Contact</Link></a>
                 </div>
-
-
-                {/*<div id='main-menu'>Test Responsive Side menu</div>*/}
-                {/*NOTE: main-menu returns an empty div used for the slide nav menu*/}
-                <div id='main-menu'>.</div>
 
             </div>
 

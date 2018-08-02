@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import {Route, Link } from 'react-router-dom';
 
 
+import {Button} from 'reactstrap'
+
+import SideNav from './layout/side-nav'
+import HeaderNav from './layout/header-nav'
+
 
 const dog_leash_01 = 'https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg'
 const dogs_on_leash = 'https://res.cloudinary.com/ocampot/image/upload/v1532397698/sbsitnstay/dogs_on_leash.jpg'
@@ -35,29 +40,62 @@ class Banner extends Component{
 
         return(
 
-            <section id="banner" className="major" style={bannerBgImg01}>
+                <div className='banner col p-0'>
 
-                <div className="inner">
-                    <header className="major">
-                        <div className="container">
-                            <span className='text1'><h1>South Bay Sit N Stay</h1></span>
+                    <span className='overlay'></span>
+
+                        {/*THE NAVBAR HEADER*/}
+                        <div className="row banner-top-menu no-gutters">
+                            <div className='col-1'>
+                                <SideNav/>
+                            </div>
+
+                            {/*THE Hamburger Menu*/}
+                            <div className='col-11 '>
+                                <HeaderNav/>
+                            </div>
                         </div>
 
 
-                    </header>
+                        <div className='banner-content row '>
+                            <div className='banner-column col'>
+                                <div className='banner-title row'>
+                                    <h1 className='display-4'>
+                                        South bay sit n stay
+                                    </h1>
+                                </div>
 
-                    <div className="content">
-                        <p>Welcome</p>
-                        <ul className="actions">
-                            <li><a href="#one" className="button next scrolly">Get Started</a></li>
-                        </ul>
-                    </div>
+                                <div className='banner-text row'>
+                                    <p className=''>Welcome, let's get aquainted</p>
+                                </div>
+
+                                <div className='banner-btn-row row'>
+                                    <button className='banner-btn col' type='button'>
+                                        <Link to='#'>Get Started</Link>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        {/* -----      -----        -----       -----       ----    */}
+
+
+
+
+                        {/*contents inside banner*/}
+                        {/*<div className='col banner-content'>*/}
+
+                                {/**/}
+
+                        {/*</div>*/}
                 </div>
-            </section>
-
         )
     }
 }
 
 export default Banner
+
 

@@ -1,18 +1,21 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+    filename: 'main.css', //add this to get sass working correctly
+});
 
 
 module.exports={
 
-    mode: 'production',
-    // mode: 'development',
+    // mode: 'production',
+    mode: 'development',
 
     entry : {
         app: __dirname + '/src/index.js',
-        // style: __dirname + '/src/assets/css/main.scss',
     } ,
 
     output: {
@@ -22,46 +25,44 @@ module.exports={
         sourceMapFilename: "bundle.map"
     },
 
-
     //used to map where errors occur in bundle
     devtool: "#source-map",
-
-
 
     module: {
         rules: [
             {
-                test: /\.js?$/,
+                test: /\.(js)?$/,
+                include: path.join(__dirname, 'src'),
                 exclude: /(node_modules|bower_components)/,
-                use:{
+
+                use:[{
+
                     loader: 'babel-loader',
                     options: {
+                        presets:[
+                            'react','es2015',
+                        ]
 
-                        presets: ["react",'es2015']
                     }
-                }
+
+                }]
             },
+
+            {
+                test: /\.(scss|css)$/,
+                use: extractSass.extract({
+                    fallback: 'style-loader',
+                    use: [{loader: "css-loader"}, {loader: "sass-loader"}]
+                }),
+
+                include: path.join(__dirname, 'src')
+            },
+
+
 
             {
                 test: /\.html$/,
                 use: ['html-loader']
-            },
-
-
-            {
-                test: /\.css$/,
-                use:['style-loader', 'css-loader']
-            },
-
-            {
-                test: /\.scss$/,
-                use:[
-                    {loader: "style-loader"},
-                    {loader: "css-loader"},
-                    {loader: "sass-loader",
-                        options:{}
-                    }
-                ]
             },
 
 
@@ -92,7 +93,18 @@ module.exports={
         template: './src/index.html'
         }),
 
-        new ExtractTextPlugin("styles.css")
+        // new ExtractTextPlugin("styles.css")
+
+        // Used for Bootstrap JavaScript components
+        // Used for Bootstrap JavaScript components
+        // Used for Bootstrap dropdown, popup and tooltip JavaScript components
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            Popper: ['popper.js', 'default']
+        }),
+
+        extractSass
 
 
     ],

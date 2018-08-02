@@ -1,80 +1,166 @@
-/*//@import 'libs/vars';*/
-/*//@import 'libs/functions';*/
-/*//@import 'libs/mixins';*/
-/*//@import 'libs/vendor';*/
-/*//@import 'libs/breakpoints';*/
-/*//@import 'libs/html-grid';*/
-/*//@import 'font-awesome.min.css';*/
-/*//@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic');*/
 
-/*!**/
-	/*Forty by HTML5 UP*/
-	/*html5up.net | @ajlkn*/
-	/*Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)*/
-/**!*/
+@import "../.././bootstrap/bootstrap.scss";
+@import "normalize";
+@import "variables";
 
-/*// Breakpoints.*/
+//----- Nav Menus -----
+@import "nav-menus/header-nav";
+@import 'nav-menus/side-nav';
 
-	/*//@include breakpoints((*/
-	/*//	xlarge:    (1281px,   1680px   ),*/
-	/*//	large:     (981px,    1280px   ),*/
-	/*//	medium:    (737px,    980px    ),*/
-	/*//	small:     (481px,    736px    ),*/
-	/*//	xsmall:    (361px,    480px    ),*/
-	/*//	xxsmall:   (null,     360px    )*/
-	/*//));*/
 
-/*// Mixins.*/
 
-	/*//@mixin inner {*/
-	/*//	> .inner {*/
-	/*//		@include padding(4em, 0);*/
-	/*//		margin: 0 auto;*/
-	/*//		max-width: _size(inner);*/
-	/*//		width: calc(100% - 6em);*/
-    /*//*/
-	/*//		@include breakpoint('<=small') {*/
-	/*//			@include padding(3em, 0);*/
-	/*//			width: calc(100% - 3em);*/
-	/*//		}*/
-	/*//	}*/
-	/*//}*/
 
-/*// Base.*/
+#main{
 
-	/*//@import 'base/reset';*/
-	/*//@import 'base/page';*/
-	/*//@import 'base/typography';*/
+  margin-left:0px;
+  margin-right: 0px;
 
-/*// Component.*/
+  width: 100vw;
 
-	/*//@import 'components/row';*/
-	/*//@import 'components/section';*/
-	/*//@import 'components/form';*/
-	/*//@import 'components/box';*/
-	/*//@import 'components/icon';*/
-	/*//@import 'components/image';*/
-	/*//@import 'components/list';*/
-	/*//@import 'components/actions';*/
-	/*//@import 'components/icons';*/
-	/*//@import 'components/pagination';*/
-	/*//@import 'components/table';*/
-	/*//@import 'components/button';*/
-	/*//@import 'components/tiles';*/
-	/*//@import 'components/contact-method';*/
-	/*//@import 'components/spotlights';*/
-
-/*// Layout.*/
-
-	/*//@import 'layout/header';*/
-	/*//@import 'layout/banner';*/
-	/*//@import 'layout/main';*/
-	/*//@import 'layout/contact';*/
-	/*//@import 'layout/footer';*/
-	/*//@import 'layout/wrapper';*/
-	/*//@import 'layout/menu';*/
-
-body {
-	background: red
+  background-color: yellow;
 }
-/*}*/
+
+
+.banner{
+
+  position: relative;
+  background: lightgrey;
+  background: url("https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg") no-repeat;
+  z-index: 0;
+
+  .banner-top-menu{
+
+    @include header-nav;
+    @include side-nav;
+
+  }
+
+
+
+  .overlay{
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    z-index: 1;
+
+    width: 100%;
+    height: 43rem;
+    opacity: .3;
+    background-color: #01549b;
+  }
+
+}
+
+
+.banner-content{
+  color: white;
+
+
+  h1{
+    margin-left: 2rem;
+    z-index: 2;
+  }
+
+  p{
+    margin-left: 2rem;
+    z-index: 2;
+  }
+
+  .banner-column{
+    z-index: 3;
+
+    .banner-btn-row{
+      margin-top: 5rem;
+      margin-left: auto;
+      margin-right: auto;
+      width:10rem;
+      height: 3rem;
+      border-style: solid;
+
+
+
+    }
+  }
+
+}
+
+
+
+
+
+
+
+//remove the top nav menu for small screens
+@media(min-width: 2px)and(max-width: 479px) {
+  .header-nav-list{
+    display: none
+  }
+
+  .banner{
+    background-size: 30rem;
+    height: 100vh;
+  }
+
+  .banner-content{
+    h1{
+      font-size: 2rem;
+    }
+
+    p{
+      font-size: 1rem;
+    }
+
+    .banner-btn-row{
+      display: none;
+    }
+  }
+}
+
+
+@media(min-width: 480px)and(max-width:680px){
+
+  .navbar{
+    display: none;
+  }
+
+  .banner{
+    background-size: 50rem 35rem;
+    height: 100vh;
+  }
+}
+
+
+@media(min-width: 681px)and(max-width:960px){
+
+  .navbar{
+    display: none;
+  }
+
+  .banner{
+    background-size: 65rem 45rem;
+    height: 100vh;
+
+    .banner-content{
+      margin-top: 7rem;
+      //background-color: lime;
+    }
+  }
+}
+
+@media(min-width: 961px)and(max-width:1280px){
+
+  .navbar{
+    display: none;
+  }
+
+  .banner{
+    height: 100vh;
+
+    .banner-content{
+      margin-top: 7rem;
+      //background-color: lime;
+    }
+  }
+
+
+}

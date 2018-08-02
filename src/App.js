@@ -1,22 +1,13 @@
 import React , {Component}from 'react'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import routes from './routes'
-import mainCss from './assets/css/main.css';
+require('./assets/css/main.css');
+import TestComp from './components/testComp'
 
-import IndexMain from './components/IndexMain'
-import NavContainer from "./components/layout/nav-container";
+
 import Banner from './components/Banner'
-import BannerType from './components/layout/banner-type'
-
-import AboutUs from './components/landing/about-us'
-import Services from './components/landing/services'
-import Contact from './components/landing/contact'
-
-import TestMenu from "./components/testComp";
 
 //THIS IS THE SASS FIX Branch
-
-// dev": "concurrently \"npm run start\" \"npm run front\""
 
 class App extends Component{
 
@@ -31,47 +22,38 @@ class App extends Component{
 
     render(){
 
-
         return(
-                <Router>
-                    <div>
-                        {/*<IndexMain/>*/}
+
+            <div id='main'>
 
 
-                        <NavContainer/>
+                <div>
+                    {/*site map for routes*/}
+                    {/*<Route path='/test' component={TestComp}/>*/}
 
-                        <Route exact path='/' component = { Banner} />
-
-
-                        <Route exact path='/:id' component = { BannerType} />
-
-
+                    <Route path='/' component={Banner} />
+                </div>
 
 
-                        <Route exact path ='/' component={IndexMain}/>
-                        <Route exact path ='/about-us' component={AboutUs}/>
-                        <Route exact path ='/services' component={Services}/>
-                        <Route exact path ='/contact' component={Contact}/>
+                {/*<div className='info'>*/}
+                    {/*<h4>*/}
+                        {/*Don't delete me: I'm coming from app.js*/}
+                    {/*</h4>*/}
+                    {/*<small className='bg-info'>*/}
+                        {/*body color pink is in the _normalize partial : yellow is the #main div*/}
+                    {/*</small>*/}
+                {/*</div>*/}
 
-
-
-                        <Route path = '/test' component={TestMenu}/>
-
-                        {/*<Route exact path='/' component = { App } />*/}
-
-                        {/*<Switch>*/}
-                            {/*<Route exact path='/landing/:id' component ={LandingMain}/>*/}
-                            {/*<Route exact path='/landing' component ={LandingMain}/>*/}
-                            {/*<Route exact path='/contact' component ={TextFieldGroup}/>*/}
+                {/*<div>*/}
+                    {/*<small className='bg-info'>*/}
+                        {/*yellow is coming from the #main div*/}
+                    {/*</small>*/}
+                {/*</div>*/}
 
 
 
-                        {/*</Switch>*/}
 
-
-
-                    </div>
-                </Router>
+            </div>
 
         )
     }
