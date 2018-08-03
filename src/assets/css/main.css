@@ -6299,6 +6299,7 @@ template {
     #main .both-navs .navbar {
       margin: 0px;
       padding: 0px;
+      display: inline-block;
       background-color: purple;
       overflow: hidden;
       height: 63px; }
@@ -6348,6 +6349,10 @@ template {
         right: 22px;
         font-size: 36px;
         margin-left: 50px; }
+    #main .both-navs .test {
+      display: inline-block;
+      background-color: pink;
+      float: right; }
   #main .landing-main-container {
     margin: 0px;
     padding: 0px;

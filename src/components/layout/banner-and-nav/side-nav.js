@@ -55,19 +55,15 @@ class NavSlideIcon extends Component{
                         {/*-----    -----   -----   Header Nav Links     ----    ----    ----    */}
 
 
-                        <div>
-                            CAN YOU SEE ME?
-                        </div>
 
+                        {/*<ul className='navbar-nav'>*/}
+                            {/*<li><a href="#" className='navbar-nav-a'>Home</a></li>*/}
+                            {/*<li><a href="#" className='navbar-nav-a'>About Us</a></li>*/}
+                            {/*<li><a href="#" className='navbar-nav-a'>Services</a></li>*/}
+                            {/*<li><a href="#" className='navbar-nav-a'>Gallery</a></li>*/}
+                            {/*<li><a href="#" className='navbar-nav-a'>Contact</a></li>*/}
 
-                        <ul className='navbar-nav'>
-                            <li><a href="#" className='navbar-nav-a'>Home</a></li>
-                            <li><a href="#" className='navbar-nav-a'>About Us</a></li>
-                            <li><a href="#" className='navbar-nav-a'>Services</a></li>
-                            <li><a href="#" className='navbar-nav-a'>Gallery</a></li>
-                            <li><a href="#" className='navbar-nav-a'>Contact</a></li>
-
-                        </ul>
+                        {/*</ul>*/}
 
                         I'm the navbar
                     </div>
@@ -90,6 +86,8 @@ class NavSlideIcon extends Component{
 
                     {/*slideNav uses this as a ref from where to push off*/}
                     {/*<div id='main-menu'>TEST FOR RESPONSE</div>*/}
+
+                    <div className='test'>I'll hold the header navs</div>
 
                 </div>
 
