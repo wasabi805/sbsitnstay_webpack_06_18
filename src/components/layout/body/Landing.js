@@ -29,7 +29,7 @@ class Landing extends Component{
 
                         {/* -----   -----   GALLERY    -----   -----   */}
                         <div className='landing-tile col-7 '>
-                            <img src="https://res.cloudinary.com/ocampot/image/upload/v1533245189/tmnt_2003_group_selfie_by_autobot2.jpg" alt=""/>
+                            <img src="https://res.cloudinary.com/ocampot/image/upload/v1532398583/sbsitnstay/dog_leash.jpg" alt=""/>
                         </div>
 
 
