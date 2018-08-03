@@ -3,6 +3,7 @@
 @import "presets/normalize";
 @import "presets/variables";
 @import "presets/resets";
+@import "body/body-parent";
 @import "body/landing";
 
 
@@ -31,6 +32,7 @@
 
   @include main-navs;
   @include banner;
+  @include body-parent;
   @include landing;
 
 

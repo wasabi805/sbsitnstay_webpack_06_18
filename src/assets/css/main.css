@@ -6359,25 +6359,15 @@ template {
       z-index: 2; }
   #main .banner-parent {
     background: lightgrey;
-    position: relative;
-    min-width: 960px; }
+    position: relative; }
     #main .banner-parent .banner-default-img {
       width: 100%; }
-  #main .landing-main {
+  #main .landing-main .col {
     margin: 0px;
     padding: 0px; }
-    #main .landing-main .col {
-      margin: 0px;
-      padding: 0px; }
-    #main .landing-main .landing-row {
-      margin: 0px;
-      padding: 0px;
-      min-width: 960px; }
-      #main .landing-main .landing-row .landing-tile {
-        margin: 0px;
-        padding: 0px;
-        height: 31em;
-        width: 60.5em; }
-        #main .landing-main .landing-row .landing-tile img {
-          min-width: 100%;
-          max-height: 100%; }
+  #main .landing-main .landing-row .landing-tile {
+    max-width: 100%;
+    height: 24rem; }
+    #main .landing-main .landing-row .landing-tile img {
+      width: 100%;
+      height: 100%; }
