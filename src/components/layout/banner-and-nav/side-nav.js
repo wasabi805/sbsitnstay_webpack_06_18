@@ -87,7 +87,7 @@ class NavSlideIcon extends Component{
                     {/*slideNav uses this as a ref from where to push off*/}
                     {/*<div id='main-menu'>TEST FOR RESPONSE</div>*/}
 
-                    <div className='test'>I'll hold the header navs</div>
+                    <div className='nav-header-links'>I'll hold the header navs</div>
 
                 </div>
 

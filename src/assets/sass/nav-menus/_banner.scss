@@ -1,5 +1,6 @@
+@import ".././presets/resets";
 @import "header-nav";
-@import "side-nav";
+@import "header-and-side-nav";
 
 @mixin banner {
 
@@ -9,85 +10,21 @@
     //position: relative;
     background: lightgrey;
 
+    position: relative;
+    //z-index: 0;
+    min-width: 960px;
+
+    .banner-default-img{
+      width: 100%;
+    }
+
+
+
   }
+
+
+
+
 }
 
 
-////remove the top nav menu for small screens
-//@media(min-width: 2px)and(max-width: 479px) {
-//  .header-nav-list{
-//    display: none
-//  }
-//
-//
-//}
-//
-//@media(max-width: 480px){
-//
-//  .navbar{
-//    display: none;
-//  }
-//
-//  .banner{
-//    background-size: 65rem 45rem;
-//    height: 100vh;
-//  }
-//}
-//
-//
-//@media(max-width:960px){
-//
-//  .navbar{
-//    display: none;
-//  }
-//
-//  .banner{
-//    background-size: 65rem 45rem;
-//    height: 100vh;
-//
-//    .banner-content{
-//      //margin-top: 7rem;
-//      //background-color: lime;
-//    }
-//  }
-//}
-//
-//@media(max-width:1280px){
-//
-//  #main{
-//    color: #7a43b6;
-//  }
-//
-//  .navbar{
-//    display: none;
-//  }
-//
-//  //.banner{
-//  //  background-size: 90rem 45rem;
-//  //  height: 100vh;
-//  //  width: 100vw;
-//  //
-//  //  .banner-content{
-//  //    margin-top: 7rem;
-//  //    //background-color: lime;
-//  //  }
-//  //}
-//}
-//
-//
-////YOU SCREEN SIZE
-//@media(max-width:1440px) {
-//
-//  #main {
-//    color: #7a43b6;
-//  }
-//
-//  .navbar {
-//    display: none;
-//  }
-//
-//  .banner-content{
-//    //margin-top: 8rem;
-//  }
-
-//}

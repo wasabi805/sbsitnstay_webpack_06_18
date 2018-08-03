@@ -9,24 +9,28 @@
 //----- Nav Menus -----
 //@import "nav-menus/header-nav";
 //@import 'nav-menus/side-nav';
-//@import "nav-menus/banner";
 
 
-@import "nav-menus/side-nav";
+@import "nav-menus/banner";
+@import "nav-menus/header-and-side-nav";
+
+*{
+  box-sizing: border-box;
+}
 
 
 
 #main{
 
-  margin-left:0px;
-  margin-right: 0px;
+  min-width: 960px;//prevent main div from resizing
 
-  width: 100vw;
+
+
 
   background-color: yellow;
 
-  @include main-nav;
-  //@include banner;
+  @include main-navs;
+  @include banner;
   @include landing;
 
 

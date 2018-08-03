@@ -6288,14 +6288,17 @@ template {
 [hidden] {
   display: none; }
 
+* {
+  box-sizing: border-box; }
+
 #main {
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 100vw;
+  min-width: 960px;
   background-color: yellow; }
   #main .both-navs {
     margin: 0px;
-    padding: 0px; }
+    padding: 0px;
+    position: absolute;
+    z-index: 1; }
     #main .both-navs .navbar {
       margin: 0px;
       padding: 0px;
@@ -6326,7 +6329,7 @@ template {
       height: 100%;
       width: 0px;
       position: fixed;
-      z-index: 4;
+      z-index: 2;
       top: 0;
       left: 0;
       background-color: #111;
@@ -6349,24 +6352,32 @@ template {
         right: 22px;
         font-size: 36px;
         margin-left: 50px; }
-    #main .both-navs .test {
+    #main .both-navs .nav-header-links {
       display: inline-block;
-      background-color: pink;
-      float: right; }
-  #main .landing-main-container {
+      background-color: blue;
+      float: right;
+      z-index: 2; }
+  #main .banner-parent {
+    background: lightgrey;
+    position: relative;
+    min-width: 960px; }
+    #main .banner-parent .banner-default-img {
+      width: 100%; }
+  #main .landing-main {
     margin: 0px;
-    padding: 0px;
-    height: 780px;
-    color: red; }
-    #main .landing-main-container .row {
+    padding: 0px; }
+    #main .landing-main .col {
       margin: 0px;
       padding: 0px; }
-      #main .landing-main-container .row .landing-col {
+    #main .landing-main .landing-row {
+      margin: 0px;
+      padding: 0px;
+      min-width: 960px; }
+      #main .landing-main .landing-row .landing-tile {
         margin: 0px;
         padding: 0px;
-        color: #5cb85c;
-        background-color: #7a43b6;
-        height: 25rem; }
-        #main .landing-main-container .row .landing-col .card .card-img {
-          max-width: 100%;
-          height: auto; }
+        height: 31em;
+        width: 60.5em; }
+        #main .landing-main .landing-row .landing-tile img {
+          min-width: 100%;
+          max-height: 100%; }

@@ -2,26 +2,26 @@
 
 
 
-@mixin main-nav {
+@mixin main-navs {
   //-----	SAME AS <side-nav/>	-----
   //----- -----parent ----- -----
 
   .both-navs{
     margin: 0px;
     padding: 0px;
-
-
+    position: absolute;//set as absolute so it can overlay with the banner
+    z-index: 1;
 
     //----- -----CH1 OF 2----- -----
 
-    //NOTE CH1 is all for top header
+    //NOTE CH1 holds the ICON for the slide menu AND the container for the header nav links
     .navbar {
 
       margin: 0px;
       padding: 0px;
       display: inline-block;
 
-      //background-color: #3b5998;
+
       background-color: purple;
       overflow: hidden;
       height: 63px;
@@ -49,13 +49,6 @@
 
       }
 
-
-
-
-
-
-
-
       .open-slide{
         //NOTE the colors for icon are in the stroke
         .hamburger-icon{
@@ -70,15 +63,13 @@
 
 
 
-
-
-    //  ----  --- SLIDE MENU (meat & potatoes) --- ----  ----
+    //  ----  --- SLIDE MENU (ACTUAL) --- ----  ----
 
     .side-nav{
       height: 100%;
       width: 0px;
       position: fixed;
-      z-index: 4;
+      z-index: 2;
 
       top: 0;
       left: 0;
@@ -110,19 +101,15 @@
         margin-left: 50px;
       }
 
-
-
-
     }
 
+    .nav-header-links{
+      display: inline-block;
+      background-color: blue;
+      float: right;
+      z-index: 2;
 
-
-  .test{
-    display: inline-block;
-    background-color: pink;
-    float: right;
-
-  }
+    }
 
 
   }// end both-navs
