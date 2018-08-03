@@ -1,0 +1,40 @@
+//LANDING STYLES
+@import ".././presets/resets";
+
+@mixin landing{
+
+  .landing-main-container{
+    margin: 0px;
+    padding: 0px;
+
+    height: 780px;
+
+    color: red;
+
+    .row{
+      @include reset-margin-padding;
+
+      .landing-col{
+        @include reset-margin-padding;
+        
+        color: #5cb85c;
+        background-color: #7a43b6;
+        height: 25rem;
+
+        .card{
+
+
+
+          .card-img{
+            @include reset-fit-img-to-bg
+          }
+
+
+        }
+      }
+    }
+
+  }
+
+
+}

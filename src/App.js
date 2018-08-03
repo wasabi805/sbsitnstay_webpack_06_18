@@ -2,7 +2,10 @@ import React , {Component}from 'react'
 import {Link, Route, Switch} from 'react-router-dom';
 import routes from './routes'
 require('./assets/css/main.css');
-import TestComp from './components/testComp'
+
+
+import Navbar from './components/layout/banner-and-nav/side-nav'
+
 
 import BannerParent from './components/BannerParent'
 import BodyParent from './components/BodyParent'
@@ -22,8 +25,10 @@ class App extends Component{
         return(
 
             <div id='main'>
+                <Route path='/' component={Navbar} />
                 <Route path='/' component={BannerParent} />
                 <Route path='/' component={BodyParent}/>
+
 
             <small className='im-hidden-in-appjs'>
                 {/*<div className='info'>*/}

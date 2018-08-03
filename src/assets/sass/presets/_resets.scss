@@ -1,0 +1,10 @@
+@mixin reset-margin-padding {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+@mixin reset-fit-img-to-bg{
+  max-width: 100%;
+  height: auto;
+}

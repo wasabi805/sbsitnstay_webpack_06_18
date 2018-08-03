@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Route, Link , Switch} from 'react-router-dom';
 
-class NavBarMenu extends Component{
+class NavSlideIcon extends Component{
 
     constructor(props){
         super(props);
@@ -34,57 +34,71 @@ class NavBarMenu extends Component{
 
     render(){
         return(
-            <div>
-                <nav className='navbar bg-danger'>
+                <div className='both-navs container'>
+                    <div className='navbar'>
 
-                    <span className='open-slide'>
-                        {/*TRIGGERS OPEN SLIDE MENU*/}
-                        <a href='#'
-                            onClick={this.onOpenSlideMenu}
-                        >
-                            <svg width='30' height='30'>
-                                <path d='M0,5 30,5'   stroke='#fff' strokeWidth='5'/>
-                                <path d='M0,14 30,14' stroke='#fff' strokeWidth='5'/>
-                                <path d='M0,23 30,23' stroke='#fff' strokeWidth='5'/>
-                            </svg>
-                        </a>
-                    </span>
+                        {/* -----   -----   -----   Slide (hamburger-icon) icon   -----   -----*/}
+                        <span className='open-slide'>
 
-                    <ul className='navbar-nav '>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/about-us'>Wu-tang</Link></li>
-                        <li><Link to='/services'>Services</Link></li>
-                        <li><Link to='/gallery'>Gallery</Link></li>
-                        <li><Link to='contact'>Contact</Link></li>
+                            <a href='#' onClick={this.onOpenSlideMenu}>
 
-                    </ul>
-                </nav>
+                                <svg className='hamburger-icon'>
+                                    <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+                                    <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+                                    <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+                                </svg>
 
-                <div id='side-menu' className='side-nav'>
-                    {/*TRIGGERS CLOSE SLIDE MENU*/}
-                    <a href='#'
-                       className='btn-close'
-                       onClick={this.onCloseSlideMenu}>
-                        {/*SVG "X"*/}
-                        &times;
-                    </a>
+                            </a>
 
-                    <a><Link to='/' onClick={this.onCloseSlideMenu}>Home</Link></a>
+                        </span>
 
-                    <a><Link to='/about-us' onClick={this.onCloseSlideMenu}>About us</Link></a>
-                    <a><Link to='/services' onClick={this.onCloseSlideMenu}>Services</Link></a>
-                    <a><Link to='/gallery' onClick={this.onCloseSlideMenu}>Gallery</Link></a>
-                    <a><Link to='/contact'onClick={this.onCloseSlideMenu}>Contact</Link></a>
+                        {/*-----    -----   -----   Header Nav Links     ----    ----    ----    */}
+
+
+                        <div>
+                            CAN YOU SEE ME?
+                        </div>
+
+
+                        <ul className='navbar-nav'>
+                            <li><a href="#" className='navbar-nav-a'>Home</a></li>
+                            <li><a href="#" className='navbar-nav-a'>About Us</a></li>
+                            <li><a href="#" className='navbar-nav-a'>Services</a></li>
+                            <li><a href="#" className='navbar-nav-a'>Gallery</a></li>
+                            <li><a href="#" className='navbar-nav-a'>Contact</a></li>
+
+                        </ul>
+
+                        I'm the navbar
+                    </div>
+
+
+
+
+                    {/*-----    -----   -----   Slide Menu(contains the li's)     ----    ----    ----    */}
+                    {/*NOTE: id is used only for js to target*/}
+
+                    <div id="side-menu" className="side-nav">
+                        {/*this is the 'X' to close the menu*/}
+                        <a href="#" className='btn-close' onClick={this.onCloseSlideMenu}>&times; </a>
+                        <a href="#" >Home </a>
+                        <a href="#" >About Us </a>
+                        <a href="#" >Services </a>
+                        <a href="#" >Gallery </a>
+                        <a href="#" >Contact </a>
+                    </div>
+
+                    {/*slideNav uses this as a ref from where to push off*/}
+                    {/*<div id='main-menu'>TEST FOR RESPONSE</div>*/}
+
                 </div>
-
-            </div>
 
         )
     }
 
 };
 
-export default NavBarMenu
+export default NavSlideIcon
 
 
 

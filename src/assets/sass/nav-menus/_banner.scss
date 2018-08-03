@@ -4,56 +4,90 @@
 @mixin banner {
 
   //THE MAIN BANNER CONTAINER
-  .banner{
+  .banner-parent {
 
-    position: relative;
+    //position: relative;
     background: lightgrey;
-    background: url("https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg") no-repeat;
-    z-index: 0;
 
-    //Formats the slide menu && header menu li's
-    .banner-top-menu{
-      @include header-nav;
-      @include side-nav;
-    }
-    .overlay{
-      margin: 0px;
-      padding: 0px;
-      position: absolute;
-      z-index: 1;
-
-      width: 100%;
-      height: 43rem;
-      opacity: .3;
-      background-color: #01549b;
-    }
-  }
-
-  //CONTAINS TITLE, TEXT, and BUTTON
-  .banner-content{
-    color: white;
-
-    h1{
-      margin-left: 2rem;
-      z-index: 2;
-    }
-
-    p{
-      margin-left: 2rem;
-      z-index: 2;
-    }
-
-    .banner-column{
-      z-index: 3;
-
-      .banner-btn-row{
-        margin-top: 5rem;
-        margin-left: auto;
-        margin-right: auto;
-        width:10rem;
-        height: 3rem;
-        border-style: solid;
-      }
-    }
   }
 }
+
+
+////remove the top nav menu for small screens
+//@media(min-width: 2px)and(max-width: 479px) {
+//  .header-nav-list{
+//    display: none
+//  }
+//
+//
+//}
+//
+//@media(max-width: 480px){
+//
+//  .navbar{
+//    display: none;
+//  }
+//
+//  .banner{
+//    background-size: 65rem 45rem;
+//    height: 100vh;
+//  }
+//}
+//
+//
+//@media(max-width:960px){
+//
+//  .navbar{
+//    display: none;
+//  }
+//
+//  .banner{
+//    background-size: 65rem 45rem;
+//    height: 100vh;
+//
+//    .banner-content{
+//      //margin-top: 7rem;
+//      //background-color: lime;
+//    }
+//  }
+//}
+//
+//@media(max-width:1280px){
+//
+//  #main{
+//    color: #7a43b6;
+//  }
+//
+//  .navbar{
+//    display: none;
+//  }
+//
+//  //.banner{
+//  //  background-size: 90rem 45rem;
+//  //  height: 100vh;
+//  //  width: 100vw;
+//  //
+//  //  .banner-content{
+//  //    margin-top: 7rem;
+//  //    //background-color: lime;
+//  //  }
+//  //}
+//}
+//
+//
+////YOU SCREEN SIZE
+//@media(max-width:1440px) {
+//
+//  #main {
+//    color: #7a43b6;
+//  }
+//
+//  .navbar {
+//    display: none;
+//  }
+//
+//  .banner-content{
+//    //margin-top: 8rem;
+//  }
+
+//}

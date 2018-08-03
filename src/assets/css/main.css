@@ -6293,126 +6293,75 @@ template {
   margin-right: 0px;
   width: 100vw;
   background-color: yellow; }
-  #main .banner {
-    position: relative;
-    background: lightgrey;
-    background: url("https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg") no-repeat;
-    z-index: 0; }
-    #main .banner .banner-top-menu .header-nav-list {
-      float: right; }
-      #main .banner .banner-top-menu .header-nav-list .list-inline-item li {
-        list-style-type: none; }
-      #main .banner .banner-top-menu .header-nav-list .list-inline-item .nav-link {
-        color: white;
-        z-index: 3; }
-    #main .banner .banner-top-menu .navbar {
-      opacity: 0.8;
+  #main .both-navs {
+    margin: 0px;
+    padding: 0px; }
+    #main .both-navs .navbar {
+      margin: 0px;
+      padding: 0px;
+      background-color: purple;
       overflow: hidden;
-      height: 4rem;
-      width: 6rem;
-      z-index: 3; }
-    #main .banner .banner-top-menu .navbar a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px; }
-    #main .banner .banner-top-menu .navbar ul {
-      padding: 8px 0 0 0;
-      list-style: none; }
-    #main .banner .banner-top-menu .navbar a:hover {
-      background-color: #ddd;
-      color: #000; }
-    #main .banner .banner-top-menu .side-nav {
+      height: 63px; }
+      #main .both-navs .navbar ul {
+        padding: 8px 0 0 0;
+        list-style: none; }
+      #main .both-navs .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        color: red;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 16px; }
+        #main .both-navs .navbar a:hover {
+          background-color: lightgrey;
+          color: black; }
+      #main .both-navs .navbar .open-slide .hamburger-icon {
+        width: 30px;
+        height: 30px;
+        background-color: cyan; }
+    #main .both-navs .side-nav {
       height: 100%;
-      width: 0;
+      width: 0px;
       position: fixed;
-      z-index: 3;
+      z-index: 4;
       top: 0;
       left: 0;
       background-color: #111;
-      opacity: 0.7;
+      opacity: 0.9;
       overflow-x: hidden;
       padding-top: 60px;
       transition: 0.5s; }
-    #main .banner .banner-top-menu .side-nav a {
-      padding: 10px 10px 10px 30px;
-      text-decoration: none;
-      font-size: 22px;
-      color: #ccc;
-      display: block;
-      transition: 0.3s;
-      border: none; }
-    #main .banner .banner-top-menu .side-nav a:hover {
-      color: #fff; }
-    #main .banner .banner-top-menu .side-nav .btn-close {
-      position: absolute;
-      top: 0;
-      right: 22px;
-      font-size: 36px;
-      margin-left: 50px; }
-    #main .banner .overlay {
+      #main .both-navs .side-nav a {
+        padding: 10px 10px 10px 30px;
+        text-decoration: none;
+        font-size: 22px;
+        color: lightgrey;
+        display: block;
+        transition: 0.3s; }
+        #main .both-navs .side-nav a:hover {
+          background-color: white; }
+      #main .both-navs .side-nav .btn-close {
+        position: absolute;
+        top: 0;
+        right: 22px;
+        font-size: 36px;
+        margin-left: 50px; }
+  #main .landing-main-container {
+    margin: 0px;
+    padding: 0px;
+    height: 780px;
+    color: red; }
+    #main .landing-main-container .row {
       margin: 0px;
-      padding: 0px;
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      height: 43rem;
-      opacity: .3;
-      background-color: #01549b; }
-  #main .banner-content {
-    color: white; }
-    #main .banner-content h1 {
-      margin-left: 2rem;
-      z-index: 2; }
-    #main .banner-content p {
-      margin-left: 2rem;
-      z-index: 2; }
-    #main .banner-content .banner-column {
-      z-index: 3; }
-      #main .banner-content .banner-column .banner-btn-row {
-        margin-top: 5rem;
-        margin-left: auto;
-        margin-right: auto;
-        width: 10rem;
-        height: 3rem;
-        border-style: solid; }
-
-@media (min-width: 2px) and (max-width: 479px) {
-  .header-nav-list {
-    display: none; }
-  .banner {
-    background-size: 30rem;
-    height: 100vh; }
-  .banner-content h1 {
-    font-size: 2rem; }
-  .banner-content p {
-    font-size: 1rem; }
-  .banner-content .banner-btn-row {
-    display: none; } }
-
-@media (min-width: 480px) and (max-width: 680px) {
-  .navbar {
-    display: none; }
-  .banner {
-    background-size: 50rem 35rem;
-    height: 100vh; } }
-
-@media (min-width: 681px) and (max-width: 960px) {
-  .navbar {
-    display: none; }
-  .banner {
-    background-size: 65rem 45rem;
-    height: 100vh; }
-    .banner .banner-content {
-      margin-top: 7rem; } }
-
-@media (min-width: 961px) and (max-width: 1280px) {
-  .navbar {
-    display: none; }
-  .banner {
-    height: 100vh; }
-    .banner .banner-content {
-      margin-top: 7rem; } }
+      padding: 0px; }
+      #main .landing-main-container .row .landing-col {
+        margin: 0px;
+        padding: 0px;
+        color: #5cb85c;
+        background-color: #7a43b6;
+        height: 25rem; }
+        #main .landing-main-container .row .landing-col .card .card-img {
+          max-width: 100%;
+          height: auto; }

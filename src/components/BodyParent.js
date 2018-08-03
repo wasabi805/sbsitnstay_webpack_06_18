@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import Landing from './layout/body/Landing'
 
 class BodyParent extends Component{
     render(){
         return(
-            <small>This will be the body</small>
+            <div className='body-parent'>
+                <Landing/>
+            </div>
         )
     }
 }
