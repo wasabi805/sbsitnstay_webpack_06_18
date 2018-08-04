@@ -1,0 +1,16 @@
+read this link to see how containers,row and columns are formatted : 
+Fixed the landing tiles:
+
+https://docs.google.com/spreadsheets/d/1uZY3dQlgquO9AmVKg9S6_TGALaOYbwniZrSrtl-c7f0/edit#gid=0
+
+w3's basic html dynamic section is also a good resource.
+
+
+Also, see the sass mixin for style props for element containing the img and the style props for the image itself. 
+Keep in mind, that in order to make DOM elements dynamic, the dynamic elements resize according some default value: that default value is the px size of the screen--> 
+typically that size is 960px for the content-width <--see src/assests/sass/presets/_variables.scss. 
+
+Also just as important, the <meta> el in apps root index.html needs to define the content width of the browser window:  <meta> el's content attr needs to include the : 
+	- width, 
+	- initial-scale,  
+	- shink to fit. 
