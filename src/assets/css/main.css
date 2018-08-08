@@ -6297,8 +6297,10 @@ template {
   #main .both-navs {
     margin: 0px;
     padding: 0px;
-    position: absolute;
-    z-index: 1; }
+    position: relative;
+    width: auto;
+    z-index: 2;
+    background-color: lightgrey; }
     #main .both-navs .navbar {
       margin: 0px;
       padding: 0px;
@@ -6354,7 +6356,7 @@ template {
         margin-left: 50px; }
     #main .both-navs .nav-header-links {
       display: inline-block;
-      background-color: blue;
+      background-color: #b5b9bf;
       float: right;
       z-index: 2; }
   #main .banner-parent {

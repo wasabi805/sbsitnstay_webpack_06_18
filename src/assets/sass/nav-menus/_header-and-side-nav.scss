@@ -9,9 +9,10 @@
   .both-navs{
     margin: 0px;
     padding: 0px;
-    position: absolute;//set as absolute so it can overlay with the banner
-    //width: 100%;
-    z-index: 1;
+    position: relative;//set as absolute so it can overlay with the banner
+    width: auto;
+    z-index: 2;
+    background-color: lightgrey;
 
     //----- -----CH1 OF 2----- -----
 
@@ -107,7 +108,7 @@
 
     .nav-header-links{
       display: inline-block;
-      background-color: blue;
+      background-color: #b5b9bf;
       float: right;
       z-index: 2;
 

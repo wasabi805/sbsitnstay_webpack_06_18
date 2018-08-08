@@ -34,8 +34,9 @@ class NavSlideIcon extends Component{
 
     render(){
         return(
-                <div className='both-navs container'>
-                    <div className='navbar'>
+                <div className='both-navs container-fluid'>
+
+                    <div className='navbar row bg-success'>
 
                         {/* -----   -----   -----   Slide (hamburger-icon) icon   -----   -----*/}
                         <span className='open-slide'>
@@ -54,8 +55,6 @@ class NavSlideIcon extends Component{
 
                         {/*-----    -----   -----   Header Nav Links     ----    ----    ----    */}
 
-
-
                         {/*<ul className='navbar-nav'>*/}
                             {/*<li><a href="#" className='navbar-nav-a'>Home</a></li>*/}
                             {/*<li><a href="#" className='navbar-nav-a'>About Us</a></li>*/}
@@ -64,8 +63,6 @@ class NavSlideIcon extends Component{
                             {/*<li><a href="#" className='navbar-nav-a'>Contact</a></li>*/}
 
                         {/*</ul>*/}
-
-                        I'm the navbar
                     </div>
 
 
@@ -87,7 +84,25 @@ class NavSlideIcon extends Component{
                     {/*slideNav uses this as a ref from where to push off*/}
                     {/*<div id='main-menu'>TEST FOR RESPONSE</div>*/}
 
-                    <div className='nav-header-links'>I'll hold the header navs</div>
+                    <div className='nav-header-links'>
+                        <ul class="nav nav-pills justify-content-end">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active">About us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
 
                 </div>
 

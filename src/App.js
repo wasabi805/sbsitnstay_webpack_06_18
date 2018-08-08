@@ -29,23 +29,6 @@ class App extends Component{
                 <Route path='/' component={BannerParent} />
                 <Route path='/' component={BodyParent}/>
 
-
-            <small className='im-hidden-in-appjs'>
-                {/*<div className='info'>*/}
-                    {/*<h4>*/}
-                        {/*Don't delete me: I'm coming from app.js*/}
-                    {/*</h4>*/}
-                    {/*<small className='bg-info'>*/}
-                        {/*body color pink is in the _normalize partial : yellow is the #main div*/}
-                    {/*</small>*/}
-                {/*</div>*/}
-
-                {/*<div>*/}
-                    {/*<small className='bg-info'>*/}
-                        {/*yellow is coming from the #main div*/}
-                    {/*</small>*/}
-                {/*</div>*/}
-            </small>
             </div>
 
         )
