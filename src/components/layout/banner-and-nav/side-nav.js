@@ -44,9 +44,9 @@ class NavSlideIcon extends Component{
                             <a href='#' onClick={this.onOpenSlideMenu}>
 
                                 <svg className='hamburger-icon'>
-                                    <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
-                                    <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
-                                    <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+                                    <path d="M0,5 30,5" stroke="#fff" strokeWidth="5"/>
+                                    <path d="M0,14 30,14" stroke="#fff" strokeWidth="5"/>
+                                    <path d="M0,23 30,23" stroke="#fff" strokeWidth="5"/>
                                 </svg>
 
                             </a>
@@ -85,21 +85,21 @@ class NavSlideIcon extends Component{
                     {/*<div id='main-menu'>TEST FOR RESPONSE</div>*/}
 
                     <div className='nav-header-links'>
-                        <ul class="nav nav-pills justify-content-end">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Home</a>
+                        <ul className="nav nav-pills justify-content-end">
+                            <li className="nav-item">
+                                <a href="#" className="nav-link">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link active">About us</a>
+                            <li className="nav-item">
+                                <a href="#" className="nav-link active">About us</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Services</a>
+                            <li className="nav-item">
+                                <a href="#" className="nav-link">Services</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Gallery</a>
+                            <li className="nav-item">
+                                <a href="#" className="nav-link">Gallery</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Contact</a>
+                            <li className="nav-item">
+                                <a href="#" className="nav-link">Contact</a>
                             </li>
                         </ul>
                     </div>
