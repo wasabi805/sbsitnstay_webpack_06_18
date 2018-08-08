@@ -4,23 +4,74 @@
 @mixin landing{
 
   .landing-main{
+    @include reset-margin-padding;
+    z-index: 0;
 
-    .col{
-      @include reset-margin-padding
-    }
 
     .landing-row{
+      z-index: 1;
 
-      .landing-tile{
 
-        max-width: 100%;
-        height: 24rem;
+      //TILES
+      .landing-col{
+        @include reset-margin-padding;
+        height: auto;
+        width: auto;
 
-        img{
+        z-index: 1;
+
+
+        .overlay{
+          background-color: #636c72; //KEEP THIS AS A POSSIBLE DEFAULT COLOR FOR ALL OVERLAYS
+          opacity: .6;
+          position: absolute;
+          //top: 0;
+          height: 28em;
           width: 100%;
-          height: 100%;
+          z-index: 2;
+
         }
+
+        .overlay-content{
+          position: absolute;
+          padding-left: 6em;
+          padding-top: 8em;
+          padding-bottom: 8em;
+          top: 10px;
+          color: white;
+          z-index: 4;
+
+
+          h1{
+            margin-bottom: 0.5em;
+
+            //display: inline-block;
+          }
+
+          .border{
+            border-bottom: 0.25em solid white;
+            width: 26em;
+            margin-bottom: 1em;
+          }
+
+
+
+        }
+
+        .landing-tile-img{
+          height: 28em;
+
+          img{
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+          }
+        }
+
+
       }
+
+
 
     }
 
