@@ -10,6 +10,7 @@
     margin: 0px;
     padding: 0px;
     position: absolute;//set as absolute so it can overlay with the banner
+    //width: 100%;
     z-index: 1;
 
     //----- -----CH1 OF 2----- -----
@@ -25,6 +26,7 @@
       background-color: purple;
       overflow: hidden;
       height: 63px;
+
 
 
       ul{

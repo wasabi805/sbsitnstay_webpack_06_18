@@ -6359,9 +6359,29 @@ template {
       z-index: 2; }
   #main .banner-parent {
     background: lightgrey;
+    height: 100vh;
     position: relative; }
     #main .banner-parent .banner-default-img {
-      width: 100%; }
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0; }
+    #main .banner-parent .banner-content {
+      position: relative;
+      height: 100%;
+      color: white;
+      padding-top: 8em;
+      padding-left: 5em;
+      padding-right: 5em; }
+      #main .banner-parent .banner-content h1 {
+        margin-bottom: 0px; }
+      #main .banner-parent .banner-content .banner-btn-row {
+        width: 100%;
+        height: 4em; }
+        #main .banner-parent .banner-content .banner-btn-row .banner-btn {
+          padding: 2em;
+          width: auto;
+          margin: auto; }
   #main .landing-main .col {
     margin: 0px;
     padding: 0px; }

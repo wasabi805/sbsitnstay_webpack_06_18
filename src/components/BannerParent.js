@@ -34,12 +34,8 @@ class Banner extends Component{
 
         return(
                 <div className='banner-parent'>
-
-
                     <img className='banner-default-img' src="https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg"/>
-
-
-
+                    <BannerContent/>
                 </div>
 
         )
