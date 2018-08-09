@@ -1,80 +1,55 @@
 import React, {Component} from 'react';
+import {Link, Route, Switch} from 'react-router-dom';
 
 import Landing from './layout/body/Landing'
 import AboutUs from './layout/body/AboutUs'
+import GenericBodyComp from './layout/body/GenericBodyComp'
+import TestComp01 from './testComp01'
+import TestComp02 from './testComp02'
 
+class BodyParent extends Component {
 
-
-
-class BodyParent extends Component{
-
-    constructor(props) {
+    constructor(props){
         super(props);
-        this.state= {
-            siteLocation: [{comp: <Landing/>} , {comp:  <AboutUs/>} ]
+        this.state={
+            isHidden01: true,
+            isHidden02: true
         };
 
-        this.checkLocation = this.checkLocation.bind(this);
-        this.mapLocation = this.mapLocation.bind(this);
-        this.setLocation=this.setLocation.bind(this);
-
+        this.toggleIsHidden01 = this.toggleIsHidden01.bind(this)
+        this.toggleIsHidden02 = this.toggleIsHidden02.bind(this)
     }
 
-    checkLocation(loc){
-        loc = this.props.location.pathname;
-        return loc
+    toggleIsHidden01(){
+        this.setState({isHidden01:!this.state.isHidden01})
     }
 
-    mapLocation(loc, locations){
-        //----  MAPPED SITE COMPS   ------
-        locations = this.state.siteLocation;
-        const mappedLocation = locations.map(obj=>{
-            const locationComp=[];
-
-            locationComp.comp= obj.comp ;
-
-            return locationComp
-        });
-        return mappedLocation
+    toggleIsHidden02(){
+        this.setState({isHidden02:!this.state.isHidden02})
     }
-
-    setLocation(loc, siteComps){
-
-        loc = this.checkLocation(); //check path after everything is mapped
-        siteComps = this.mapLocation();
-
-        let renderLocation =null;
-
-        if(loc ==='/'){
-            renderLocation = siteComps[0].comp;
-        }
-
-
-        if(loc ==='/about-us'){
-           renderLocation = siteComps[1].comp;
-        }
-
-        return renderLocation
-
-    }
-
 
     componentDidMount(){
-        this.checkLocation();
-        this.mapLocation();
-        this.setLocation();
+
+        console.log(this.props.location.pathname);
+        if(this.props.location.pathname === '/test01'){
+            this.toggleIsHidden01();
+        }
+
+        if(this.props.location.pathname === '/test02'){
+            this.toggleIsHidden02();
+        }
 
     }
+
     render(){
-
-        console.log(this.setLocation());
-
         return(
-            <div className='body-parent'>
-                {this.setLocation()}
+            <div>
+                {!this.state.isHidden01 && < TestComp01/>}
+                {!this.state.isHidden02 && < TestComp02/>}
             </div>
         )
     }
+
 }
 
 export default BodyParent

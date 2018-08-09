@@ -9,6 +9,7 @@ import Navbar from './components/layout/banner-and-nav/side-nav'
 
 import BannerParent from './components/BannerParent'
 import BodyParent from './components/BodyParent'
+import GenericBodyComp from './components/layout/body/GenericBodyComp'
 
 
 class App extends Component{
@@ -27,7 +28,12 @@ class App extends Component{
             <div id="main">
                 <Route path='/' component={Navbar} />
                 <Route path='/' component={BannerParent} />
+
                 <Route path='/' component={BodyParent}/>
+
+
+
+
 
             </div>
 
