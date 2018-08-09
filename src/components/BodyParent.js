@@ -10,43 +10,59 @@ class BodyParent extends Component{
 
     constructor(props) {
         super(props);
-        this.state={
-
+        this.state= {
+            siteLocation: [{comp: <Landing/>} , {comp:  <AboutUs/>} ]
         };
 
-        this.setLocation = this.setLocation.bind(this);
+        this.checkLocation = this.checkLocation.bind(this);
+        this.mapLocation = this.mapLocation.bind(this);
+        this.setLocation=this.setLocation.bind(this);
 
     }
 
-    setLocation(location){
+    checkLocation(loc){
+        loc = this.props.location.pathname;
+        return loc
+    }
 
-        location = this.props.location.pathname;
+    mapLocation(loc, locations){
+        //----  MAPPED SITE COMPS   ------
+        locations = this.state.siteLocation;
+        const mappedLocation = locations.map(obj=>{
+            const locationComp=[];
 
-        const setLocationComp=[];
+            locationComp.comp= obj.comp ;
 
-        const locations=[
-            <Landing/> ,
-            <AboutUs/>
-        ];
-        switch(location){
-            case '/landing' :
-                setLocationComp.push(locations[0]);
-                break;
+            return locationComp
+        });
+        return mappedLocation
+    }
+
+    setLocation(loc, siteComps){
+
+        loc = this.checkLocation(); //check path after everything is mapped
+        siteComps = this.mapLocation();
+
+        let renderLocation =null;
+
+        if(loc ==='/about-us'){
+           renderLocation = siteComps[1].comp;
         }
-        switch(location){
-            case '/about-us' :
-                setLocationComp.push(locations[1]);
-                break;
-        }
-        return setLocationComp
 
+        return renderLocation
 
     }
+
+
     componentDidMount(){
+        this.checkLocation();
+        this.mapLocation();
         this.setLocation();
 
     }
     render(){
+
+        console.log(this.setLocation());
 
         return(
             <div className='body-parent'>
