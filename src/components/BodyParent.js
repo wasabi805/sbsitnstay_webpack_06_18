@@ -45,6 +45,11 @@ class BodyParent extends Component{
 
         let renderLocation =null;
 
+        if(loc ==='/'){
+            renderLocation = siteComps[0].comp;
+        }
+
+
         if(loc ==='/about-us'){
            renderLocation = siteComps[1].comp;
         }

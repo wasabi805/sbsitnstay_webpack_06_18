@@ -5,6 +5,7 @@
 @import "presets/resets";
 @import "body/body-parent";
 @import "body/landing";
+@import "body/about-us-main";
 
 
 //----- Nav Menus -----
@@ -28,12 +29,13 @@
 
 
 
-  background-color: yellow;
+  background-color: #283559;
 
   @include main-navs;
   @include banner;
   @include body-parent;
   @include landing;
+  @include about-us-main;
 
 
 }
