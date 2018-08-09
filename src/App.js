@@ -29,8 +29,8 @@ class App extends Component{
                 <Route path='/' component={Navbar} />
                 <Route path='/' component={BannerParent} />
 
-                <Route path='/' component={BodyParent}/>
 
+                <Route exact strict path='/location/:location' component={BodyParent}/>
 
 
 

@@ -7,45 +7,69 @@ import GenericBodyComp from './layout/body/GenericBodyComp'
 import TestComp01 from './testComp01'
 import TestComp02 from './testComp02'
 
+
+
+
 class BodyParent extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-            isHidden01: true,
-            isHidden02: true
+        this.state = {
+            locations: ['about-us', 'test-comp-01']
         };
 
-        this.toggleIsHidden01 = this.toggleIsHidden01.bind(this)
-        this.toggleIsHidden02 = this.toggleIsHidden02.bind(this)
-    }
-
-    toggleIsHidden01(){
-        this.setState({isHidden01:!this.state.isHidden01})
-    }
-
-    toggleIsHidden02(){
-        this.setState({isHidden02:!this.state.isHidden02})
+        // this.handleAboutUs = this.handleAboutUs.bind(this);
+        this.mapComps = this.mapComps.bind(this)
     }
 
     componentDidMount(){
 
-        console.log(this.props.location.pathname);
-        if(this.props.location.pathname === '/test01'){
-            this.toggleIsHidden01();
-        }
+    }
 
-        if(this.props.location.pathname === '/test02'){
-            this.toggleIsHidden02();
-        }
+
+    mapComps(comps){
+
+        comps = [
+            {id:1, comp: <AboutUs/> },
+            {id:2, comp: <TestComp01/> }];
+
+            let compMapperBody = comps.map(obj=>{
+
+            let mappedComps = {};
+
+            mappedComps.key = obj.id;
+            mappedComps.comp = obj.comp;
+
+            return mappedComps
+
+        });
+
+        return compMapperBody
 
     }
 
+
     render(){
+
+
+        let comps = this.mapComps();
+
+        let AboutUs = comps[0].comp;
+        let Services = comps[1].comp;
+
+        let location = this.props.match.params.location;
+
+        let renderLocation = [];
+
+
+        if(location === this.state.locations[0]){
+            renderLocation.push(AboutUs)
+        }
+
+
         return(
             <div>
-                {!this.state.isHidden01 && < TestComp01/>}
-                {!this.state.isHidden02 && < TestComp02/>}
+                {renderLocation[0]}
             </div>
         )
     }
