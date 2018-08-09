@@ -14,13 +14,6 @@ import GenericBodyComp from './components/layout/body/GenericBodyComp'
 
 class App extends Component{
 
-    constructor(props){
-        super(props);
-        this.state={
-            test: 'this is a test'
-        }
-    }
-
     render(){
 
         return(
@@ -29,11 +22,8 @@ class App extends Component{
                 <Route path='/' component={Navbar} />
                 <Route path='/' component={BannerParent} />
 
-
+                <Route exact path='/' component={BodyParent} />
                 <Route exact strict path='/location/:location' component={BodyParent}/>
-
-
-
 
             </div>
 

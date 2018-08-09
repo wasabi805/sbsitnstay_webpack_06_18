@@ -23,15 +23,18 @@ class BodyParent extends Component {
     }
 
     componentDidMount(){
-
+        this.mapComps()
     }
 
 
     mapComps(comps){
 
         comps = [
-            {id:1, comp: <AboutUs/> },
-            {id:2, comp: <TestComp01/> }];
+            {id:1, comp:  <Landing/>},
+            {id:2, comp: <AboutUs/> },
+            {id:3, comp: <TestComp01/>}
+
+        ];
 
             let compMapperBody = comps.map(obj=>{
 
@@ -54,24 +57,42 @@ class BodyParent extends Component {
 
         let comps = this.mapComps();
 
-        let AboutUs = comps[0].comp;
-        let Services = comps[1].comp;
+        let Landing = comps[0].comp;
+        let AboutUs = comps[1].comp;
+        let Services = comps[2].comp;
 
         let location = this.props.match.params.location;
 
         let renderLocation = [];
 
 
-        if(location === this.state.locations[0]){
-            renderLocation.push(AboutUs)
-        }
+       console.log(this.props.match.params.location
+       );
+
+
+       if(this.props.match.path === '/'){
+           renderLocation.push(Landing)
+       }
+
+       if(location === 'about-us'){
+           renderLocation.push(AboutUs)
+       }
+
+
+
 
 
         return(
             <div>
+
                 {renderLocation[0]}
             </div>
         )
+
+
+
+
+
     }
 
 }
