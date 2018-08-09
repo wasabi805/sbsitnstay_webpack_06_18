@@ -74,8 +74,8 @@ class NavSlideIcon extends Component{
                     <div id="side-menu" className="side-nav">
                         {/*this is the 'X' to close the menu*/}
                         <a href="#" className='btn-close' onClick={this.onCloseSlideMenu}>&times; </a>
-                        <a href="#" >Home </a>
-                        <a href="#" >About Us </a>
+                        <a href="/" >Home </a>
+                        <a href="/" >About Us </a>
                         <a href="#" >Services </a>
                         <a href="#" >Gallery </a>
                         <a href="#" >Contact </a>
@@ -87,13 +87,13 @@ class NavSlideIcon extends Component{
                     <div className='nav-header-links'>
                         <ul className="nav nav-pills justify-content-end">
                             <li className="nav-item">
-                                <a href="#" className="nav-link">Home</a>
+                                <a href="/" className="nav-link">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link active">About us</a>
+                                <a href="/location/about-us" className="nav-link active">About us</a>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link">Services</a>
+                                <a href="/location/services" className="nav-link">Services</a>
                             </li>
                             <li className="nav-item">
                                 <a href="#" className="nav-link">Gallery</a>

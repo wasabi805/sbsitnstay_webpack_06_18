@@ -1,15 +1,15 @@
-@mixin generic-body-comp{
+@mixin services-body-comp {
 
-  .generic-body-comp-main{
+  .services-main{
     //width :auto;
 
-    .generic-body-comp-row{
+    .services-row{
 
       height: 20rem;
       margin: 1em;
 
 
-      .generic-body-comp-colA{
+      .services-colA{
         background-color: cyan;
         height: 20em;
         position: relative;
@@ -27,7 +27,7 @@
 
         }
 
-        .generic-body-comp-img-cont{
+        .services-img-cont{
           height: 20em;
           width: auto;
           z-index: 3;
@@ -42,12 +42,12 @@
 
       }
 
-      .generic-body-comp-colB{
+      .services-colB{
 
         //background-color: #334780;
         height: auto;
 
-        .generic-body-comp-content{
+        .services-content{
          
         }
 
@@ -56,7 +56,7 @@
 
   }
 
-  .generic-body-comp-content{
+  .services-content{
     color: white;
     padding-top: 5em;
     padding-left: 6em;

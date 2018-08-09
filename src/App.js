@@ -9,7 +9,7 @@ import Navbar from './components/layout/banner-and-nav/side-nav'
 
 import BannerParent from './components/BannerParent'
 import BodyParent from './components/BodyParent'
-import GenericBodyComp from './components/layout/body/GenericBodyComp'
+import Services from './components/layout/body/Services';
 
 
 class App extends Component{

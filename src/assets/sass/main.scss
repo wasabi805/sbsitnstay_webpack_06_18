@@ -6,7 +6,7 @@
 @import "body/body-parent";
 @import "body/landing";
 @import "body/about-us-main";
-@import "body/generic-body-comp";
+@import "body/services";
 
 
 //----- Nav Menus -----
@@ -37,7 +37,7 @@
   @include body-parent;
   @include landing;
   @include about-us-main;
-  @include generic-body-comp;
+  @include services-body-comp;
 
 
 }
