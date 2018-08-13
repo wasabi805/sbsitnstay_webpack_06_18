@@ -1,6 +1,8 @@
 import React , {Component}from 'react'
 import {Link, Route, Switch} from 'react-router-dom';
-import routes from './routes'
+
+
+
 require('./assets/css/main.css');
 
 
@@ -10,6 +12,7 @@ import Navbar from './components/layout/banner-and-nav/side-nav'
 import BannerParent from './components/BannerParent'
 import BodyParent from './components/BodyParent'
 import Services from './components/layout/body/Services';
+
 
 
 class App extends Component{
@@ -24,6 +27,7 @@ class App extends Component{
 
                 <Route exact path='/' component={BodyParent} />
                 <Route exact strict path='/location/:location' component={BodyParent}/>
+
 
             </div>
 

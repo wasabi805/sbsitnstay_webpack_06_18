@@ -3,7 +3,16 @@ import React, {Component} from 'react';
 
 
 class Landing extends Component{
+
+    constructor(props){
+        super(props)
+    }
+
     render(){
+
+        console.log(this.props);
+
+
         return(
 
                 <div className='landing-main p-0 m-0'>

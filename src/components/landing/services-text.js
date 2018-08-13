@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 const ServiceText =(props)=>{
 
     if(props.isHovered && props.isWalking){
-        console.log(props, '1+1=2');
+        // console.log(props, '1+1=2');
 
        return(
 

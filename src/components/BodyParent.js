@@ -5,97 +5,63 @@ import Landing from './layout/body/Landing'
 import AboutUs from './layout/body/AboutUs'
 import Services from './layout/body/Services'
 
-
-
-
-
 class BodyParent extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            locations: ['/', 'about-us', 'services']
+            isLandingVisible : false,
+            isAboutUsVisible : false,
+            isServicesVisible : false,
+
+            currentLoc: [
+                {id:0, value: '/'},
+                {id:1, value: '/location/about-us'},
+                {id:2, value: '/location/services'}]
         };
 
-        // this.handleAboutUs = this.handleAboutUs.bind(this);
-        this.mapComps = this.mapComps.bind(this)
     }
 
     componentDidMount(){
-        this.mapComps()
-    }
 
+        let location = this.props.location.pathname;
+        let {currentLoc} = this.state;
 
-    mapComps(comps){
+        if(location === `${currentLoc[0].value}`){
+            this.setState({
+                isLandingVisible : true
+            })
+        }
 
-        comps = [
-            {id:1, comp:  <Landing/>},
-            {id:2, comp: <AboutUs/> },
-            {id:3, comp: <Services/>}
+        if(location === `${currentLoc[1].value}`){
+            this.setState({
+                isAboutUsVisible : true
+            })
+        }
 
-        ];
+        if(location === `${currentLoc[2].value}`){
+            this.setState({
+                isServicesVisible : true
+            })
+        }
 
-            let compMapperBody = comps.map(obj=>{
-
-            let mappedComps = {};
-
-            mappedComps.key = obj.id;
-            mappedComps.comp = obj.comp;
-
-            return mappedComps
-
-        });
-
-        return compMapperBody
+        console.log(`${currentLoc[2].value}`);
 
     }
-
 
     render(){
 
 
-        let comps = this.mapComps();
-
-        let Landing = comps[0].comp;
-        let AboutUs = comps[1].comp;
-        let Services = comps[2].comp;
-
-        let location = this.props.match.params.location;
-
-        let renderLocation = null;
-
-
-       console.log(this.props.match.params.location
-       );
-
-
-       if(this.props.match.path === this.state.locations[0]){
-           renderLocation = Landing
-       }
-
-       if(location === 'about-us'){
-           renderLocation = AboutUs
-       }
-
-        if(location === 'services'){
-            renderLocation=Services
-        }
-
-
-
-
-
-
-
         return(
-            <div>
-                {renderLocation}
+            <div className='body-parent'>
+                {/*{renderLocation}*/}
+
+                {this.state.isLandingVisible &&  <Landing test='This is a test: frm body parent '/>}
+                {this.state.isAboutUsVisible &&  <AboutUs test='This is a ABOUTUS test: frm body parent '/>}
+                {this.state.isServicesVisible &&  <Services/>}
             </div>
         )
-
-
-
-
 
     }
 
