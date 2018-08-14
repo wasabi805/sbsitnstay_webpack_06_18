@@ -1,11 +1,10 @@
-import {LANDING} from "../actions/action-type";
+import {LANDING, ABOUT_US} from "../actions/action-type";
 
 
 
 let initialState = {
-    user: 'hope you dont see me',
+    toggle: false
 };
-
 
 
 export default function (state=initialState, action) {
@@ -13,9 +12,12 @@ export default function (state=initialState, action) {
     switch (action.type){
         //LANDING
         case LANDING:
-            return {
-                user: action.payload
-            };
+            initialState.toggle = action.payload;
+            return state;
+
+        case ABOUT_US:
+            initialState.toggle = action.payload;
+            return state;
 
 
         default:

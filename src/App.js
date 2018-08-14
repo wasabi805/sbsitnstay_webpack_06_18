@@ -25,8 +25,10 @@ class App extends Component{
                 <Route path='/' component={Navbar} />
                 <Route path='/' component={BannerParent} />
 
-                <Route exact path='/' component={BodyParent} />
+                {/*<Route exact path='/' component={BodyParent} />*/}
+
                 <Route exact strict path='/location/:location' component={BodyParent}/>
+                <Route exact strict path='/' component={BodyParent}/>
                 {/*<Landing/>*/}
 
             </div>

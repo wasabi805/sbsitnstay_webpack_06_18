@@ -1,12 +1,20 @@
-import {LANDING} from "./action-type";
+import {LANDING, ABOUT_US } from "./action-type";
 
 
 
 
 export const loadLanding =()=>{
-
     return{
         type: LANDING,
-        payload: 'PLEASE SAY YOU CAN SEE ME'
+        payload: true
+
+    }
+};
+
+export const loadAboutUs =()=>{
+    return{
+        type: ABOUT_US,
+        payload: true
+
     }
 };

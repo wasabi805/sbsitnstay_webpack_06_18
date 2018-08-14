@@ -19,57 +19,54 @@ class BodyParent extends Component {
             isLandingVisible : false,
             isAboutUsVisible : false,
             isServicesVisible : false,
+            isGalleryVisible : false,
+            isContactVisible : false,
 
-            currentLoc: [
-                {id:0, value: '/'},
-                {id:1, value: '/location/about-us'},
-                {id:2, value: '/location/services'}]
+            currentLoc: ['/', 'about-us', 'services', 'gallery', 'contact']
         };
-
     }
 
     componentDidMount(){
-
-
-
-        let location = this.props.location.pathname;
+        let index = this.props.match.path;
+        let location = this.props.match.params.location;
         let {currentLoc} = this.state;
 
-        // if(location === `${currentLoc[0].value}`){
-        //     this.setState({
-        //         isLandingVisible : true
-        //     })
-        // }
 
-        if(location === `${currentLoc[0].value}`){
-            this.props.loadLanding()
+        this.props.handleLoadBodySection();
+
+
+        if(index === '/'){
+           this.setState({
+               isLandingVisible : true
+           })
         }
 
+        switch (location){
+            case `${currentLoc[1]}`:
+                this.setState({isAboutUsVisible: this.props.bodyParent.toggle});
+                break;
 
+            case `${currentLoc[2]}`:
+                this.setState({isServicesVisible: this.props.bodyParent.toggle});
+                break;
 
-        if(location === `${currentLoc[1].value}`){
-            this.setState({
-                isAboutUsVisible : true
-            })
+            case `${currentLoc[3]}`:
+                this.setState({isGalleryVisible: this.props.bodyParent.toggle});
+                break;
+
+            case `${currentLoc[4]}`:
+                this.setState({isContactVisible: this.props.bodyParent.toggle});
+                break;
+
         }
 
-        if(location === `${currentLoc[2].value}`){
-            this.setState({
-                isServicesVisible : true
-            })
-        }
-
-        // console.log(`${currentLoc[2].value}`);
+        // console.log(location);
+        // console.log(`${currentLoc[1]}`);
+        // console.log(this.props.match.params.location, 'the params');
 
     }
 
-
-
-
-
-
     render(){
-
 
 
 
@@ -86,15 +83,11 @@ class BodyParent extends Component {
     }
 
 }
+
 //remember that the VALUES are from the root reducer
-
-
 const mapStateToProps = (state)=>({
     bodyParent: state.bodyParent
 });
 
 
-
-
-
-export default connect(mapStateToProps, {loadLanding} )(BodyParent)
+export default connect(mapStateToProps, {handleLoadBodySection: loadLanding} )(BodyParent)
