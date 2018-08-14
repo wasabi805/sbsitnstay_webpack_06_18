@@ -1,128 +1,118 @@
-import React, {Component} from 'react';
-
-import {Link, Route} from 'react-router-dom';
-
-class Services extends Component{
-
-    constructor(props){
-        super(props);
-        this.state= {
-
-        }
-    };
+import React from 'react';
 
 
-    render(){
+const Services = (props)=>{
 
-        return(
-            <div className='services-main container-fluid'>
+    console.log(props);
 
+    return(
+        <div className='services-main container-fluid'>
 
-                <div className='services-row row'>
+            <div className='services-row row'>
 
-                    <div className='col services-colA col-sm-2 col-md-5 p-0'>
+                <div className='col services-colA col-sm-2 col-md-5 p-0'>
 
-                        <div className='overlay'>I'm the overlay</div>
+                    <div className='overlay'>I'm the overlay</div>
 
-                        <div className='services-img-cont'>
-                            <img src='https://res.cloudinary.com/ocampot/image/upload/v1532399332/sbsitnstay/dog_leash_002.jpg'></img>
-                        </div>
-                    </div>
-
-
-                    <div className='col services-colB col-sm-10 col-md-7'>
-                        <div className='services-content'>
-                            <h2>Walking</h2>
-                            <p>stuff about walking</p>
-
-                            <button className='btn'> Read More </button>
-                        </div>
+                    <div className='services-img-cont'>
+                        <img src={props.content[0].src} alt=''/>
                     </div>
                 </div>
 
 
-                <div className='services-row row'>
-                    <div className='col services-colB col-sm-10  col-md-7'>
-                        <div className='services-content'>
-                            <h2>Feeding</h2>
-                            <p>stuff about Feeding</p>
+                <div className='col services-colB col-sm-10 col-md-7'>
+                    <div className='services-content'>
+                        <h2>{props.content[0].name}</h2>
+                        <p>{props.content[0].small}</p>
 
-                            <button className='btn'> Read More </button>
-                        </div>
-                    </div>
-
-
-                    <div className='col services-colA col-sm-2 col-sm-2 p-0 col-md-5 '>
-                        <div className='overlay'>I'm the overlay</div>
-                        <div className='services-img-cont'>
-                            <img src='https://res.cloudinary.com/ocampot/image/upload/v1532399233/sbsitnstay/pups_eating.jpg'></img>
-                        </div>
+                        <button className='btn'> Read More </button>
                     </div>
                 </div>
-
-                <div className='services-row row'>
-
-                    <div className='col services-colA col-sm-2 col-md-5 p-0'>
-                        <div className='overlay'>I'm the overlay</div>
-                        <div className='services-img-cont'>
-                            <img src='https://res.cloudinary.com/ocampot/image/upload/v1533787475/dog-napping.jpg'></img>
-                        </div>
-                    </div>
-
-
-                    <div className='col services-colB col-sm-10 col-md-7'>
-                        <div className='services-content'>
-                            <h2>Drop-in Visits</h2>
-                            <p>stuff about Drop ins</p>
-
-                            <button className='btn'> Read More </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='services-row row'>
-                    <div className='col services-colB col-sm-10  col-md-7'>
-                        <div className='services-content'>
-                            <h2>Overnight Care</h2>
-                            <p>stuff about overnight care</p>
-
-                            <button className='btn'> Read More </button>
-                        </div>
-                    </div>
-
-
-                    <div className='col services-colA col-sm-2 col-sm-2 p-0 col-md-5 '>
-                        <div className='overlay'>I'm the overlay</div>
-                        <div className='services-img-cont'>
-                            <img src='https://res.cloudinary.com/ocampot/image/upload/v1532399537/sbsitnstay/dog_sleeping_01.jpg'></img>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='services-row row'>
-
-                    <div className='col services-colA col-sm-2 col-md-5 p-0'>
-                        <div className='overlay'>I'm the overlay</div>
-                        <div className='services-img-cont'>
-                            <img src='https://res.cloudinary.com/ocampot/image/upload/v1533787592/dog-on-hike-00.jpg'></img>
-                        </div>
-                    </div>
-
-
-                    <div className='col services-colB col-sm-10 col-md-7'>
-                        <div className='services-content'>
-                            <h2>Adventuress</h2>
-                            <p>stuff about adventures</p>
-
-                            <button className='btn'> Read More </button>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
-        )
-    }
-}
+
+
+            <div className='services-row row'>
+                <div className='col services-colB col-sm-10  col-md-7'>
+                    <div className='services-content'>
+                        <h2>{props.content[1].name}</h2>
+                        <p>{props.content[1].small}</p>
+
+                        <button className='btn'> Read More </button>
+                    </div>
+                </div>
+
+
+                <div className='col services-colA col-sm-2 col-sm-2 p-0 col-md-5 '>
+                    <div className='overlay'>I'm the overlay</div>
+                    <div className='services-img-cont'>
+                        <img src={props.content[1].src} alt=''/>
+                    </div>
+                </div>
+            </div>
+
+            <div className='services-row row'>
+
+                <div className='col services-colA col-sm-2 col-md-5 p-0'>
+                    <div className='overlay'>I'm the overlay</div>
+                    <div className='services-img-cont'>
+                        <img src={props.content[2].src} alt=''/>
+                    </div>
+                </div>
+
+
+                <div className='col services-colB col-sm-10 col-md-7'>
+                    <div className='services-content'>
+                        <h2>{props.content[2].name}</h2>
+                        <p>{props.content[2].small}</p>
+
+                        <button className='btn'> Read More </button>
+                    </div>
+                </div>
+            </div>
+
+            <div className='services-row row'>
+                <div className='col services-colB col-sm-10  col-md-7'>
+                    <div className='services-content'>
+                        <h2>{props.content[3].name}</h2>
+                        <p>{props.content[3].small}</p>
+
+                        <button className='btn'> Read More </button>
+                    </div>
+                </div>
+
+
+                <div className='col services-colA col-sm-2 col-sm-2 p-0 col-md-5 '>
+                    <div className='overlay'>I'm the overlay</div>
+                    <div className='services-img-cont'>
+                        <img src={props.content[3].src} alt=''/>
+                    </div>
+                </div>
+            </div>
+
+            <div className='services-row row'>
+
+                <div className='col services-colA col-sm-2 col-md-5 p-0'>
+                    <div className='overlay'>I'm the overlay</div>
+                    <div className='services-img-cont'>
+                        <img src={props.content[4].src} alt=''/>
+                    </div>
+                </div>
+
+
+                <div className='col services-colB col-sm-10 col-md-7'>
+                    <div className='services-content'>
+                        <h2>{props.content[4].name}</h2>
+                        <p>{props.content[4].small}</p>
+
+                        <button className='btn'> Read More </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    )
+
+};
 
 export default Services

@@ -1,7 +1,8 @@
-import {LANDING, ABOUT_US} from "../actions/action-type";
+import {TOGGLE_VIEW} from "../actions/action-type";
 
 
 let initialState = {
+
     toggle: {},
 
     landing: [
@@ -15,23 +16,23 @@ let initialState = {
         {id: 1, name:'Kayla', src: 'https://res.cloudinary.com/ocampot/image/upload/v1533777073/kayla-portrait.jpg', small: 'stuff about Kayla' },
         {id: 2, name:'Catherine', src: 'https://res.cloudinary.com/ocampot/image/upload/v1532396286/sbsitnstay/catherine.jpg', small: 'stuff about Catherine' },
         {id: 3, name:'Yuko', src: 'https://res.cloudinary.com/ocampot/image/upload/v1532396750/sbsitnstay/yuko.jpg', small: 'stuff about Yuko' },
+    ],
+
+    services:[
+        {id: 1, name:'Walking', src: 'https://res.cloudinary.com/ocampot/image/upload/v1532399332/sbsitnstay/dog_leash_002.jpg', small: 'stuff about Walking' },
+        {id: 2, name:'Feeding', src: 'https://res.cloudinary.com/ocampot/image/upload/v1532399233/sbsitnstay/pups_eating.jpg', small: 'stuff about Feeding' },
+        {id: 3, name:'Drop-in Care', src: 'https://res.cloudinary.com/ocampot/image/upload/v1533787475/dog-napping.jpg', small: 'stuff about Drop in' },
+        {id: 4, name:'Overnight Care', src: 'https://res.cloudinary.com/ocampot/image/upload/v1532399537/sbsitnstay/dog_sleeping_01.jpg', small: 'stuff about Overnights' },
+        {id: 5, name:'Adventures', src: 'https://res.cloudinary.com/ocampot/image/upload/v1533787592/dog-on-hike-00.jpg', small: 'stuff about Adventures' },
     ]
 
 };
 
-
 export default function (state=initialState, action) {
-
     switch (action.type){
-        //LANDING
-        case LANDING:
-            state.toggle = action.payload;
-            return state;
-
-        case ABOUT_US:
-            return[ ...state, {toggle: action.payload}
-            ]
-
+        //Hide and Seek w/ BodyParent sub-components
+        case TOGGLE_VIEW:
+            return [ ...state, {toggle: action.payload} ];
         default:
             return state;
 

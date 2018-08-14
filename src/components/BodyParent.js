@@ -64,7 +64,7 @@ class BodyParent extends Component {
 
         const Content = this.props.bodyParent;
 
-        let {landing, aboutUs} = Content;
+        let {landing, aboutUs, services} = Content;
 
         //Landing Props
         let landingMapper = landing.map(obj=>{
@@ -80,12 +80,19 @@ class BodyParent extends Component {
             return mappedContent
         });
 
+        //Services Props
+        let servicesMapper = services.map(obj=>{
+            let mappedContent =[];
+            mappedContent.key = obj.id; mappedContent.name = obj.name; mappedContent.src = obj.src; mappedContent.small= obj.small;
+            return mappedContent
+        });
+
 
         return(
             <div className='body-parent'>
                 {this.state.isLandingVisible &&  <LandingBody content={landingMapper}/>}
                 {this.state.isAboutUsVisible &&  <AboutUsBody content={aboutUsMapper}/>}
-                {this.state.isServicesVisible &&  <ServicesBody/>}
+                {this.state.isServicesVisible &&  <ServicesBody content={servicesMapper}/>}
             </div>
         )
 

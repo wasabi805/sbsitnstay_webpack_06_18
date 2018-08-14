@@ -1,4 +1,4 @@
-import {LANDING, ABOUT_US } from "./action-type";
+import {LANDING} from "./action-type";
 
 
 
@@ -11,10 +11,3 @@ export const loadLanding =()=>{
     }
 };
 
-export const loadAboutUs =()=>{
-    return{
-        type: ABOUT_US,
-        payload: true
-
-    }
-};
