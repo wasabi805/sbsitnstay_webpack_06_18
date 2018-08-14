@@ -11,6 +11,12 @@ let initialState = {
         {id: 4, name:'Contact',  src: "https://res.cloudinary.com/ocampot/image/upload/v1532398723/sbsitnstay/dog_laptop.jpg", small: 'Get in touch with us' }
     ],
 
+    aboutUs:[
+        {id: 1, name:'Kayla', src: 'https://res.cloudinary.com/ocampot/image/upload/v1533777073/kayla-portrait.jpg', small: 'stuff about Kayla' },
+        {id: 2, name:'Catherine', src: 'https://res.cloudinary.com/ocampot/image/upload/v1532396286/sbsitnstay/catherine.jpg', small: 'stuff about Catherine' },
+        {id: 3, name:'Yuko', src: 'https://res.cloudinary.com/ocampot/image/upload/v1532396750/sbsitnstay/yuko.jpg', small: 'stuff about Yuko' },
+    ]
+
 };
 
 
