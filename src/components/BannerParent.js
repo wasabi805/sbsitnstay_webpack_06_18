@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {Route, Link } from 'react-router-dom';
 
+
+import Navbar from './layout/banner-and-nav/side-nav'
 import BannerLanding from './layout/banner-and-nav/banner-landing'
+import BannerGeneric from './layout/banner-and-nav/banner-generic'
 
 
 
@@ -18,7 +21,8 @@ class Banner extends Component{
 
         return(
                 <div className='banner-parent'>
-                    <BannerLanding/>
+                    {/*<Navbar/>*/}
+                    <BannerGeneric/>
                 </div>
 
         )

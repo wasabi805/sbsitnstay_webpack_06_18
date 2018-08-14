@@ -11,8 +11,8 @@
     padding: 0px;
     position: relative;//set as absolute so it can overlay with the banner
     width: auto;
-    z-index: 2;
-    background-color: lightgrey;
+    z-index: 10;
+
 
     //----- -----CH1 OF 2----- -----
 
@@ -22,9 +22,6 @@
       margin: 0px;
       padding: 0px;
       display: inline-block;
-
-
-      background-color: purple;
       overflow: hidden;
       height: 63px;
 
@@ -39,7 +36,7 @@
         float: left;
         display: block;
         color: #f2f2f2;
-        color: red;
+
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -57,7 +54,7 @@
         .hamburger-icon{
           width: 30px;
           height: 30px;
-          background-color: cyan ;
+
         }
       }
 
@@ -108,7 +105,7 @@
 
     .nav-header-links{
       display: inline-block;
-      background-color: #b5b9bf;
+      background-color: lightgrey;
       float: right;
       z-index: 2;
 

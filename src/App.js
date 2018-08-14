@@ -22,7 +22,7 @@ class App extends Component{
         return(
 
             <div id="main">
-                <Route path='/' component={Navbar} />
+                {/*<Route path='/' component={Navbar} />*/}
                 <Route path='/' component={BannerParent} />
 
                 {/*<Route exact path='/' component={BodyParent} />*/}
