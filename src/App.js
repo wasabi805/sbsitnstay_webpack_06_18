@@ -12,7 +12,7 @@ import Navbar from './components/layout/banner-and-nav/side-nav'
 import BannerParent from './components/BannerParent'
 import BodyParent from './components/BodyParent'
 import Services from './components/layout/body/Services';
-
+import Landing from './components/layout/body/Landing'
 
 
 class App extends Component{
@@ -27,7 +27,7 @@ class App extends Component{
 
                 <Route exact path='/' component={BodyParent} />
                 <Route exact strict path='/location/:location' component={BodyParent}/>
-
+                {/*<Landing/>*/}
 
             </div>
 

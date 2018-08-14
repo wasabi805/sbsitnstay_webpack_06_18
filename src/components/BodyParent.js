@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux'
+
+import {loadLanding} from "../actions/body-parent-actions";
+
+
 import {Link, Route, Switch} from 'react-router-dom';
 
 import Landing from './layout/body/Landing'
@@ -25,14 +30,22 @@ class BodyParent extends Component {
 
     componentDidMount(){
 
+
+
         let location = this.props.location.pathname;
         let {currentLoc} = this.state;
 
+        // if(location === `${currentLoc[0].value}`){
+        //     this.setState({
+        //         isLandingVisible : true
+        //     })
+        // }
+
         if(location === `${currentLoc[0].value}`){
-            this.setState({
-                isLandingVisible : true
-            })
+            this.props.loadLanding()
         }
+
+
 
         if(location === `${currentLoc[1].value}`){
             this.setState({
@@ -46,11 +59,18 @@ class BodyParent extends Component {
             })
         }
 
-        console.log(`${currentLoc[2].value}`);
+        // console.log(`${currentLoc[2].value}`);
 
     }
 
+
+
+
+
+
     render(){
+
+
 
 
         return(
@@ -66,5 +86,15 @@ class BodyParent extends Component {
     }
 
 }
+//remember that the VALUES are from the root reducer
 
-export default BodyParent
+
+const mapStateToProps = (state)=>({
+    bodyParent: state.bodyParent
+});
+
+
+
+
+
+export default connect(mapStateToProps, {loadLanding} )(BodyParent)

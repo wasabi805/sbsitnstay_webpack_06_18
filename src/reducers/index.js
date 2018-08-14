@@ -1,7 +1,14 @@
 import {combineReducers} from 'redux';
-import landingReducer from './landing-reducer';
 
-export default combineReducers({
-    landing : landingReducer
 
-});
+import bodyReducer from './body-parent-reducer';
+
+
+
+// console.log(store,'frm reducers/inde');
+
+export default combineReducers(
+
+    {bodyParent: bodyReducer}
+
+    );
