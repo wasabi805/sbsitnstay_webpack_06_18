@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 
+import {Link, Route, Switch} from 'react-router-dom';
 import {loadLanding} from "../actions/body-parent-actions";
 
 
-import {Link, Route, Switch} from 'react-router-dom';
 
-import Landing from './layout/body/Landing'
-import AboutUs from './layout/body/AboutUs'
-import Services from './layout/body/Services'
+import LandingBody from './layout/body/Landing'
+import AboutUsBody from './layout/body/AboutUs'
+import ServicesBody from './layout/body/Services'
 
 class BodyParent extends Component {
 
@@ -68,15 +68,24 @@ class BodyParent extends Component {
 
     render(){
 
+        const landingContent = this.props.bodyParent.landing;
+
+        let landingMapper = landingContent.map(obj=>{
+            let mappedImg =[];
+            mappedImg.key = obj.id;
+            mappedImg.name = obj.name;
+            mappedImg.src = obj.src;
+            mappedImg.small= obj.small;
+            return mappedImg
+        });
 
 
         return(
             <div className='body-parent'>
-                {/*{renderLocation}*/}
+                {this.state.isLandingVisible &&  <LandingBody content={landingMapper}/>}
 
-                {this.state.isLandingVisible &&  <Landing test='This is a test: frm body parent '/>}
-                {this.state.isAboutUsVisible &&  <AboutUs test='This is a ABOUTUS test: frm body parent '/>}
-                {this.state.isServicesVisible &&  <Services/>}
+                {this.state.isAboutUsVisible &&  <AboutUsBody test='This is a ABOUTUS test: frm body parent '/>}
+                {this.state.isServicesVisible &&  <ServicesBody/>}
             </div>
         )
 
