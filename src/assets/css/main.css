@@ -6360,21 +6360,85 @@ template {
       float: right;
       z-index: 2; }
   #main .banner-parent {
-    background: lightgrey;
-    height: 100vh;
+    background-color: mediumpurple;
+    height: auto;
+    width: 100%;
     position: relative; }
-    #main .banner-parent .banner-default-img {
-      position: absolute;
+    #main .banner-parent .banner-landing-main {
+      background: hotpink;
+      position: relative;
+      height: 100vh;
       width: 100%;
-      height: 100%;
+      position: relative; }
+      #main .banner-parent .banner-landing-main .banner-landing-img-cont {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1; }
+        #main .banner-parent .banner-landing-main .banner-landing-img-cont img {
+          height: 100%;
+          width: 100%; }
+        #main .banner-parent .banner-landing-main .banner-landing-img-cont::before {
+          content: '';
+          top: 0px;
+          position: absolute;
+          background-color: lightgrey;
+          opacity: 0.1;
+          height: 100%;
+          width: 100%; }
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+      #main .banner-parent .banner-landing-main .banner-landing-content {
+        position: absolute;
+        top: 8em;
+        padding-left: 5em;
+        padding-top: 10em;
+        height: 100%;
+        width: 100%;
+        color: white;
+        z-index: 5;
+        animation: 1.75s ease-out 0s 1 slideInFromLeft; }
+        #main .banner-parent .banner-landing-main .banner-landing-content .btm-border {
+          border-bottom: 0.2em solid white;
+          display: inline-block;
+          width: 80%;
+          animation: fadein 3.5s; }
+        #main .banner-parent .banner-landing-main .banner-landing-content h1 {
+          font-weight: 200;
+          margin-bottom: 0.25em;
+          animation: fadein 3.5s; }
+        #main .banner-parent .banner-landing-main .banner-landing-content p {
+          animation: fadein 3.5s; }
+        #main .banner-parent .banner-landing-main .banner-landing-content .banner-btn {
+          animation: fadein 3.5s;
+          z-index: 4; }
+    #main .banner-parent .banner-img-cont .banner-landing-img {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      z-index: 0; }
+    #main .banner-parent .banner-img-cont .banner-section-img {
+      position: relative;
+      width: 100%;
+      height: 80vh;
       z-index: 0; }
     #main .banner-parent .banner-content {
-      position: relative;
+      position: absolute;
       height: 100%;
       color: white;
-      padding-top: 8em;
       padding-left: 5em;
-      padding-right: 5em; }
+      padding-right: 5em;
+      z-index: 10; }
       #main .banner-parent .banner-content h1 {
         margin-bottom: 0px; }
       #main .banner-parent .banner-content .banner-btn-row {
@@ -6453,8 +6517,7 @@ template {
     padding-top: 5em;
     padding-left: 6em; }
   #main .services-main .services-row {
-    height: 20rem;
-    margin: 1em; }
+    height: 20rem; }
     #main .services-main .services-row .services-colA {
       background-color: cyan;
       height: 20em;

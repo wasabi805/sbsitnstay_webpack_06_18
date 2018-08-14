@@ -108,8 +108,6 @@ const Services = (props)=>{
                     </div>
                 </div>
             </div>
-
-
         </div>
     )
 
