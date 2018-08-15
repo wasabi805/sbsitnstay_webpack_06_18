@@ -1,1 +1,1 @@
-export const LOAD_BODY_LANDING = 'LOAD_BODY_LANDING';
+export const MAIN_CONTAINER = 'MAIN_CONTAINER';
