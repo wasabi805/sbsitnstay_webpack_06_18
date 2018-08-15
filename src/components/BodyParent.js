@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {loadLanding} from '.././actions/body-parent-actions';
 
 
-import {Link} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 
 
 import LandingBody from './layout/body/Landing'
@@ -31,28 +31,46 @@ class BodyParent extends Component {
             content: this.props.bodyReducer
         };
 
+        this.bodyMapper= this.bodyMapper.bind(this)
+
     }
+
+    bodyMapper(){
+        let {content} = this.state
+
+        console.log(this.props);
+
+
+
+
+
+
+        console.log(content, 'test00s');
+    }
+
 
     componentDidMount(){
         this.props.loadLanding();
+        this.bodyMapper();
 
         this.setState(
             {isLoading: false, showLanding:true})
     }
 
     render(){
-
-        let {landing} = this.state.content;
-
-        // //LANDING PROPS
-        let landingMapper = landing.map(obj=>{
-
-            let mappedContent =[];
-            mappedContent.key = obj.id; mappedContent.name = obj.name; mappedContent.src = obj.src; mappedContent.small= obj.small;
-            return mappedContent
-        });
-
-        console.log(landingMapper);
+        console.log(this.props);
+        //
+        // let {landing} = this.state.content;
+        //
+        // // //LANDING PROPS
+        // let landingMapper = landing.map(obj=>{
+        //
+        //     let mappedContent =[];
+        //     mappedContent.key = obj.id; mappedContent.name = obj.name; mappedContent.src = obj.src; mappedContent.small= obj.small;
+        //     return mappedContent
+        // });
+        //
+        // console.log(landingMapper);
 
 
 
@@ -73,6 +91,10 @@ class BodyParent extends Component {
 
         return(
             <div className='body-parent'>
+
+
+
+
                 {this.state.showLanding &&  <LandingBody />}
                 {this.state.showAbout &&  <AboutUsBody />}
                 {this.state.showServices &&  <ServicesBody />}

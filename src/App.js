@@ -1,14 +1,13 @@
 import React , {Component}from 'react'
-import {Link, Route, Switch} from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom'
-import {Provider} from 'react-redux';
-import store from './store';
+import {Link, Route, Switch} from 'react-router-dom';
 
 
 
 
 require('./assets/css/main.css');
 
+import Main from './components/layout/Main'
 
 import BannerParent from './components/BannerParent'
 import BodyParent from './components/BodyParent'
@@ -25,16 +24,16 @@ class App extends Component{
 
         return(
 
-            <Provider store={store}>
-                <BrowserRouter>
+
 
                     <div id="main">
                         {/*<Route path='/' component={Navbar} />*/}
 
 
-                        <Route exact path='/'>
-                            <BodyParent/>
-                        </Route>
+                        {/*<Route path='/' component={BodyParent}/>*/}
+                        <Route path='/' component={Main}/>
+
+
 
 
                         {/*<Route exact strict path='/location/:location' component={BodyParent}/>*/}
@@ -43,8 +42,7 @@ class App extends Component{
 
                     </div>
 
-                </BrowserRouter>
-            </Provider>
+
 
         )
     }
