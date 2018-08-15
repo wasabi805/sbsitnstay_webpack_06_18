@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+
+
+
+
 import {Route, Link } from 'react-router-dom';
 
 
@@ -8,36 +12,35 @@ import BannerGeneric from './layout/banner-and-nav/banner-generic'
 
 
 
-class Banner extends Component{
+class BannerParent extends Component{
 
     constructor(props){
         super(props);
         this.state={
 
+            isVisibleBannerLanding : false,
+            isVisibleBannerGeneric: true
+
         }
+    }
+
+    componentDidMount(){
+
     }
 
     render(){
 
+       console.log(this.props, 'banner-parent');
+
         return(
                 <div className='banner-parent'>
-                    {/*<Navbar/>*/}
-                    <BannerGeneric/>
+                    {this.state.isVisibleBannerGeneric && <BannerGeneric/>}
                 </div>
 
         )
     }
 }
 
-
-
-// &::before{
-//     content: '';
-//     height: 300px;
-//     width: 300px;
-//     background-color: red;
-// }
-
-export default Banner
+export default BannerParent
 
 

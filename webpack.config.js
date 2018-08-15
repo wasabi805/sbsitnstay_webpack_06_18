@@ -26,7 +26,7 @@ module.exports={
     },
 
     //used to map where errors occur in bundle
-    devtool: "#source-map",
+    devtool: false,
 
     module: {
         rules: [
@@ -88,6 +88,10 @@ module.exports={
     // Plugins
     plugins: [
 
+        new webpack.EvalSourceMapDevToolPlugin(),
+
+
+
         new HtmlWebpackPlugin({
         title: 'My Custom HTML Temp',
         template: './src/index.html'
@@ -103,6 +107,10 @@ module.exports={
             jQuery: "jquery",
             Popper: ['popper.js', 'default']
         }),
+
+
+
+
 
         extractSass
 
@@ -128,11 +136,6 @@ module.exports={
 
         //without this prop in devServer, your pages won't reload if you click refresh
         historyApiFallback: true,
-
-
-
-
-
 
     }
 };

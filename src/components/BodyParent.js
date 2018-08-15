@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 
-import {Link, Route, Switch} from 'react-router-dom';
-import {loadLanding} from "../actions/body-parent-actions";
+
+import {loadLanding} from '.././actions/body-parent-actions';
+
+
+import {Link} from 'react-router-dom';
+
 
 import LandingBody from './layout/body/Landing'
 import AboutUsBody from './layout/body/AboutUs'
 import ServicesBody from './layout/body/Services'
+// import index from "../reducers";
 
 class BodyParent extends Component {
 
@@ -14,85 +19,63 @@ class BodyParent extends Component {
         super(props);
 
         this.state = {
-            isLandingVisible : false,
-            isAboutUsVisible : false,
-            isServicesVisible : false,
-            isGalleryVisible : false,
-            isContactVisible : false,
+            isLoading: true,
+            showLanding : false,
+            showAbout   : false,
+            showServices: false,
+            showGallery : false,
+            showContact : false,
 
-            currentLoc: ['/', 'about-us', 'services', 'gallery', 'contact']
+            location: ['/', 'about-us', 'services', 'gallery', 'contact'],
+
+            content: this.props.bodyReducer
         };
+
     }
 
     componentDidMount(){
-        let index = this.props.match.path;
-        let location = this.props.match.params.location;
-        let {currentLoc} = this.state;
+        this.props.loadLanding();
 
-        //Returns Toggle View of <BodyParent/> sub-components
-        this.props.handleLoadBodySection();
-
-
-        //Verify navigation URL
-        if(index === '/'){
-           this.setState({
-               isLandingVisible : true
-           })
-        }
-
-        switch (location){
-            case `${currentLoc[1]}`:
-                this.setState({isAboutUsVisible: this.props.bodyParent.toggle});
-                break;
-
-            case `${currentLoc[2]}`:
-                this.setState({isServicesVisible: this.props.bodyParent.toggle});
-                break;
-
-            case `${currentLoc[3]}`:
-                this.setState({isGalleryVisible: this.props.bodyParent.toggle});
-                break;
-
-            case `${currentLoc[4]}`:
-                this.setState({isContactVisible: this.props.bodyParent.toggle});
-                break;
-
-        }
+        this.setState(
+            {isLoading: false, showLanding:true})
     }
 
     render(){
 
-        const Content = this.props.bodyParent;
+        let {landing} = this.state.content;
 
-        let {landing, aboutUs, services} = Content;
-
-        //Landing Props
+        // //LANDING PROPS
         let landingMapper = landing.map(obj=>{
-            let mappedContent =[];
-            mappedContent.key = obj.id; mappedContent.name = obj.name; mappedContent.src = obj.src;mappedContent.small= obj.small;
-            return mappedContent
-        });
 
-        //About Us Props
-        let aboutUsMapper = aboutUs.map(obj=>{
             let mappedContent =[];
             mappedContent.key = obj.id; mappedContent.name = obj.name; mappedContent.src = obj.src; mappedContent.small= obj.small;
             return mappedContent
         });
 
-        //Services Props
-        let servicesMapper = services.map(obj=>{
-            let mappedContent =[];
-            mappedContent.key = obj.id; mappedContent.name = obj.name; mappedContent.src = obj.src; mappedContent.small= obj.small;
-            return mappedContent
-        });
+        console.log(landingMapper);
+
+
+
+        // //About Us Props
+        // let aboutUsMapper = aboutUs.map(obj=>{
+        //     let mappedContent =[];
+        //     mappedContent.key = obj.id; mappedContent.name = obj.name; mappedContent.src = obj.src; mappedContent.small= obj.small;
+        //     return mappedContent
+        // });
+        //
+        // //Services Props
+        // let servicesMapper = services.map(obj=>{
+        //     let mappedContent =[];
+        //     mappedContent.key = obj.id; mappedContent.name = obj.name; mappedContent.src = obj.src; mappedContent.small= obj.small;
+        //     return mappedContent
+        // });
 
 
         return(
             <div className='body-parent'>
-                {this.state.isLandingVisible &&  <LandingBody content={landingMapper}/>}
-                {this.state.isAboutUsVisible &&  <AboutUsBody content={aboutUsMapper}/>}
-                {this.state.isServicesVisible &&  <ServicesBody content={servicesMapper}/>}
+                {this.state.showLanding &&  <LandingBody />}
+                {this.state.showAbout &&  <AboutUsBody />}
+                {this.state.showServices &&  <ServicesBody />}
             </div>
         )
 
@@ -101,9 +84,12 @@ class BodyParent extends Component {
 }
 
 //remember that the VALUES are from the root reducer
-const mapStateToProps = (state)=>({
-    bodyParent: state.bodyParent
-});
+const mapStateToProps = (state)=>{
+    return{
+        bodyReducer: state.bodyReducer
+    }
+};
 
 
-export default connect(mapStateToProps, {handleLoadBodySection: loadLanding} )(BodyParent)
+
+export default connect(mapStateToProps,{loadLanding} )(BodyParent)
