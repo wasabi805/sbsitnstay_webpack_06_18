@@ -19,40 +19,43 @@ class BodyParent extends Component {
             showServices: false,
             showGallery : false,
             showContact : false,
-
-            location: ['/', 'about-us', 'services', 'gallery', 'contact'],
-
             content: this.props.content
         };
     }
 
-
     componentWillMount(){
-        let {pathname} = this.props.location;
 
-        if(pathname === this.state.location[0]){
-            this.setState({
-                content : this.props.content.landing,
-                isLoading: false,
-                showLanding : true,
-            })
+        let pathname = this.props.location.pathname;
+
+        switch(pathname){
+
+            case '/':
+                this.setState({content : this.props.content.landing, isLoading: false, showLanding : true, });
+                break;
+
+            case '/location/about-us':
+                this.setState({content : this.props.content.about, isLoading: false, showAbout : true, });
+                break;
+
+            case '/location/services':
+                this.setState({content : this.props.content.services, isLoading: false, showServices : true, });
+                break;
+
+            case '/location/gallery':
+                this.setState({content : this.props.content.gallery, isLoading: false, showGallery : true, });
+                break;
+
+            case '/location/contact':
+                this.setState({content : this.props.content.contact, isLoading: false, showContact : true, });
+                break;
         }
-
-    }
-
-    componentDidMount(){
-        console.log(this.state.content, 'content from compdidmount');
-        console.log(this.state.isLoading, 'isloading from compdidmount');
     }
 
     render(){
-        console.log(this.state.content, 'from render-Body Parent');
-
-
-
+        console.log('this.state.content', this.state.content);
         return(
             <div className='body-parent'>
-                {this.state.showLanding &&  <LandingBody />}
+                {this.state.showLanding &&  <LandingBody content={this.state.content}/>}
                 {this.state.showAbout &&  <AboutUsBody />}
                 {this.state.showServices &&  <ServicesBody />}
             </div>
