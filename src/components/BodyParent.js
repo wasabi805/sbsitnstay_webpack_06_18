@@ -22,13 +22,33 @@ class BodyParent extends Component {
 
             location: ['/', 'about-us', 'services', 'gallery', 'contact'],
 
-            content: this.props.bodyReducer
+            content: this.props.content
         };
     }
 
-    render(){
 
-        console.log("I'm FROM BODY PARENT", this.props);
+    componentWillMount(){
+        let {pathname} = this.props.location;
+
+        if(pathname === this.state.location[0]){
+            this.setState({
+                content : this.props.content.landing,
+                isLoading: false,
+                showLanding : true,
+            })
+        }
+
+    }
+
+    componentDidMount(){
+        console.log(this.state.content, 'content from compdidmount');
+        console.log(this.state.isLoading, 'isloading from compdidmount');
+    }
+
+    render(){
+        console.log(this.state.content, 'from render-Body Parent');
+
+
 
         return(
             <div className='body-parent'>

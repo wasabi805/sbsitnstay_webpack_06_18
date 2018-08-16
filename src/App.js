@@ -6,7 +6,8 @@ require('./assets/css/main.css');
 
 import Main from './components/Main'
 
-const App=()=>{
+const App=(props)=>{
+
     return(
         <div id="main">
             {/*<Route path='/' component={Navbar} />*/}

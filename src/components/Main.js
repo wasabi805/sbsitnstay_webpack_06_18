@@ -12,20 +12,21 @@ import BodyParent from './BodyParent'
 class Main extends Component{
    constructor(props){
        super(props);
-
    }
 
    render(){
-       console.log('IM THE MAIN', this.props);
+
 
        let appState = this.props.mainReducer.bodyParentState;
-       let{landing} = appState;
+       let {match, location, history} = this.props;
 
-       // console.log(landing, "i'm appState");
        return(
            <div className='main-cont bg-info'>
+
                <BannerParent />
-               <BodyParent content={appState}/>
+               <BodyParent content={appState} match={match} location={location} history={history}/>
+
+
            </div>
        )
    }
