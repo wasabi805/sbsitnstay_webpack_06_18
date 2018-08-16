@@ -5,6 +5,7 @@ import {Route, Link} from 'react-router-dom';
 import LandingBody from './layout/body/Landing'
 import AboutUsBody from './layout/body/AboutUs'
 import ServicesBody from './layout/body/Services'
+import TestComp01 from './testComp01'
 
 
 class BodyParent extends Component {
@@ -55,6 +56,10 @@ class BodyParent extends Component {
                 {this.state.showLanding &&  <LandingBody content={this.state.content}/>}
                 {this.state.showAbout &&  <AboutUsBody content={this.state.content} />}
                 {this.state.showServices &&  <ServicesBody content={this.state.content}/>}
+
+                <TestComp01/>
+
+
             </div>
         )
 

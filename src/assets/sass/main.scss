@@ -38,12 +38,26 @@
   @include landing;
   @include about-us-main;
   @include services-body-comp;
-
-
 }
 
 //----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 //PLAY HERE!:
+.track{
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border: 3px solid #fff;
+  border-radius: 3px;
+  margin: 10px;
+  padding :10px;
+  cursor: pointer; //cursor lets user know you can click img
+
+  .track-img{
+    position: relative;
+    width:100%;
+    height: 100%;
+  }
+}
 
 
 

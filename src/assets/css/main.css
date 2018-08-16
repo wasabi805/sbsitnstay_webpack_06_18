@@ -6596,3 +6596,17 @@ template {
     color: white;
     padding-top: 5em;
     padding-left: 6em; }
+
+.track {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border: 3px solid #fff;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer; }
+  .track .track-img {
+    position: relative;
+    width: 100%;
+    height: 100%; }
