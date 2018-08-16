@@ -38,7 +38,6 @@ class BannerGeneric extends Component {
 
     }
 
-
     render(){
 
         let {content} = this.state;
