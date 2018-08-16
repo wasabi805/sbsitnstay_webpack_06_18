@@ -14,11 +14,7 @@ class BodyParent extends Component {
 
         this.state = {
             isLoading: true,
-            showLanding : false,
-            showAbout   : false,
-            showServices: false,
-            showGallery : false,
-            showContact : false,
+            showLanding:false, showAbout:false, showServices:false, showGallery:false, showContact:false,
             content: this.props.content
         };
     }
@@ -52,12 +48,13 @@ class BodyParent extends Component {
     }
 
     render(){
+
         console.log('this.state.content', this.state.content);
         return(
             <div className='body-parent'>
                 {this.state.showLanding &&  <LandingBody content={this.state.content}/>}
-                {this.state.showAbout &&  <AboutUsBody />}
-                {this.state.showServices &&  <ServicesBody />}
+                {this.state.showAbout &&  <AboutUsBody content={this.state.content} />}
+                {this.state.showServices &&  <ServicesBody content={this.state.content}/>}
             </div>
         )
 
