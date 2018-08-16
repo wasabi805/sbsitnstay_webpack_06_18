@@ -16,17 +16,17 @@ class Main extends Component{
 
    render(){
 
+       let appStateBanner = this.props.mainReducer.bannerParentState;
+       let appStateBody = this.props.mainReducer.bodyParentState;
 
-       let appState = this.props.mainReducer.bodyParentState;
        let {match, location, history} = this.props;
+       
+       console.log(this.props.mainReducer);
 
        return(
            <div className='main-cont bg-info'>
-
-               <BannerParent />
-               <BodyParent content={appState} match={match} location={location} history={history}/>
-
-
+               <BannerParent content={appStateBanner} match={match} location={location} history={history}/>
+               <BodyParent content={appStateBody} match={match} location={location} history={history}/>
            </div>
        )
    }

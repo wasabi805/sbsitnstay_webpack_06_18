@@ -1,8 +1,12 @@
 import React from 'react';
 
+import Navbar from './side-nav'
+
 const BannerLanding = ()=>{
     return(
+
         <div className='banner-landing-main'>
+            <Navbar/>
 
 
             <div className='banner-landing-img-cont'>

@@ -27,7 +27,6 @@ class NavSlideIcon extends Component{
 
     }
 
-
     onClick(){
 
     }
@@ -40,9 +39,7 @@ class NavSlideIcon extends Component{
 
                         {/* -----   -----   -----   Slide (hamburger-icon) icon   -----   -----*/}
                         <span className='open-slide'>
-
                             <a href='#' onClick={this.onOpenSlideMenu}>
-
                                 <svg className='hamburger-icon'>
                                     <path d="M0,5 30,5" stroke="#fff" strokeWidth="5"/>
                                     <path d="M0,14 30,14" stroke="#fff" strokeWidth="5"/>
@@ -50,23 +47,9 @@ class NavSlideIcon extends Component{
                                 </svg>
 
                             </a>
-
                         </span>
 
-                        {/*-----    -----   -----   Header Nav Links     ----    ----    ----    */}
-
-                        {/*<ul className='navbar-nav'>*/}
-                            {/*<li><a href="#" className='navbar-nav-a'>Home</a></li>*/}
-                            {/*<li><a href="#" className='navbar-nav-a'>About Us</a></li>*/}
-                            {/*<li><a href="#" className='navbar-nav-a'>Services</a></li>*/}
-                            {/*<li><a href="#" className='navbar-nav-a'>Gallery</a></li>*/}
-                            {/*<li><a href="#" className='navbar-nav-a'>Contact</a></li>*/}
-
-                        {/*</ul>*/}
                     </div>
-
-
-
 
                     {/*-----    -----   -----   Slide Menu(contains the li's)     ----    ----    ----    */}
                     {/*NOTE: id is used only for js to target*/}
@@ -75,10 +58,10 @@ class NavSlideIcon extends Component{
                         {/*this is the 'X' to close the menu*/}
                         <a href="#" className='btn-close' onClick={this.onCloseSlideMenu}>&times; </a>
                         <a href="/" >Home </a>
-                        <a href="/" >About Us </a>
-                        <a href="#" >Services </a>
-                        <a href="#" >Gallery </a>
-                        <a href="#" >Contact </a>
+                        <a href="/location/about-us" >About Us </a>
+                        <a href="/location/services" >Services </a>
+                        <a href="/location/gallery" >Gallery </a>
+                        <a href="/location/contact" >Contact </a>
                     </div>
 
                     {/*slideNav uses this as a ref from where to push off*/}
@@ -96,10 +79,10 @@ class NavSlideIcon extends Component{
                                 <a href="/location/services" className="nav-link">Services</a>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link">Gallery</a>
+                                <a href="/location/gallery" className="nav-link">Gallery</a>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link">Contact</a>
+                                <a href="/location/contact" className="nav-link">Contact</a>
                             </li>
                         </ul>
                     </div>
