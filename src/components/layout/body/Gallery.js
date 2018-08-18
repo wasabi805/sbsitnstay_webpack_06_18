@@ -43,8 +43,8 @@ class Gallery extends Component{
 
         return(
 
-            <div className="container">
-                <div className="masonry-container">
+            <div className="container-fluid">
+                <div className="masonry-container w-100">
 
                     <Masonry brakepoints={breakPoints}>
 

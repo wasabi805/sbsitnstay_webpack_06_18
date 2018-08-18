@@ -65,6 +65,7 @@ class BannerParent extends Component{
                 <div className='banner-parent'>
                     {this.state.showBannerLanding && <BannerLanding/>},
                     {this.state.showBannerGeneric && <BannerGeneric content={content} match={match} history={history} location={location} />}
+
                 </div>
 
         )

@@ -35,11 +35,25 @@ const initialState = {
         ],
 
         images : [
-            'https://i1.sndcdn.com/artworks-000046904102-0iwr24-t500x500.jpg',
-            'http://www.thechurchillobserver.com/wp-content/uploads/2018/03/image1.png',
-            'https://is3-ssl.mzstatic.com/image/thumb/Music4/v4/c7/e6/b0/c7e6b060-51c0-971b-0d80-518cd97db3c3/UMG_cvrart_00044003173460_01_RGB72_1502x1502_13CANIM00972.jpg/1200x630bb.jpg',
-            'https://cdn.shopify.com/s/files/1/1477/9384/articles/wu_tang_clan_enter_the_wu_tang_36_chambers_x750.jpeg?v=1481162833',
+            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20180129_192156.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170304_110838.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160801_182236.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170529_124148.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160924_080550.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171028_215554.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160508_191857.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170709_174353.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161022_123554.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170304_110858.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161015_162730.jpg',
+            "https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161022_123554_1.jpg",
+            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160717_081551.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171112_180856.jpg',
+            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170101_201317.jpg',
         ],
+
+
 
         breakPoints:[350 , 500, 750],
 
