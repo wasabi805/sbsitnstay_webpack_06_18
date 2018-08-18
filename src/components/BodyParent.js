@@ -5,7 +5,9 @@ import {Route, Link} from 'react-router-dom';
 import LandingBody from './layout/body/Landing'
 import AboutUsBody from './layout/body/AboutUs'
 import ServicesBody from './layout/body/Services'
+import GalleryBody from './layout/body/Gallery'
 import TestComp01 from './testComp01'
+import test_imgs_srcs from '.././images/test-imgs-srcs';
 
 
 class BodyParent extends Component {
@@ -50,14 +52,32 @@ class BodyParent extends Component {
 
     render(){
 
+        // let imgArr = test_imgs_srcs;
+        //
+        // let testImgMapper = imgArr.map((img, key)=>{
+        //
+        //     return(
+        //         <img key={key} src={img.src}  />
+        //     )
+        //
+        // });
+
+        let imgs = test_imgs_srcs;
+        console.log(imgs, 'imgs');
+
+
+
+
         console.log('this.state.content', this.state.content);
+
         return(
-            <div className='body-parent'>
+            <div className='body-parent container-fluid'>
                 {this.state.showLanding &&  <LandingBody content={this.state.content}/>}
                 {this.state.showAbout &&  <AboutUsBody content={this.state.content} />}
                 {this.state.showServices &&  <ServicesBody content={this.state.content}/>}
+                {this.state.showGallery &&  <GalleryBody content={this.state.content}  imgs={imgs} />}
+                {/*{this.state.showContact &&  <ContactBody content={this.state.content}/>}*/}
 
-                <TestComp01/>
 
 
             </div>

@@ -42,7 +42,7 @@ class BannerGeneric extends Component {
 
         let {content} = this.state;
 
-        console.table([content]);
+        // console.table([content]);
 
 
         return(

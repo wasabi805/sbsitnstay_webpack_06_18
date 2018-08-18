@@ -1,4 +1,5 @@
 import {MAIN_CONTAINER} from "../actions/action-type";
+const testImg01 = 'https://res.cloudinary.com/ocampot/image/upload/v1532313756/testImg.jpg'
 
 const initialState = {
 
@@ -30,9 +31,16 @@ const initialState = {
             {id: 2, name:'Feeding', src: "https://res.cloudinary.com/ocampot/image/upload/v1532399233/sbsitnstay/pups_eating.jpg", small: 'Stuff About Feeding' },
             {id: 3, name:'Drop-ins', src: "https://res.cloudinary.com/ocampot/image/upload/v1533787475/dog-napping.jpg", small: 'Stuff About Drop-ins' },
             {id: 4, name:'Overnight Care', src: "https://res.cloudinary.com/ocampot/image/upload/v1532399537/sbsitnstay/dog_sleeping_01.jpg", small: 'Stuff Overnight care' },
-            {id: 5, name:'Adventures', src: "https://res.cloudinary.com/ocampot/image/upload/v1533787592/dog-on-hike-00.jpg", small: 'Stuff About Adventures' +
-                '' },
+            {id: 5, name:'Adventures', src: "https://res.cloudinary.com/ocampot/image/upload/v1533787592/dog-on-hike-00.jpg", small: 'Stuff About Adventures'},
         ],
+
+        gallery : [
+            {id:1 , name :'see the main-container-reducer and set up defaults' ,src: testImg01, small: 'Make up ome content'}
+        ],
+
+        contact: [
+            {id:1 , name :'see the main-container-reducer and set up defaults' ,src: testImg01, small: 'Make up ome content'}
+        ]
 
 
 

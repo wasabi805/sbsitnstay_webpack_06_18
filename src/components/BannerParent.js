@@ -24,7 +24,7 @@ class BannerParent extends Component{
 
         let pathname = this.props.location.pathname;
 
-       console.table('My Table' + [this.state.content]);
+       // console.table('My Table' + [this.state.content]);
 
         switch(pathname){
 
@@ -42,12 +42,21 @@ class BannerParent extends Component{
                 this.setState({content: this.state.content[2], showBannerGeneric: true});
                 break;
 
+            case '/location/gallery':
+
+                this.setState({content: this.state.content[3], showBannerGeneric: true});
+                break;
+
+            case '/location/contact':
+
+                this.setState({content: this.state.content[4], showBannerGeneric: true});
+                break;
         }
     }
 
     render(){
 
-        console.log(this.props, 'banner-parent');
+        // console.log(this.props, 'banner-parent');
 
         let {match, history, location, content} = this.props;
 

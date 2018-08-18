@@ -20,7 +20,7 @@ const AboutUs=(props)=>{
 
 
                   <div className='col about-us-colB col-sm-10 col-md-9'>
-                    <div className='about-us-content'>
+                    <div className='about-us-content lead'>
                         <h2>Meet {props.content[0].name}</h2>
                         <p>stuff about kayla</p>
 
