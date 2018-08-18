@@ -24,7 +24,8 @@ const Gallery = (props)=>{
 
         key = imgTest.id;
 
-        console.log(key);
+        // console.log(key);
+
 
 
         return(
