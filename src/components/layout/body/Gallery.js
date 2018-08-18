@@ -1,53 +1,83 @@
-import * as React from 'react';
-import Masonry from 'react-masonry-component'
+import React,{Component} from 'react';
+// import Masonry from 'react-masonry-component'
+import Masonry from './gallery-children/Masonry'
+import ReactDOM from 'react-dom';
+const { render } = ReactDOM;
 
 
 
+class Gallery extends Component{
 
-const Gallery = (props)=>{
+    constructor(props){
+        super(props);
+        this.state={
+            content: [],
+            breakPoints:[]
 
-    let {imgs} = props;
+        }
+    }
 
-    let style1 = {
-        backgroundColor : '#7a43b6',
-        maxWidth : '400px',
-        maxHeight: '400px',
-    };
-
-    let style2={
-        height: '100%',
-        width: '100%',
+    componentWillMount(){
+        this.setState({
+            content: this.props.content,
+            breakPoints: this.props.breakPoints
+        })
 
     }
 
-    const childElements = imgs.map((imgTest, key)=>{
+    componentDidMount(){
+        console.log(this.state, 'from Gallery CompDidMount');
+    }
 
-        key = imgTest.id;
+    render(){
 
-        // console.log(key);
+        console.log(this.props, 'zzzzzzz');
 
+
+
+        console.log(this.state.breakPoints, "Bout to send this in");
+
+
+       const {content, breakPoints} = this.state;
 
 
         return(
-            <li key={key} style={style1} className='image-element-class'>
-                <img style={style2} src={imgTest.src}/>
-            </li>
+
+            <div className="container">
+                <div className="masonry-container">
+
+                    <Masonry brakepoints={breakPoints}>
+
+                        {content.map((image, index)=>{
+
+                            return(
+                                <Tile key={index} src={image}/>
+                            )
+                        })}
+                    </Masonry>
+                </div>
+
+            </div>
+
         )
-    });
+    }
 
-    return(
+}
 
-        <Masonry className={'my-gallery-class'}
-                 elementType={'ul'}
-
-        >
-           { childElements}
-        </Masonry>
-
-    )
+const Tile = ({src}) => {
+    return (
+        <div className="tile">
+            <img src={src} />
+        </div>
+    );
 };
 
+
+
+// render(<Gallery content={} brakePoints={breakPoints} />, root);
 export default Gallery
+
+
 
 
 

@@ -34,23 +34,33 @@ const initialState = {
             {id: 5, name:'Adventures', src: "https://res.cloudinary.com/ocampot/image/upload/v1533787592/dog-on-hike-00.jpg", small: 'Stuff About Adventures'},
         ],
 
-        gallery : [
-            {id:1 , name :'see the main-container-reducer and set up defaults' ,src: testImg01, small: 'Make up ome content'}
+        images : [
+            'https://i1.sndcdn.com/artworks-000046904102-0iwr24-t500x500.jpg',
+            'http://www.thechurchillobserver.com/wp-content/uploads/2018/03/image1.png',
+            'https://is3-ssl.mzstatic.com/image/thumb/Music4/v4/c7/e6/b0/c7e6b060-51c0-971b-0d80-518cd97db3c3/UMG_cvrart_00044003173460_01_RGB72_1502x1502_13CANIM00972.jpg/1200x630bb.jpg',
+            'https://cdn.shopify.com/s/files/1/1477/9384/articles/wu_tang_clan_enter_the_wu_tang_36_chambers_x750.jpeg?v=1481162833',
         ],
+
+        breakPoints:[350 , 500, 750],
+
 
         contact: [
             {id:1 , name :'see the main-container-reducer and set up defaults' ,src: testImg01, small: 'Make up ome content'}
         ]
-
-
-
     },
+
+
 };
+
+
 
 export default function (state=initialState, action) {
     switch (action.type){
+
         case MAIN_CONTAINER:{
             state = { ...state};
+
+            console.log('FROM REDUCER', state);
 
             return state
         }
