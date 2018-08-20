@@ -6293,6 +6293,99 @@ template {
 
 #main {
   min-width: 960px; }
+  #main .Gallery-Main {
+    /* Create four equal columns that floats next to eachother */
+    /* The Modal (background) */
+    /* Modal Content */
+    /* The Close Button */
+    /* Hide the slides by default */
+    /* Next & previous buttons */
+    /* Position the "next button" to the right */
+    /* On hover, add a black background color with a little bit see-through */
+    /* Number text (1/3 etc) */
+    /* Caption text */ }
+    #main .Gallery-Main .row > .column {
+      padding: 0 8px; }
+    #main .Gallery-Main .row:after {
+      content: "";
+      display: table;
+      clear: both; }
+    #main .Gallery-Main .column {
+      float: left;
+      width: 25%; }
+    #main .Gallery-Main .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: black; }
+    #main .Gallery-Main .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 1200px; }
+    #main .Gallery-Main .close {
+      color: red;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold; }
+    #main .Gallery-Main .close:hover,
+    #main .Gallery-Main .close:focus {
+      color: #999;
+      text-decoration: none;
+      cursor: pointer; }
+    #main .Gallery-Main .mySlides {
+      display: none; }
+    #main .Gallery-Main .prev,
+    #main .Gallery-Main .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none; }
+    #main .Gallery-Main .next {
+      right: 0;
+      border-radius: 3px 0 0 3px; }
+    #main .Gallery-Main .prev:hover,
+    #main .Gallery-Main .next:hover {
+      background-color: rgba(0, 0, 0, 0.8); }
+    #main .Gallery-Main .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0; }
+    #main .Gallery-Main .captioncontainer {
+      text-align: center;
+      background-color: black;
+      padding: 2px 16px;
+      color: white; }
+    #main .Gallery-Main img.demo {
+      opacity: 0.6; }
+    #main .Gallery-Main .active,
+    #main .Gallery-Main .demo:hover {
+      opacity: 1; }
+    #main .Gallery-Main img.hover-shadow {
+      transition: 0.3s; }
+    #main .Gallery-Main .hover-shadow:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
   #main .both-navs {
     margin: 0px;
     padding: 0px;
@@ -6596,42 +6689,3 @@ template {
     color: white;
     padding-top: 5em;
     padding-left: 6em; }
-
-.my-gallery-class {
-  width: auto;
-  height: auto;
-  background-color: red; }
-
-.masonry-container {
-  width: 80%;
-  margin: auto;
-  margin-top: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1); }
-  .masonry-container p {
-    text-align: center;
-    padding: 4px;
-    font-family: monospace;
-    background: #222;
-    color: #efefef; }
-
-.masonry {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: stretch;
-  width: 100%;
-  margin: auto; }
-
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: stretch;
-  flex-grow: 1; }
-
-.tile {
-  margin: 4px; }
-  .tile img {
-    box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    width: 100%; }

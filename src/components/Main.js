@@ -6,7 +6,7 @@ import {getInitialState} from "../actions/main-container-actions";
 
 
 import BannerParent from './BannerParent';
-import BodyParent from './BodyParent'
+import BodyParent from './BodyParent';
 
 
 class Main extends Component{
@@ -16,17 +16,16 @@ class Main extends Component{
 
    render(){
 
-       let appStateBanner = this.props.mainReducer.bannerParentState;
-       let appStateBody = this.props.mainReducer.bodyParentState;
+       let StateBanner = this.props.mainReducer.bannerParentState;
+       let StateBody = this.props.mainReducer.bodyParentState;
+
 
        let {match, location, history} = this.props;
-       
-       console.log(this.props.mainReducer);
 
        return(
            <div className='main-cont bg-info'>
-               <BannerParent content={appStateBanner} match={match} location={location} history={history}/>
-               <BodyParent content={appStateBody} match={match} location={location} history={history}/>
+               <BannerParent content={StateBanner} match={match} location={location} history={history}/>
+               <BodyParent content={StateBody} match={match} location={location} history={history}/>
            </div>
        )
    }

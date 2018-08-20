@@ -19,7 +19,7 @@ class BodyParent extends Component {
             isLoading: true,
             showLanding:false, showAbout:false, showServices:false, showGallery:false, showContact:false,
             content: this.props.content,
-            breakPoints:[]
+
 
         };
     }
@@ -45,10 +45,7 @@ class BodyParent extends Component {
             case '/location/gallery':
 
                 this.setState({
-                    content : this.props.content.images,
-                    breakPoints: this.props.content.breakPoints,
-                    isLoading: false,
-                    showGallery : true, });
+                    content : this.props.content.gallery, isLoading: false, showGallery : true, });
                 break;
 
             case '/location/contact':
@@ -59,16 +56,13 @@ class BodyParent extends Component {
 
     render(){
 
-        console.log(this.props.content, "can you see breakPoints from Reducer?");
-
-        console.log('this should be new state frm reducer', this.state.breakPoints);
 
         return(
             <div className='body-parent container-fluid'>
                 {this.state.showLanding &&  <LandingBody content={this.state.content}/>}
                 {this.state.showAbout &&  <AboutUsBody content={this.state.content} />}
                 {this.state.showServices &&  <ServicesBody content={this.state.content}/>}
-                {this.state.showGallery &&  <GalleryBody content={this.state.content} breakPoints={this.state.breakPoints} />}
+                {this.state.showGallery &&  <GalleryBody content={this.state.content} />}
                 {/*{this.state.showContact &&  <ContactBody content={this.state.content}/>}*/}
 
 

@@ -1,8 +1,9 @@
 import React from 'react';
 
+
+
 const Landing =(props)=>{
 
-    console.log(props, 'from landing');
 
         return(
             <div className='landing-main p-0 m-0'>

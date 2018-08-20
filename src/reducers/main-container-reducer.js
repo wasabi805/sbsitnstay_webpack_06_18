@@ -34,28 +34,20 @@ const initialState = {
             {id: 5, name:'Adventures', src: "https://res.cloudinary.com/ocampot/image/upload/v1533787592/dog-on-hike-00.jpg", small: 'Stuff About Adventures'},
         ],
 
-        images : [
-            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20180129_192156.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170304_110838.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160801_182236.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170529_124148.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160924_080550.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171028_215554.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160508_191857.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170709_174353.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161022_123554.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170304_110858.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161015_162730.jpg',
-            "https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161022_123554_1.jpg",
-            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160717_081551.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171112_180856.jpg',
-            'https://res.cloudinary.com/ocampot/image/upload/a_360,w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170101_201317.jpg',
+        gallery: [
+
+            {id:1, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/a_360, w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20180129_192156.jpg'},
+            {id:2, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170304_110838.jpg'},
+            {id:3, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg'},
+            {id:4, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170710_203907.jpg'},
+            {id:5, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/a_360, w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161015_162730.jpg'},
+            {id:6, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171122_132128.jpg'},
+            {id:7, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/a_360, w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160801_182236.jpg'},
+            {id:8, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160508_191857.jpg'},
+            {id:9, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/a_360, w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170529_124148.jpg'},
+            {id:10, name:'', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171028_215554.jpg'},
+
         ],
-
-
-
-        breakPoints:[350 , 500, 750],
 
 
         contact: [

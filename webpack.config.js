@@ -6,6 +6,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
     filename: 'main.css', //add this to get sass working correctly
+
 });
 
 
@@ -88,7 +89,9 @@ module.exports={
     // Plugins
     plugins: [
 
+
         new webpack.EvalSourceMapDevToolPlugin(),
+
 
 
 
