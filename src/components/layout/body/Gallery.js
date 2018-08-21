@@ -7,6 +7,7 @@ class Gallery extends Component{
         this.state={
 
             content: [],
+            lightBox:[],
 
             slides: '',
             slideIndex: '',
@@ -31,6 +32,7 @@ class Gallery extends Component{
     componentWillMount(){
         this.setState({
             content: this.props.content,
+            lightBox: this.props.lightBox,
         })
 
 
@@ -60,6 +62,8 @@ class Gallery extends Component{
 
         })
 
+
+
     }
 
     closeModal(){
@@ -80,13 +84,13 @@ class Gallery extends Component{
 
     showSlides(n){
 
-        n=0
+        n=1
 
         console.log('showslides clicked', n);
 
         let i;
 
-        let{slides, slideIndex, slideLength, showModalImg, dots, captionText, isOpen} = this.state;
+        let{slides, slideIndex, slideLength, dots, captionText, isOpen} = this.state;
 
 
         if(n > slideLength) {
@@ -110,6 +114,7 @@ class Gallery extends Component{
         }
 
         slides[slideIndex-1].style.display = "block";
+
         dots[slideIndex-1].className += " active";
         captionText.innerHTML = dots[slideIndex-1].alt;
 
@@ -118,20 +123,22 @@ class Gallery extends Component{
     }
 
 
-
-
     render(){
         let style={
-            width: 100
+            width: 60,
         }
 
         // let {style} = this.state.style;
 
-        console.log(style);
+        console.log(this.props, 'see all props');
 
-        const {content} = this.state;
+        const {content, lightBox} = this.state;
+
+
 
         let{slideLength, slideIndex, dots, captionText} = this.state;
+
+
 
 
                 //-------   ------  ------  -----   ----    -
@@ -140,16 +147,15 @@ class Gallery extends Component{
 
                     <div className='Gallery-Main'>
 
+                        {/*Click the thumbnails*/}
                         <div className='row '>
-
-
                             <div className='column'>
-                                <img name="arlo" src={content[1].src} onClick={this.openModal} />
+                                <img name="arlo" src={content[0].src} onClick={this.openModal} />
                             </div>
 
 
                             <div className='column'>
-                                <img src={content[2].src}/>
+                                <img src={content[2].src} onClick={this.openModal}/>
                             </div>
 
                             <div className='column'>
@@ -178,7 +184,7 @@ class Gallery extends Component{
 
                                 <div className="mySlides">
                                     <div className="numbertext">2 / 4</div>
-                                    {/*<img src="https://res.cloudinary.com/ocampot/image/upload/v1534616139/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg" style={style}/>*/}
+                                    <img src="https://res.cloudinary.com/ocampot/image/upload/v1534616139/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg" style={style}/>
                                 </div>
 
                                 <div className="mySlides">
@@ -208,11 +214,12 @@ class Gallery extends Component{
 
                                 {/*Thumbnail image controls*/}
                                 <div className="column">
-                                    <img className="demo" src="img1.jpg" onClick="currentSlide(1)" alt="Nature"/>
+
+                                    <img className="demo" src={content[0].src} onClick={()=>{console.log('nature was clicked');}} alt="Nature"/>
                                 </div>
 
                                 <div className="column">
-                                    <img className="demo" src="img2.jpg" onClick="currentSlide(2)" alt="Snow"/>
+                                    <img className="demo" src="https://res.cloudinary.com/ocampot/image/upload/v1534616139/sbsitnstay/gallery-sbsitnstay/20170304_110838.jpg" onClick="currentSlide(2)" alt="Snow"/>
                                 </div>
 
                                 <div className="column">

@@ -1,6 +1,9 @@
 import {MAIN_CONTAINER} from "../actions/action-type";
 const testImg01 = 'https://res.cloudinary.com/ocampot/image/upload/v1532313756/testImg.jpg'
 
+import close from '.././assets/images/loading.gif'
+
+
 const initialState = {
 
     bannerParentState :[
@@ -36,7 +39,7 @@ const initialState = {
 
         gallery: [
 
-            {id:1, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/a_360, w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20180129_192156.jpg'},
+            {id:1, name: '', src: '.././assets/thumbs/sbsitnstay_gallery-sbsitnstay_arlo01_110838-Thumbnail.jpg'},
             {id:2, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170304_110838.jpg'},
             {id:3, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg'},
             {id:4, name: '', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170710_203907.jpg'},
@@ -48,6 +51,14 @@ const initialState = {
             {id:10, name:'', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171028_215554.jpg'},
 
         ],
+
+        lightBox:[
+            {id:1, name: 'loading', src:'.././assets/images/loading.gif'},
+            {id:2, name: 'next', src:'.././assets/images/next.gif'},
+            {id:3, name: 'prev', src:'.././assets/images/prev.gif'},
+            {id:4, name: 'close', src:'.././assets/images/close.gif'},
+        ],
+
 
 
         contact: [

@@ -18,9 +18,8 @@ class BodyParent extends Component {
         this.state = {
             isLoading: true,
             showLanding:false, showAbout:false, showServices:false, showGallery:false, showContact:false,
-            content: this.props.content,
-
-
+            content: '',
+            lightBox :''
         };
     }
 
@@ -45,7 +44,9 @@ class BodyParent extends Component {
             case '/location/gallery':
 
                 this.setState({
-                    content : this.props.content.gallery, isLoading: false, showGallery : true, });
+                    content : this.props.content.gallery, isLoading: false,
+                    lightBox : this.props.content.lightBox,
+                    showGallery : true, });
                 break;
 
             case '/location/contact':
@@ -56,13 +57,15 @@ class BodyParent extends Component {
 
     render(){
 
+        console.log(this.props, 'bodyParent');
+
 
         return(
             <div className='body-parent container-fluid'>
                 {this.state.showLanding &&  <LandingBody content={this.state.content}/>}
                 {this.state.showAbout &&  <AboutUsBody content={this.state.content} />}
                 {this.state.showServices &&  <ServicesBody content={this.state.content}/>}
-                {this.state.showGallery &&  <GalleryBody content={this.state.content} />}
+                {this.state.showGallery &&  <GalleryBody content={this.state.content} lightBox={this.state.lightBox} />}
                 {/*{this.state.showContact &&  <ContactBody content={this.state.content}/>}*/}
 
 
