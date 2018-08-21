@@ -19,7 +19,7 @@ class BodyParent extends Component {
             isLoading: true,
             showLanding:false, showAbout:false, showServices:false, showGallery:false, showContact:false,
             content: '',
-            lightBox :''
+            modalBtns :''
         };
     }
 
@@ -45,7 +45,7 @@ class BodyParent extends Component {
 
                 this.setState({
                     content : this.props.content.gallery, isLoading: false,
-                    lightBox : this.props.content.lightBox,
+                    modalBtns : this.props.content.modalBtns,
                     showGallery : true, });
                 break;
 
@@ -65,7 +65,7 @@ class BodyParent extends Component {
                 {this.state.showLanding &&  <LandingBody content={this.state.content}/>}
                 {this.state.showAbout &&  <AboutUsBody content={this.state.content} />}
                 {this.state.showServices &&  <ServicesBody content={this.state.content}/>}
-                {this.state.showGallery &&  <GalleryBody content={this.state.content} lightBox={this.state.lightBox} />}
+                {this.state.showGallery &&  <GalleryBody content={this.state.content} modalBtns={this.state.modalBtns} />}
                 {/*{this.state.showContact &&  <ContactBody content={this.state.content}/>}*/}
 
 
