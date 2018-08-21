@@ -1,9 +1,7 @@
 import {combineReducers} from 'redux';
 
 import mainReducer from './main-container-reducer'
-// import bodyReducer from './body-parent-reducer';
-import bannerReducer from './banner-parent-reducer'
-import landingReducer from './landing-reducer';
+import galleryReducer from './gallery-reducer';
 
 
 
@@ -15,4 +13,6 @@ import landingReducer from './landing-reducer';
 export default combineReducers({
     // bodyReducer: bodyReducer,
     mainReducer: mainReducer,
+    galleryReducer: galleryReducer,
+
 });

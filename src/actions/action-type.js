@@ -1,1 +1,2 @@
 export const MAIN_CONTAINER = 'MAIN_CONTAINER';
+export const LOAD_GALLERY = 'LOAD_GALLERY';

@@ -19,14 +19,12 @@ class BodyParent extends Component {
             isLoading: true,
             showLanding:false, showAbout:false, showServices:false, showGallery:false, showContact:false,
             content: '',
-            modalBtns :''
         };
     }
 
     componentWillMount(){
 
         let pathname = this.props.location.pathname;
-
         switch(pathname){
 
             case '/':
@@ -44,8 +42,6 @@ class BodyParent extends Component {
             case '/location/gallery':
 
                 this.setState({
-                    content : this.props.content.gallery, isLoading: false,
-                    modalBtns : this.props.content.modalBtns,
                     showGallery : true, });
                 break;
 
@@ -57,22 +53,16 @@ class BodyParent extends Component {
 
     render(){
 
-        console.log(this.props, 'bodyParent');
-
-
         return(
             <div className='body-parent container-fluid'>
                 {this.state.showLanding &&  <LandingBody content={this.state.content}/>}
                 {this.state.showAbout &&  <AboutUsBody content={this.state.content} />}
                 {this.state.showServices &&  <ServicesBody content={this.state.content}/>}
-                {this.state.showGallery &&  <GalleryBody content={this.state.content} modalBtns={this.state.modalBtns} />}
+
+                {this.state.showGallery &&  <GalleryBody/>} />
                 {/*{this.state.showContact &&  <ContactBody content={this.state.content}/>}*/}
-
-
-
             </div>
         )
-
     }
 
 }

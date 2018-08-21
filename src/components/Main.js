@@ -23,7 +23,7 @@ class Main extends Component{
        let {match, location, history} = this.props;
 
        return(
-           <div className='main-cont bg-info'>
+           <div className='main-cont'>
                <BannerParent content={StateBanner} match={match} location={location} history={history}/>
                <BodyParent content={StateBody} match={match} location={location} history={history}/>
            </div>

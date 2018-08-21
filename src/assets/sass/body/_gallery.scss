@@ -8,7 +8,7 @@
   .Gallery-Main{
 
     @include gallery-masonry;
-    @include imgModal;
+    @include galleryModal;
 
 
   }
