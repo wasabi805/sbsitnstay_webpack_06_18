@@ -1,3 +1,5 @@
 export const MAIN_CONTAINER = 'MAIN_CONTAINER';
 export const LOAD_GALLERY = 'LOAD_GALLERY';
 export const SHOW_MODAL_IMG = 'SHOW_MODAL_IMG';
+export const GET_MODAL_DATA = 'GET_MODAL_DATA';
+export const GET_THUMB_DATA = 'GET_THUMB_DATA';

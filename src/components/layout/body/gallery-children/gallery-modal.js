@@ -1,18 +1,39 @@
 import React, {Component} from 'React'
 
-const GalleryModal =(props)=>{
+class GalleryModal extends Component{
+
+    constructor(props){
+        super(props);
+        this.state={
+        };
+
+
+    }
+
+
+    render(){
 
 
 
-    return(
-        <div>
-            <div id="myModal" className="modal">
-                <span className="close">&times;</span>
-                <img className="modal-content" id="img01"/>
-                <div id="caption"></div>
+        console.log(this.props, 'MODAL');
+
+
+
+        return(
+            <div>
+                <div id={this.props.myModal} className={this.props.modalClass}>
+
+                    <span className="close">&times;</span>
+                    <img id={this.props.modalImgId} className={this.props.modalImgClass} />
+
+                    <div id={this.props.captionText}></div>
+                </div>
             </div>
-        </div>
-    )
+        )
+
+    }
+
+
 
 };
 
