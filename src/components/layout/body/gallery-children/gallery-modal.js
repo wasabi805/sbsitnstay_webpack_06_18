@@ -2,7 +2,7 @@ import React, {Component} from 'React'
 
 const GalleryModal =(props)=>{
 
-    console.log(props, 'modal');
+
 
     return(
         <div>

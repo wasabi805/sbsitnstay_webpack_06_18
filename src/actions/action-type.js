@@ -1,2 +1,3 @@
 export const MAIN_CONTAINER = 'MAIN_CONTAINER';
 export const LOAD_GALLERY = 'LOAD_GALLERY';
+export const SHOW_MODAL_IMG = 'SHOW_MODAL_IMG';

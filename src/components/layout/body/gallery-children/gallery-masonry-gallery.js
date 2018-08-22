@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 
 const MasonryGallery = (props)=>{
 
+
     return(
+
         <div className='masonry-main container'>
             <div className='row '>
 

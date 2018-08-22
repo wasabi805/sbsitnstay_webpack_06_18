@@ -1,4 +1,4 @@
-import {LOAD_GALLERY} from ".././actions/action-type";
+import {LOAD_GALLERY, SHOW_MODAL_IMG} from ".././actions/action-type";
 
 const initialState = {
 
@@ -64,7 +64,11 @@ const initialState = {
         {id:4, name: 'close', src:'.././assets/images/close.gif'},
     ],
 
+
+
 };
+
+
 
 
 export default function (state=initialState, action) {
@@ -73,6 +77,17 @@ export default function (state=initialState, action) {
 
         case LOAD_GALLERY:{
             state = { ...state};
+            return state
+        }
+
+        case SHOW_MODAL_IMG:{
+
+            state = {
+                ...state,
+
+                getModalId: action.payload
+            }
+
             return state
         }
 
