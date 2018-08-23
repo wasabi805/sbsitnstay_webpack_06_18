@@ -1,31 +1,31 @@
-import {LOAD_GALLERY, SHOW_MODAL_IMG, GET_THUMB_DATA, GET_MODAL_DATA } from ".././actions/action-type";
+import {LOAD_GALLERY, SHOW_MODAL_IMG, GET_THUMB_DATA, GET_MODAL_DATA, } from ".././actions/action-type";
 
 const initialState = {
 
     //Gallery Thumnails
     galleryThumbs: [
 
-        {id: 'gal-thumb-00', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20180129_192156.jpg', display:'block'},
-        {id: 'gal-thumb-01', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170304_110838.jpg', display:'block'},
-        {id: 'gal-thumb-02', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg', display:'block'},
-        {id: 'gal-thumb-03', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170710_203907.jpg', display:'block'},
-        {id: 'gal-thumb-04', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161015_162730.jpg', display:'block'},
-        {id: 'gal-thumb-05', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171122_132128.jpg', display:'block'},
-        {id: 'gal-thumb-06', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160801_182236.jpg', display:'block'},
-        {id: 'gal-thumb-07', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160508_191857.jpg', display:'block'},
-        {id: 'gal-thumb-08', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170529_124148.jpg', display:'block'},
-        {id: 'gal-thumb-09', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171028_215554.jpg', display:'block'},
+        {id: 'gal-thumb-00', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20180129_192156.jpg', targetModal: '#gal-modal-img-00'},
+        {id: 'gal-thumb-01', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170304_110838.jpg', targetModal: '#gal-modal-img-01'},
+        {id: 'gal-thumb-02', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg', targetModal: '#gal-modal-img-02'},
+        {id: 'gal-thumb-03', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170710_203907.jpg', targetModal: '#gal-modal-img-03'},
+        {id: 'gal-thumb-04', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161015_162730.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-05', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171122_132128.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-06', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160801_182236.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-07', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160508_191857.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-08', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170529_124148.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-09', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171028_215554.jpg', targetModal: 'gal-modal-img-00'},
 
-        {id: 'gal-thumb-10', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160716_183734.jpg', style:''},
-        {id: 'gal-thumb-11', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160618_093938.jpg', style:''},
-        {id: 'gal-thumb-12', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160701_174543.jpg', style:''},
-        {id: 'gal-thumb-13', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20180127_224819.jpg', style:''},
-        {id: 'gal-thumb-14', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20171222_195748.jpg', style:''},
-        {id: 'gal-thumb-15', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161008_111823.jpg', style:''},
-        {id: 'gal-thumb-16', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161007_185518.jpg', style:''},
-        {id: 'gal-thumb-17', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20170203_194845.jpg', style:''},
-        {id: 'gal-thumb-18', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161220_201416.jpg', style:''},
-        {id: 'gal-thumb-19', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160702_204520.jpg', style:''},
+        {id: 'gal-thumb-10', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160716_183734.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-11', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160618_093938.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-12', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160701_174543.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-13', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20180127_224819.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-14', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20171222_195748.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-15', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161008_111823.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-16', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161007_185518.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-17', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20170203_194845.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-18', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161220_201416.jpg', targetModal: 'gal-modal-img-00'},
+        {id: 'gal-thumb-19', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160702_204520.jpg', targetModal: 'gal-modal-img-00'},
     ],
 
     //MODAL IMGS : FULL SCREEN
@@ -65,10 +65,7 @@ const initialState = {
     ],
 
 
-
 };
-
-
 
 
 export default function (state=initialState, action) {
@@ -77,36 +74,6 @@ export default function (state=initialState, action) {
 
         case LOAD_GALLERY:{
             state = { ...state};
-            return state
-        }
-
-        case GET_THUMB_DATA:{
-            state = {
-                ...state,
-                getThumbData: action.payload
-            }
-
-            return state
-        }
-
-        case GET_MODAL_DATA:{
-            state = {
-                ...state,
-                getModalData: action.payload
-            }
-
-            return state
-        }
-
-
-        case SHOW_MODAL_IMG:{
-
-            state = {
-                ...state,
-
-                getModalId: action.payload
-            }
-
             return state
         }
 
