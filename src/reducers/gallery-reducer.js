@@ -32,10 +32,10 @@ const initialState = {
 
     modalImages: [
 
-        {id: 'gal-modal-img-00', src: 'https://res.cloudinary.com/ocampot/image/upload/sbsitnstay/gallery-sbsitnstay/20180129_192156.jpg', style:''},
+        {id: 'gal-modal-img-00', src: 'https://res.cloudinary.com/ocampot/image/upload/ac_360/sbsitnstay/gallery-sbsitnstay/20180129_192156.jpg', style:''},
         {id: 'gal-modal-img-01', src: 'https://res.cloudinary.com/ocampot/image/upload/sbsitnstay/gallery-sbsitnstay/20170304_110838.jpg', style:''},
         {id: 'gal-modal-img-02', src: 'https://res.cloudinary.com/ocampot/image/upload/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg', style:''},
-        {id: 'gal-modal-img-03', src: 'https://res.cloudinary.com/ocampot/image/upload/sbsitnstay/gallery-sbsitnstay/20170710_203907.jpg', style:''},
+        {id: 'gal-modal-img-03', src: 'https://res.cloudinary.com/ocampot/image/upload/ac_360/sbsitnstay/gallery-sbsitnstay/20170710_203907.jpg', style:''},
         {id: 'gal-modal-img-04', src: 'https://res.cloudinary.com/ocampot/image/upload/sbsitnstay/gallery-sbsitnstay/20161015_162730.jpg', style:''},
         {id: 'gal-modal-img-05', src: 'https://res.cloudinary.com/ocampot/image/upload/sbsitnstay/gallery-sbsitnstay/20171122_132128.jpg', style:''},
         {id: 'gal-modal-img-06', src: 'https://res.cloudinary.com/ocampot/image/upload/sbsitnstay/gallery-sbsitnstay/20160801_182236.jpg', style:''},

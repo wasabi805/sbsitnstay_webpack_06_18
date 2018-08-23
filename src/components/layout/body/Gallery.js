@@ -47,14 +47,18 @@ class Gallery extends Component{
             let modals =
 
                 <div key={index} className='modal' id={modal.id}>
-                    <div className='modal-dialog'>
+
                         <div className='modal-content'>
                             <div className='modal-header'>
-                                <h5 className='modal-title'>Modal Title</h5>
+                                <h5 className='modal-title'>Take a look at this dirpy little guy :)</h5>
                                 <button className='close' data-dismiss="modal">&times;</button>
                             </div>
 
-                            <img src={modal.src}/>
+                            <div className='img-cont'>
+                                <img src={modal.src}/>
+                            </div>
+
+
 
                         </div>
 
@@ -68,7 +72,9 @@ class Gallery extends Component{
                                 close
                             </Button>
                         </div>
-                    </div>
+
+                         <div className='modal-dialog'></div>
+
                 </div>
 
             return [modals]
@@ -115,7 +121,9 @@ class Gallery extends Component{
 
 
                         {/*RENDERS ALL MODALS WITH IDS*/}
-                        {this.state.modals}
+                        <div className='modals-main'>
+                            {this.state.modals}
+                        </div>
 
 
                         {/*Last div*/}

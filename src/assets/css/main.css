@@ -6009,6 +6009,9 @@ body {
   margin: 0;
   background-color: white;
   font-size: 16px; }
+  body .modal-backdrop {
+    background-color: black;
+    opacity: 0.7; }
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -6297,6 +6300,14 @@ template {
     padding: 0;
     margin: 0;
     width: auto; }
+    #main .Gallery-Main .masonry-main .modals-main .modal {
+      top: 2em;
+      left: 14em;
+      right: 14em;
+      align-items: center;
+      justify-content: center; }
+      #main .Gallery-Main .masonry-main .modals-main .modal .modal-content .img-cont img {
+        width: 100%; }
     #main .Gallery-Main .masonry-main .row {
       padding: 0 4px; }
       #main .Gallery-Main .masonry-main .row .column {
@@ -6315,6 +6326,14 @@ template {
       #main .Gallery-Main .masonry-main .column {
         flex: 100%;
         max-width: 100%; } }
+  #main .Gallery-Main .modals-main .modal {
+    top: 2em;
+    left: 14em;
+    right: 14em;
+    align-items: center;
+    justify-content: center; }
+    #main .Gallery-Main .modals-main .modal .modal-content .img-cont img {
+      width: 100%; }
   #main .both-navs {
     margin: 0px;
     padding: 0px;
