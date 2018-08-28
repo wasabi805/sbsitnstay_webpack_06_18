@@ -1,13 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
+const $ = require("jquery");
+
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-const extractSass = new ExtractTextPlugin({
-    filename: 'main.css', //add this to get sass working correctly
-
-});
 
 
 module.exports={
@@ -50,16 +47,24 @@ module.exports={
             },
 
             {
-                test: /\.(scss|css)$/,
-                use: extractSass.extract({
-                    fallback: 'style-loader',
-                    use: [{loader: "css-loader"}, {loader: "sass-loader"}]
-                }),
-
-                include: path.join(__dirname, 'src')
+                test: /\.scss$/,
+                loaders: [
+                    'style-loader?sourceMap',
+                    'css-loader',
+                    'resolve-url-loader',
+                    'sass-loader?sourceMap'
+                ]
             },
 
 
+            {
+                test: /\.(css)$/,
+                use:[
+                    'style-loader?sourceMap',
+                    'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+
+                ],
+            },
 
             {
                 test: /\.html$/,
@@ -78,7 +83,7 @@ module.exports={
                         options: {
                             fallback: 'file-loader',
                             outputPath: 'img/',
-                            publicPath: 'img/'
+                            publicPath: 'src/images'
                         }
                     }
                 ]
@@ -110,14 +115,6 @@ module.exports={
             jQuery: "jquery",
             Popper: ['popper.js', 'default']
         }),
-
-
-
-
-
-        extractSass
-
-
     ],
 
     devServer: {

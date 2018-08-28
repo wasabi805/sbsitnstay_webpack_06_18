@@ -1,116 +1,82 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {getInitState} from "../../../actions/services-action";
 
 
-const Services = (props)=>{
+import {pic02} from '../../../assets/images/background/pic02.jpg';
 
-    console.log(props);
 
-    return(
-        <div className='services-main container-fluid'>
+class Services extends Component{
 
-            <div className='services-row row'>
+    constructor(props){
+        super(props);
+        this.state={
+            content:[],
+            backgroundImg:[],
+        }
 
-                <div className='col services-colA col-sm-2 col-md-5 p-0'>
+    }
 
-                    <div className='overlay'>I'm the overlay</div>
+    componentWillMount() {
+        let {services} = this.props.serviceReducer
 
-                    <div className='services-img-cont'>
-                        <img src={props.content[0].src} alt=''/>
+        let content =[];
+
+        services.map((data)=>{
+
+            let card =
+                <div key={data.id} className="card">
+                    <img className="card-img" src={data.cardBg} alt=""/>
+                        <div className="card-img-overlay">
+                            <h4 className="card-title text-white">{data.name}</h4>
+                            <img src={data.src}/>
+
+
+                            <p className="card-text text-light">This is a wider card with supporting text below as a natural lead-in to additional content. This content
+                                is a little bit longer.</p>
+                            <p className="card-text">
+                            <small className="text-muted">Last updated 3 mins ago</small>
+                        </p>
                     </div>
                 </div>
 
+            content.push(card)
 
-                <div className='col services-colB col-sm-10 col-md-7'>
-                    <div className='services-content'>
-                        <h2>{props.content[0].name}</h2>
-                        <p>{props.content[0].small}</p>
+        });
 
-                        <button className='btn'> Read More </button>
-                    </div>
-                </div>
+
+
+        this.setState({
+            content: content
+        })
+
+
+    }
+
+
+    render(){
+
+        let {content} = this.state
+        return(
+            <div className='services-main container-fluid'>
+                {content}
             </div>
-
-
-            <div className='services-row row'>
-                <div className='col services-colB col-sm-10  col-md-7'>
-                    <div className='services-content'>
-                        <h2>{props.content[1].name}</h2>
-                        <p>{props.content[1].small}</p>
-
-                        <button className='btn'> Read More </button>
-                    </div>
-                </div>
-
-
-                <div className='col services-colA col-sm-2 col-sm-2 p-0 col-md-5 '>
-                    <div className='overlay'>I'm the overlay</div>
-                    <div className='services-img-cont'>
-                        <img src={props.content[1].src} alt=''/>
-                    </div>
-                </div>
-            </div>
-
-            <div className='services-row row'>
-
-                <div className='col services-colA col-sm-2 col-md-5 p-0'>
-                    <div className='overlay'>I'm the overlay</div>
-                    <div className='services-img-cont'>
-                        <img src={props.content[2].src} alt=''/>
-                    </div>
-                </div>
-
-
-                <div className='col services-colB col-sm-10 col-md-7'>
-                    <div className='services-content'>
-                        <h2>{props.content[2].name}</h2>
-                        <p>{props.content[2].small}</p>
-
-                        <button className='btn'> Read More </button>
-                    </div>
-                </div>
-            </div>
-
-            <div className='services-row row'>
-                <div className='col services-colB col-sm-10  col-md-7'>
-                    <div className='services-content'>
-                        <h2>{props.content[3].name}</h2>
-                        <p>{props.content[3].small}</p>
-
-                        <button className='btn'> Read More </button>
-                    </div>
-                </div>
-
-
-                <div className='col services-colA col-sm-2 col-sm-2 p-0 col-md-5 '>
-                    <div className='overlay'>I'm the overlay</div>
-                    <div className='services-img-cont'>
-                        <img src={props.content[3].src} alt=''/>
-                    </div>
-                </div>
-            </div>
-
-            <div className='services-row row'>
-
-                <div className='col services-colA col-sm-2 col-md-5 p-0'>
-                    <div className='overlay'>I'm the overlay</div>
-                    <div className='services-img-cont'>
-                        <img src={props.content[4].src} alt=''/>
-                    </div>
-                </div>
-
-
-                <div className='col services-colB col-sm-10 col-md-7'>
-                    <div className='services-content'>
-                        <h2>{props.content[4].name}</h2>
-                        <p>{props.content[4].small}</p>
-
-                        <button className='btn'> Read More </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-
+        )
+    }
 };
 
-export default Services
+
+
+const mapStateToProps = (state)=>{
+    return{
+        serviceReducer: state.serviceReducer
+    }
+};
+const mapDispatchToProps = (dispatch, props)=>{
+    return{
+        getInitState : bindActionCreators(getInitState, dispatch)
+    }
+
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Services)

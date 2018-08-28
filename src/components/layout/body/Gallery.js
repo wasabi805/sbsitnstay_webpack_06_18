@@ -28,19 +28,47 @@ class Gallery extends Component{
         const {galleryThumbs, modalImages} = this.props.galleryReducer;
 
 
-            let col1Imgs = []; let col2Imgs = []; let col3Imgs = []; let col4Imgs = [];
+        let col1Imgs = []; let col2Imgs = []; let col3Imgs = []; let col4Imgs = [];
 
-            let w;
+        let w; let x; let y; let z;
 
-            //COL 1 MASONRY IMGS
-            for(w=0; w <= galleryThumbs.length -16 ; w++ ) {
-                let {id, src, targetModal} = galleryThumbs[w];
+        //COL 1 MASONRY IMGS
+        for(w=0; w <= galleryThumbs.length -16 ; w++ ) {
+            let {id, src, targetModal} = galleryThumbs[w];
 
-                let img = <img key={id} id={id} src={src} data-toggle='modal' data-target={targetModal} />
+            let img = <img key={id} id={id} src={src} data-toggle='modal' data-target={targetModal} />
 
-                col1Imgs.push(img)
+            col1Imgs.push(img)
+            }
 
-                }
+        //COL 2 MASONRY IMGS
+        for(x=5; x <= galleryThumbs.length -11 ; x++ ) {
+            let {id, src, targetModal} = galleryThumbs[x];
+
+            let img = <img key={id} id={id} src={src} data-toggle='modal' data-target={targetModal} />
+
+            col2Imgs.push(img)
+        }
+
+        //COL 3 MASONRY IMGS
+        for(y=10; y <= galleryThumbs.length -6 ; y++ ) {
+            let {id, src, targetModal} = galleryThumbs[y];
+
+            let img = <img key={id} id={id} src={src} data-toggle='modal' data-target={targetModal} />
+
+            col3Imgs.push(img)
+        }
+
+        //COL 4 MASONRY IMGS
+        for(z=15; z <= galleryThumbs.length -1 ; z++ ) {
+            let {id, src, targetModal} = galleryThumbs[z];
+
+            let img = <img key={id} id={id} src={src} data-toggle='modal' data-target={targetModal} />
+
+            col4Imgs.push(img)
+        }
+
+
 
         //===== =====   =====   MAP THE MODALS  ======  =====   =====
         const makeModals = modalImages.map((modal,index)=>{
@@ -57,8 +85,6 @@ class Gallery extends Component{
                             <div className='img-cont'>
                                 <img src={modal.src}/>
                             </div>
-
-
 
                         </div>
 
@@ -87,6 +113,9 @@ class Gallery extends Component{
             modalBtns : this.props.galleryReducer.modalBtns,
 
             col1: col1Imgs,
+            col2: col2Imgs,
+            col3: col3Imgs,
+            col4: col4Imgs,
             modals: makeModals
         });
     }
@@ -105,15 +134,15 @@ class Gallery extends Component{
                                 </div>
 
                                 <div className='column'>
-
+                                    {this.state.col2}
                                 </div>
 
                                 <div className='column'>
-
+                                    {this.state.col3}
                                 </div>
 
                                 <div className='column'>
-
+                                    {this.state.col4}
                                 </div>
                             </div>
                         </div>

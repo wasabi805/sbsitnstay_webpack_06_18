@@ -16,7 +16,7 @@ class Main extends Component{
 
    render(){
 
-       let StateBanner = this.props.mainReducer.bannerParentState;
+       let StateBanner = this.props.mainReducer.banner;
        let StateBody = this.props.mainReducer.bodyParentState;
 
 
@@ -24,8 +24,8 @@ class Main extends Component{
 
        return(
            <div className='main-cont'>
-               <BannerParent content={StateBanner} match={match} location={location} history={history}/>
-               <BodyParent content={StateBody} match={match} location={location} history={history}/>
+               {/*<BannerParent content={StateBanner} match={match} location={location} history={history}/>*/}
+               {/*<BodyParent content={StateBody} match={match} location={location} history={history}/>*/}
            </div>
        )
    }

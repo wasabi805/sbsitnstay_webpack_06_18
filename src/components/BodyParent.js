@@ -57,7 +57,7 @@ class BodyParent extends Component {
             <div className='body-parent container-fluid'>
                 {this.state.showLanding &&  <LandingBody content={this.state.content}/>}
                 {this.state.showAbout &&  <AboutUsBody content={this.state.content} />}
-                {this.state.showServices &&  <ServicesBody content={this.state.content}/>}
+                {this.state.showServices &&  <ServicesBody/>}
 
                 {this.state.showGallery &&  <GalleryBody/>} />
                 {/*{this.state.showContact &&  <ContactBody content={this.state.content}/>}*/}

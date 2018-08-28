@@ -6294,346 +6294,207 @@ template {
 * {
   box-sizing: border-box; }
 
-#main {
-  min-width: 960px; }
-  #main .Gallery-Main .masonry-main {
-    padding: 0;
-    margin: 0;
-    width: auto; }
-    #main .Gallery-Main .masonry-main .modals-main .modal {
-      top: 2em;
-      left: 14em;
-      right: 14em;
-      align-items: center;
-      justify-content: center; }
-      #main .Gallery-Main .masonry-main .modals-main .modal .modal-content .img-cont img {
-        width: 100%; }
-    #main .Gallery-Main .masonry-main .row {
-      padding: 0 4px; }
-      #main .Gallery-Main .masonry-main .row .column {
-        flex: 25%;
-        max-width: 25%;
-        padding: 0 4px; }
-        #main .Gallery-Main .masonry-main .row .column img {
-          margin-top: 8px;
-          vertical-align: middle;
-          width: 100%; }
-    @media screen and (max-width: 800px) {
-      #main .Gallery-Main .masonry-main .column {
-        flex: 50%;
-        max-width: 50%; } }
-    @media screen and (max-width: 600px) {
-      #main .Gallery-Main .masonry-main .column {
-        flex: 100%;
-        max-width: 100%; } }
-  #main .Gallery-Main .modals-main .modal {
+.both-navs {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  width: auto;
+  z-index: 10; }
+  .both-navs .navbar {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    overflow: hidden;
+    height: 63px; }
+    .both-navs .navbar ul {
+      padding: 8px 0 0 0;
+      list-style: none; }
+    .both-navs .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 16px; }
+      .both-navs .navbar a:hover {
+        background-color: lightgrey;
+        color: black; }
+    .both-navs .navbar .open-slide .hamburger-icon {
+      width: 30px;
+      height: 30px; }
+  .both-navs .side-nav {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s; }
+    .both-navs .side-nav a {
+      padding: 10px 10px 10px 30px;
+      text-decoration: none;
+      font-size: 22px;
+      color: lightgrey;
+      display: block;
+      transition: 0.3s; }
+      .both-navs .side-nav a:hover {
+        background-color: white; }
+    .both-navs .side-nav .btn-close {
+      position: absolute;
+      top: 0;
+      right: 22px;
+      font-size: 36px;
+      margin-left: 50px; }
+  .both-navs .nav-header-links {
+    display: inline-block;
+    background-color: lightgrey;
+    float: right;
+    z-index: 2; }
+
+.landing-main {
+  margin: 0px;
+  padding: 0px;
+  z-index: 0; }
+  .landing-main .landing-row {
+    z-index: 1; }
+    .landing-main .landing-row .landing-col {
+      margin: 0px;
+      padding: 0px;
+      height: auto;
+      width: auto;
+      z-index: 1; }
+      .landing-main .landing-row .landing-col .overlay {
+        background-color: #636c72;
+        opacity: .6;
+        position: absolute;
+        height: 28em;
+        width: 100%;
+        z-index: 2; }
+      .landing-main .landing-row .landing-col .overlay-content {
+        position: absolute;
+        padding-left: 6em;
+        padding-top: 8em;
+        padding-bottom: 8em;
+        top: 10px;
+        color: white;
+        z-index: 4; }
+        .landing-main .landing-row .landing-col .overlay-content h1 {
+          margin-bottom: 0.5em; }
+        .landing-main .landing-row .landing-col .overlay-content .border {
+          border-bottom: 0.25em solid white;
+          width: 26em;
+          margin-bottom: 1em; }
+      .landing-main .landing-row .landing-col .landing-tile-img {
+        height: 28em; }
+        .landing-main .landing-row .landing-col .landing-tile-img img {
+          width: 100%;
+          height: 100%;
+          z-index: 1; }
+
+.about-us-parent .about-us-row {
+  height: 20rem;
+  margin: 1em; }
+  .about-us-parent .about-us-row .about-us-colA {
+    background-color: cyan;
+    height: 20em;
+    position: relative; }
+    .about-us-parent .about-us-row .about-us-colA .overlay {
+      position: absolute;
+      z-index: 2;
+      opacity: .5;
+      height: 100%;
+      width: 100%;
+      background-color: #636c72; }
+    .about-us-parent .about-us-row .about-us-colA .about-us-img-cont {
+      height: 20em;
+      width: auto;
+      z-index: 3; }
+      .about-us-parent .about-us-row .about-us-colA .about-us-img-cont img {
+        width: 100%;
+        height: 100%;
+        z-index: 1; }
+  .about-us-parent .about-us-row .about-us-colB {
+    background-color: #334780;
+    height: auto; }
+
+.about-us-content {
+  color: white;
+  padding-top: 5em;
+  padding-left: 6em; }
+
+.services-main .card .card-img-overlay .img {
+  width: 100%;
+  height: 100%; }
+
+.Gallery-Main .masonry-main {
+  padding: 0;
+  margin: 0;
+  width: auto; }
+  .Gallery-Main .masonry-main .modals-main .modal {
     top: 2em;
     left: 14em;
     right: 14em;
     align-items: center;
     justify-content: center; }
-    #main .Gallery-Main .modals-main .modal .modal-content .img-cont img {
+    .Gallery-Main .masonry-main .modals-main .modal .modal-content .img-cont img {
       width: 100%; }
-  #main .both-navs {
-    margin: 0px;
-    padding: 0px;
-    position: relative;
-    width: auto;
-    z-index: 10; }
-    #main .both-navs .navbar {
-      margin: 0px;
-      padding: 0px;
-      display: inline-block;
-      overflow: hidden;
-      height: 63px; }
-      #main .both-navs .navbar ul {
-        padding: 8px 0 0 0;
-        list-style: none; }
-      #main .both-navs .navbar a {
-        float: left;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 16px; }
-        #main .both-navs .navbar a:hover {
-          background-color: lightgrey;
-          color: black; }
-      #main .both-navs .navbar .open-slide .hamburger-icon {
-        width: 30px;
-        height: 30px; }
-    #main .both-navs .side-nav {
-      height: 100%;
-      width: 0px;
-      position: fixed;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      background-color: #111;
-      opacity: 0.9;
-      overflow-x: hidden;
-      padding-top: 60px;
-      transition: 0.5s; }
-      #main .both-navs .side-nav a {
-        padding: 10px 10px 10px 30px;
-        text-decoration: none;
-        font-size: 22px;
-        color: lightgrey;
-        display: block;
-        transition: 0.3s; }
-        #main .both-navs .side-nav a:hover {
-          background-color: white; }
-      #main .both-navs .side-nav .btn-close {
-        position: absolute;
-        top: 0;
-        right: 22px;
-        font-size: 36px;
-        margin-left: 50px; }
-    #main .both-navs .nav-header-links {
-      display: inline-block;
-      background-color: lightgrey;
-      float: right;
-      z-index: 2; }
-  #main .banner-parent {
-    height: auto;
-    width: 100%;
-    position: relative; }
-    #main .banner-parent .banner-landing-main {
-      background: hotpink;
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      position: relative; }
-      #main .banner-parent .banner-landing-main .banner-landing-img-cont {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: 1; }
-        #main .banner-parent .banner-landing-main .banner-landing-img-cont img {
-          height: 100%;
-          width: 100%; }
-        #main .banner-parent .banner-landing-main .banner-landing-img-cont::before {
-          content: '';
-          top: 0px;
-          position: absolute;
-          background-color: lightgrey;
-          opacity: 0.1;
-          height: 100%;
-          width: 100%; }
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%); }
-  100% {
-    transform: translateX(0); } }
-
-@keyframes fadein {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-      #main .banner-parent .banner-landing-main .banner-landing-content {
-        position: absolute;
-        top: 8em;
-        padding-left: 5em;
-        padding-top: 10em;
-        height: 100%;
-        width: 100%;
-        color: white;
-        z-index: 2;
-        animation: 1.75s ease-out 0s 1 slideInFromLeft; }
-        #main .banner-parent .banner-landing-main .banner-landing-content .btm-border {
-          border-bottom: 0.2em solid white;
-          display: inline-block;
-          width: 80%;
-          animation: fadein 3.5s; }
-        #main .banner-parent .banner-landing-main .banner-landing-content h1 {
-          font-weight: 200;
-          margin-bottom: 0.25em;
-          animation: fadein 3.5s; }
-        #main .banner-parent .banner-landing-main .banner-landing-content p {
-          animation: fadein 3.5s; }
-        #main .banner-parent .banner-landing-main .banner-landing-content .banner-btn {
-          animation: fadein 3.5s;
-          z-index: 4; }
-    #main .banner-parent .banner-img-cont .banner-landing-img {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      z-index: 0; }
-    #main .banner-parent .banner-img-cont .banner-section-img {
-      position: relative;
-      width: 100%;
-      height: 80vh;
-      z-index: 0; }
-    #main .banner-parent .banner-content {
-      position: absolute;
-      height: 100%;
-      color: white;
-      padding-left: 5em;
-      padding-right: 5em;
-      z-index: 1; }
-      #main .banner-parent .banner-content h1 {
-        margin-bottom: 0px; }
-      #main .banner-parent .banner-content .banner-btn-row {
-        width: 100%;
-        height: 4em; }
-        #main .banner-parent .banner-content .banner-btn-row .banner-btn {
-          padding: 2em;
-          width: auto;
-          margin: auto; }
-    #main .banner-parent .banner-generic-main {
-      top: 0px;
-      background: hotpink;
-      position: relative;
-      height: 70vh;
-      width: 100%;
-      position: relative; }
-      #main .banner-parent .banner-generic-main .banner-generic-img-cont {
-        top: 0px;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: 1; }
-        #main .banner-parent .banner-generic-main .banner-generic-img-cont img {
-          height: 100%;
-          width: 100%; }
-        #main .banner-parent .banner-generic-main .banner-generic-img-cont::before {
-          content: '';
-          top: 0px;
-          position: absolute;
-          background-color: lightgrey;
-          opacity: 0.1;
-          height: 100%;
-          width: 100%; }
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%); }
-  100% {
-    transform: translateX(0); } }
-
-@keyframes fadein {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-      #main .banner-parent .banner-generic-main .banner-generic-content {
-        position: absolute;
-        top: -1em;
-        padding-left: 5em;
-        padding-top: 10em;
-        height: 100%;
-        width: 100%;
-        color: white;
-        z-index: 1;
-        animation: 1.75s ease-out 0s 1 slideInFromLeft; }
-        #main .banner-parent .banner-generic-main .banner-generic-content .btm-border {
-          border-bottom: 0.2em solid white;
-          display: inline-block;
-          width: 80%;
-          animation: fadein 3.5s; }
-        #main .banner-parent .banner-generic-main .banner-generic-content h1 {
-          font-weight: 200;
-          margin-bottom: 0.25em;
-          animation: fadein 3.5s; }
-        #main .banner-parent .banner-generic-main .banner-generic-content p {
-          animation: fadein 3.5s; }
-        #main .banner-parent .banner-generic-main .banner-generic-content .banner-btn {
-          animation: fadein 3.5s;
-          z-index: 4; }
-  #main .landing-main {
-    margin: 0px;
-    padding: 0px;
-    z-index: 0; }
-    #main .landing-main .landing-row {
-      z-index: 1; }
-      #main .landing-main .landing-row .landing-col {
-        margin: 0px;
-        padding: 0px;
-        height: auto;
-        width: auto;
-        z-index: 1; }
-        #main .landing-main .landing-row .landing-col .overlay {
-          background-color: #636c72;
-          opacity: .6;
-          position: absolute;
-          height: 28em;
-          width: 100%;
-          z-index: 2; }
-        #main .landing-main .landing-row .landing-col .overlay-content {
-          position: absolute;
-          padding-left: 6em;
-          padding-top: 8em;
-          padding-bottom: 8em;
-          top: 10px;
-          color: white;
-          z-index: 4; }
-          #main .landing-main .landing-row .landing-col .overlay-content h1 {
-            margin-bottom: 0.5em; }
-          #main .landing-main .landing-row .landing-col .overlay-content .border {
-            border-bottom: 0.25em solid white;
-            width: 26em;
-            margin-bottom: 1em; }
-        #main .landing-main .landing-row .landing-col .landing-tile-img {
-          height: 28em; }
-          #main .landing-main .landing-row .landing-col .landing-tile-img img {
-            width: 100%;
-            height: 100%;
-            z-index: 1; }
-  #main .about-us-parent .about-us-row {
-    height: 20rem;
-    margin: 1em; }
-    #main .about-us-parent .about-us-row .about-us-colA {
-      background-color: cyan;
-      height: 20em;
-      position: relative; }
-      #main .about-us-parent .about-us-row .about-us-colA .overlay {
-        position: absolute;
-        z-index: 2;
-        opacity: .5;
-        height: 100%;
-        width: 100%;
-        background-color: #636c72; }
-      #main .about-us-parent .about-us-row .about-us-colA .about-us-img-cont {
-        height: 20em;
-        width: auto;
-        z-index: 3; }
-        #main .about-us-parent .about-us-row .about-us-colA .about-us-img-cont img {
-          width: 100%;
-          height: 100%;
-          z-index: 1; }
-    #main .about-us-parent .about-us-row .about-us-colB {
-      background-color: #334780;
-      height: auto; }
-  #main .about-us-content {
-    color: white;
-    padding-top: 5em;
-    padding-left: 6em; }
-  #main .services-main .services-row {
-    height: 20rem; }
-    #main .services-main .services-row .services-colA {
-      background-color: cyan;
-      height: 20em;
-      position: relative; }
-      #main .services-main .services-row .services-colA .overlay {
-        position: absolute;
-        z-index: 2;
-        opacity: .5;
-        height: 100%;
+  .Gallery-Main .masonry-main .row {
+    padding: 0 4px; }
+    .Gallery-Main .masonry-main .row .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px; }
+      .Gallery-Main .masonry-main .row .column img {
+        margin-top: 8px;
+        vertical-align: middle;
         width: 100%; }
-      #main .services-main .services-row .services-colA .services-img-cont {
-        height: 20em;
-        width: auto;
-        z-index: 3; }
-        #main .services-main .services-row .services-colA .services-img-cont img {
-          width: 100%;
-          height: 100%;
-          z-index: 1; }
-    #main .services-main .services-row .services-colB {
-      height: auto; }
-  #main .services-content {
-    color: white;
-    padding-top: 5em;
-    padding-left: 6em; }
+  @media screen and (max-width: 800px) {
+    .Gallery-Main .masonry-main .column {
+      flex: 50%;
+      max-width: 50%; } }
+  @media screen and (max-width: 600px) {
+    .Gallery-Main .masonry-main .column {
+      flex: 100%;
+      max-width: 100%; } }
+
+.Gallery-Main .modals-main .modal {
+  top: 2em;
+  left: 14em;
+  right: 14em;
+  align-items: center;
+  justify-content: center; }
+  .Gallery-Main .modals-main .modal .modal-content .img-cont img {
+    width: 100%; }
+
+header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 1em; }
+  header img {
+    width: 100%;
+    height: auto; }
+  header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    header nav ul li {
+      display: inline-block;
+      margin: 1em; }
+      header nav ul li a {
+        font-weight: 900;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: .8rem;
+        padding: .5em;
+        color: white; }
+        header nav ul li a:focus {
+          color: yellow; }
+  header .home-hero .container {
+    width: 95%;
+    margin: auto; }
