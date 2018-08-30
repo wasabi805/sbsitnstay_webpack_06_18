@@ -6,7 +6,7 @@ import store from './store';
 import {setAppInitState} from './routes/route_callbacks';
 import $ from 'jquery';
 
-import bootstrapStyle from 'bootstrap/dist/css/bootstrap.css';
+
 
 
 
@@ -22,11 +22,10 @@ const AppRoot = <Provider store={store}>
 
 
 
-const mountElement = document.querySelector('#root');
-const boldElement = React.createElement('b', null, "Text (as a string)");
-
+// const mountElement = document.querySelector('#root');
+// const boldElement = React.createElement('b', null, "Text (as a string)");
 // ReactDOM.render([boldElement], mountElement);
+// ReactDOM.render( [AppRoot, boldElement], document.getElementById('root'));
 
+ReactDOM.render( AppRoot, document.getElementById('root'));
 
-
-ReactDOM.render( [AppRoot, boldElement], document.getElementById('root'));

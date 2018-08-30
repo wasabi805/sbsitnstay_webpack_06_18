@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CSSModules from 'react-css-modules'
+import {Button} from 'react-bootstrap'
 
 import styles from '../../.././assets/css/banner.css';
 
@@ -12,12 +13,12 @@ class BannerStyled extends Component{
 
         return(
 
-            <div className={styles.section}>
+            <div className={`${styles.section} home-hero` } >
+                {/*<div className='container'>*/}
 
-                <div className="container">
-                    <div className="title">
+                    <div className={styles.title}>
 
-                        <h1>
+                        <h1 className={styles.h1}>
                             Southbay Sit 'N Stay
                             <span>
                                Welcome
@@ -25,12 +26,12 @@ class BannerStyled extends Component{
                         </h1>
                     </div>
 
-                    <div className="button">
+                    <div className={styles.button}>
                         Get Started
                     </div>
-
-                </div>
+                {/*</div>*/}
             </div>
+
         )
     }
 }

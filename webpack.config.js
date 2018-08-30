@@ -46,6 +46,7 @@ module.exports={
                 }]
             },
 
+            //SET UP FOR PROCESSING SASS w/sass-loader-> see App.js, need to import scss style sheet
             {
                 test: /\.scss$/,
                 loaders: [
@@ -57,6 +58,7 @@ module.exports={
             },
 
 
+            //SET UP FOR css styled components -> see App.js, need to import css style sheet
             {
                 test: /\.(css)$/,
                 use:[
@@ -94,18 +96,13 @@ module.exports={
     // Plugins
     plugins: [
 
-
         new webpack.EvalSourceMapDevToolPlugin(),
-
-
-
 
         new HtmlWebpackPlugin({
         title: 'My Custom HTML Temp',
         template: './src/index.html'
         }),
 
-        // new ExtractTextPlugin("styles.css")
 
         // Used for Bootstrap JavaScript components
         // Used for Bootstrap JavaScript components

@@ -1,0 +1,153 @@
+.main{
+    padding: 0;
+    margin: 0;
+    width: auto;
+    display: flex;
+}
+
+/*HOME-ABOUT*/
+.section {
+    position: relative;
+    z-index: 0;
+
+    margin-bottom: 0;
+    height: 30em;
+
+    /*shifts bg img*/
+    /*margin-left: 6em;*/
+    /*reduces gap --> dependent on .section height*/
+}
+
+.container{
+    /*Set the container height to equal the section height*/
+    height: 30em;
+}
+
+.bgContainer{
+    position: relative;
+    float: right;
+    width: 100%;
+    z-index: -1;
+}
+
+
+/*bg img*/
+.section:before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+
+
+    background-image: url("https://res.cloudinary.com/ocampot/image/upload/v1535670369/erica-magugliani-446666-unsplash.jpg");
+    background-position: center ;
+    background-size: cover ;
+}
+
+
+.homeAboutTextbox {
+    display: flex;
+    position: relative;
+    background-color: #232323;
+    padding: 4em;
+    margin-left: -2.5%;
+    top: -22em;
+
+    width: 30%;
+    left: 5em;
+
+
+
+    /*bottom: -5em;*/
+    /*left: 5em;*/
+    z-index: 2;
+
+
+    /*//Like border but with more control-> can pull inward*/
+    outline: 2px solid #00ff6c;
+    outline-offset: -2.5em;
+
+    color: #FFF;
+
+}
+
+h1{
+
+    margin-top: 0;
+    color: #00ff6c;
+    position: absolute;
+    /*//========centers the h1*/
+    left: 50%;
+    transform: translateX(-50%);
+    /*//=========*/
+    top: .3em;
+    background: #232323;
+    padding: 0 .1em;
+}
+
+
+
+
+
+@media (min-width: 25rem) {
+
+    .section{
+        /*float: left;*/
+    }
+
+    .bgContainer{
+
+
+    }
+
+    .homeAboutTextbox{
+        /*width: 20%;*/
+    }
+
+
+
+
+    h1{
+        top: .6em;
+        font-size: 2rem;
+        padding: 0 .325em;
+    }
+}
+
+/*@media (min-width: 60rem) {*/
+
+    /*.homeAboutTextbox{*/
+        /*!*height: 10em;*!*/
+        /*!*width: 32%;*!*/
+        /*margin-left: -2.5%;*/
+        /*top: 3em;*/
+    /*}*/
+
+    /*h1{*/
+        /*top: .3em;*/
+        /*left: 3.25rem;*/
+        /*transform: translateX(0);*/
+    /*}*/
+
+/*}*/
+
+
+
+
+
+
+
+
+
+/*@media(min-width: 960px) {*/
+    /*.section{*/
+        /*width: 80vw;*/
+    /*}*/
+/*}*/
+
+
+
+

@@ -41,43 +41,6 @@ class BannerParent extends Component{
 
         console.log(this.props, "Clean up");
 
-        // let Background = '../assets/images/background/pic02.jpg'
-        //
-        //
-        // let bannerBg ={
-        //     backgroundImage: `url(${Background})`,
-        //     padding: '10em 0',
-        // };
-        //
-        // let titleStyle={
-        //     fontSize: '2.5em',
-        //     color: 'white',
-        //     marginBottom: '1.5em'
-        // }
-        //
-        // let titleSpanStyle={
-        //     fontSize: '.9em',
-        //     color: 'lightgrey',
-        //     fontWeight: '300',
-        //     display: 'block'
-        // }
-        //
-        // let bannerBtnStyle={
-        //     color: '#00ff6c', //lime green limegreen yellowgreen
-        //     display: 'inline-block',
-        //     class: 'btn',
-        //     fontSize: '1.1rem',
-        //     textTransform: 'uppercase',
-        //     // backgroundColor: 'white',
-        //     borderWidth: '2px',
-        //     borderStyle: 'solid',
-        //     padding: '.5em 1.75em',
-        //
-        // }
-
-
-        console.log(Background);
-
         let {match, history, location, content} = this.props;
 
 

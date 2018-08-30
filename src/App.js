@@ -8,11 +8,10 @@ import './assets/sass/main.scss';
 import Main from './components/Main'
 
 import Banner from './components/BannerParent'
+import Body from './components/BodyParent'
 import TestComp02 from './components/testComp02'
 
-// $("p").click(function(){
-//     alert("The paragraph was clicked.");
-// });
+
 
 class App extends Component{
 
@@ -34,10 +33,8 @@ class App extends Component{
     render(){
         return(
             <div>
-                <div className='bg-info'>
-                    <p> WHATS THE BG?</p>
-                </div>
                 <Banner/>
+                <Body/>
 
 
             </div>

@@ -14,12 +14,12 @@ class BannerContent extends Component{
                     <p className=''>Welcome, let's get aquainted</p>
                 </div>
 
-                {/*<div className='banner-btn-row row w-100 px-0 '>*/}
+                <div className='banner-btn-row row w-100 px-0 '>
 
-                       {/*<button className='btn banner-btn' type='button'>*/}
-                           {/*<Link to='#'>Get Started</Link>*/}
-                       {/*</button>*/}
-                {/*</div>*/}
+                       <button className='btn banner-btn' type='button'>
+                           <Link to='#'>Get Started</Link>
+                       </button>
+                </div>
 
             </div>
         )
