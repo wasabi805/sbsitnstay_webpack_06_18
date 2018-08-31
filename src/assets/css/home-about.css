@@ -21,11 +21,12 @@
 .container{
     /*Set the container height to equal the section height*/
     height: 30em;
+    margin: 0;
+    padding: 0;
 }
 
 .bgContainer{
     position: relative;
-    float: right;
     width: 100%;
     z-index: -1;
 }
@@ -88,27 +89,31 @@ h1{
     padding: 0 .1em;
 }
 
+/*======    iphone 4 & 4S  =====*/
 
+/*portrait and */
+@media only screen
+    and (min-width: 320px)
+    and (max-width: 480px) {
 
-
-
-@media (min-width: 25rem) {
-
-    .section{
-        /*float: left;*/
+    .container{
+        /*Set the container height to equal the section height*/
+        height: auto;
     }
-
-    .bgContainer{
-
-
+    .section {
+        height: 17em;
     }
 
     .homeAboutTextbox{
-        /*width: 20%;*/
+
+        top: 0;
+        bottom: 0;
+        margin-left: 0px;
+
+        width: 100%;
+        left: 0;
+        right: 0;
     }
-
-
-
 
     h1{
         top: .6em;
@@ -117,36 +122,88 @@ h1{
     }
 }
 
-/*@media (min-width: 60rem) {*/
 
-    /*.homeAboutTextbox{*/
-        /*!*height: 10em;*!*/
-        /*!*width: 32%;*!*/
-        /*margin-left: -2.5%;*/
-        /*top: 3em;*/
-    /*}*/
+@media only screen
+and (min-width: 481px)
+and (max-width: 768px) {
 
-    /*h1{*/
-        /*top: .3em;*/
-        /*left: 3.25rem;*/
-        /*transform: translateX(0);*/
-    /*}*/
+    .container{
+        /*Set the container height to equal the section height*/
+        height: auto;
+        display: block;
 
-/*}*/
+    }
 
+    .section {
+        height: 17em;
+    }
 
-
-
-
-
+    .homeAboutTextbox{
+        top: 0;
+        bottom: 0;
+        margin-left: 0px;
 
 
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
 
-/*@media(min-width: 960px) {*/
-    /*.section{*/
-        /*width: 80vw;*/
-    /*}*/
-/*}*/
+    h1{
+        top: .6em;
+        font-size: 2rem;
+        padding: 0 .325em;
+    }
+}
+
+@media only screen
+    and (min-width: 769px)
+    and (max-width: 1024px) {
+
+    .homeAboutTextbox{
+        font-size: 0.8em;
+        width: 38%;
+        left: 4em;
+        top: -28em;
+    }
+
+    h1{
+        top: .6em;
+        font-size: 1.8rem;
+        padding: 0 .325em;
+    }
+}
+
+@media only screen and (min-width: 1025px){
+
+    .homeAboutTextbox{
+        font-size: 1.2em;
+        width: 38%;
+        left: 4em;
+        top: -20em;
+    }
+
+    h1{
+        top: .6em;
+        font-size: 1.8rem;
+        padding: 0 .325em;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

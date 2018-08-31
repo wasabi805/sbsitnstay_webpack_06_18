@@ -46,6 +46,7 @@ class HomeAbout extends Component{
 
                             </h1>
 
+
                             <p>
                                 It was all a dream, I used to read Word Up! magazine
                                 Salt-n-Pepa and Heavy D up in the limousine
