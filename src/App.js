@@ -24,13 +24,13 @@ class App extends Component{
 
     render(){
 
-        console.log(this.props, 'from APP');
+
         const {history, location, match} = this.props;
         const {body} = this.props.mainReducer
 
         return(
             <div className='main container-fluid p-0'>
-                <Banner/>
+                <Banner history={history} location={location} match={match}/>
                 <Body history={history} location={location} match={match} content={body}/>
             </div>
 

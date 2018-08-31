@@ -4,7 +4,7 @@
 @mixin landing{
 
 
-  .landing-tiles-wrapper{
+  .about-us-wrapper{
 
     padding-top: 3em;
     position: relative;
@@ -17,6 +17,7 @@
     .container{
       position: relative;
       z-index: 0;
+      height: auto;
       width: 100vw;
       margin-top: 3em;
 
@@ -56,7 +57,7 @@
             color: #FFF;
 
             h1{
-              margin-top: 0.5;
+              margin-top: 0.5em;
               color: #00ff6c;
               position: absolute;
               /*//========centers the h1*/
@@ -84,10 +85,11 @@
 
             //===== PLACEMENT FOR TEXTBOX ======
             margin-left: -2.5%;
-            top: -15em;
+            top: -23em;
             left: 5em;
             font-size: 0.8em;
-            width: 35%;
+            height: 60%;
+            width: 36%;
             z-index: 2;
             /*//Like border but with more control-> can pull inward*/
             outline: 2px solid #00ff6c;

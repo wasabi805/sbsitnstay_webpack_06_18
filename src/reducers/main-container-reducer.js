@@ -78,7 +78,7 @@ export default function (state=initialState, action) {
         case MAIN_CONTAINER:{
             state = { ...state};
 
-            console.log('FROM REDUCER', state);
+
 
             return state
         }

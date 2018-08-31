@@ -1,78 +1,131 @@
-import React from 'react';
+import React, {Component} from 'react'
+// import CSSModules from 'react-css-modules'
+// import styles from '../.././assets/css/home-about.css'
+const test1 = "https://res.cloudinary.com/ocampot/image/upload/v1535753491/joanna-kosinska-453787-REVERSED-unsplash.jpg"
+const test2 = 'https://res.cloudinary.com/ocampot/image/upload/v1535744895/joanna-kosinska-453787-unsplash.jpg'
+const test3 ='https://res.cloudinary.com/ocampot/image/upload/q_60/jesse-schoff-56768-unsplash.jpg'
+const test4 ='https://res.cloudinary.com/ocampot/image/upload/q_60/german-shepherd-using-laptop-desktop-background.jpg'
+
+const Kayla = 'https://res.cloudinary.com/ocampot/image/upload/v1533777073/kayla-portrait.jpg'
 
 
-const AboutUs=(props)=>{
+const solidBg = 'https://res.cloudinary.com/ocampot/image/upload/v1535745196/background-white-sand-beach-ameen-fahmy-527435-unsplash.jpg';
+
+const AboutUs =(props)=>{
+
+    const introTile = {
+        backgroundImage: `url(${solidBg})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        height: '22em',
+    }
 
 
-        return(
-            <div className='about-us-parent container-fluid'>
+    const bgImg1 = {
+        backgroundImage: `url(${test1})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        zIndex: -1,
+    }
 
-              <div className='about-us-row row'>
+    const bgImg2={
+        backgroundImage: `url(${test2})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+    }
 
-                 <div className='col about-us-colA col-sm-2 col-md-3 p-0'>
+    const tempTest ={
+        backgroundImage: `url(${Kayla})`,
+        height: '18em',
+        width: '34%',
+        margin: 'auto',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
 
-                     <div className='overlay'>I'm the overlay</div>
-
-                     <div className='about-us-img-cont'>
-                         <img src={props.content[0].src}></img>
-                     </div>
-                 </div>
-
-
-                  <div className='col about-us-colB col-sm-10 col-md-9'>
-                    <div className='about-us-content lead'>
-                        <h2>Meet {props.content[0].name}</h2>
-                        <p>stuff about kayla</p>
-
-                        <button className='btn'> Read More About Kayla</button>
-                    </div>
-                  </div>
-              </div>
+        // left:' 49em',
+        top: '-19em',
+        right: '-5em'
+    }
 
 
-                <div className='about-us-row row'>
-                    <div className='col about-us-colB col-sm-10  col-md-9'>
-                        <div className='about-us-content'>
-                            <h2>Meet {props.content[1].name}</h2>
-                            <p>stuff about Catherine</p>
 
-                            <button className='btn'> Read More About Catherine</button>
+    return(
+        <div className='about-us-wrapper'>
+
+            {/*/!*ABOUT*!/*/}
+            <div className='container'>
+                <div className='row'>
+
+                    <section className='section' style={introTile}></section>
+
+
+                        <div className='textBoxCenter'>
+                            <h1>{props.content[0].name}</h1>
+                            <p>{props.content[0].small}</p>
                         </div>
-                    </div>
 
-
-                    <div className='col about-us-colA col-sm-2 col-sm-2 p-0 col-md-3 '>
-                        <div className='overlay'>I'm the overlay</div>
-                        <div className='about-us-img-cont'>
-                            <img src={props.content[1].src}></img>
-                        </div>
-                    </div>
                 </div>
-
-                <div className='about-us-row row'>
-
-                    <div className='col about-us-colA col-sm-2 col-md-3 p-0'>
-                        <div className='overlay'>I'm the overlay</div>
-                        <div className='about-us-img-cont'>
-                            <img src={props.content[2].src}></img>
-                        </div>
-                    </div>
-
-
-                    <div className='col about-us-colB col-sm-10 col-md-9'>
-                        <div className='about-us-content'>
-                            <h2>Meet {props.content[2].name}</h2>
-                            <p>stuff about Yuko</p>
-
-                            <button className='btn'> Read More About Yuko</button>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
-        )
 
+
+
+
+
+
+            {/*/!*KAYLA*!/*/}
+            <div className='container'>
+                <div className='row'>
+
+                    <section className='section' style={bgImg1}></section>
+
+
+
+                    <div className='homeAboutTextBox'>
+                        <h1>{props.content[0].name}</h1>
+                        <p>{props.content[0].small}</p>
+                    </div>
+
+                    <div className='card' style={tempTest} ></div>
+
+
+
+                </div>
+            </div>
+
+
+            {/*/!*CATHERINE*!/*/}
+            <div className='container'>
+                <div className='row'>
+
+                    <section className='section' style={bgImg2}></section>
+
+                    <div className='homeAboutTextBox'>
+                        <h1>{props.content[1].name}</h1>
+                        <p>{props.content[1].small}</p>
+                    </div>
+
+                    <div className='card' style={tempTest} ></div>
+                </div>
+            </div>
+
+            {/*/!*YUKO*!/*/}
+            <div className='container'>
+                <div className='row'>
+
+                    <section className='section' style={bgImg1}></section>
+
+                    <div className='homeAboutTextBox'>
+                        <h1>{props.content[2].name}</h1>
+                        <p>{props.content[2].small}</p>
+                    </div>
+
+                    <div className='card' style={tempTest} ></div>
+                </div>
+            </div>
+
+        </div>
+    )
 }
+
 
 export default AboutUs

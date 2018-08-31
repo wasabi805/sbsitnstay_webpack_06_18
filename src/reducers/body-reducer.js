@@ -29,7 +29,7 @@ export default function(state=initialState, action){
 
 
         default:
-            console.log("if you see this your reducer is F'ed");
+
             return state
 
     }

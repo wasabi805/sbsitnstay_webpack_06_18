@@ -5,6 +5,8 @@ import {Route, Link} from 'react-router-dom';
 
 import test_imgs_srcs from '.././images/test-imgs-srcs';
 import HomeAbout from './body/Home-About'
+import AboutUs from './layout/body/AboutUs'
+import Gallery from './layout/body/Gallery';
 
 class BodyParent extends Component {
 
@@ -13,7 +15,9 @@ class BodyParent extends Component {
 
         this.state={
             content : '',
-            isLandingVisible : false
+            isLandingVisible : false,
+            isAboutVisible : false,
+            isGalleryVisible : false,
 
         }
 
@@ -21,13 +25,32 @@ class BodyParent extends Component {
 
     componentWillMount(){
         let {pathname} =this.props.location;
+        console.log(this.props.content, 'WUTANG');
 
-        if(pathname === '/'){
-            this.setState({
-                content: this.props.content.landing,
-                isLandingVisible: true
-            })
+        switch (pathname){
+            case '/':
+                this.setState({
+                    content: this.props.content.landing,
+                    isLandingVisible: true
+                });
+                break;
+
+            case '/location/about-us':
+                this.setState({
+                    content: this.props.content.about,
+                    isAboutVisible: true
+                });
+                break;
+
+            case '/location/gallery':
+                this.setState({
+                    content: this.props.content.gallery,
+                    isGalleryVisible: true
+                });
+                break;
+
         }
+
     }
 
 
@@ -39,6 +62,9 @@ class BodyParent extends Component {
         return(
             <React.Fragment>
                 { this.state.isLandingVisible && <HomeAbout content={content} />}
+                { this.state.isAboutVisible && <AboutUs content={content} />}
+                { this.state.isGalleryVisible && <Gallery content={content} />}
+
             </React.Fragment>
         )
     }

@@ -6,16 +6,13 @@ import styles from '../../.././assets/css/banner.css';
 
 
 
-const landingPic = 'https://res.cloudinary.com/ocampot/image/upload/q_60/matt-nelson-259365-unsplash.jpg'
+const BannerStyled =(props)=>{
 
 
-class BannerStyled extends Component{
-
-render(){
+    const bannerBgImg = props.content.src
 
     const landingBg={
-        backgroundImage: `url(${landingPic})`,
-
+        backgroundImage: `url(${bannerBgImg})`,
     }
 
 
@@ -38,7 +35,6 @@ return(
        </div>
 
        )
-   }
 }
 
 // export default CSSModules(BannerStyled, styles)

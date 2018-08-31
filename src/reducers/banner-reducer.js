@@ -1,8 +1,8 @@
 import {SET_BANNER_STATE} from "../actions/action-type";
 
-const landingBgImg = "https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg";
+const landingBgImg = "https://res.cloudinary.com/ocampot/image/upload/q_60/matt-nelson-259365-unsplash.jpg";
 const aboutBgImg = 'https://res.cloudinary.com/ocampot/image/upload/v1532397892/sbsitnstay/dog_and_owner_sunset.jpg';
-const servicesBgImg = 'https://res.cloudinary.com/ocampot/image/upload/v1532398062/sbsitnstay/dog_trainer_silhouettes_sunset.jpg';
+const servicesBgImg = 'https://res.cloudinary.com/ocampot/image/upload/q_60/patrick-hendry-406636-unsplash.jpg';
 const galleryBgImg = 'https://res.cloudinary.com/ocampot/image/upload/v1532398181/sbsitnstay/dog_selfie.jpg';
 const contactBgImg ='https://res.cloudinary.com/ocampot/image/upload/v1532398257/sbsitnstay/dog_on_phone.jpg';
 

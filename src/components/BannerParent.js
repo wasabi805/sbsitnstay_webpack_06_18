@@ -22,14 +22,52 @@ class BannerParent extends Component{
     constructor(props){
         super(props);
         this.state={
-            banner:[],
+            content:[],
 
         }
     }
 
 
     componentWillMount(){
-        let {banner} = this.props.bannerReducer
+
+
+        let{pathname} = this.props.location;
+        let {banner} = this.props.bannerReducer;
+
+
+        switch (pathname){
+            case '/':
+                this.setState({
+                    content: banner[0]
+                })
+                break;
+
+            case '/location/about-us':
+                this.setState({
+                    content: banner[1]
+                })
+                break;
+
+            case '/location/services':
+                this.setState({
+                    content: banner[2]
+                })
+                break;
+
+            case '/location/gallery':
+                this.setState({
+                    content: banner[3]
+                })
+                break;
+
+            case '/location/contact':
+                this.setState({
+                    content: banner[4]
+                })
+                break;
+
+        }
+
 
         this.setState({
             banner : banner
@@ -39,7 +77,7 @@ class BannerParent extends Component{
 
     render(){
 
-        console.log(this.props, "Clean up");
+
 
         let {match, history, location, content} = this.props;
 
@@ -60,11 +98,7 @@ class BannerParent extends Component{
                 </header>
 
 
-                <BannerStyled/>
-
-
-
-
+                <BannerStyled content={this.state.content}/>
 
             </div>
 
