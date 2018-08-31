@@ -46,7 +46,7 @@ class BannerParent extends Component{
 
 
         return(
-            <React.Fragment>
+            <div className='banner-wrapper'>
 
                 <header>
                     <img src="#" alt="#"/>
@@ -66,7 +66,7 @@ class BannerParent extends Component{
 
 
 
-            </React.Fragment>
+            </div>
 
         )
     }

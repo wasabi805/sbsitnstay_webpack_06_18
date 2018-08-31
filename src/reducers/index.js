@@ -4,6 +4,7 @@ import mainReducer from './main-container-reducer'
 import galleryReducer from './gallery-reducer';
 import serviceReducer from './services-reducer'
 import bannerReducer from './banner-reducer'
+import bodyReducer from './body-reducer'
 
 
 
@@ -17,5 +18,7 @@ export default combineReducers({
     mainReducer: mainReducer,
     galleryReducer: galleryReducer,
     serviceReducer : serviceReducer,
-    bannerReducer: bannerReducer
+    bannerReducer: bannerReducer,
+    bodyReducer: bodyReducer
+
 });

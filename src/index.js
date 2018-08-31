@@ -3,19 +3,20 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom'
 import {Provider} from 'react-redux';
 import store from './store';
-import {setAppInitState} from './routes/route_callbacks';
-import $ from 'jquery';
 
 
+
+import bodyActions from './actions/body-actions'
 
 
 
 import App from './App'
 import Main from "./components/Main";
 
+
 const AppRoot = <Provider store={store}>
                     <BrowserRouter>
-                        <Route path='/' component={App} onEnter={setAppInitState}/>
+                        <Route path="/" component={App}/>
                     </BrowserRouter>
                 </Provider>
 

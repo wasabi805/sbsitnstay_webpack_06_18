@@ -8,7 +8,11 @@
 @import "body/about-us-main";
 @import "body/services";
 @import "body/gallery";
-@import "nav-menus/banner";
+@import "banner/banner";
+
+
+
+
 @import "nav-menus/header-and-side-nav";
 
 
@@ -19,6 +23,7 @@
 }
 
 @include main-navs;
+
 @include banner;
 @include body-parent;
 @include landing;

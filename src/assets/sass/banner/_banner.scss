@@ -1,2 +1,21 @@
 
+@mixin banner{
 
+  .home-hero{
+
+    .container{
+      width: 100vw;
+      height: 100vh;
+
+      background-repeat: no-repeat;
+      padding: 10em 0;
+      //height: auto;
+      //width: auto;
+      background-size: cover;
+      background-attachment: fixed;
+      z-index: -1;
+
+      }
+
+    }
+}

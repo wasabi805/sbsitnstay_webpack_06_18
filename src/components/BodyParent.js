@@ -11,14 +11,35 @@ class BodyParent extends Component {
     constructor(props) {
         super(props);
 
+        this.state={
+            content : '',
+            isLandingVisible : false
 
+        }
+
+    }
+
+    componentWillMount(){
+        let {pathname} =this.props.location;
+
+        if(pathname === '/'){
+            this.setState({
+                content: this.props.content.landing,
+                isLandingVisible: true
+            })
+        }
     }
 
 
     render(){
 
+        console.log(this.state.content, 'body-parent');
+        let {content} = this.state;
+
         return(
-            <HomeAbout/>
+            <React.Fragment>
+                { this.state.isLandingVisible && <HomeAbout content={content} />}
+            </React.Fragment>
         )
     }
 
