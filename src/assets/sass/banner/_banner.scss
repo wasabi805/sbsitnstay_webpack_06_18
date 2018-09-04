@@ -1,21 +1,250 @@
 
 @mixin banner{
 
-  .home-hero{
+  body,html{margin:0;padding:0;}
 
-    .container{
-      width: 100vw;
-      height: 100vh;
 
-      background-repeat: no-repeat;
-      padding: 10em 0;
-      //height: auto;
-      //width: auto;
-      background-size: cover;
-      background-attachment: fixed;
-      z-index: -1;
 
+  //  ======  ===== ===== LANDING ONLY  ===== ===== ===== =====
+
+  .wrapper {
+    /* The height needs to be set to a fixed value for the effect to work.
+     * 100vh is the full height of the viewport. */
+    height: 100vh;
+    /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+    overflow-x: hidden;
+    /* Enable scrolling on the page. */
+    overflow-y: auto;
+    /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+    perspective: 2px;
+
+  }
+
+  .section {
+    /* Needed for children to be absolutely positioned relative to the parent. */
+    position: relative;
+    /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+    height: 100vh;
+
+    /* For text formatting. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 0 5px #000;
+  }
+
+  .parallax::after {
+    /* Display and position the pseudo-element */
+    content: " ";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* Move the pseudo-element back away from the camera,
+     * then scale it back up to fill the viewport.
+     * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+    transform: translateZ(-1px) scale(1.5);
+    /* Force the background image to fill the whole element. */
+    background-size: 100%;
+    /* Keep the image from overlapping sibling elements. */
+    z-index: -1;
+  }
+
+  /* The styling for the static div. */
+  .static {
+    //background: #2eb8d1;
+    background-image: linear-gradient(to bottom right, #cc66ff, #0000ff);
+  }
+
+  /* Sets the actual background images to adorable kitties. This part is crucial. */
+  .bg1::after {
+    background-image: url('https://res.cloudinary.com/ocampot/image/upload/q_60/matt-nelson-259365-unsplash.jpg');
+
+  }
+
+  .bg2{
+    background-size: cover;
+  }
+
+  .bg2::after {
+    background-image: url('https://res.cloudinary.com/ocampot/image/upload/q_60/jesse-schoff-56768-unsplash.jpg');
+  }
+
+
+  .banner-bg-about{
+
+  }
+
+  .banner-bg-about::after {
+    background-image: url('https://res.cloudinary.com/ocampot/image/upload/v1532397892/sbsitnstay/dog_and_owner_sunset.jpg');
+    background-size: cover;
+
+  }
+
+  //  ======  ===== ===== END  ===== ===== ===== =====
+
+
+
+  //  ======  ===== ===== GENERIC  ===== ===== ===== =====
+
+  .wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+
+  }
+
+  .section {
+    position: relative;
+    height: 70vh;
+
+    /* For text formatting. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 0 5px #000;
+  }
+
+  .parallax::after {
+    /* Display and position the pseudo-element */
+    content: " ";
+    position: absolute;
+    height: 100%;
+    top: -3em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* Move the pseudo-element back away from the camera,
+     * then scale it back up to fill the viewport.
+     * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+    transform: translateZ(-1px) scale(1.5);
+    /* Force the background image to fill the whole element. */
+    background-size: 100%;
+    /* Keep the image from overlapping sibling elements. */
+    z-index: -1;
+  }
+
+  /* The styling for the static div. */
+  .static {
+    //background: #2eb8d1;
+    background-image: linear-gradient(to bottom right, #cc66ff, #0000ff);
+    height: 30em;
+  }
+
+  .static-body-content {
+    //background: #2eb8d1;
+    position: relative;
+    background-image: linear-gradient(to bottom right, #cc66ff, #0000ff);
+    padding-top: 2em;
+
+
+    //.about-us-wrapper{
+      .container{
+
+        .row{
+          width: 100%;
+          height: 44em;
+
+          padding: 0;
+
+          .col{
+            width: 100%;
+
+          }
+
+          .img-cont-kayla{
+            background-image: url("https://res.cloudinary.com/ocampot/image/upload/v1533777073/kayla-portrait.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 35em;
+          }
+
+          .img-cont-catherine{
+            background-image: url("https://res.cloudinary.com/ocampot/image/upload/v1532396286/sbsitnstay/catherine.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 35em;
+          }
+
+          .img-cont-yuko{
+            background-image: url("https://res.cloudinary.com/ocampot/image/upload/v1532396750/sbsitnstay/yuko.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 35em;
+          }
+
+          .textBoxGeneric {
+            position: relative;
+            background-color: #232323;
+            padding: 4em;
+
+            //===== PLACEMENT FOR TEXTBOX ======
+
+            font-size: 0.8em;
+            height: 44em;
+            width: 30%;
+
+            left: 1em;
+
+
+            z-index: 2;
+
+            outline: 2px solid #00ff6c;
+            outline-offset: -2.5em;
+            color: #FFF;
+
+            h1{
+              margin-top: 0.5;
+              color: #00ff6c;
+              position: absolute;
+              /*//========centers the h1*/
+              left: 50%;
+              transform: translateX(-50%);
+              /*//=========*/
+              top: .3em;
+              background: #232323;
+              padding: 0 .1em;
+
+              font-size: 2.2em;
+
+            }
+          }
+
+          .test{
+            position: relative;
+          }
+
+
+
+        }
       }
+    //}
+  }
 
-    }
+
+
+  /* Sets the actual background images to adorable kitties. This part is crucial. */
+
+  .banner-bg-about{
+    background-size: cover;
+
+  }
+
+  .banner-bg-about::after {
+    background-image: url('https://res.cloudinary.com/ocampot/image/upload/v1532397892/sbsitnstay/dog_and_owner_sunset.jpg');
+    height: 100%;
+
+  }
+
+
+
+
+
 }

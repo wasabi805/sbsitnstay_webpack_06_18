@@ -12,7 +12,7 @@ import './assets/sass/main.scss';
 
 import Banner from './components/BannerParent'
 import Body from './components/BodyParent'
-import TestComp02 from './components/testComp02'
+
 
 
 
@@ -29,10 +29,14 @@ class App extends Component{
         const {body} = this.props.mainReducer
 
         return(
-            <div className='main container-fluid p-0'>
+            <main className="wrapper">
+            {/*<div className='main container-fluid p-0'>*/}
                 <Banner history={history} location={location} match={match}/>
                 <Body history={history} location={location} match={match} content={body}/>
-            </div>
+
+
+             {/*</div>*/}
+            </main>
 
         )
     }

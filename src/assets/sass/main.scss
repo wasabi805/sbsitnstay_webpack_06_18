@@ -4,8 +4,7 @@
 @import "presets/variables";
 @import "presets/resets";
 @import "body/body-parent";
-@import "body/landing";
-@import "body/about-us-main";
+@import "body/landing-body";
 @import "body/services";
 @import "body/gallery";
 @import "banner/banner";
@@ -26,8 +25,8 @@
 
 @include banner;
 @include body-parent;
-@include landing;
-@include about-us-main;
+
+@include landing-body-tiles;//THIS IS THE ONE YOUR WORKING WITH
 @include services-body-comp;
 @include gallery;
 
@@ -37,85 +36,16 @@
 //----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 //PLAY HERE!:
 
-
-
-//  .home-about-textbox{
-//    background-color: #232323;
-//    padding: 4em;
-//    margin-left: -2.5% ;
-//    top: -14em;
-//    left: 5em;
-//
-//    //Like border but with more control-> can pull inward
-//    outline: 2px solid #00ff6c;
-//    outline-offset: -2.5em;
-//
-//    color: #FFF;
-//    position: relative;
-//
-//    h1{
-//
-//      margin-top: 0;
-//      color: #00ff6c;
-//      position: absolute;
-//      //========centers the h1
-//      left: 50%;
-//      transform: translateX(-50%);
-//      //=========
-//      top: .3em;
-//      background: #232323;
-//      padding: 0 .1em;
-//    }
-//
-//
-//
-//  }
-//
-//@media (min-width: 25rem) {
-//  h1{
-//    top: .6em;
-//    font-size: 2rem;
-//    padding: 0 .325em;
-//  }
-//}
-//
-//@media (min-width: 60rem) {
-//
-//  .home-about-textbox{
-//    width: 60%;
-//    margin-left: -2.5%;
-//  }
-//
-//  .home-about-textbox{
-//    h1{
-//
-//      top: .3em;
-//      left: 3.25rem;
-//      transform: translateX(0);
-//    }
-//
-//  }
-//
-//}
-
-//@media(min-width: 960px) {
-//  .section{
-//    width: 80vw;
-//  }
-//}
-  
-
-
-
-
-
-
 //header ========================
 header{
   position: absolute;
-  left: 0;
-  right: 0;
-  margin-top: 1em;
+  //left: 0;
+  //right: 0;
+  //margin-top: 1em;
+  z-index: 1;
+  margin: auto;
+  width: 50%;
+
 
   img{
     width: 100%;

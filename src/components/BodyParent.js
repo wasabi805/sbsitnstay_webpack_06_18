@@ -4,8 +4,8 @@ import {Route, Link} from 'react-router-dom';
 
 
 import test_imgs_srcs from '.././images/test-imgs-srcs';
-import HomeAbout from './body/Home-About'
-import AboutUs from './layout/body/AboutUs'
+import LandingBody from './body/LandingBody'
+import AboutBody from './body/AboutBody'
 import Gallery from './layout/body/Gallery';
 
 class BodyParent extends Component {
@@ -61,8 +61,8 @@ class BodyParent extends Component {
 
         return(
             <React.Fragment>
-                { this.state.isLandingVisible && <HomeAbout content={content} />}
-                { this.state.isAboutVisible && <AboutUs content={content} />}
+                { this.state.isLandingVisible && <LandingBody content={content} />}
+                {/*{ this.state.isAboutVisible && <AboutBody content={content} />}*/}
                 { this.state.isGalleryVisible && <Gallery content={content} />}
 
             </React.Fragment>

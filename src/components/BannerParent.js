@@ -4,16 +4,9 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux';
 import {setBannerState} from '.././actions/banner-actions'
 
-import { Parallax, Background } from 'react-parallax';
-import CSSModules from 'react-css-modules';
-
-
-import styles from '.././assets/css/banner.css';
-import BannerStyled from './layout/banner-and-nav/banner-styled'
-
-
-import BannerLanding from './layout/banner-and-nav/banner-landing'
-import BannerGeneric from './layout/banner-and-nav/banner-generic'
+import HeaderNavigation from './layout/nav/HeaderNavigation'
+import BannerLanding from './layout/banner/BannerLanding'
+import BannerGeneric from './layout/banner/BannerGeneric'
 
 
 
@@ -23,6 +16,10 @@ class BannerParent extends Component{
         super(props);
         this.state={
             content:[],
+            bannerBgImg: ' section parallax banner-bg-about',
+
+            isLandingVisible : false,
+            isGenericVisible : false,
 
         }
     }
@@ -34,17 +31,20 @@ class BannerParent extends Component{
         let{pathname} = this.props.location;
         let {banner} = this.props.bannerReducer;
 
-
         switch (pathname){
             case '/':
                 this.setState({
-                    content: banner[0]
+                    content: banner[0],
+                    isLandingVisible: true
                 })
                 break;
 
             case '/location/about-us':
+
+
                 this.setState({
-                    content: banner[1]
+                    content: banner[1],
+                    isGenericVisible: true
                 })
                 break;
 
@@ -77,28 +77,24 @@ class BannerParent extends Component{
 
     render(){
 
+        console.log(this.state.content, 'TESTING');
 
 
-        let {match, history, location, content} = this.props;
+        let {title} = this.state.content;
+        let {bannerBgImg, content} = this.state;
 
+        console.log(this.state, 'sanity check');
 
 
         return(
-            <div className='banner-wrapper'>
+            <div className='banner-wrapper-landing'>
 
-                <header>
-                    <img src="#" alt="#"/>
-                    <nav>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Service</a></li>
-                        </ul>
-                    </nav>
-                </header>
+                <HeaderNavigation placeHoldForProps='ToDO'/>
+                {this.state.isLandingVisible && <BannerLanding/>}
+                {this.state.isGenericVisible && <BannerGeneric content={content}/>}
 
 
-                <BannerStyled content={this.state.content}/>
+                {/*<BannerStyled content={this.state.content}/>*/}
 
             </div>
 

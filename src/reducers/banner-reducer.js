@@ -11,7 +11,7 @@ const initialState = {
 
     banner :[
         {name : 'landing',  title: "South Bay Sit 'N Stay", src: landingBgImg ,     small: 'Welcome' },
-        {name : 'about',    title: 'About us',              src: aboutBgImg ,       small: 'A little about us ...'},
+        {name : 'about',    title: 'About us',              src: aboutBgImg ,       small: 'A little about us ...' , style: 'section parallax banner-bg-about'},
         {name : 'services', title: 'Services',              src: servicesBgImg ,    small: 'Providing the best for your pup.'},
         {name : 'gallery',  title: 'Gallery' ,              src: galleryBgImg ,     small: 'Come hang with crew!'},
         {name : 'contact',  title: 'Contact',               src: contactBgImg ,     small: 'Get in touch with us.'},
