@@ -16,7 +16,7 @@ import Main from "./components/Main";
 
 const AppRoot = <Provider store={store}>
                     <BrowserRouter>
-                        <Route path="/" component={App}/>
+                        <Route path="/" render={(props)=><App {...props}/>}/>
                     </BrowserRouter>
                 </Provider>
 

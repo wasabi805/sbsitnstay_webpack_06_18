@@ -8,8 +8,7 @@
 @import "body/services";
 @import "body/gallery";
 @import "banner/banner";
-
-
+@import "App";
 
 
 @import "nav-menus/header-and-side-nav";
@@ -29,6 +28,16 @@
 @include landing-body-tiles;//THIS IS THE ONE YOUR WORKING WITH
 @include services-body-comp;
 @include gallery;
+
+@include app-main;
+
+
+//APP
+
+
+
+
+
 
 
 

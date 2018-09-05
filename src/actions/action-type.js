@@ -5,3 +5,4 @@ export const SET_BANNER_STATE ='SET_BANNER_STATE';
 
 
 export const SET_BODY_STATE = 'SET_BODY_STATE';
+export const SET_LANDING = 'SET_LANDING';

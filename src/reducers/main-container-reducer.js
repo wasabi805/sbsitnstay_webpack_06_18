@@ -6,6 +6,14 @@ import close from '.././assets/images/loading.gif'
 
 const initialState = {
 
+    landing:{
+        heading: 'South Bay Sit N Stay',
+        small: 'Welcome',
+        tiles:['about us', 'services', 'gallery', 'contact']
+    }
+
+    ,
+
     banner :[
         {name : 'landing',  title: "South Bay Sit 'N Stay ", src: "https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg", small: 'Welcome' },
         {name : 'about',    title: 'About us',  src: 'https://res.cloudinary.com/ocampot/image/upload/v1532397892/sbsitnstay/dog_and_owner_sunset.jpg', small: 'A little about us ...'},

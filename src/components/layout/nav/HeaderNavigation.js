@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 const HeaderNavigation = (props)=>{
 
@@ -8,11 +9,11 @@ const HeaderNavigation = (props)=>{
         <header>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <Link to='/'><li>Home</li></Link>
+                    <Link to='/location/about-us'><li>About</li></Link>
+                    <Link to='/location/services'><li>Service</li></Link>
+                    <Link to='/location/gallery'><li>Gallery</li></Link>
+                    <Link to='/location/contact'><li>Contact</li></Link>
                 </ul>
             </nav>
         </header>
