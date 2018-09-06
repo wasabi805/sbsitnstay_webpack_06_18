@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import HeaderNavigation from './layout/nav/HeaderNavigation'
+import  Gallery1 from './layout/body/Gallery'
 
 class Gallery extends Component{
     render(){
@@ -21,9 +22,11 @@ class Gallery extends Component{
                 </section>
 
                 {/*Body*/}
-                <section className="app-section app-static">
-                    <h1>Boring</h1>
-                </section>
+                {/*<section className="app-section app-static">*/}
+                    {/*<h1>Boring</h1>*/}
+                {/*</section>*/}
+                <Gallery1/>
+
             </main>
         )
     }

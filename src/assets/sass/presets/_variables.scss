@@ -1,5 +1,59 @@
 //  ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 
-//                          SCREEN SIZE
+//                                  SCREEN SIZE
 $content-width: 960px;
 
+//----------- ----------  ----------  ----------  ----------  ----------- ----------- ----------  ----------
+//                                 Background iImages
+
+// @descrip :  LANDING
+// @section : parallax
+$landing-bg-1: "https://res.cloudinary.com/ocampot/image/upload/q_60/matt-nelson-259365-unsplash.jpg";
+$landing-bg-2: "https://res.cloudinary.com/ocampot/image/upload/q_60/background-white-sand-beach-ameen-fahmy-527435-unsplash.jpg";
+// @section : static bg content
+
+// @section : tiles
+
+//----------- ----------  ----------  ----------  ----------  ----------- ----------- ----------  ----------
+
+// @descrip : About
+// @section : parallax
+$about-bg-1: "https://res.cloudinary.com/ocampot/image/upload/q_60/sbsitnstay/dog_and_owner_sunset.jpg";
+$about-bg-2: "https://res.cloudinary.com/ocampot/image/upload/q_60/andrew-pons-9713-unsplash.jpg";
+
+// @section : static bg content
+
+// @section : tiles
+
+//----------- ----------  ----------  ----------  ----------  ----------- ----------- ----------  ----------
+
+
+//  services
+$services-bg-1: "https://res.cloudinary.com/ocampot/image/upload/v1535670370/patrick-hendry-406636-unsplash.jpg";
+$services-bg-2: "https://res.cloudinary.com/ocampot/image/upload/v1532397698/sbsitnstay/dogs_on_leash.jpg";
+
+// @section : static bg content
+
+// @section : tiles
+
+//----------- ----------  ----------  ----------  ----------  ----------- ----------- ----------  ----------
+
+//  gallery
+$gallery-bg-1: "https://res.cloudinary.com/ocampot/image/upload/v1532398181/sbsitnstay/dog_selfie.jpg";
+$gallery-bg-2: "";
+
+// @section : static bg content
+
+// @section : tiles
+
+//----------- ----------  ----------  ----------  ----------  ----------- ----------- ----------  ----------
+
+//  contact
+$contact-bg-1: "https://res.cloudinary.com/ocampot/image/upload/v1532398723/sbsitnstay/dog_laptop.jpg";
+$contact-bg-2: "";
+
+// @section : static bg content
+
+// @section : tiles
+
+///----------- ----------  ----------  ----------  ----------  ----------- ----------- ----------  ----------

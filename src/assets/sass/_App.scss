@@ -1,8 +1,9 @@
+@import "presets/variables";
+
 @mixin app-main{
   body,html{margin:0;padding:0;}
 
-
-
+  //  ===== ===== ===== MAIN APP WRAPPER  ===== ===== =====
   .app-wrapper {
     /* The height needs to be set to a fixed value for the effect to work.
      * 100vh is the full height of the viewport. */
@@ -28,8 +29,8 @@
     perspective: 2px;
   }
 
-
-  .app-section {
+  //  ===== ===== ===== PARALLAX COMPONENTS ====  ===== =====
+  .app-section-banner {
     /* Needed for children to be absolutely positioned relative to the parent. */
     position: relative;
     /* The height of the container. Must be set, but it doesn't really matter what the value is. */
@@ -43,16 +44,63 @@
     text-shadow: 0 0 5px #000;
   }
 
-  .app-section2 {
-    //position: relative;
-    height: 74vh;
-
-    /* For text formatting. */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  //  Section BEFORE cards
+  .app-section-static-frame {
+    position: relative;
+    //align-items: center;  /*y axis*/
+    justify-content: center; /*x axis*/
     color: white;
     text-shadow: 0 0 5px #000;
+  }
+
+  .app-section-static-content{
+    width: 75%;
+    margin: 0 auto;
+    object-fit: contain;
+    margin-bottom: 10em;
+
+    // shadows
+    -webkit-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
+    -moz-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
+    box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
+
+    img{
+      height: 100%;
+      width: 100%;
+    }
+
+    h1{
+      color: #00ff6c;
+      position: absolute;
+      top: .3em;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background: #232323;
+      padding: 0 1em;
+
+      font-weight: 300;
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+  }
+
+  .app-section-static-content-text-box{
+    color: #FFF;
+    background-color: #232323;
+    padding: 3em;
+    width: 32vw;
+    outline: 2px solid #00ff6c;
+    outline-offset: -2.5em;
+    position: absolute;
+    top: -5em;
+    left: 6em;
+
+    //  SHADOW-Card-Text-Box-LEFT
+    -webkit-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
+    -moz-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
+    box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
+
   }
 
   .app-parallax::after {
@@ -74,10 +122,14 @@
     z-index: -1;
   }
 
+  //  ===== ===== ===== CONTENT ====  ===== =====
+
   /* The styling for the static div. */
   .app-static {
-    background: lightgrey;
+    background : url('http://api.thumbr.it/whitenoise-361x370.png?')
   }
+
+//  ======  ===== Parallax Backgrounds===== =====
 
   /* Sets the actual background images to adorable kitties. This part is crucial. */
   .bg1::after {
@@ -88,84 +140,127 @@
     background-image: url('https://placekitten.com/g/800/600');
   }
 
+  .bgLanding::after{
+    background-image: url($landing-bg-1);
+    background-repeat: no-repeat;
+  }
+
   .landing-parallax-bg2::after{
-    background-image: url('https://res.cloudinary.com/ocampot/image/upload/v1535745196/background-white-sand-beach-ameen-fahmy-527435-unsplash.jpg');
+    background-image: url($landing-bg-2);
     height: 30em;
   }
 
-//  ======  ===== Banner Backgrounds===== =====
-
-  .bgLanding::after{
-    background-image: url('https://res.cloudinary.com/ocampot/image/upload/v1535455263/matt-nelson-259365-unsplash.jpg');
-  }
-
   .bgAbout1::after{
-    background-image: url('https://res.cloudinary.com/ocampot/image/upload/v1532397892/sbsitnstay/dog_and_owner_sunset.jpg');
-    background-position: center top;
-    background-size: 120em 80%;
-    background-repeat: no-repeat;
+    top: -10em;
+    bottom: 10em;
 
+    background-image: url($about-bg-1);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 35em;
   }
 
   .bgAbout2::after{
-    background-image: url('https://res.cloudinary.com/ocampot/image/upload/v1535670370/andrew-pons-9713-unsplash.jpg');
+    background-image: url($about-bg-2);
   }
 
   .bgServices1::after{
-    background-image: url('https://res.cloudinary.com/ocampot/image/upload/v1535670370/patrick-hendry-406636-unsplash.jpg');
+    background-image: url($services-bg-1);
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    top: -6em;
+    //bottom: 10em;
   }
 
   .bgServices2::after{
-    background-image: url('https://res.cloudinary.com/ocampot/image/upload/v1532397698/sbsitnstay/dogs_on_leash.jpg');
+    background-image: url($services-bg-2);
   }
 
   .bgGallery::after{
-    background-image: url('https://res.cloudinary.com/ocampot/image/upload/v1532398181/sbsitnstay/dog_selfie.jpg');
+    background-image: url($gallery-bg-1);
   }
 
   .bgContact::after{
-    background-image: url('https://res.cloudinary.com/ocampot/image/upload/v1532398723/sbsitnstay/dog_laptop.jpg');
+    background-image: url($contact-bg-1);
   }
 
-
-
-  //  ======  ===== Body Imgs===== =====
+  //  ======  ===== Body Images ===== =====
   .body {
+    content: '';
     background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
     padding-top: 3em;
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+  .landing-tile-body{
   }
 
-  //Landing Card
-  .card-landing{
-    width: 83%;
-    margin: 0 auto;
-    position: relative;
-
-
-    -webkit-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
-    -moz-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
-    box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
+  .col-6{
+    height: 30em;
+    object-fit: contain;
+    padding: 0;
 
     img{
-      height: 37em;
-      width: 100em;
-    }
-
-    h1{
-      color: #00ff6c;
-      position: absolute;
-      top: .3em;
-      left: 50%;
-      transform: translateX(-50%);
-
-      background: #232323;
-      padding: 0 1em;
-
-      font-weight: 300;
-      font-size: 2.5rem;
-      margin-top: 0;
+      width: 100%;
+      height: 100%;
     }
   }
+  .landing-tile-meet{
+
+  }
+
+  .landing-tile-services{
+
+  }
+
+  .landing-tile-gallery{
+
+  }
+  //
+  .landing-tile-contact{
+
+  }
+
+
+
+  //  ===== ===== ===== CARDS ===== ===== =====
+  //  Landing Card
+  //.card-landing{
+  //  width: 75%;
+  //  margin: 0 auto;
+  //  position: absolute;
+  //
+  //  //  card shadows
+  //  -webkit-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
+  //  -moz-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
+  //  box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
+  //
+  //  img{
+  //    height: 37em;
+  //    width: 58em;
+  //  }
+  //
+  //  h1{
+  //    color: #00ff6c;
+  //    position: absolute;
+  //    top: .3em;
+  //    left: 50%;
+  //    transform: translateX(-50%);
+  //
+  //    background: #232323;
+  //    padding: 0 1em;
+  //
+  //    font-weight: 300;
+  //    font-size: 2.5rem;
+  //    margin-top: 0;
+  //  }
+  //}
+
+  //  Card Right
   .about-profile-pic-right{
     position: absolute;
     object-fit: cover;
@@ -180,7 +275,7 @@
       height: 100%;
     }
   }
-
+  //  Card left
   .about-profile-pic-left{
     position: absolute;
     object-fit: cover;
@@ -196,10 +291,7 @@
     }
   }
 
-
-
-
-
+  //  Card-Text-Box-LEFT
   .card-text-box-left{
     color: #FFF;
     background-color: #232323;
@@ -211,12 +303,14 @@
     top: 9em;
     left: 3em;
 
+    //  SHADOW-Card-Text-Box-LEFT
     -webkit-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
     -moz-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
     box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
 
   }
 
+  //  Card-Text-Box-RIGHT
   .card-text-box-right{
     color: #FFF;
     background-color: #232323;
@@ -229,15 +323,10 @@
     top: 9em;
     right: 8em;
 
+    //  SHADOW-Card-Text-Box-RIGHT
     -webkit-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
     -moz-box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
     box-shadow: 17px 21px 18px 1px rgba(134,141,153,1);
   }
-
-
-
-
-
-
 
 }
