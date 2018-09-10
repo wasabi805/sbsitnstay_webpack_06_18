@@ -188,7 +188,7 @@
   //  ======  ===== Body Images ===== =====
   .body {
     content: '';
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    background : url('http://api.thumbr.it/whitenoise-361x370.png?');
     padding-top: 3em;
     position: relative;
     height: auto;
@@ -201,31 +201,104 @@
 
   .col-6{
     height: 30em;
+
     object-fit: contain;
     padding: 0;
+    margin: 0;
+  }
+
+  //HOVER effect
+  //NOTE: used this snippet
+  //see https://codepen.io/philcheng/pen/YWyYwG
+  .container .landing-tile{
+    position: relative;
+    margin-top: 50px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 
     img{
       width: 100%;
       height: 100%;
+      position: absolute;
+    }
+
+    &:hover .overlay{
+      display: block;
+      background: rgba(0,0,0,.3);
+    }
+
+    &:hover .title{
+      top: 90px;
+    }
+
+    &:hover .button{
+      opacity: 1;
+    }
+
+
+    img {
+      position: absolute;
+      //width: 500px;
+      //height: 300px;
+      width: 100%;
+      height: 100%;
+      left: 0;
+    }
+
+    .title {
+      position: relative;
+      width: 10em;
+      margin: auto;
+      left: 0;
+      top: 120px;
+      font-weight: 700;
+      font-size: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      color: white;
+      z-index: 1;
+      transition: top .5s ease;
+    }
+    .button {
+      position: relative;
+      width: 10em;
+      margin-left: auto;
+      margin-right: auto;
+      left:0;
+      top: 8em;
+      text-align: center;
+      opacity: 0;
+      transition: opacity .35s ease;
+
+      a{
+        width: 5em;
+        padding: 1em 1em;
+        text-align: center;
+        color: white;
+        border: solid 2px white;
+        z-index: 1;
+      }
+
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0);
+      transition: background 0.5s ease;
+
+      &:hover{
+        display: block;
+        background: rgba(0, 0, 0, .3);
+      }
     }
   }
-  .landing-tile-meet{
-
-  }
-
-  .landing-tile-services{
-
-  }
-
-  .landing-tile-gallery{
-
-  }
-  //
-  .landing-tile-contact{
-
-  }
-
-
 
   //  ===== ===== ===== CARDS ===== ===== =====
   //  Landing Card

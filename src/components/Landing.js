@@ -35,6 +35,8 @@ class Landing extends Component{
     }
 
     handleClickAbout(){
+        console.log('about got clicked');
+
         this.setState({
             redirectAbout: true
         })
@@ -66,6 +68,7 @@ class Landing extends Component{
 
         const classNames = require('classnames');
         let landingStyle = classNames('app-section-banner','app-parallax', 'bgLanding')
+
 
         if(this.state.redirectAbout){
             return <Redirect push to ='/location/about-us'/>
@@ -106,65 +109,54 @@ class Landing extends Component{
                         <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670369/erica-magugliani-446666-unsplash.jpg"/>
                     </div>
 
-                    <div className='body container w-80' >
-                        <div className='row landing-tile-body'>
-                            <div className='col-6 landing-tile-meet  bg-danger' >
-                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670370/catarina-carvalho-406908-unsplash.jpg"/>
-                            </div>
-                            <div className='col-6  landing-tile-services bg-info' >
-                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670372/nicolas-tessari-218491-unsplash.jpg"/>
-                            </div>
-                            <div className=' col-6 landing-tile-gallery bg-primary ' >
-                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535455453/alvan-nee-259129-unsplash.jpg"/>
-                            </div>
-
-                            <div className=' col-6  bg-success landing-tile-contact' >
-                                <img src= "https://res.cloudinary.com/ocampot/image/upload/v1535713833/german-shepherd-using-laptop-desktop-background.jpg"/>
-                            </div>
-                        </div>
-                    </div>
 
                 </section>
 
-                {/*<section className="section parallax landing-parallax-bg2">*/}
-                    {/*<h1>SO FWUFFY AWWW</h1>*/}
-                {/*</section>*/}
+
+                <section className="section parallax bgAbout2">
+                    <h1>SO FWUFFY AWWW</h1>
+                </section>
 
                 {/*Body*/}
+                <div className='body container w-80' >
+                    <div className='row landing-tile-body'>
+                        <div className='col-6 ' >
+                            <div className='container landing-tile'>
+                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670370/catarina-carvalho-406908-unsplash.jpg"/>
+                                <p className='title'>Meet the Crew</p>
+                                <div className='overlay'></div>
+                                <div className='button ' onClick={this.handleClickAbout}><a>Meet the Crew</a></div>
+                            </div>
+                        </div>
 
+                        <div className='col-6 ' >
+                            <div className='container landing-tile'>
+                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670372/nicolas-tessari-218491-unsplash.jpg"/>
+                                <p className='title'>Services</p>
+                                <div className='overlay'></div>
+                                <div className='button ' onClick={this.handleClickServices}><a>What we do</a></div>
+                            </div>
+                        </div>
 
-                    {/*<div className='card-landing bg-primary mb-5' onClick={this.handleClickServices}>*/}
-                        {/*<div className='card-text-box-right'>*/}
-                            {/*<h1>Services</h1>*/}
-                            {/*<p>MORE TEXT TO COME</p>*/}
+                        <div className='col-6 ' >
+                            <div className='container landing-tile'>
+                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535455453/alvan-nee-259129-unsplash.jpg"/>
+                                <p className='title'>Gallery</p>
+                                <div className='overlay'></div>
+                                <div className='button ' onClick={this.handleClickGallery}><a>Our guests</a></div>
+                            </div>
+                        </div>
 
-                        {/*</div>*/}
-                        {/*<img src="https://res.cloudinary.com/ocampot/image/upload/v1535709797/nicolas-tessari-218491-unsplash-FLIPPED.jpg"/>*/}
-                    {/*</div>*/}
-
-                    {/*<div className='card-landing bg-primary mb-5' onClick={this.handleClickGallery}>*/}
-                        {/*<div className='card-text-box-left'>*/}
-                            {/*<h1>Gallery</h1>*/}
-                            {/*<p>MORE TEXT TO COME</p>*/}
-
-                        {/*</div>*/}
-                        {/*<img src="https://res.cloudinary.com/ocampot/image/upload/v1535670369/robert-larsson-64550-unsplash.jpg"/>*/}
-                    {/*</div>*/}
-
-                    {/*<div className='card-landing bg-primary mb-5' onClick={this.handleClickContact}>*/}
-                        {/*<div className='card-text-box-right'>*/}
-                            {/*<h1>Contact</h1>*/}
-                            {/*<p>MORE TEXT TO COME</p>*/}
-
-                        {/*</div>*/}
-                        {/*<img src="https://res.cloudinary.com/ocampot/image/upload/v1535670372/bruno-cervera-460422-unsplash.jpg"/>*/}
-                    {/*</div>*/}
-
-
-                {/*</div>*/}
-
-
-
+                        <div className='col-6 ' >
+                            <div className='container landing-tile'>
+                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535713833/german-shepherd-using-laptop-desktop-background.jpg"/>
+                                <p className='title'>Gallery</p>
+                                <div className='overlay'></div>
+                                <div className='button ' onClick={this.handleClickContact}><a>Drop us a line</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
 
             </React.Fragment>
