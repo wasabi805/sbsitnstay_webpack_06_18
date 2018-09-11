@@ -9,48 +9,61 @@ const test4 ='https://res.cloudinary.com/ocampot/image/upload/q_60/german-shephe
 
 const solidBg = 'https://res.cloudinary.com/ocampot/image/upload/v1535745196/background-white-sand-beach-ameen-fahmy-527435-unsplash.jpg';
 
-const LandingBody =(props)=>{
-    return(
-        <div className='body container w-80' >
-            <div className='row landing-tile-body'>
-                <div className='col-6 ' >
-                    <div className='container landing-tile'>
-                        <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670370/catarina-carvalho-406908-unsplash.jpg"/>
-                        <p className='title'>Meet the Crew</p>
-                        <div className='overlay'></div>
-                        <Link to='/location/about-us'><div className='button '>Meet the Crew</div></Link>
-                    </div>
-                </div>
+class LandingBody extends Component{
+    constructor(props){
+        super(props);
+        this.state={
 
-                <div className='col-6 ' >
-                    <div className='container landing-tile'>
-                        <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670372/nicolas-tessari-218491-unsplash.jpg"/>
-                        <p className='title'>Services</p>
-                        <div className='overlay'></div>
-                        <Link to='/location/services'><div className='button '>What we do</div></Link>
-                    </div>
-                </div>
+        }
+    }
+   render(){
 
-                <div className='col-6 ' >
-                    <div className='container landing-tile'>
-                        <img src="https://res.cloudinary.com/ocampot/image/upload/v1535455453/alvan-nee-259129-unsplash.jpg"/>
-                        <p className='title'>Gallery</p>
-                        <div className='overlay'></div>
-                        <Link to='/location/gallery'><div className='button '>Our pals</div></Link>
-                    </div>
-                </div>
+       console.log(this.props, 'LandingBody');
 
-                <div className='col-6 ' >
-                    <div className='container landing-tile'>
-                        <img src="https://res.cloudinary.com/ocampot/image/upload/v1535713833/german-shepherd-using-laptop-desktop-background.jpg"/>
-                        <p className='title'>Gallery</p>
-                        <div className='overlay'></div>
-                        <Link to='/location/contact'><div className='button '>Drop us a line</div></Link>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+       return(
+           <div className='body container w-80' >
+               <div className='row landing-tile-body'>
+                   <div className='col-6 ' >
+                       <div className='container landing-tile'>
+                           <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670370/catarina-carvalho-406908-unsplash.jpg"/>
+                           <p className='title'>Meet the Crew</p>
+                           <div className='overlay'></div>
+
+                           <div className='button '  id="aboutRoute"  onClick={
+                               (e) => this.props.handleRedirect(e )}  >Meet the Crew</div>
+                       </div>
+                   </div>
+
+                   <div className='col-6 ' >
+                       <div className='container landing-tile'>
+                           <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670372/nicolas-tessari-218491-unsplash.jpg"/>
+                           <p className='title'>Services</p>
+                           <div className='overlay'></div>
+                           <Link to='/location/services'><div className='button '>What we do</div></Link>
+                       </div>
+                   </div>
+
+                   <div className='col-6 ' >
+                       <div className='container landing-tile'>
+                           <img src="https://res.cloudinary.com/ocampot/image/upload/v1535455453/alvan-nee-259129-unsplash.jpg"/>
+                           <p className='title'>Gallery</p>
+                           <div className='overlay'></div>
+                           <Link to='/location/gallery'><div className='button '>Our pals</div></Link>
+                       </div>
+                   </div>
+
+                   <div className='col-6 ' >
+                       <div className='container landing-tile'>
+                           <img src="https://res.cloudinary.com/ocampot/image/upload/v1535713833/german-shepherd-using-laptop-desktop-background.jpg"/>
+                           <p className='title'>Gallery</p>
+                           <div className='overlay'></div>
+                           <Link to='/location/contact'><div className='button '>Drop us a line</div></Link>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       )
+   }
 
 }
 

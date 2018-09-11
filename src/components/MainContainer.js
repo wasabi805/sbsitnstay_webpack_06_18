@@ -18,33 +18,79 @@ class MainContainer extends Component{
             heroBannerImg : '',
             landingBodyVisible: false,
             aboutBodyVisible: false,
+
+            redirectAbout: false,
         };
+        this.handleRedirect = this.handleRedirect.bind(this)
+    }
+
+    handleRedirect(e){
+        console.log(e.target.id);
+        let buttonId = e.target.id
+
+
+        if(buttonId==='landingRoute'){
+            this.setState({
+                heroBannerImg: 'bgLanding',
+                landingBodyVisible : true
+            })
+        }
+
+        if(buttonId==='aboutRoute'){
+            this.setState({
+                heroBannerImg: 'bgAbout1',
+                landingBodyVisible : false
+            })
+        }
+
+        if(buttonId==='servicesRoute'){
+            this.setState({
+                heroBannerImg: 'bgServices1',
+
+            })
+        }
+
+        if(buttonId==='galleryRoute'){
+            this.setState({
+                heroBannerImg: 'bgGallery',
+
+            })
+        }
+
+        if(buttonId==='contactRoute'){
+            this.setState({
+                heroBannerImg: 'bgContact',
+
+            })
+        }
+
+
     }
 
     componentWillMount(){
-        let {pathname} = this.props.location;
+        let {pathname}=this.props.location;
 
-       switch(pathname){
-           case( '/'):
-               this.setState({
-                   heroBannerImg : 'bgLanding',
-                   landingBodyVisible: true,
-               });
-           break;
+        if(pathname==='/'){
+            this.setState({
+                heroBannerImg : 'bgLanding',
+                landingBodyVisible: true
+            })
 
-           case( '/location/about-us'):
-               this.setState({
-                   heroBannerImg : 'bgAbout1',
-                   aboutBodyVisible: true,
-               });
-               break;
-       }
+        }
 
+        if(pathname==='/location/about-us'){
+            this.setState({heroBannerImg : 'bgAbout1'})
+        }
     }
 
 
+
+
+
+
     render(){
-        console.log(this.state, 'SANITY CHECK');
+        // console.log(this.props, 'SANITY CHECK');
+
 
         const classNames = require('classnames');
         let landingStyle = classNames('app-section-banner','app-parallax', 'bgLanding')
@@ -67,7 +113,7 @@ class MainContainer extends Component{
 
             <React.Fragment>
             <main className="app-wrapper">
-                <HeaderNavigation/>
+                <HeaderNavigation handleRedirect={this.handleRedirect} />
 
                 {/*BANNER*/}
                 <section className={`app-hero app-hero-parallax  ${this.state.heroBannerImg}`}>
@@ -91,11 +137,13 @@ class MainContainer extends Component{
 
 
                 <section className="app-section-sidekick sidekick-parallax bgAbout2">
+
                     <h1>SO FWUFFY AWWW</h1>
                 </section>
+                <div className='bg-info'>HELLO</div>
 
                 {/*Body*/}
-                {this.state.landingBodyVisible &&  <LandingBody/>}
+                {this.state.landingBodyVisible &&  <LandingBody handleRedirect={this.handleRedirect}/>}
                 {this.state.aboutBodyVisible &&  <AboutBody/>}
 
 

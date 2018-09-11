@@ -13,6 +13,7 @@
     justify-content: center;
     color: white;
     text-shadow: 0 0 5px #000;
+    object-fit: cover;
 
   }
 
@@ -40,21 +41,18 @@
   }
 
   .bgAbout1::after{
-    top: -10em;
-    bottom: 10em;
-
     background-image: url($about-bg-1);
-    background-size: 100% 100%;
     background-repeat: no-repeat;
-    object-fit: cover;
-    height: 35em;
+    object-fit: contain;
   }
 
   .bgServices1::after{
     background-image: url($services-bg-1);
-    background-size: 100% 80%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    top: -6em;
+    object-fit: cover;
+    height: 35em;
+    //top: -6em;
     //bottom: 10em;
   }
 
