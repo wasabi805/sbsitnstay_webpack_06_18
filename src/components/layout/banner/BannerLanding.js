@@ -3,14 +3,14 @@ import React from 'react';
 const BannerLanding =(props)=>{
     return(
         <React.Fragment>
-            <section className='section parallax bg1'>
+            <section className='app-section-sidekick sidekick-parallax bg1'>
                 <h1>Such Adorableness</h1>
 
                 <h2>LANDING</h2>
 
             </section>
 
-            <section className="section static">
+            <section className="app-section-sidekick static">
 
                 <p>Watching haters wonder why Gambino got the game locked
                     Half-Thai thickie, all she wanna do is Bangkok
@@ -28,7 +28,7 @@ const BannerLanding =(props)=>{
                     Breakfast, lunch and dinner's for beginners, you ain't even know</p>
             </section>
 
-            <section className="section parallax bg2" >
+            <section className="app-section-sidekick sidekick-parallax bg2" >
                 <h1>SO FWUFFY AWWW</h1>
             </section>
         </React.Fragment>

@@ -15,11 +15,11 @@ class Services extends Component{
                     <h1>Services</h1>
                 </section>
 
-                <section className="app-section app-static">
+                <section className="app-section-sidekick app-static">
                     <h1>Boring</h1>
                 </section>
 
-                <section className="section parallax bgServices2">
+                <section className="app-section-sidekick sidekick-parallax bgServices2">
                     <h1>WU TANG</h1>
                 </section>
 

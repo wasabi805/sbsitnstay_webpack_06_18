@@ -9,7 +9,7 @@ import {getInitialState} from "./actions/main-container-actions";
 import './assets/css/main.css';
 import './assets/sass/main.scss';
 
-import Landing from './components/Landing'
+import MainContainer from './components/MainContainer'
 import About from './components/About'
 import Services from './components/Services'
 import Gallery from './components/Gallery'
@@ -50,11 +50,11 @@ class App extends Component{
 
         return(
             <Switch>
-                <Route exact path='/' render={(props)=> <Landing{...props} landing={this.state.landing}/>  } />
-                <Route path='/location/about-us' component={About}/>
-                <Route path='/location/services' component={Services} />
-                <Route path='/location/gallery' component={Gallery} />
-                <Route path='/location/contact' component={Contact} />
+                <Route path='/' render={(props)=> <MainContainer{...props} landing={this.state.landing}/>  } />
+                {/*<Route path='/location/about-us' component={About}/>*/}
+                {/*<Route path='/location/services' component={Services} />*/}
+                {/*<Route path='/location/gallery' component={Gallery} />*/}
+                {/*<Route path='/location/contact' component={Contact} />*/}
             </Switch>
 
 

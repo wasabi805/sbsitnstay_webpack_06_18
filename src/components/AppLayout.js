@@ -8,20 +8,20 @@ class AppLayout extends Component{
                 <HeaderNavigation/>
 
                 {/*BANNER*/}
-                <section className="app-section app-parallax bg-landing">
+                <section className="app-section-sidekick app-hero-parallax bg-landing">
                     <h1>Such Adorableness</h1>
                 </section>
 
-                <section className="app-section app-static">
+                <section className="app-section-sidekick app-static">
                     <h1>Boring</h1>
                 </section>
 
-                <section className="section parallax bg2">
+                <section className="app-section-sidekick sidekick-parallax bg2">
                     <h1>SO FWUFFY AWWW</h1>
                 </section>
 
                 {/*Body*/}
-                <section className="app-section app-static">
+                <section className="app-section-sidekick app-static">
                     <h1>Boring</h1>
                 </section>
             </main>
