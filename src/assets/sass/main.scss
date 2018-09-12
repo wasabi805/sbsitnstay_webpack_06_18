@@ -5,13 +5,16 @@
 @import "presets/resets";
 @import "body/body-parent";
 @import "body/landing-body";
+@import "body/about";
 @import "body/services";
 @import "body/gallery";
 
 @import "banner/hero-banner";
+@import "banner/hero-banner2";
 @import "banner/sidekick-banner";
 
 @import "static-content/staticA-content";
+@import "static-content/staticB-content";
 
 
 
@@ -30,7 +33,9 @@
 //@include banner;
 @include body-parent;
 
+//  BODY
 @include landing-body-tiles;//THIS IS THE ONE YOUR WORKING WITH
+@include aboutProfiles
 @include services-body-comp;
 @include gallery;
 
@@ -50,10 +55,20 @@ body,html{margin:0;padding:0;}
   overflow-y: auto;
   /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
   perspective: 2px;
+
+
+  //FOOTER
+  .footer{
+    position: relative;
+    background: #5cb3fd; //sky blue light blue
+    width: 100%;
+    height: 32em;
+  }
 }
 
 //  ===== ===== ===== HERO PARALLAX BANNER ====  ===== =====
 @include  hero-banner
+@include hero-banner2
 
 //  ===== ===== ===== CONTENT ====  ===== =====
 .app-static {
@@ -63,6 +78,7 @@ body,html{margin:0;padding:0;}
 
 }
 @include static-contentA
+@include static-contentB
 
 
 
@@ -381,7 +397,8 @@ header{
 
 
 
-//  ================================
+//  =================FOOTER===============
+
 
 
 

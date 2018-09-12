@@ -21,47 +21,8 @@ class LandingBody extends Component{
        console.log(this.props, 'LandingBody');
 
        return(
-           <div className='body container w-80' >
-               <div className='row landing-tile-body'>
-                   <div className='col-6 ' >
-                       <div className='container landing-tile'>
-                           <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670370/catarina-carvalho-406908-unsplash.jpg"/>
-                           <p className='title'>Meet the Crew</p>
-                           <div className='overlay'></div>
+           <div></div>
 
-                           <div className='button '  id="aboutRoute"  onClick={
-                               (e) => this.props.handleRedirect(e )}  >Meet the Crew</div>
-                       </div>
-                   </div>
-
-                   <div className='col-6 ' >
-                       <div className='container landing-tile'>
-                           <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670372/nicolas-tessari-218491-unsplash.jpg"/>
-                           <p className='title'>Services</p>
-                           <div className='overlay'></div>
-                           <Link to='/location/services'><div className='button '>What we do</div></Link>
-                       </div>
-                   </div>
-
-                   <div className='col-6 ' >
-                       <div className='container landing-tile'>
-                           <img src="https://res.cloudinary.com/ocampot/image/upload/v1535455453/alvan-nee-259129-unsplash.jpg"/>
-                           <p className='title'>Gallery</p>
-                           <div className='overlay'></div>
-                           <Link to='/location/gallery'><div className='button '>Our pals</div></Link>
-                       </div>
-                   </div>
-
-                   <div className='col-6 ' >
-                       <div className='container landing-tile'>
-                           <img src="https://res.cloudinary.com/ocampot/image/upload/v1535713833/german-shepherd-using-laptop-desktop-background.jpg"/>
-                           <p className='title'>Gallery</p>
-                           <div className='overlay'></div>
-                           <Link to='/location/contact'><div className='button '>Drop us a line</div></Link>
-                       </div>
-                   </div>
-               </div>
-           </div>
        )
    }
 

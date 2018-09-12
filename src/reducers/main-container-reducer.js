@@ -10,9 +10,33 @@ const initialState = {
         heading: 'South Bay Sit N Stay',
         small: 'Welcome',
         tiles:['about us', 'services', 'gallery', 'contact']
-    }
+    },
 
-    ,
+    about:{
+        heading: 'About Us',
+        small: 'Get to know who we are',
+        heroBg: 'https://res.cloudinary.com/ocampot/image/upload/v1532397892/sbsitnstay/dog_and_owner_sunset.jpg',
+        sidekickBg: '',
+        portraits: [
+            {
+                name: 'Kayla',
+                img: "https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/kayla-portrait.jpg"
+
+            },
+            {
+                name: 'Catherine',
+                img: 'https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/sbsitnstay/catherine.jpg'
+            },
+
+            {
+                name: 'Yuko',
+                img: "https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/sbsitnstay/yuko.jpg"
+
+            }
+
+            ]
+
+    },
 
     banner :[
         {name : 'landing',  title: "South Bay Sit 'N Stay ", src: "https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg", small: 'Welcome' },

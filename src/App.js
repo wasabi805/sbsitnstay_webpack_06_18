@@ -31,12 +31,14 @@ class App extends Component{
         }
     }
     componentWillMount(){
-
+        console.log(this.props.mainReducer, 'main reducer');
       // console.log(this.props.mainReducer, 'wutang');
-      let {landing} = this.props.mainReducer
+      let {landing, about} = this.props.mainReducer
 
         this.setState({
-            landing: landing
+            landing: landing,
+            aboutContent: about
+
         })
 
         // console.log(this.props.mainReducer, 'THE INITAL');
@@ -46,12 +48,13 @@ class App extends Component{
 
     render(){
         console.log(this.state, 'state from APP');
-        console.log(this.props, 'Router stuff');
+        console.log(this.props, 'APP: Router stuff');
 
         return(
             <Switch>
-                <Route path='/' render={(props)=> <MainContainer{...props} landing={this.state.landing}/>  } />
-                {/*<Route path='/location/about-us' component={About}/>*/}
+                <Route exact path='/' render={(props)=> <MainContainer{...props} landing={this.state.landing}/>  } />
+                <Route exact path='/location/about-us' render={(props)=> <About{...props} about={this.state.aboutContent}/>  } />
+
                 {/*<Route path='/location/services' component={Services} />*/}
                 {/*<Route path='/location/gallery' component={Gallery} />*/}
                 {/*<Route path='/location/contact' component={Contact} />*/}

@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 
 const HeaderNavigation = (props)=>{
 
-    console.log(props);
 
     return(
         <header>

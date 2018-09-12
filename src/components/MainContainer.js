@@ -19,6 +19,7 @@ class MainContainer extends Component{
             landingBodyVisible: false,
             aboutBodyVisible: false,
 
+            redirectHome: false,
             redirectAbout: false,
         };
         this.handleRedirect = this.handleRedirect.bind(this)
@@ -32,7 +33,8 @@ class MainContainer extends Component{
         if(buttonId==='landingRoute'){
             this.setState({
                 heroBannerImg: 'bgLanding',
-                landingBodyVisible : true
+                landingBodyVisible : true,
+                redirectHome: true,
             })
         }
 
@@ -95,6 +97,9 @@ class MainContainer extends Component{
         const classNames = require('classnames');
         let landingStyle = classNames('app-section-banner','app-parallax', 'bgLanding')
 
+        if(this.state.redirectHome){
+            return <Redirect push to ='/'/>
+        }
 
         if(this.state.redirectAbout){
             return <Redirect push to ='/location/about-us'/>
@@ -137,18 +142,52 @@ class MainContainer extends Component{
 
 
                 <section className="app-section-sidekick sidekick-parallax bgAbout2">
-
                     <h1>SO FWUFFY AWWW</h1>
                 </section>
-                <div className='bg-info'>HELLO</div>
 
                 {/*Body*/}
-                {this.state.landingBodyVisible &&  <LandingBody handleRedirect={this.handleRedirect}/>}
-                {this.state.aboutBodyVisible &&  <AboutBody/>}
+                <div className='body container w-80' >
+                    <div className='row landing-tile-body'>
+                        <div className='col-6 ' >
+                            <div className='container landing-tile'>
+                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670370/catarina-carvalho-406908-unsplash.jpg"/>
+                                <p className='title'>Meet the Crew</p>
+                                <div className='overlay'></div>
 
+                                <div className='button '  id="aboutRoute">
+                                    <Link to='/location/about-us'><li>Meet the Crew</li></Link>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div className='col-6 ' >
+                            <div className='container landing-tile'>
+                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670372/nicolas-tessari-218491-unsplash.jpg"/>
+                                <p className='title'>Services</p>
+                                <div className='overlay'></div>
+                                <Link to='/location/services'><div className='button '>What we do</div></Link>
+                            </div>
+                        </div>
 
+                        <div className='col-6 ' >
+                            <div className='container landing-tile'>
+                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535455453/alvan-nee-259129-unsplash.jpg"/>
+                                <p className='title'>Gallery</p>
+                                <div className='overlay'></div>
+                                <Link to='/location/gallery'><div className='button '>Our pals</div></Link>
+                            </div>
+                        </div>
 
+                        <div className='col-6 ' >
+                            <div className='container landing-tile'>
+                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535713833/german-shepherd-using-laptop-desktop-background.jpg"/>
+                                <p className='title'>Gallery</p>
+                                <div className='overlay'></div>
+                                <Link to='/location/contact'><div className='button '>Drop us a line</div></Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
             </React.Fragment>
         )
