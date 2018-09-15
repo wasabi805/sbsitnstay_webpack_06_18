@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
+import $ from 'jquery'
 
 import HeaderNavigation from './layout/nav/HeaderNavigation'
 
@@ -74,6 +75,72 @@ class About extends Component{
         })
     }
 
+    componentDidMount(){
+
+
+       // Show Kayla Profile
+       $(function(){
+           $("#more-kayla").click(function () {
+               $("#catherine-profile").fadeToggle();
+               $("#yuko-profile").fadeToggle();
+               $("#more-kayla").hide();
+               $("#less-kayla").show();
+               $('#kayla-profile-content').delay(500).fadeToggle()
+           });
+
+           // Hide Kayla Profile
+           $('#less-kayla').click(()=>{
+               $("#less-kayla").hide();
+               $("#more-kayla").show();
+               $('#kayla-profile-content').fadeToggle()
+               $("#catherine-profile").delay(500).fadeToggle();
+               $("#yuko-profile").delay(500).fadeToggle();
+           });
+
+           // Show Catherine Profile
+           $("#more-catherine").click(function () {
+               $("#kayla-profile").fadeToggle();
+               $("#yuko-profile").fadeToggle();
+
+
+
+               $("#more-catherine").hide();
+               $("#less-catherine").show();
+               $('#catherine-profile-content').delay(500).fadeToggle()
+           })
+
+           // Hide Catherine Profile
+           $('#less-catherine').click(()=>{
+               $("#less-catherine").hide();
+               $("#more-catherine").show();
+               $('#catherine-profile-content').fadeToggle()
+               $("#kayla-profile").delay(500).fadeToggle();
+               $("#yuko-profile").delay(500).fadeToggle();
+           });
+
+           // Show Yuko Profile
+           $("#more-yuko").click(function () {
+               $("#kayla-profile").fadeToggle();
+               $("#catherine-profile").fadeToggle();
+               $("#more-yuko").hide();
+               $("#less-yuko").show();
+               $('#yuko-profile-content').delay(500).fadeToggle()
+           })
+
+           // Hide Yuko Profile
+           $('#less-yuko').click(()=>{
+               $("#less-yuko").hide();
+               $("#more-yuko").show();
+               $('#yuko-profile-content').fadeToggle()
+               $("#kayla-profile").delay(500).fadeToggle();
+               $("#catherine-profile").delay(500).fadeToggle();
+           });
+
+
+       })
+
+    }
+
 
 
     render(){
@@ -114,16 +181,17 @@ class About extends Component{
                         <div className='row landing-tile-body'>
 
                                                         {/*KAYLA*/}
-                            <div className='col col-xl-4 profile' style={{display : this.state.toggleKaylaProfile}}>
+                            <div  id="kayla-profile" className='col col-xl-4 profile' >
                                 <div className="container">
                                     <img src={this.state.portraits[0].img} alt="" />
                                     <p className="title">Kayla</p>
                                     <div className="overlay"></div>
-                                    <div className="button"><a href="#" onClick={this.showKaylaContent}> More on Kayla </a></div>
+                                    <div id="more-kayla" className=" button"><a href="#" > More on Kayla </a></div>
+                                    <div id="less-kayla" className="button"><a href="#" > close profile </a></div>
                                 </div>
                             </div>
 
-                            <div className='col col-xl-8 profile-content ' style={{display : this.state.displayKaylaProfile}} onClick={this.reset}>
+                            <div id="kayla-profile-content" className='col col-xl-8 profile-content '>
                                 <div className="test">
                                     <p className="title">STUFF ABOUT KAYLA</p>
                                     <div className="overlay"></div>
@@ -131,16 +199,17 @@ class About extends Component{
                             </div>
 
                                                         {/*CATHERINE*/}
-                            <div className='col col-xl-4 profile ' style={{display : this.state.toggleCatherineProfile}}>
+                            <div  id="catherine-profile" className='col col-xl-4 profile ' >
                                 <div className="container">
                                     <img src={this.state.portraits[1].img} alt="" />
                                     <p className="title">Catherine</p>
                                     <div className="overlay"></div>
-                                    <div className="button"><a href="#" onClick={this.showCatherineContent}> More on Catherine </a></div>
+                                    <div id="more-catherine" className=" button"><a href="#" > More on Catherine </a></div>
+                                    <div id="less-catherine" className="button"><a href="#" > close profile </a></div>
                                 </div>
                             </div>
 
-                            <div className='col col-xl-8 profile-content ' style={{display : this.state.displayCatherineProfile}} onClick={this.reset}>
+                            <div id="catherine-profile-content" className='col col-xl-8 profile-content ' >
                                 <div className="test">
                                     <p className="title">STUFF ABOUT Catherine</p>
                                     <div className="overlay"></div>
@@ -148,16 +217,17 @@ class About extends Component{
                             </div>
 
                                                         {/*YUKO*/}
-                            <div className='col col-xl-4 profile ' style={{display : this.state.toggleYukoProfile}}>
+                            <div  id="yuko-profile" className='col col-xl-4 profile ' >
                                 <div className="container">
                                     <img src={this.state.portraits[2].img} alt="" />
                                     <p className="title">Yuko</p>
                                     <div className="overlay"></div>
-                                    <div className="button"><a href="#" onClick={this.showYukoContent}> More on Yuko </a></div>
+                                    <div id="more-yuko" className=" button"><a href="#" > More on Yuko </a></div>
+                                    <div id="less-yuko" className="button"><a href="#" > close profile </a></div>
                                 </div>
                             </div>
 
-                            <div className='col col-xl-8 profile-content ' style={{display : this.state.displayYukoProfile}} onClick={this.reset}>
+                            <div id="yuko-profile-content" className='col col-xl-8 profile-content ' >
                                 <div className="test">
                                     <p className="title">STUFF ABOUT YUKO</p>
                                     <div className="overlay"></div>
@@ -171,8 +241,6 @@ class About extends Component{
                         <h2>Like what you see?</h2>
                         <p>get in touch with us on social media</p>
                     </div>
-
-
 
                 </main>
             </React.Fragment>
