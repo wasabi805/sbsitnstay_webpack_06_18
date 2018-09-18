@@ -33,12 +33,12 @@ class App extends Component{
     componentWillMount(){
         console.log(this.props.mainReducer, 'main reducer');
       // console.log(this.props.mainReducer, 'wutang');
-      let {landing, about} = this.props.mainReducer
+      let {landing, about, gallery} = this.props.mainReducer
 
         this.setState({
             landing: landing,
-            aboutContent: about
-
+            aboutContent: about,
+            galleryContent: gallery
         })
 
         // console.log(this.props.mainReducer, 'THE INITAL');
@@ -54,6 +54,7 @@ class App extends Component{
             <Switch>
                 <Route exact path='/' render={(props)=> <MainContainer{...props} landing={this.state.landing}/>  } />
                 <Route exact path='/location/about-us' render={(props)=> <About{...props} about={this.state.aboutContent}/>  } />
+                <Route exact path='/location/gallery' render={(props)=> <Gallery{...props} gallery={this.state.galleryContent}/>  } />
 
                 {/*<Route path='/location/services' component={Services} />*/}
                 {/*<Route path='/location/gallery' component={Gallery} />*/}

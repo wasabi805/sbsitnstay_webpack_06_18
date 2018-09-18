@@ -18,25 +18,36 @@ const initialState = {
         heroBg: 'https://res.cloudinary.com/ocampot/image/upload/v1532397892/sbsitnstay/dog_and_owner_sunset.jpg',
         sidekickBg: '',
         portraits: [
-            {
-                name: 'Kayla',
-                img: "https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/kayla-portrait.jpg"
-
-            },
-            {
-                name: 'Catherine',
-                img: 'https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/sbsitnstay/catherine.jpg'
-            },
-
-            {
-                name: 'Yuko',
-                img: "https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/sbsitnstay/yuko.jpg"
-
-            }
-
+            {name: 'Kayla', img: "https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/kayla-portrait.jpg"},
+            {name: 'Catherine', img: 'https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/sbsitnstay/catherine.jpg'},
+            {name: 'Yuko', img: "https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/sbsitnstay/yuko.jpg"}
             ]
-
     },
+
+    gallery: [
+
+        {id: 'gallery-00', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20180129_192156.jpg'},
+        {id: 'gallery-01', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170304_110838.jpg'},
+        {id: 'gallery-02', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg'},
+        {id: 'gallery-03', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170710_203907.jpg'},
+        {id: 'gallery-04', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161015_162730.jpg'},
+        {id: 'gallery-05', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171122_132128.jpg'},
+        {id: 'gallery-06', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160801_182236.jpg'},
+        {id: 'gallery-07', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160508_191857.jpg'},
+        {id: 'gallery-08', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170529_124148.jpg'},
+        {id: 'gallery-09', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171028_215554.jpg'},
+
+        {id: 'gallery-10', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160716_183734.jpg'},
+        {id: 'gallery-11', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160618_093938.jpg'},
+        {id: 'gallery-12', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160701_174543.jpg'},
+        {id: 'gallery-13', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20180127_224819.jpg'},
+        {id: 'gallery-14', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20171222_195748.jpg'},
+        {id: 'gallery-15', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161008_111823.jpg'},
+        {id: 'gallery-16', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161007_185518.jpg'},
+        {id: 'gallery-17', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20170203_194845.jpg'},
+        {id: 'gallery-18', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161220_201416.jpg'},
+        {id: 'gallery-19', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160702_204520.jpg'},
+    ],
 
     banner :[
         {name : 'landing',  title: "South Bay Sit 'N Stay ", src: "https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg", small: 'Welcome' },

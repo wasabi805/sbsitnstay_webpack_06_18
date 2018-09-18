@@ -3,35 +3,6 @@
 
   .modals-main{
 
-    .modal{
-      //BOOTSTRAP DEFAULT POSITION IS FIXED
-      top: 2em;
-      left: 14em;
-      right: 14em;
-      //SEE _normalize.scss @BODY FOR MODAL BACKDROP STYLING
-      align-items: center;
-      justify-content: center;
-
-        .modal-content{
-
-        .img-cont{
-
-          img{
-            width: 100%;
-          }
-
-        }
-          .modal-dialog{
-
-          }
-
-
-        }
-
-    }
 
   }
-
-
-
 }
