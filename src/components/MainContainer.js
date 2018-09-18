@@ -87,11 +87,6 @@ class MainContainer extends Component{
         }
     }
 
-
-
-
-
-
     render(){
         console.log(this.state.heroBannerImg, 'heroBannerImg', );
 
