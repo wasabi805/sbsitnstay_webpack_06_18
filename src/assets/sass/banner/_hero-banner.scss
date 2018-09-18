@@ -38,7 +38,7 @@
   .bgLanding::after{
     background-image: url($landing-bg-1);
     background-repeat: no-repeat;
-    background-size: cover; //use cover NOT CONTAIN
+    background-size: cover;
   }
 
   .bgAbout1::after{

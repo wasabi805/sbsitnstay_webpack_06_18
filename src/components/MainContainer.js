@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {Redirect, Link} from 'react-router-dom'
+import {mainContainerStyles} from '.././assets/js/styled-components/mainContainerStyle'
 
 
 import HeaderNavigation from './layout/nav/HeaderNavigation'
+
 import LandingBody from './body/LandingBody'
 import AboutBody from './body/AboutBody';
 
@@ -91,16 +93,17 @@ class MainContainer extends Component{
 
 
     render(){
-        // console.log(this.props, 'SANITY CHECK');
+        console.log(this.state.heroBannerImg, 'heroBannerImg', );
 
+        let {AppWrapper, AppHeroBanner, AppHeroParallax,
+            AppArticleOne, AppArticleContentContainer, AppArticleTextBox,
+            AppSecondaryParallaxContainer, AppSecondaryParallaxBg} = mainContainerStyles;
 
         const classNames = require('classnames');
         let landingStyle = classNames('app-section-banner','app-parallax', 'bgLanding')
-
         if(this.state.redirectHome){
             return <Redirect push to ='/'/>
         }
-
         if(this.state.redirectAbout){
             return <Redirect push to ='/location/about-us'/>
         }
@@ -115,37 +118,35 @@ class MainContainer extends Component{
         }
 
         return(
+           <AppWrapper>
 
-            <React.Fragment>
-            <main className="app-wrapper">
-                <HeaderNavigation handleRedirect={this.handleRedirect} />
+               {/*  =====   HeroBannerParallax =====   */}
+               <HeaderNavigation handleRedirect={this.handleRedirect} />
+               <AppHeroBanner/>
+               <AppHeroParallax/>
 
-                {/*BANNER*/}
-                <section className={`app-hero app-hero-parallax  ${this.state.heroBannerImg}`}>
-                    <h1>{this.state.heading}</h1>
-                </section>
+               {/*  =====   ArticleOne =====   */}
+                    <AppArticleOne>
+                        <AppArticleContentContainer>
+                            <AppArticleTextBox>
+                                <h1>About Us</h1>
+                                <p>It was all a dream, I used to read Word Up! magazine
+                                    Salt-n-Pepa and Heavy D up in the limousine
+                                    Hangin' pictures on my wall
+                                    Every Saturday Rap Attack, Mr. Magic, Marley Marl</p>
+                            </AppArticleTextBox>
+                            <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670369/erica-magugliani-446666-unsplash.jpg"/>
+                        </AppArticleContentContainer>
+                    </AppArticleOne>
 
-                <section className="app-static app-static-content-01 ">
-
-                    <div className='app-static-container'>
-                        <div className='app-section-static-content-text-box'>
-                            <h1>About Us</h1>
-                            <p>It was all a dream, I used to read Word Up! magazine
-                                Salt-n-Pepa and Heavy D up in the limousine
-                                Hangin' pictures on my wall
-                                Every Saturday Rap Attack, Mr. Magic, Marley Marl</p>
-
-                        </div>
-                        <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670369/erica-magugliani-446666-unsplash.jpg"/>
-                    </div>
-                </section>
+               {/*  =====   SecondaryParallax BG =====   */}
+               <AppSecondaryParallaxContainer>
+                   <AppSecondaryParallaxBg/>
+               </AppSecondaryParallaxContainer>
 
 
-                <section className="app-section-sidekick sidekick-parallax bgAbout2">
-                    <h1>SO FWUFFY AWWW</h1>
-                </section>
-
-                {/*Body*/}
+                    {/*  =====   SiteNavigationTiles  =====   */}
+                                    {/*AboutUs*/}
                 <div className='body container w-80' >
                     <div className='row landing-tile-body'>
                         <div className='col-6 ' >
@@ -159,7 +160,7 @@ class MainContainer extends Component{
                                 </div>
                             </div>
                         </div>
-
+                                        {/*Services*/}
                         <div className='col-6 ' >
                             <div className='container landing-tile'>
                                 <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670372/nicolas-tessari-218491-unsplash.jpg"/>
@@ -168,7 +169,7 @@ class MainContainer extends Component{
                                 <Link to='/location/services'><div className='button '>What we do</div></Link>
                             </div>
                         </div>
-
+                                        {/*Gallery*/}
                         <div className='col-6 ' >
                             <div className='container landing-tile'>
                                 <img src="https://res.cloudinary.com/ocampot/image/upload/v1535455453/alvan-nee-259129-unsplash.jpg"/>
@@ -177,19 +178,19 @@ class MainContainer extends Component{
                                 <Link to='/location/gallery'><div className='button '>Our pals</div></Link>
                             </div>
                         </div>
-
+                                        {/*Contact*/}
                         <div className='col-6 ' >
                             <div className='container landing-tile'>
                                 <img src="https://res.cloudinary.com/ocampot/image/upload/v1535713833/german-shepherd-using-laptop-desktop-background.jpg"/>
-                                <p className='title'>Gallery</p>
+                                <p className='title'>Contact</p>
                                 <div className='overlay'></div>
                                 <Link to='/location/contact'><div className='button '>Drop us a line</div></Link>
                             </div>
                         </div>
                     </div>
                 </div>
-            </main>
-            </React.Fragment>
+           </AppWrapper>
+
         )
 
     }

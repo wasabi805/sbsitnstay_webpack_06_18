@@ -12,7 +12,6 @@ class Gallery extends Component{
 
         this.state={
             masonryGallery: [],
-            refs:[]
         }
 
         this.handleImgClick= this.handleImgClick.bind(this)
@@ -23,11 +22,19 @@ class Gallery extends Component{
     }
 
     componentWillMount(){
+
       let galleryPics =   this.props.gallery.map((img,index)=>{
+
+          let thumbStyle={
+              'marginTop' : '8px',
+              'verticalAlign' : 'middle',
+              'width' : '100%'
+          }
+
           let pics =[];
           let pic =
-              <figure key={index}>
-                  <img id={index}  ref={(ref)=>{index =ref}} onClick={(ref=index)=>{this.handleImgClick(ref)}} src={img.src}/>
+              <figure className='m-0' key={index}>
+                  <img id={index}  ref={(ref)=>{index =ref}} onClick={(ref=index)=>{this.handleImgClick(ref)}} src={img.src} style={thumbStyle}/>
               </figure>
           pics.push(pic)
           return pics
@@ -62,10 +69,7 @@ class Gallery extends Component{
                     <h1>SO FWUFFY AWWW</h1>
                 </section>
 
-                <MasonryGallery masonryGallery={this.state.masonryGallery} >
-                    <p>inside the masory gallery</p>
-                </MasonryGallery>
-
+                <MasonryGallery masonryGallery={this.state.masonryGallery} />
 
             </main>
         )

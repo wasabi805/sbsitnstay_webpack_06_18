@@ -16,9 +16,9 @@ export const masonryGalleryStyle ={
         `,
 
     MasonryCol: styled.div`
-         flex: 25%;
+        flex: 25%;
         max-width: 25%;
-        padding: 0 4px;
+        padding: 0 0.25em;
         `,
 }
 
