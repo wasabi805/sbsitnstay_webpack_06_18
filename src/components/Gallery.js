@@ -45,8 +45,6 @@ class Gallery extends Component{
             modal.style.display = "none";
         }
 
-
-
         console.log(modal, 'modal id');
         console.log(img, 'img: the thumbnail');
         console.log(imgID, ' IMGID');

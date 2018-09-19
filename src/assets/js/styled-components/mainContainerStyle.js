@@ -125,6 +125,22 @@ export const mainContainerStyles = {
         }
     `,
 
+    AppBodyWrapper: styled.div`  
+       
+         position: relative;
+         background-color: #5cb3fd;
+         width: 100%;
+         margin: 0 auto;
+         padding: 3em;
+         
+         height: 40em;
+         
+        
+         
+         
+    `,
+
+
 
 
 };

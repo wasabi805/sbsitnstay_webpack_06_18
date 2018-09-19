@@ -55,8 +55,7 @@ class App extends Component{
                 <Route exact path='/' render={(props)=> <MainContainer{...props} landing={this.state.landing}/>  } />
                 <Route exact path='/location/about-us' render={(props)=> <About{...props} about={this.state.aboutContent}/>  } />
                 <Route exact path='/location/gallery' render={(props)=> <Gallery{...props} gallery={this.state.galleryContent}/>  } />
-
-                {/*<Route path='/location/services' component={Services} />*/}
+                <Route path='/location/services' component={Services} />
                 {/*<Route path='/location/gallery' component={Gallery} />*/}
                 {/*<Route path='/location/contact' component={Contact} />*/}
             </Switch>
