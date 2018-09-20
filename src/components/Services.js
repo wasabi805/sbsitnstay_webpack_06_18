@@ -34,7 +34,7 @@ class Services extends Component{
         console.log(this.state.showNewText, 'Forever');
 
         let {AppWrapper, AppHeroBanner, AppHeroParallax,
-            AppArticleOne, AppArticleContentContainer, AppArticleTextBox,
+            AppSection, AppSectionContentWrapper, AppSectionTextBox,
             AppSecondaryParallaxContainer, AppSecondaryParallaxBg, AppBodyWrapper} = mainContainerStyles;
         let {SectionContainer, SectionTileImg, SectionTile, SectionTextWrapper, SectionText} = serviceStyle
 

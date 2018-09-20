@@ -82,7 +82,7 @@ class Gallery extends Component{
 
     render(){
         let {AppWrapper, AppHeroBanner, AppHeroParallax,
-            AppArticleOne, AppArticleContentContainer, AppArticleTextBox,
+            AppSection, AppSectionContentWrapper, AppSectionTextBox,
             AppSecondaryParallaxContainer, AppSecondaryParallaxBg} = mainContainerStyles;
 
 

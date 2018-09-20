@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
-import {Redirect, Link} from 'react-router-dom'
-import {mainContainerStyles} from '.././assets/js/styled-components/mainContainerStyle'
+import {Redirect, Link} from 'react-router-dom';
 
+import {AppWrapper, AppHeroBanner, AppHeroParallax, AppSectionContentWrapper, AppSectionImage, AppSectionTextBox, AppBodyWrapper} from '.././assets/js/styled-components/mainContainerStyle'
+
+import styled from 'styled-components'
+import {ThemeProvider} from 'styled-components';
+import theme from 'styled-theme';
 
 import HeaderNavigation from './layout/nav/HeaderNavigation'
 
@@ -90,9 +94,9 @@ class MainContainer extends Component{
     render(){
         console.log(this.state.heroBannerImg, 'heroBannerImg', );
 
-        let {AppWrapper, AppHeroBanner, AppHeroParallax,
-            AppArticleOne, AppArticleContentContainer, AppArticleTextBox,
-            AppSecondaryParallaxContainer, AppSecondaryParallaxBg} = mainContainerStyles;
+        // let {AppWrapper, AppHeroBanner, AppHeroParallax,
+        //     AppSection, AppSectionContentWrapper, AppSectionTextBox, AppSectionImage,
+        //     SectionServices, AppSecondaryParallaxBg} = mainContainerStyles;
 
         const classNames = require('classnames');
         let landingStyle = classNames('app-section-banner','app-parallax', 'bgLanding')
@@ -112,78 +116,64 @@ class MainContainer extends Component{
             return <Redirect push to ='/location/contact'/>
         }
 
+        //THEMES
+
+        AppSectionContentWrapper.defaultProps = {
+            theme: {
+                main: "palevioletred"
+            }
+        };
+
+        AppSectionContentWrapper.defaultProps = {
+            theme: {
+                main: "palevioletred"
+            }
+        }
+
+        // Define what props.theme will look like
+        const theme = {
+            main: "mediumseagreen"
+        };
+
+
+
         return(
            <AppWrapper>
 
-               {/*  =====   HeroBannerParallax =====   */}
+               {/*/!*  =====   HeroBannerParallax =====   *!/*/}
                <HeaderNavigation handleRedirect={this.handleRedirect} />
                <AppHeroBanner/>
                <AppHeroParallax/>
 
-               {/*  =====   ArticleOne =====   */}
-                    <AppArticleOne>
-                        <AppArticleContentContainer>
-                            <AppArticleTextBox>
-                                <h1>About Us</h1>
-                                <p>It was all a dream, I used to read Word Up! magazine
-                                    Salt-n-Pepa and Heavy D up in the limousine
-                                    Hangin' pictures on my wall
-                                    Every Saturday Rap Attack, Mr. Magic, Marley Marl</p>
-                            </AppArticleTextBox>
-                            <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670369/erica-magugliani-446666-unsplash.jpg"/>
-                        </AppArticleContentContainer>
-                    </AppArticleOne>
+               {/*/!*  =====   AboutUs =====   *!/*/}
+               <ThemeProvider theme={theme}>
+               <AppSectionContentWrapper>
 
-               {/*  =====   SecondaryParallax BG =====   */}
-               <AppSecondaryParallaxContainer>
-                   <AppSecondaryParallaxBg/>
-               </AppSecondaryParallaxContainer>
+                    <AppSectionImage>
+                        <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670369/erica-magugliani-446666-unsplash.jpg"/>
+                    </AppSectionImage>
+
+                   <AppSectionTextBox>
+                       <h1>About US</h1>
+                   </AppSectionTextBox>
+               </AppSectionContentWrapper>
+               </ThemeProvider>
+
+               <AppSectionContentWrapper>
+
+                   <AppSectionImage>
+                       <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670369/erica-magugliani-446666-unsplash.jpg"/>
+                   </AppSectionImage>
+
+                   <AppSectionTextBox>
+                       <h1>About US</h1>
+                   </AppSectionTextBox>
+
+               </AppSectionContentWrapper>
 
 
-                    {/*  =====   SiteNavigationTiles  =====   */}
-                                    {/*AboutUs*/}
-                <div className='body container w-80' >
-                    <div className='row landing-tile-body'>
-                        <div className='col-6 ' >
-                            <div className='container landing-tile'>
-                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670370/catarina-carvalho-406908-unsplash.jpg"/>
-                                <p className='title'>Meet the Crew</p>
-                                <div className='overlay'></div>
 
-                                <div className='button '  id="aboutRoute">
-                                    <Link to='/location/about-us'><li>Meet the Crew</li></Link>
-                                </div>
-                            </div>
-                        </div>
-                                        {/*Services*/}
-                        <div className='col-6 ' >
-                            <div className='container landing-tile'>
-                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670372/nicolas-tessari-218491-unsplash.jpg"/>
-                                <p className='title'>Services</p>
-                                <div className='overlay'></div>
-                                <Link to='/location/services'><div className='button '>What we do</div></Link>
-                            </div>
-                        </div>
-                                        {/*Gallery*/}
-                        <div className='col-6 ' >
-                            <div className='container landing-tile'>
-                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535455453/alvan-nee-259129-unsplash.jpg"/>
-                                <p className='title'>Gallery</p>
-                                <div className='overlay'></div>
-                                <Link to='/location/gallery'><div className='button '>Our pals</div></Link>
-                            </div>
-                        </div>
-                                        {/*Contact*/}
-                        <div className='col-6 ' >
-                            <div className='container landing-tile'>
-                                <img src="https://res.cloudinary.com/ocampot/image/upload/v1535713833/german-shepherd-using-laptop-desktop-background.jpg"/>
-                                <p className='title'>Contact</p>
-                                <div className='overlay'></div>
-                                <Link to='/location/contact'><div className='button '>Drop us a line</div></Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
            </AppWrapper>
 
         )
