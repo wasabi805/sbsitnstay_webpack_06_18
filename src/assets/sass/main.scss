@@ -145,11 +145,13 @@ body,html{margin:0;padding:0;}
 }
 
 .sectionText-enter{
+  position: absolute;
   opacity: 0.01;
-  transform: scale(0.9) translateY(50%);
+  transform: scale(0.9) translateY(0%);
 }
 
 .sectionText-enter-active {
+  position: absolute;
   opacity: 1;
   transform: scale(1) translateY(0%);
   transition: all 300ms ease-out;
@@ -157,7 +159,7 @@ body,html{margin:0;padding:0;}
 
 .sectionText-exit-active {
   opacity: 0.01;
-  transform: scale(0.9) translateY(50%);
+  transform: scale(0.9) translateY(0%);
   transition: all 300ms ease-out;
 }
 

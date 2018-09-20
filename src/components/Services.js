@@ -13,9 +13,8 @@ class Services extends Component{
     constructor(props){
         super(props);
         this.state={
-            test: false,
-            showText: false,
-            showCatsAndDogs: false
+            showInitialText: true,
+            showNewText: false,
         };
         this.handleClick=this.handleClick.bind(this)
     }
@@ -23,19 +22,21 @@ class Services extends Component{
     handleClick(){
         console.log('handleClickRan');
         this.setState({
-            test: !this.state.test,
+            showInitialText: !this.state.showInitialText,
+            showNewText: !this.state.showNewText,
         })
     }
 
 
     render(){
 
-        console.log(this.state.test, 'WUTANG');
+        console.log(this.state.showInitialText, 'WUTANG');
+        console.log(this.state.showNewText, 'Forever');
 
         let {AppWrapper, AppHeroBanner, AppHeroParallax,
             AppArticleOne, AppArticleContentContainer, AppArticleTextBox,
             AppSecondaryParallaxContainer, AppSecondaryParallaxBg, AppBodyWrapper} = mainContainerStyles;
-        let {SectionContainer, SectionTileImg, SectionTileText, } = serviceStyle
+        let {SectionContainer, SectionTileImg, SectionTile, } = serviceStyle
 
 
         const classNames = require('classnames');
@@ -76,15 +77,22 @@ class Services extends Component{
                             <div className='btn btn-primary' onClick={this.handleClick}>Set in to True</div>
                         </SectionTileImg>
 
-                       <CSSTransition timeout={5000}
-                                      in={this.state.test}
-                                      classNames="sectionText"
-                                      unmountOnExit
-                       >
-                           <SectionTileText>
-                               <div className='sectionText'><h1>Hello</h1></div>
-                           </SectionTileText>
-                       </CSSTransition>
+
+
+                       <SectionTile>
+                           {/*INITIAL*/}
+                           <CSSTransition
+                               timeout={3000} in={this.state.showInitialText} classNames="sectionText" unmountOnExit>
+                                   <div className='sectionText'><h1>I'm the Initial</h1></div>
+                           </CSSTransition>
+                           {/*Incoming*/}
+                           <CSSTransition
+                               timeout={3000} in={this.state.showNewText} classNames="sectionText" unmountOnExit>
+                               <div className='sectionText'><h1>I came in</h1></div>
+                           </CSSTransition>
+                       </SectionTile>
+
+
 
                    </SectionContainer>
                 </AppBodyWrapper>

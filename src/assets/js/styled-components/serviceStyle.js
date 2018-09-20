@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 export const serviceStyle ={
     SectionContainer: styled.section`
+        
         display: flex;
         background: #f2f2f2 
     `,
@@ -14,8 +15,8 @@ export const serviceStyle ={
        
     `,
 
-    SectionTileText: styled.div.attrs({
-        className: 'sectionText',
+    SectionTile: styled.div.attrs({
+        className: 'sectionTile',
         // size: props => (props.small ? 3 : 8),
     })`
          position: relative;
@@ -27,8 +28,18 @@ export const serviceStyle ={
          justify-content: center;
          align-items: center;
          
-         h1{
+        
+    `,
+
+    SectionText: styled.div.attrs({
+        className: 'sectionText',
+        // size: props => (props.small ? 3 : 8),
+    })`
+         position: absolute;
+         color: #f2f2f2;
+          h1{
             color: white;
          }
+        
     `,
 };
