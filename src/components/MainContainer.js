@@ -116,23 +116,18 @@ class MainContainer extends Component{
             return <Redirect push to ='/location/contact'/>
         }
 
-        //THEMES
-
+        //THEMES : DEFAULTS
         AppSectionContentWrapper.defaultProps = {
             theme: {
-                main: "palevioletred"
+                bgColor: "purple"
             }
         };
 
-        AppSectionContentWrapper.defaultProps = {
-            theme: {
-                main: "palevioletred"
-            }
-        }
 
         // Define what props.theme will look like
-        const theme = {
-            main: "mediumseagreen"
+        //THEMES : INSTANCES
+        const aboutUsTheme = {
+            bgColor: '#edf1f9'
         };
 
 
@@ -146,7 +141,7 @@ class MainContainer extends Component{
                <AppHeroParallax/>
 
                {/*/!*  =====   AboutUs =====   *!/*/}
-               <ThemeProvider theme={theme}>
+               <ThemeProvider theme={aboutUsTheme}>
                <AppSectionContentWrapper>
 
                     <AppSectionImage>

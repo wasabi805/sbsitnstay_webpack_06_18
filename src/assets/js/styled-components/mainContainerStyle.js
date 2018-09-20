@@ -51,7 +51,7 @@ export const AppHeroParallax = styled.section.attrs({
 
         position: relative;
         display: flex;
-        background-color : ${props => props.theme.main};
+        background-color : ${props => props.theme.bgColor};
         padding-top: 2em;
         padding-bottom: 7em;
         padding-left: 2em;
@@ -109,9 +109,8 @@ export const AppBodyWrapper = styled.div`
 
 
 
-AppSectionContentWrapper.defaultProps = {
-    palette: 'primary'
-}
+
+
 
 
 
