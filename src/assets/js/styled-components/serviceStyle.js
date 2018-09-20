@@ -8,7 +8,7 @@ export const serviceStyle ={
 
     SectionTileImg: styled.div`
         
-         width: 30em;
+         width: 20em;
          background-image: linear-gradient(to bottom right, #ff00f2, #4b0648);
          color: #f2f2f2;
          object-fit: contain;    
@@ -26,20 +26,30 @@ export const serviceStyle ={
          
          display: flex;
          justify-content: center;
-         align-items: center;
-         
-        
+         align-items: center;  
     `,
 
-    SectionText: styled.div.attrs({
-        className: 'sectionText',
+    SectionTextWrapper: styled.div.attrs({
+        className: 'sectionTextWrapper',
         // size: props => (props.small ? 3 : 8),
     })`
-         position: absolute;
-         color: #f2f2f2;
-          h1{
-            color: white;
-         }
+        position: absolute;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
         
+        
+        align-items: center;
+        justify-content: center }
+        
+        
+        outline: 2px solid white;
+        outline-offset: -2.5em;
+      
+       
     `,
+
+
 };

@@ -36,7 +36,7 @@ class Services extends Component{
         let {AppWrapper, AppHeroBanner, AppHeroParallax,
             AppArticleOne, AppArticleContentContainer, AppArticleTextBox,
             AppSecondaryParallaxContainer, AppSecondaryParallaxBg, AppBodyWrapper} = mainContainerStyles;
-        let {SectionContainer, SectionTileImg, SectionTile, } = serviceStyle
+        let {SectionContainer, SectionTileImg, SectionTile, SectionTextWrapper, SectionText} = serviceStyle
 
 
         const classNames = require('classnames');
@@ -82,13 +82,17 @@ class Services extends Component{
                        <SectionTile>
                            {/*INITIAL*/}
                            <CSSTransition
-                               timeout={3000} in={this.state.showInitialText} classNames="sectionText" unmountOnExit>
-                                   <div className='sectionText'><h1>I'm the Initial</h1></div>
+                               timeout={1000} in={this.state.showInitialText} classNames="sectionTextWrapper" unmountOnExit>
+                               <SectionTextWrapper>
+                                    <h1 className='m-0'>I'm the INITIAL</h1>
+                               </SectionTextWrapper>
                            </CSSTransition>
                            {/*Incoming*/}
                            <CSSTransition
-                               timeout={3000} in={this.state.showNewText} classNames="sectionText" unmountOnExit>
-                               <div className='sectionText'><h1>I came in</h1></div>
+                               timeout={1000} in={this.state.showNewText} classNames="sectionTextWrapper" unmountOnExit>
+                                <SectionTextWrapper>
+                                    <h1 className='m-0'>I'm the DELTA</h1>
+                                </SectionTextWrapper>
                            </CSSTransition>
                        </SectionTile>
 
