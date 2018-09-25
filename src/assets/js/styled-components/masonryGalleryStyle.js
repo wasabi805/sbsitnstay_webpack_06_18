@@ -9,13 +9,21 @@ export const masonryGalleryStyle ={
          background-color: pink;
          `,
 
-    MasonryRow: styled.div`
+    MasonryRow: styled.div.attrs({
+        className: 'MasonryRow'
+    })`
          display: flex;
          flex-wrap: wrap;
          padding: 0 4px;
+         padding-bottom: 5em
+         
+         
+         
         `,
 
-    MasonryCol: styled.div`
+    MasonryCol: styled.div.attrs({
+        className: 'MasonryCol'
+    })`
         flex: 25%;
         max-width: 25%;
         padding: 0 0.25em;

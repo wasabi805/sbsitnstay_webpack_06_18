@@ -4,6 +4,8 @@
 @import "presets/variables";
 @import "presets/resets";
 
+@import "input-fields-contact";
+
 
 
 
@@ -17,6 +19,13 @@
 //
 body,html{margin:0;padding:0;}
 
+.masonry-gallery-wrapper{
+  background-color: #f2f2f2;
+
+}
+
+
+
 //thumb to trigger modal
 .galleryThumb{
   margin-top: 8px;
@@ -25,7 +34,8 @@ body,html{margin:0;padding:0;}
   cursor: pointer;
   transition: 0.5s;
 
-  &:hover {opacity: 0.7;}
+  &:hover {opacity: 0.7};
+
 }
 
 //modal
@@ -137,9 +147,58 @@ body,html{margin:0;padding:0;}
 }
 
 
+//Contact form container : 09-25-18
+
+.contact-form-container{
+  position: absolute;
+  top: -8em;
+  left: 6em;
+  width: 65%;
+  //height: 30em;
+  //opacity: 0.3;
+
+}
+
+.contact-form-row{
+
+}
+
+.contact-form-col{
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+
+.contact-info-box{
+  position: absolute;
+  background-color: teal;
+  padding: 0;
+
+  &:before{
+    content: ' ';
+    position: absolute;
+    width: 20.25em;
+    height: 40em;
+    background-color: #00c9d6;
+    z-index: 1;
+  }
+}
+
+.contact-form-box{
+  //background-color: yellow;
+  padding: 0;
+}
 
 
-//SVC Transition
+
+
+
+
+//Form Inpunt Styling
+//style ing for contact form : 09-25-18
+@include input-fields-contact
+
 
 
 

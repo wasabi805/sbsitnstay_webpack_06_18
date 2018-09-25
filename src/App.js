@@ -27,7 +27,7 @@ class App extends Component{
             landing:'',
             aboutContent:'',
             servicesContent: '',
-            galleryContent: '',
+            gallery: '',
             contactContent: ''
         }
     }
@@ -39,7 +39,7 @@ class App extends Component{
         this.setState({
             landing: landing,
             aboutContent: about,
-            galleryContent: gallery
+            gallery: gallery
         })
 
         // console.log(this.props.mainReducer, 'THE INITAL');
@@ -53,7 +53,7 @@ class App extends Component{
 
         return(
             <Switch>
-                <Route exact path='/' render={(props)=> <MainContainer{...props} landing={this.state.landing}/>  } />
+                <Route exact path='/' render={(props)=> <MainContainer{...props} landing={this.state.landing} gallery={this.state.gallery}/>  } />
                 <Route exact path='/location/about-us' render={(props)=> <About{...props} about={this.state.aboutContent}/>  } />
                 <Route exact path='/location/gallery' render={(props)=> <Gallery{...props} gallery={this.state.galleryContent}/>  } />
                 <Route path='/location/services' component={Services} />

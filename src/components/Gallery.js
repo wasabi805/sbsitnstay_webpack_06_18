@@ -81,50 +81,17 @@ class Gallery extends Component{
 
 
     render(){
-        let {AppWrapper, AppHeroBanner, AppHeroParallax,
-            AppSection, AppSectionContentWrapper, AppSectionTextBox,
-            AppSecondaryParallaxContainer, AppSecondaryParallaxBg} = mainContainerStyles;
-
-
         console.log(this.props, 'REAL Gallery');
         console.log(this.state.showModalPic, 'showModalPic');
         return(
             <React.Fragment>
-            <AppWrapper>
-
-                {/*  =====   HeroBannerParallax =====   */}
-                <HeaderNavigation/>
-                <AppHeroBanner>
-                    <h1>Gallery</h1>
-                </AppHeroBanner>
-                <AppHeroParallax/>
-
-                {/*  =====   ArticleOne =====   */}
-                <AppArticleOne>
-                    <AppArticleContentContainer>
-                        <AppArticleTextBox>
-                            <h1>Check out Our buds</h1>
-                            <p>It was all a dream, I used to read Word Up! magazine
-                                Salt-n-Pepa and Heavy D up in the limousine
-                                Hangin' pictures on my wall
-                                Every Saturday Rap Attack, Mr. Magic, Marley Marl</p>
-                        </AppArticleTextBox>
-                        <img src="https://res.cloudinary.com/ocampot/image/upload/v1535670369/erica-magugliani-446666-unsplash.jpg"/>
-                    </AppArticleContentContainer>
-                </AppArticleOne>
-
-                {/*  =====   SecondaryParallax BG =====   */}
-                <AppSecondaryParallaxContainer>
-                    <h1>Stuff Before the gallery</h1>
-                    <AppSecondaryParallaxBg/>
-                </AppSecondaryParallaxContainer>
 
 
                 {/*  =====   Gallery && Modal =====   */}
                 <MasonryGallery masonryGallery={this.state.masonryGallery}/>
 
 
-            </AppWrapper>
+
                 {/*Outside of wrapper so modal appears above ALL sections*/}
                 <MasonryModal showModal={this.showModal} gallery={this.props.gallery} />
 

@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
 import {Redirect, Link} from 'react-router-dom';
 
-import {AppWrapper, AppHeroBanner, AppHeroParallax, AppSectionContentWrapper, AppSectionImage, AppSectionTextBox, AppBodyWrapper, ServiceTiles, FaContainer, ServiceTilesText} from '.././assets/js/styled-components/mainContainerStyle'
+import {AppWrapper, AppHeroBanner, AppHeroParallax, AppSectionContentWrapper, AppSectionImage, AppSectionTextBox, AppBodyWrapper, ServiceTiles, FaContainer, ServiceTilesText, ProfileImageWrapper, SecondaryParallaxBanner,Footer} from '.././assets/js/styled-components/mainContainerStyle'
+import {FormWrapper,FormRow, FormTextArea} from '.././assets/js/styled-components/mainContainerStyle'
+
+
 
 import styled from 'styled-components'
 import {ThemeProvider} from 'styled-components';
 import theme from 'styled-theme';
 
 import HeaderNavigation from './layout/nav/HeaderNavigation'
-import FontAwesome from 'react-fontawesome'
+import Gallery from './Gallery';
+import ContactForm from './common/ContactForm'
 
 import LandingBody from './body/LandingBody'
 import AboutBody from './body/AboutBody';
@@ -93,14 +97,10 @@ class MainContainer extends Component{
     }
 
     render(){
-        console.log(this.state.heroBannerImg, 'heroBannerImg', );
-
-        // let {AppWrapper, AppHeroBanner, AppHeroParallax,
-        //     AppSection, AppSectionContentWrapper, AppSectionTextBox, AppSectionImage,
-        //     SectionServices, AppSecondaryParallaxBg} = mainContainerStyles;
-
+        console.log(this.props, 'REFACTORING' );
         const classNames = require('classnames');
-        let landingStyle = classNames('app-section-banner','app-parallax', 'bgLanding')
+
+
         if(this.state.redirectHome){
             return <Redirect push to ='/'/>
         }
@@ -132,10 +132,20 @@ class MainContainer extends Component{
 
         const servicesTheme ={
             bgColor:  '#f2f2f2',
+            top: '14em',
             textAlignment: 'center',
             width: '50%',
             margin: '0 auto',
             padding: '1em 10em',
+        };
+
+        const meetTheCrewTheme ={
+            bgColor:  '#f2f2f2',
+            textAlignment: 'center',
+            width: '50%',
+            margin: '0 auto',
+            padding: '0',
+
         };
 
 
@@ -159,6 +169,7 @@ class MainContainer extends Component{
                        </AppSectionTextBox>
                    </AppSectionContentWrapper>
                </ThemeProvider>
+
 
                {/*/!*  =====   Services =====   *!/*/}
                <ThemeProvider theme={servicesTheme}>
@@ -222,16 +233,165 @@ class MainContainer extends Component{
 
                {/*Put the 2nd Parallax here*/}
 
-
-
+               {/*/!*  =====   AboutUs =====   *!/*/}
                <ThemeProvider theme={aboutUsTheme}>
                    <AppSectionContentWrapper>
-                       <h1>Hello?</h1>
+
+
+                       <AppSectionTextBox>
+                           <h1 >Why SB Sit 'N Stay? </h1>
+                           <ul>
+                               <h2>Qualifications for sbsitnstay</h2>
+                               <li>drop down 1</li>
+                               <li>drop down 2</li>
+                               <li>drop down 3</li>
+                               <li>drop down 4</li>
+
+                           </ul>
+                       </AppSectionTextBox>
+
+                       <AppSectionImage>
+                           <img src="https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg"/>
+                       </AppSectionImage>
+                   </AppSectionContentWrapper>
+               </ThemeProvider>
+
+               {/*MEET THE CREW*/}
+               <ThemeProvider theme={servicesTheme}>
+                   <AppSectionContentWrapper>
+
+                       <AppSectionTextBox>
+                           <h1>Meet the Crew</h1>
+                           <p> grew up on the crime side, the New York Times side
+                               Staying alive was no jive
+                               Had second hands, moms bounced on old men
+                               So then we moved to Shaolin land</p>
+                       </AppSectionTextBox>
+
+                   </AppSectionContentWrapper>
+               </ThemeProvider>
+
+               {/*KAYLA*/}
+               <ThemeProvider theme={meetTheCrewTheme}>
+                   <AppSectionContentWrapper>
+                       <ServiceTiles>
+
+                           <ProfileImageWrapper>
+                              <img src='https://res.cloudinary.com/ocampot/image/upload/v1533777073/kayla-portrait.jpg'/>
+                           </ProfileImageWrapper>
+
+                           <ServiceTilesText>
+                               <h1>Kayla</h1>
+                           </ServiceTilesText>
+                     </ServiceTiles>
+
+
+                       {/*Catherine*/}
+                       <ServiceTiles>
+
+                           <ProfileImageWrapper>
+                               <img src='https://res.cloudinary.com/ocampot/image/upload/v1532396286/sbsitnstay/catherine.jpg'/>
+                           </ProfileImageWrapper>
+
+                           <ServiceTilesText>
+                               <h1>Catherine</h1>
+                           </ServiceTilesText>
+                       </ServiceTiles>
+
+                       {/*Yuko*/}
+                       <ServiceTiles>
+
+                           <ProfileImageWrapper>
+                               <img src='.././assets/images/tina.jpeg'/>
+                           </ProfileImageWrapper>
+
+                           <ServiceTilesText>
+                               <h1>Tina</h1>
+                           </ServiceTilesText>
+                       </ServiceTiles>
+
+
                    </AppSectionContentWrapper>
                </ThemeProvider>
 
 
+               {/*Gallery*/}
+               <ThemeProvider theme={aboutUsTheme}>
+                   <AppSectionContentWrapper>
+
+                       <AppSectionTextBox>
+                           <h1>Check out the gallery of our latest Clients!</h1>
+                           <p> grew up on the crime side, the New York Times side
+                               Staying alive was no jive
+                               Had second hands, moms bounced on old men
+                               So then we moved to Shaolin land</p>
+                       </AppSectionTextBox>
+
+                   </AppSectionContentWrapper>
+               </ThemeProvider>
+
+               {/*Parallax 2*/}
+               <Gallery gallery={this.props.gallery}/>
+
+
+
+               <ThemeProvider theme={aboutUsTheme}>
+                   <AppSectionContentWrapper>
+
+                       <AppSectionTextBox>
+                           <h1>We'd love to hear from you!</h1>
+                           <p> grew up on the crime side, the New York Times side
+                               Staying alive was no jive
+                               Had second hands, moms bounced on old men
+                               So then we moved to Shaolin land</p>
+                       </AppSectionTextBox>
+
+                   </AppSectionContentWrapper>
+               </ThemeProvider>
+
+
+               <SecondaryParallaxBanner>
+                   {/*<ContactForm/>*/}
+
+                   <div className='contact-form-container'>
+
+                       <div className='row contact-form-row bg-danger'>
+
+                           <div className='col-sm-4 contact-form-col  '>
+                              <div className='contact-info-box'>
+                                  <h2>Test</h2>
+                                  <p>More stuff</p>
+                                  <p>More stuff</p>
+                                  <p>More stuff</p>
+
+                              </div>
+                           </div>
+
+
+
+                           <div className='col-sm-8 contact-form-col contact-form-box'>
+                               <ContactForm/>
+                           </div>
+
+                       </div>
+                   </div>
+
+
+
+
+                   {/*<ContactForm/>*/}
+               </SecondaryParallaxBanner>
+
+
+               {/*Contact Form*/}
+
+
+               <Footer>
+                   THIS IS THE FOOTER
+               </Footer>
+
            </AppWrapper>
+
 
         )
 

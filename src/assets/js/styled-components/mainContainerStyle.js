@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { font, palette } from 'styled-theme'
-import theme from 'styled-theme';
+
 
 export const AppWrapper = styled.div.attrs({className: 'AppWrapper'})`
         height: 100vh;
@@ -43,6 +43,9 @@ export const AppHeroParallax = styled.section.attrs({
     `;
 
 
+
+
+
 //     // =====   Section Wrapper : FLEX CONTAINER =====
     export const AppSectionContentWrapper = styled.div.attrs({
         className: 'AppSectionContentWrapper',
@@ -77,7 +80,7 @@ export const AppSectionTextBox =styled.div.attrs({
         position: relative;
       
         width: ${props => props.theme.width};
-        color: #FFF;
+        color: #666;
         background-color: ${props => props.theme.bgColor};
         padding:0 2em;
         margin: ${props => props.theme.margin}
@@ -113,6 +116,7 @@ export const AppSectionTextBox =styled.div.attrs({
 export const ServiceTiles = styled.div.attrs({
     className : 'ServiceTiles'
 })`
+    display: ${props => props.theme.display};
     position: relative;
     width: 13em;
     height: 30em;
@@ -127,8 +131,9 @@ export const ServiceTilesText = styled.div.attrs({
 })`
     position: relative;
     background-color: #e9f0f0;
-    top: 14em;
+    top: ${props => props.theme.top};
     width: 75%;
+    height: ${props => props.theme.height};
     margin: 0 auto;
     text-align: center;
     
@@ -211,6 +216,126 @@ export const FaContainer = styled.ul.attrs({
     
 `;
 
+export const ProfileImageWrapper = styled.div.attrs({
+    className : 'ProfileImageWrapper'
+})`
+    background-color: lime;
+    object-fit: contain;
+    width: 25em;
+    margin: 1em auto;
+    
+    img{
+        width: 100%
+    }
+`;
+
+export const SecondaryParallaxBanner = styled.section.attrs({
+    className: 'SecondaryParallaxBanner'
+})`
+    position: relative;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    color: blue;
+    
+    &:after{
+        content: ' ';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom 0;
+        left 0;
+        transform: translateZ(-1px) scale(1.5);
+        background-size: 100%;
+        z-index: -1;
+        background-image: url('../.././assets/images/sbSitNStayMap2.png');
+    }
+   
+`;
+
+export const FormWrapper = styled.div.attrs({
+    className :  'FormWrapper'
+})`
+    position: absolute;
+    width: 100%;
+    margin: 0 auto; 
+    padding: 5em 5em;
+    
+    
+    //overlay bg
+    &:before{
+    content: ' ';
+    position: absolute;
+    width: 52em;
+    height: 40em;
+    margin: 0 auto; 
+    padding: 5em 5em;
+    top: 0;
+    left: 338px;
+
+     background-color: black;
+     opacity: 0.5;
+    }
+    
+`;
+
+export  const FormRow = styled.div.attrs({
+    className: 'row',
+
+})`
+   width: 100%;
+   position: relative;
+   justify-content: center;
+  
+    
+`;
+
+export  const FormTextArea = styled.textarea.attrs({
+    className: 'FormTextArea',
+    placeholder: 'Comments',
+    rows: '10',
+
+
+})`
+   position: absolute;
+   width: 91%;
+   height: auto;
+   top: 2em;
+   left: 2em;
+`;
+
+
+export const FormCol1 =styled.div.attrs({
+    className: 'FormCol1',
+})`
+    flex-grow: 1;
+    background-color:  #00c9d5;
+    
+`;
+
+export const FormCol2 =styled.div.attrs({
+    className: 'FormCol2',
+})`
+    flex-grow: 2;
+    position: relative;
+    
+`;
+
+
+
+export const Footer = styled.footer.attrs({
+    className: 'Footer'
+})`
+   
+    background-color: grey;
+    height: 30rem;
+`;
+
+
+
+
+
+
 
 export const AppBodyWrapper = styled.div`
 
@@ -240,6 +365,11 @@ AppSectionTextBox.defaultProps ={
         margin: '',
     }
 };
+
+ServiceTilesText.defaultProps = {
+    height: '',
+    top: '',
+}
 
 
 

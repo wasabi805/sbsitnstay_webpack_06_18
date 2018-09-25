@@ -40,7 +40,7 @@ class MasonryGallery extends Component{
         let {Title, MasonryRow, MasonryCol} = masonryGalleryStyle;
 
         return(
-            <React.Fragment>
+            <div className='masonry-gallery-wrapper '>
 
                 <MasonryRow>
                    <MasonryCol>
@@ -60,12 +60,11 @@ class MasonryGallery extends Component{
 
                     <MasonryCol>
                         {this.state.col4}
-
                     </MasonryCol>
 
                 </MasonryRow>
 
-            </React.Fragment>
+            </div>
 
         )
     }
