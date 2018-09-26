@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Redirect, Link} from 'react-router-dom';
 
 import {AppWrapper, AppHeroBanner, AppHeroParallax, AppSectionContentWrapper, AppSectionImage, AppSectionTextBox, AppBodyWrapper, ServiceTiles, FaContainer, ServiceTilesText, ProfileImageWrapper, SecondaryParallaxBanner,Footer} from '.././assets/js/styled-components/mainContainerStyle'
-import {FormWrapper,FormRow, FormTextArea} from '.././assets/js/styled-components/mainContainerStyle'
+import {FormContainer,FormCol1, FormCol2, FormTextArea} from '.././assets/js/styled-components/mainContainerStyle'
 
 
 
@@ -350,40 +350,48 @@ class MainContainer extends Component{
                </ThemeProvider>
 
 
+
+
                <SecondaryParallaxBanner>
                    {/*<ContactForm/>*/}
 
-                   <div className='contact-form-container'>
+                   <FormContainer>
+                       <FormCol1>
 
-                       <div className='row contact-form-row bg-danger'>
+                           <p>Phone: 650-123-4567</p>
+                           <p>Email: timothy.j.ocampo@gmail.com</p>
+                       </FormCol1>
 
-                           <div className='col-sm-4 contact-form-col  '>
-                              <div className='contact-info-box'>
-                                  <h2>Test</h2>
-                                  <p>More stuff</p>
-                                  <p>More stuff</p>
-                                  <p>More stuff</p>
+                       <div className='x'></div>
+                       <FormCol2>
+                           <table className='tableF'>
+                               <tr>
+                                   <td className='pt-2 pl-2 pr-2'><input className='inputF w-100' type='text' placeholder='first name:'/></td>
+                                   <td className='pt-2 pl-2 pr-2'><input className='inputF w-100' type='text' placeholder='last name:'/></td>
+                               </tr>
+                               <tr>
+                                   <td className='pb-2 pt-2 pl-2 pr-2'><input className='inputF w-100' type='text' placeholder='phone:'/></td>
+                                   <td className='pb-2 pt-2 pl-2 pr-2'><input className='inputF w-100' type='text' placeholder='email:'/></td>
+                               </tr>
+                           </table>
 
-                              </div>
+                           <table className='w-100'>
+                               <td className='pl-2 pr-2 pt-3 '> <textarea className='w-100 h-auto ' rows='10' placeholder='comments'></textarea></td>
+                           </table>
+
+                           <div className='buttonFCont'>
+                               <button className='btn buttonF' value="Submit">Submit</button>
                            </div>
 
 
 
-                           <div className='col-sm-8 contact-form-col contact-form-box'>
-                               <ContactForm/>
-                           </div>
+                       </FormCol2>
 
-                       </div>
-                   </div>
-
-
-
-
-                   {/*<ContactForm/>*/}
+                   </FormContainer>
                </SecondaryParallaxBanner>
 
 
-               {/*Contact Form*/}
+
 
 
                <Footer>

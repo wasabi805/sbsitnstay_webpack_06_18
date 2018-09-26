@@ -56,6 +56,9 @@ export const AppHeroParallax = styled.section.attrs({
         background-color : ${props => props.theme.bgColor};
         margin: ${props => props.theme.margin};
         padding: ${props => props.theme.padding};
+        
+        // background-color: yellow;
+        
     `;
 
     // =====   Section Image =====
@@ -82,7 +85,7 @@ export const AppSectionTextBox =styled.div.attrs({
         width: ${props => props.theme.width};
         color: #666;
         background-color: ${props => props.theme.bgColor};
-        padding:0 2em;
+        // padding:0 2em;
         margin: ${props => props.theme.margin}
         
      
@@ -233,7 +236,7 @@ export const SecondaryParallaxBanner = styled.section.attrs({
     className: 'SecondaryParallaxBanner'
 })`
     position: relative;
-    height: 50rem;
+    height: 55rem;
     display: flex;
     align-items: center;
     color: blue;
@@ -246,70 +249,55 @@ export const SecondaryParallaxBanner = styled.section.attrs({
         bottom 0;
         left 0;
         transform: translateZ(-1px) scale(1.5);
-        background-size: 100%;
+        background-size: 125%;
         z-index: -1;
         background-image: url('../.././assets/images/sbSitNStayMap2.png');
+        background-repeat: no-repeat;
+        
     }
    
 `;
 
-export const FormWrapper = styled.div.attrs({
-    className :  'FormWrapper'
+export const FormContainer = styled.div.attrs({
+    className :  'FormContainer'
 })`
-    position: absolute;
+    position: relative;
+    display: flex;
     width: 100%;
-    margin: 0 auto; 
-    padding: 5em 5em;
+    padding-top : 2%;
+    padding-bottom : 2%;
+    padding-right: 25%;
+    padding-left: 5%;
     
     
-    //overlay bg
+    top: -6em;
+    
+    
+    // background-color: pink;
     &:before{
     content: ' ';
     position: absolute;
-    width: 52em;
-    height: 40em;
-    margin: 0 auto; 
-    padding: 5em 5em;
-    top: 0;
-    left: 338px;
+    top:0;
+    width: 75%;
+    height: 100%;
 
-     background-color: black;
-     opacity: 0.5;
-    }
+    z-index: 0;
+    opacity: .3;
+    background-color:  black;
+    padding: 5em 2em;
+
+
+  }
     
 `;
-
-export  const FormRow = styled.div.attrs({
-    className: 'row',
-
-})`
-   width: 100%;
-   position: relative;
-   justify-content: center;
-  
-    
-`;
-
-export  const FormTextArea = styled.textarea.attrs({
-    className: 'FormTextArea',
-    placeholder: 'Comments',
-    rows: '10',
-
-
-})`
-   position: absolute;
-   width: 91%;
-   height: auto;
-   top: 2em;
-   left: 2em;
-`;
-
 
 export const FormCol1 =styled.div.attrs({
     className: 'FormCol1',
 })`
-    flex-grow: 1;
+    flex-grow: 0.25;
     background-color:  #00c9d5;
+    font-size: 1em;
+    margin-left: 2em;
     
 `;
 
@@ -318,8 +306,26 @@ export const FormCol2 =styled.div.attrs({
 })`
     flex-grow: 2;
     position: relative;
-    
+    padding: 3em;
+    // background-color: lime;
+     
 `;
+
+
+
+export  const FormTextArea = styled.textarea.attrs({
+    className: 'FormTextArea',
+    placeholder: 'Comments',
+    rows: '10',
+
+
+})`
+  overflow: hidden;
+  width: 10em;
+`;
+
+
+
 
 
 
