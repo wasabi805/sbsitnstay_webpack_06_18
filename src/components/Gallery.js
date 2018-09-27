@@ -82,7 +82,7 @@ class Gallery extends Component{
 
     render(){
         console.log(this.props, 'REAL Gallery');
-        console.log(this.state.showModalPic, 'showModalPic');
+        // console.log(this.state.showModalPic, 'showModalPic');
         return(
             <React.Fragment>
 

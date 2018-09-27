@@ -12,7 +12,7 @@ import './assets/sass/main.scss';
 
 import MainContainer from './components/MainContainer'
 import About from './components/About'
-import Services from './components/Services'
+// import Services from './components/Services'
 import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 
@@ -32,7 +32,7 @@ class App extends Component{
         }
     }
     componentWillMount(){
-        console.log(this.props.mainReducer, 'main reducer');
+        // console.log(this.props.mainReducer, 'main reducer');
       // console.log(this.props.mainReducer, 'wutang');
       let {landing, about, gallery} = this.props.mainReducer
 
@@ -48,15 +48,15 @@ class App extends Component{
 
 
     render(){
-        console.log(this.state, 'state from APP');
-        console.log(this.props, 'APP: Router stuff');
+        // console.log(this.state, 'state from APP');
+        // console.log(this.props, 'APP: Router stuff');
 
         return(
             <Switch>
                 <Route exact path='/' render={(props)=> <MainContainer{...props} landing={this.state.landing} gallery={this.state.gallery}/>  } />
                 <Route exact path='/location/about-us' render={(props)=> <About{...props} about={this.state.aboutContent}/>  } />
                 <Route exact path='/location/gallery' render={(props)=> <Gallery{...props} gallery={this.state.galleryContent}/>  } />
-                <Route path='/location/services' component={Services} />
+                {/*<Route path='/location/services' component={Services} />*/}
                 {/*<Route path='/location/gallery' component={Gallery} />*/}
                 {/*<Route path='/location/contact' component={Contact} />*/}
             </Switch>

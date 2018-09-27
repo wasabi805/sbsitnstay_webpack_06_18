@@ -150,14 +150,20 @@ export const ServiceTilesText = styled.div.attrs({
 export const FaContainer = styled.ul.attrs({
     className : 'FaContainer',
 })`
-    display: flex;
-    position: absolute;
+    
+    position: relative;
+    padding: 0;
 
     left: 50%;
     transform: translate(-50%, 50%);
     
+    
     li{
         list-style: none;
+        width: 10em;
+        margin: 0 auto;
+        background-color:yellow;
+        
         
         &:nth-child(1) a:before{
             background: #00c9d5;

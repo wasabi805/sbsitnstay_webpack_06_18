@@ -190,11 +190,6 @@ body,html{margin:0;padding:0;}
   padding: 0;
 }
 
-
-
-
-
-
 //Form Inpunt Styling
 //style ing for contact form : 09-25-18
 @include input-fields-contact
@@ -229,6 +224,128 @@ body,html{margin:0;padding:0;}
 .buttonF{
   margin: 0 auto;
 }
+
+
+//Pricing cards : 9-27
+.pricing-container{
+
+
+  position: relative;
+  background-color: #f2f2f2;
+  padding-bottom: 20em;
+  padding-left: 6%;
+
+
+  h2{
+    display: block;
+  }
+}
+
+.pricing-banner{
+  text-align: center;
+
+  h2{
+    line-height: 3em;
+    font-size: large;
+    color: #000;
+  }
+
+}
+
+.pricing-card{
+  position: absolute;
+  width: 75%;
+  display: inline-block;
+
+
+}
+
+.card-body{
+
+  min-height: 20em;
+  max-height: 30em;
+  padding: 10%;
+
+  h4{
+    line-height: 50px;
+  }
+
+  h1{
+    line-height: 2em;
+  }
+
+  p{
+    line-height: 1.5em;
+  }
+
+  a{
+    text-align: center;
+  }
+
+  .btn-container{
+    position: absolute;
+    bottom: 4em;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+}
+
+
+//CARDS AND CARD CONTAINER
+@media screen and (min-width: 0px) and (max-width: 640px) {
+  .pricing-container{
+    padding-bottom: 26em;
+  }
+
+  .card-body {
+    h1{
+      font-size: 1.2em;
+    }
+
+    p{
+      font-size: 0.6em;
+    };
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1200px) {
+  .pricing-container{
+    padding-bottom: 40em;
+  }
+
+  .pricing-card{
+    width: 90%;
+  }
+
+
+  .card-body{
+    h1{
+      font-size: 1.2em;
+    }
+
+    p{
+      font-size: small;
+    };
+  }
+
+}
+
+@media screen and (min-width: 1201px) {
+  .pricing-container{
+    padding-bottom: 50em;
+  }
+  .pricing-card{
+    width: 90%;
+  }
+
+  .card-body{
+    min-height: 45em;
+  }
+}
+
+
+
 
 
 

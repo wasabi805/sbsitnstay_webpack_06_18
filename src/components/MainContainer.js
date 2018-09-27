@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Redirect, Link} from 'react-router-dom';
+import {CSSTransition} from 'react-transition-group';
 
 import {AppWrapper, AppHeroBanner, AppHeroParallax, AppSectionContentWrapper, AppSectionImage, AppSectionTextBox, AppBodyWrapper, ServiceTiles, FaContainer, ServiceTilesText, ProfileImageWrapper, SecondaryParallaxBanner,Footer} from '.././assets/js/styled-components/mainContainerStyle'
 import {FormContainer,FormCol1, FormCol2, FormTextArea} from '.././assets/js/styled-components/mainContainerStyle'
-
+import {SectionTile,SectionTextWrapper} from '.././assets/js/styled-components/serviceStyle'
 
 
 import styled from 'styled-components'
@@ -15,7 +16,7 @@ import Gallery from './Gallery';
 import ContactForm from './common/ContactForm'
 
 import LandingBody from './body/LandingBody'
-import AboutBody from './body/AboutBody';
+
 
 
 class MainContainer extends Component{
@@ -32,8 +33,21 @@ class MainContainer extends Component{
 
             redirectHome: false,
             redirectAbout: false,
+
+            startAnimation: false,
+            showValidationButton: false,
         };
+        this.handleClick = this.handleClick.bind(this);
         this.handleRedirect = this.handleRedirect.bind(this)
+    }
+
+    handleClick() {
+        this.setState({
+            startAnimation: !this.state.startAnimation,
+        })
+
+        console.log(this.state.startAnimation, 'Value for startAnimation');
+
     }
 
     handleRedirect(e){
@@ -122,6 +136,15 @@ class MainContainer extends Component{
 
         // Define what props.theme will look like
         //THEMES : INSTANCES
+        const textBoxCenter = {
+            padding: '0 0 50px',
+            textAlign: 'center,'
+
+        }
+
+
+
+
         const aboutUsTheme = {
             bgColor: 'white',
             textAlignment: 'left',
@@ -132,21 +155,62 @@ class MainContainer extends Component{
 
         const servicesTheme ={
             bgColor:  '#f2f2f2',
-            top: '14em',
+            top: '6em',
             textAlignment: 'center',
             width: '50%',
             margin: '0 auto',
             padding: '1em 10em',
         };
 
-        const meetTheCrewTheme ={
+        const pricingBannerr ={
+            bgColor:  '#0e0905',
+            textAlignment: 'center',
+            width: '75%',
+            margin: '0 auto',
+            padding: '0',
+        };
+
+        const pricingBanner2 ={
             bgColor:  '#f2f2f2',
+            textAlignment: 'center',
+            width: '75%',
+            margin: '0 auto',
+            padding: '0',
+        };
+
+        const pricingTheme = {
+            bgColor:  '#0e0905',
+            textAlignment: 'center',
+            width: '75%',
+            margin: '0 auto',
+            padding: '0',
+        }
+
+        const meetTheCrewBanner ={
+            bgColor:  '#white',
+            textAlignment: 'center',
+            margin: '0 auto',
+            padding: '0',
+
+        };
+
+
+        const meetTheCrewTheme ={
+            bgColor:  'white',
             textAlignment: 'center',
             width: '50%',
             margin: '0 auto',
             padding: '0',
 
         };
+
+        const galleryTheme ={
+            bgColor:  '#f2f2f2',
+            textAlignment: 'left',
+            width: '50%',
+            margin: '2em 0',
+            padding: '4em 8em',
+        }
 
 
         return(
@@ -166,6 +230,10 @@ class MainContainer extends Component{
 
                        <AppSectionTextBox>
                            <h1 >About Us </h1>
+                           <p>South Bay Sit N’ Stay is a unique business offering a wide range of services aimed at the health and happiness of your pets.
+                               From overnight stays in our home to adventures to the beach to stop-in visits, we tailor each of our services
+                               to your pet so they come home with wagging tails and a big smile for you!
+                           </p>
                        </AppSectionTextBox>
                    </AppSectionContentWrapper>
                </ThemeProvider>
@@ -186,17 +254,38 @@ class MainContainer extends Component{
                    </AppSectionContentWrapper>
                </ThemeProvider>
 
+
+
+               {/*SERVICE TILES*/}
                <ThemeProvider theme={servicesTheme}>
                <AppSectionContentWrapper>
                    <ServiceTiles>
                        <FaContainer>
                            {/*<i className='fa fa-shoe-prints fa-8x'></i>*/}
-                           <li><a href='#'><i className='fa fa-shoe-prints ' aria-hidden="true"></i></a></li>
+                           <li onClick={this.handleClick}>
+                               <a href='#'><i className='fa fa-shoe-prints ' aria-hidden="true"></i></a>
+                           </li>
                        </FaContainer>
-                      <ServiceTilesText>
-                          <h1>Walking</h1>
-                      </ServiceTilesText>
+
+
+                       <ServiceTilesText>
+                           <h1>Walking</h1>
+                           <p>It was all a dream, I used to read Word Up! magazine
+                               Salt-n-Pepa and Heavy D up in the limousine
+                               Hangin' pictures on my wall
+                               Every Saturday Rap Attack, Mr. Magic, Marley Marl
+                               I let my tape rock 'til my tape popped
+                               Smokin' weed in Bambu, sippin' on Private Stock
+                               Way back, when I had the red and black lumberjack
+                               With the hat to match...
+                           </p>
+                       </ServiceTilesText>
+
+
+
+
                    </ServiceTiles>
+
 
                    <ServiceTiles>
                        <FaContainer>
@@ -204,6 +293,10 @@ class MainContainer extends Component{
                        </FaContainer>
                        <ServiceTilesText>
                            <h1>Feeding</h1>
+                           <p>Remember Rappin' Duke? Duh-ha, duh-ha
+                               You never thought that hip-hop would take it this far
+                               Now I'm in the limelight 'cause I rhyme tight
+                               Time to get paid, blow up like the World Trade</p>
                        </ServiceTilesText>
                    </ServiceTiles>
                </AppSectionContentWrapper>
@@ -217,6 +310,14 @@ class MainContainer extends Component{
                        </FaContainer>
                        <ServiceTilesText>
                            <h1>Overnight and Drop-ins</h1>
+                           <p> Born sinner, the opposite of a winner
+                               Remember when I used to eat sardines for dinner
+                               Peace to Ron G, Brucie B, Kid Capri
+                               Funkmaster Flex, Lovebug Starski
+                               I'm blowin' up like you thought I would
+                               Call the crib, same number, same hood
+                               It's all good (It's all good)
+                               And if you don't know, now you know,</p>
                        </ServiceTilesText>
                    </ServiceTiles>
 
@@ -226,20 +327,42 @@ class MainContainer extends Component{
                        </FaContainer>
                        <ServiceTilesText>
                            <h1>Adventures</h1>
+                           <p>I bomb atomically, Socrates' philosophies and hypotheses
+                               Can't define how I be dropping these mockeries
+                               Lyrically perform armed robbery
+                               Flee with the lottery, possibly they spotted me
+                               Battle-scarred Shogun, explosion when my pen hits tremendous
+                               Ultraviolet shine blind forensics</p>
                        </ServiceTilesText>
                    </ServiceTiles>
                </AppSectionContentWrapper>
                </ThemeProvider>
 
-               {/*Put the 2nd Parallax here*/}
+
+
+
+
 
                {/*/!*  =====   AboutUs =====   *!/*/}
+               <ThemeProvider theme={pricingBannerr}>
+                   <AppSectionContentWrapper>
+
+                       <AppSectionTextBox>
+                           <h1 >Why Choose South Bay Sit N Stay? </h1>
+                           <p>South Bay Sit N’ Stay is a unique business offering a wide range of services aimed at the health and happiness of your pets.
+                               From overnight stays in our home to adventures to the beach to stop-in visits, we tailor each of our services
+                               to your pet so they come home with wagging tails and a big smile for you!
+                           </p>
+                       </AppSectionTextBox>
+                   </AppSectionContentWrapper>
+               </ThemeProvider>
+
                <ThemeProvider theme={aboutUsTheme}>
                    <AppSectionContentWrapper>
 
 
                        <AppSectionTextBox>
-                           <h1 >Why SB Sit 'N Stay? </h1>
+
                            <ul>
                                <h2>Qualifications for sbsitnstay</h2>
                                <li>drop down 1</li>
@@ -256,8 +379,95 @@ class MainContainer extends Component{
                    </AppSectionContentWrapper>
                </ThemeProvider>
 
+
+               {/*START CARDS HERE*/}
+               {/*<ThemeProvider theme={pricingTheme}>*/}
+                   <div className='pricing-container'>
+
+                       <ThemeProvider theme={pricingBanner2}>
+                           <AppSectionContentWrapper>
+
+                               <AppSectionTextBox>
+                                   <h1 >Our Pricing Plan </h1>
+                               </AppSectionTextBox>
+                           </AppSectionContentWrapper>
+                       </ThemeProvider>
+
+
+                        <div className='row bg-info '>
+                            <div className='col'>
+                                <div className="card pricing-card">
+                                    <div className="card-body pb-3">
+
+                                        <h4 className="card-title">Standard Care</h4>
+                                        <h1 className="card-subtitle text-muted">Stop in Visits</h1>
+                                        <h6>Rate: $25 Per </h6>
+
+                                        <p>This option is ideal for the homebody pet. We come to you and take care of your pet overnight in the comfort of their home.  Also offered for overnight stays: watering your indoor and outdoor plants, picking up your mail,
+                                            accepting deliveries, and more!
+                                        </p>
+                                        <div className='btn-container'>
+                                            <a className='btn btn-outline-primary' href="#">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='col'>
+                                <div className="card pricing-card">
+                                    <div className="card-body">
+
+                                        <h4 className="card-title">Overnight Care</h4>
+                                        <h1 className="card-subtitle text-muted">$40 <sub>/ per night</sub></h1>
+
+
+                                        <p>Working late? Date night? We’ve got you covered with an hour stop in visit. We can feed, play, and spend quality time with your pet while you are out.
+                                            Per visit can to multiple visits a day.
+                                        </p>
+                                        <h6>Rate: $40 Per night
+                                        </h6>
+
+                                        <div className='btn-container'>
+                                            <a className='btn btn-outline-primary' href="#">Read More</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='col'>
+                                <div className="card pricing-card">
+                                    <div className="card-body">
+
+                                        <h4 className="card-title">VIP Care</h4>
+                                        <h1 className="card-subtitle text-muted">Pawsome Adventures</h1>
+
+                                        <p>
+                                            Sometimes we just need to get away, and sometimes your pets do too! We offer adventures spanning from trips to the dog park, to off-leash parks at the beach,  to dog friendly hiking trails around the bay. Feel free to join us on these trips, or we can always accompany you on your dog adventures if your hands are full!
+                                            Rates: Starting at $40 per trip
+
+                                        </p>
+
+                                        <h6>Rates: Starting at $40 per trip</h6>
+
+
+                                        <div className='btn-container'>
+                                            <a className='btn btn-outline-primary' href="#">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                   </div>
+               {/*</ThemeProvider>*/}
+
+
+
                {/*MEET THE CREW*/}
-               <ThemeProvider theme={servicesTheme}>
+               <ThemeProvider theme={meetTheCrewBanner}>
                    <AppSectionContentWrapper>
 
                        <AppSectionTextBox>
@@ -316,7 +526,7 @@ class MainContainer extends Component{
 
 
                {/*Gallery*/}
-               <ThemeProvider theme={aboutUsTheme}>
+               <ThemeProvider theme={galleryTheme}>
                    <AppSectionContentWrapper>
 
                        <AppSectionTextBox>
@@ -353,7 +563,7 @@ class MainContainer extends Component{
 
 
                <SecondaryParallaxBanner>
-                   {/*<ContactForm/>*/}
+                   <ContactForm/>
 
                    <FormContainer>
                        <FormCol1>
@@ -376,7 +586,9 @@ class MainContainer extends Component{
                            </table>
 
                            <table className='w-100'>
-                               <td className='pl-2 pr-2 pt-3 '> <textarea className='w-100 h-auto ' rows='10' placeholder='comments'></textarea></td>
+                               <td className='pl-2 pr-2 pt-3 '>
+                                   <textarea className='w-100 h-auto ' rows='10' placeholder='comments'/>
+                               </td>
                            </table>
 
                            <div className='buttonFCont'>

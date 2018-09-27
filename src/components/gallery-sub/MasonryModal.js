@@ -11,12 +11,12 @@ class MasonryModal extends Component{
     }
 
     componentWillMount(){
-        console.log( this.props, 'bout to do this');
+
     }
 
 
     render(){
-        console.log(this.props, 'is showmodal here?');
+
         return(
             <div id="myModal" className='modal'>
                 <span className='close'>&times;</span>
