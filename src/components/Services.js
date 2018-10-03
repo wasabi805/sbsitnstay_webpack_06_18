@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {mainContainerStyle, mainContainerStyles} from '../assets/js/styled-components/mainContainerStyle';
+import {mainContainerStyle, mainContainerStyles} from '../assets/js/styled-components/00-MainContainerStyle';
 import {serviceStyle} from '../assets/js/styled-components/serviceStyle'
 import {CSSTransition} from 'react-transition-group';
 

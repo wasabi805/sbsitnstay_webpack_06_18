@@ -1,4 +1,4 @@
-
+@import "sandbox";
 @import "../.././bootstrap/bootstrap.scss";
 @import "presets/normalize";
 @import "presets/variables";
@@ -10,10 +10,13 @@
 
 
 
+
 *{
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif
 }
+
+@include sandbox;
 
 //                                 START HERE
 //
@@ -228,8 +231,6 @@ body,html{margin:0;padding:0;}
 
 //Pricing cards : 9-27
 .pricing-container{
-
-
   position: relative;
   background-color: #f2f2f2;
   padding-bottom: 20em;
@@ -294,9 +295,6 @@ body,html{margin:0;padding:0;}
 
 //CARDS AND CARD CONTAINER
 @media screen and (min-width: 0px) and (max-width: 640px) {
-  .pricing-container{
-    padding-bottom: 26em;
-  }
 
   .card-body {
     h1{
@@ -310,9 +308,7 @@ body,html{margin:0;padding:0;}
 }
 
 @media screen and (min-width: 641px) and (max-width: 1200px) {
-  .pricing-container{
-    padding-bottom: 40em;
-  }
+
 
   .pricing-card{
     width: 90%;
@@ -332,11 +328,9 @@ body,html{margin:0;padding:0;}
 }
 
 @media screen and (min-width: 1201px) {
-  .pricing-container{
-    padding-bottom: 50em;
-  }
+
   .pricing-card{
-    width: 90%;
+    width: 94%;
   }
 
   .card-body{

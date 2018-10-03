@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import HeaderNavigation from './layout/nav/HeaderNavigation'
 import styled from 'styled-components'
 import galleryStyles from "../assets/js/styled-components/masonryGalleryStyle"
-import {mainContainerStyles} from '.././assets/js/styled-components/mainContainerStyle'
+import {mainContainerStyles} from '../assets/js/styled-components/00-MainContainerStyle'
 
 import MasonryGallery from './gallery-sub/MasonryGallery'
 import  MasonryModal from './gallery-sub/MasonryModal'
