@@ -5,17 +5,14 @@ import { font, palette } from 'styled-theme';
 export const HeroBanner = styled.section.attrs({
 
 })`
-        position: relative;
-        height: 100vh;
-        
         display: flex;
-        // align-items: center;
-        // justify-content: center;
+        position: relative;
+        // height: 100vh;
+        padding-bottom: 66vw;
         color: white;
         text-shadow: 0 0 5px #000;
         object-fit: cover;
-        
-        
+       
         overflow:auto;
         transform:scaleY(1);
         transform-origin:top;
