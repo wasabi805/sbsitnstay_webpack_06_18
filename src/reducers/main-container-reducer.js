@@ -1,28 +1,11 @@
-import {MAIN_CONTAINER} from "../actions/action-type";
+import {MAIN_CONTAINER, TEST_MAIN, OPEN_NAV_MODAL, CLOSE_NAV_MODAL} from "../actions/action-type";
 const testImg01 = 'https://res.cloudinary.com/ocampot/image/upload/v1532313756/testImg.jpg'
+import {testTheMain} from '.././actions/main-container-actions'
 
 import close from '.././assets/images/loading.gif'
 
 
 const initialState = {
-
-    landing:{
-        heading: 'South Bay Sit N Stay',
-        small: 'Welcome',
-        tiles:['about us', 'services', 'gallery', 'contact']
-    },
-
-    about:{
-        heading: 'About Us',
-        small: 'Get to know who we are',
-        heroBg: 'https://res.cloudinary.com/ocampot/image/upload/v1532397892/sbsitnstay/dog_and_owner_sunset.jpg',
-        sidekickBg: '',
-        portraits: [
-            {name: 'Kayla', img: "https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/kayla-portrait.jpg"},
-            {name: 'Catherine', img: 'https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/sbsitnstay/catherine.jpg'},
-            {name: 'Yuko', img: "https://res.cloudinary.com/ocampot/image/upload/h_300,w_300/sbsitnstay/yuko.jpg"}
-            ]
-    },
 
     gallery: [
 
@@ -49,82 +32,48 @@ const initialState = {
         {id: 'gallery-19', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160702_204520.jpg'},
     ],
 
-    banner :[
-        {name : 'landing',  title: "South Bay Sit 'N Stay ", src: "https://res.cloudinary.com/ocampot/image/upload/v1532397239/sbsitnstay/dog-leash-01.jpg", small: 'Welcome' },
-        {name : 'about',    title: 'About us',  src: 'https://res.cloudinary.com/ocampot/image/upload/v1532397892/sbsitnstay/dog_and_owner_sunset.jpg', small: 'A little about us ...'},
-        {name : 'services', title: 'Services',  src: 'https://res.cloudinary.com/ocampot/image/upload/v1532398062/sbsitnstay/dog_trainer_silhouettes_sunset.jpg', small: 'Providing the best for your pup.'},
-        {name : 'gallery',  title: 'Gallery' ,  src: 'https://res.cloudinary.com/ocampot/image/upload/v1532398181/sbsitnstay/dog_selfie.jpg', small: 'Come hang with crew!'},
-        {name : 'contact',  title: 'Contact',   src: 'https://res.cloudinary.com/ocampot/image/upload/v1532398257/sbsitnstay/dog_on_phone.jpg', small: 'Get in touch with us.'},
+    ourPricingContent: [
+        {title: 'Standard Care', subTitle : 'Stop in Visits' , price: '$25', rate: ' /per visit' , badge: 'fa fa-shoe-prints', text: 'This option is ideal for the homebody pet. We come to you and take care of your pet overnight in the comfort of their home.  Also offered for overnight stays: watering your indoor and outdoor plants, picking up your mail, accepting deliveries, and more!' },
+        {title: 'Deluxe', subTitle : 'Overnight Care', price: '$40' , rate: ' /per stay' ,  badge: 'fa fa-bone', text: 'Working late? Date night? We’ve got you covered with an hour stop in visit. We can feed, play, and spend quality time with your pet while you are out. Per visit can to multiple visits a day.' },
+        {title: 'VIP Care', subTitle : 'Pawesome Adventures', price: ' starting at $40' , rate: ' /per trip' ,  badge: 'fa fa-tree', text: 'Sometimes we just need to get away, and sometimes your pets do too! We offer adventures spanning from trips to the dog park, to off-leash parks at the beach,  to dog friendly hiking trails around the bay. Feel free to join us on these trips, or we can always accompany you on your dog adventures if your hands are full!' }
     ],
 
-    body : {
+    meetTheCrewContent : [
+        {name: 'Kayla', image: 'https://res.cloudinary.com/ocampot/image/upload/v1533777073/kayla-portrait.jpg', text: 'Kayla started South Bay Sit N’ Stay in 2013 after receiving her certifications in dog training, pet massage, pet nutrition, and pet boarding through Animal Behavior College. She has also spent over 100 hours working with dogs at the Humane Society- Silicon Valley as a volunteer. She loves taking her own dogs out for adventures to the beach and hiking throughout the South Bay'},
+        {name: 'Catherine', image: 'https://res.cloudinary.com/ocampot/image/upload/v1532396286/sbsitnstay/catherine.jpg', text: 'Catherine joined the South Bay Sit N’ Stay team after moving to California in 2016. Her volunteer work at the Humane Society and dog sitting in her home state of Wisconsin has developed her into an incredibly patient caregiver. It is a passion of hers to work with animals and provide them with the love and attention they need, especially when they are away from their owners'},
+        {name: 'Yuko', image: '.././assets/images/tina.jpeg', text: 'Yuko is the newest member of the South Bay Sit N’ Stay team. She specializes in cat care and is a proud cat mom of 5 herself. She has worked with cats for about 10 years and has completed a cat training course through Animal Behavior College. When she’s not snuggling with her kitties, Yuko enjoys exploring all the amazing food and adventures the bay has to offer'},
+    ],
 
-        landing: [
-            {id: 1, name:'About Us', src: "https://res.cloudinary.com/ocampot/image/upload/v1533245189/tmnt_2003_group_selfie_by_autobot2.jpg", small: 'Meet the crew' },
-            {id: 2, name:'Services', src: "https://res.cloudinary.com/ocampot/image/upload/v1532397698/sbsitnstay/dogs_on_leash.jpg", small: 'We provide for you and yours' },
-            {id: 3, name:'Gallery',  src: "https://res.cloudinary.com/ocampot/image/upload/v1532398583/sbsitnstay/dog_leash.jpg", small: 'Check out our buds.' },
-            {id: 4, name:'Contact',  src: "https://res.cloudinary.com/ocampot/image/upload/v1532398723/sbsitnstay/dog_laptop.jpg", small: 'Get in touch with us' }
-        ],
 
-        about: [
-            {id: 1, name:'Meet Kayla', src: "https://res.cloudinary.com/ocampot/image/upload/v1533777073/kayla-portrait.jpg", small: 'Stuff About Kayla' },
-            {id: 2, name:'Meet Catherine', src: "https://res.cloudinary.com/ocampot/image/upload/v1532396286/sbsitnstay/catherine.jpg", small: 'Stuff About Catherine' },
-            {id: 3, name:'Meet Yuko', src: "https://res.cloudinary.com/ocampot/image/upload/v1532396750/sbsitnstay/yuko.jpg", small: 'Stuff About Yuko' },
-        ],
 
-        services: [
-            {id: 1, name:'Walking', src: "https://res.cloudinary.com/ocampot/image/upload/v1532399332/sbsitnstay/dog_leash_002.jpg", small: 'Stuff About Walking' },
-            {id: 2, name:'Feeding', src: "https://res.cloudinary.com/ocampot/image/upload/v1532399233/sbsitnstay/pups_eating.jpg", small: 'Stuff About Feeding' },
-            {id: 3, name:'Drop-ins', src: "https://res.cloudinary.com/ocampot/image/upload/v1533787475/dog-napping.jpg", small: 'Stuff About Drop-ins' },
-            {id: 4, name:'Overnight Care', src: "https://res.cloudinary.com/ocampot/image/upload/v1532399537/sbsitnstay/dog_sleeping_01.jpg", small: 'Stuff Overnight care' },
-            {id: 5, name:'Adventures', src: "https://res.cloudinary.com/ocampot/image/upload/v1533787592/dog-on-hike-00.jpg", small: 'Stuff About Adventures'},
-        ],
-
-        gallery: [
-
-            {id: 'gallery-00', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20180129_192156.jpg'},
-            {id: 'gallery-01', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170304_110838.jpg'},
-            {id: 'gallery-02', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161231_140603.jpg'},
-            {id: 'gallery-03', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170710_203907.jpg'},
-            {id: 'gallery-04', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20161015_162730.jpg'},
-            {id: 'gallery-05', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171122_132128.jpg'},
-            {id: 'gallery-06', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160801_182236.jpg'},
-            {id: 'gallery-07', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20160508_191857.jpg'},
-            {id: 'gallery-08', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20170529_124148.jpg'},
-            {id: 'gallery-09', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/sbsitnstay/gallery-sbsitnstay/20171028_215554.jpg'},
-
-            {id: 'gallery-10', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160716_183734.jpg'},
-            {id: 'gallery-11', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160618_093938.jpg'},
-            {id: 'gallery-12', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160701_174543.jpg'},
-            {id: 'gallery-13', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20180127_224819.jpg'},
-            {id: 'gallery-14', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20171222_195748.jpg'},
-            {id: 'gallery-15', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161008_111823.jpg'},
-            {id: 'gallery-16', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161007_185518.jpg'},
-            {id: 'gallery-17', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20170203_194845.jpg'},
-            {id: 'gallery-18', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20161220_201416.jpg'},
-            {id: 'gallery-19', src: 'https://res.cloudinary.com/ocampot/image/upload/w_400,c_scale/20160702_204520.jpg'},
-        ],
-
-        contact: [
-            {id:1 , name :'see the main-container-reducer and set up defaults' ,src: testImg01, small: 'Make up ome content'}
-        ]
-    },
-
+    testReturnFromReducer:{},
+    toggleNavModal: 'none'
 
 };
-
 
 
 export default function (state=initialState, action) {
     switch (action.type){
 
-        case MAIN_CONTAINER:{
-            state = { ...state};
+        case MAIN_CONTAINER:
+            return{...state};
+
+        case TEST_MAIN:
+            return {
+                testReturnFromReducer: action.payload
+            };
+
+        case OPEN_NAV_MODAL:
+            return{
+                toggleNavModal: action.payload
+            };
+
+        case CLOSE_NAV_MODAL:
+            return{
+                toggleNavModal: action.payload
+            };
 
 
-
-            return state
-        }
 
         //THIS IS WHAT YOU ARE WORKING OFF OF ON INITIAL RENDER
         default:

@@ -1,4 +1,11 @@
 export const MAIN_CONTAINER = 'MAIN_CONTAINER';
+export const TEST_MAIN = 'TEST_MAIN';
+export const OPEN_NAV_MODAL = 'OPEN_NAV_MODAL';
+export const CLOSE_NAV_MODAL = 'CLOSE_NAV_MODAL';
+
+
+
+
 export const LOAD_GALLERY = 'LOAD_GALLERY';
 export const SET_SERVICES_STATE ='SET_SERVICES_STATE';
 export const SET_BANNER_STATE ='SET_BANNER_STATE';

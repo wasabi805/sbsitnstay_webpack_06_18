@@ -3,7 +3,8 @@ import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {getInitialState} from "./actions/main-container-actions";
+import {getInitialState, testTheMain} from "./actions/main-container-actions";
+
 
 
 import './assets/css/main.css';
@@ -11,13 +12,12 @@ import './assets/sass/main.scss';
 
 
 import MainContainer from './components/MainContainer'
-import About from './components/About'
-// import Services from './components/Services'
-import Gallery from './components/Gallery'
-import Contact from './components/Contact'
 
-import Banner from './components/BannerParent'
-import Body from './components/BodyParent'
+
+
+
+
+
 
 class App extends Component{
     constructor(props){
@@ -49,11 +49,12 @@ class App extends Component{
 
     render(){
         // console.log(this.state, 'state from APP');
-        // console.log(this.props, 'APP: Router stuff');
+        console.log(this.props, 'APP: Action stuff');
+        let {mainReducer} = this.props
 
         return(
             <Switch>
-                <Route exact path='/' render={(props)=> <MainContainer{...props} landing={this.state.landing} gallery={this.state.gallery}/>  } />
+                <Route exact path='/' render={(props)=> <MainContainer{...props} landing={this.state.landing} gallery={this.state.gallery} testTheMain={this.props.testTheMain}  mainReducer={mainReducer}/>   } />
                 <Route exact path='/location/about-us' render={(props)=> <About{...props} about={this.state.aboutContent}/>  } />
                 <Route exact path='/location/gallery' render={(props)=> <Gallery{...props} gallery={this.state.galleryContent}/>  } />
                 {/*<Route path='/location/services' component={Services} />*/}
@@ -69,8 +70,7 @@ class App extends Component{
 const mapStateToProps =(state)=> {
     return{mainReducer : state.mainReducer}};
 
-const mapDispatchToProps =(dispatch)=> {
-    return{getInitialState : bindActionCreators(dispatch, getInitialState)}};
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+export default connect(mapStateToProps)(App)
 

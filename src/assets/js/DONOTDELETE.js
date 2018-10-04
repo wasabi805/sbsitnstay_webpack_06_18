@@ -17,7 +17,7 @@ import {ThemeProvider} from 'styled-components';
 import theme from 'styled-theme';
 
 import HeaderNavigation from './layout/nav/HeaderNavigation'
-import Gallery from './Gallery';
+
 import ContactForm from './common/ContactForm'
 
 import LandingBody from './body/LandingBody'

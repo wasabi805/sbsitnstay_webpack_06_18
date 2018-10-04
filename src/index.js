@@ -5,15 +5,8 @@ import {Provider} from 'react-redux';
 import store from './store';
 
 
-
-
-
-import bodyActions from './actions/body-actions'
-
-
-
 import App from './App'
-import Main from "./components/Main";
+
 
 
 const AppRoot = <Provider store={store}>
@@ -21,9 +14,6 @@ const AppRoot = <Provider store={store}>
                         <Route path="/" render={(props)=><App {...props}/>}/>
                     </BrowserRouter>
                 </Provider>
-
-
-
 
 // const mountElement = document.querySelector('#root');
 // const boldElement = React.createElement('b', null, "Text (as a string)");
